@@ -2671,24 +2671,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "blueprint-contract-deployer"
-version = "0.1.0"
-dependencies = [
- "alloy",
- "alloy-contract",
- "alloy-json-abi",
- "alloy-primitives 0.8.25",
- "alloy-provider",
- "alloy-sol-types 0.8.25",
- "blueprint-build-utils",
- "blueprint-sdk",
- "color-eyre",
- "eigensdk",
- "serde",
- "serde_json",
-]
-
-[[package]]
 name = "blueprint-core"
 version = "0.1.0"
 source = "git+https://github.com/tangle-network/blueprint?branch=drew%2Feigensdk-bump#a67b3fc4c5eb2f01e84317dc1e4d0e0086dc171c"
@@ -5589,6 +5571,24 @@ dependencies = [
  "alloy",
  "regex",
  "reqwest 0.12.15",
+]
+
+[[package]]
+name = "eigenlayer-contract-deployer"
+version = "0.1.0"
+dependencies = [
+ "alloy",
+ "alloy-contract",
+ "alloy-json-abi",
+ "alloy-primitives 0.8.25",
+ "alloy-provider",
+ "alloy-sol-types 0.8.25",
+ "blueprint-build-utils",
+ "blueprint-sdk",
+ "color-eyre",
+ "eigensdk",
+ "serde",
+ "serde_json",
 ]
 
 [[package]]

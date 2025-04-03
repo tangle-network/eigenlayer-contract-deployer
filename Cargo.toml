@@ -1,12 +1,12 @@
 [package]
-name = "blueprint-contract-deployer"
+name = "eigenlayer-contract-deployer"
 version = "0.1.0"
 description = "A library that contains Rust bindings for contracts and tools for deploying contracts"
 authors = ["Tangle Network"]
 edition = "2024"
 license = "MIT OR Apache-2.0"
 homepage = "https://tangle.tools"
-repository = "https://github.com/tangle-network/blueprint-contract-deployer"
+repository = "https://github.com/tangle-network/eigenlayer-contract-deployer"
 rust-version = "1.85"
 
 [lints.rust]
