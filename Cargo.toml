@@ -1,0 +1,52 @@
+[package]
+name = "blueprint-contract-deployer"
+version = "0.1.0"
+description = "A library that contains Rust bindings for contracts and tools for deploying contracts"
+authors = ["Tangle Network"]
+edition = "2024"
+license = "MIT OR Apache-2.0"
+homepage = "https://tangle.tools"
+repository = "https://github.com/tangle-network/blueprint-contract-deployer"
+rust-version = "1.85"
+
+[lints.rust]
+rust_2018_idioms = { level = "deny", priority = -1 }
+trivial_casts = "deny"
+trivial_numeric_casts = "deny"
+unused_import_braces = "deny"
+async_fn_in_trait = "allow"
+
+[lints.clippy]
+pedantic = { level = "deny", priority = -1 }
+all = { level = "deny", priority = -1 }
+single_match_else = "allow"
+uninlined_format_args = "allow"
+needless_late_init = "allow"
+struct_excessive_bools = "allow"
+large_enum_variant = "allow"
+result_large_err = "allow"
+similar_names = "allow"
+assigning_clones = "allow"
+transmute_ptr_to_ptr = "allow"
+items_after_statements = "allow"
+match_wildcard_for_single_variants = "allow"
+too_many_lines = "allow"
+
+[lints.rustdoc]
+broken_intra_doc_links = "deny"
+
+[dependencies]
+color-eyre = { version = "0.6" }
+eigensdk = { version = "0.5.0", features = ["crypto-bls", "utils"] }
+serde = { version = "1.0.127", features = ["derive"] }
+serde_json = { version = "1.0.67", features = ["alloc"] }
+alloy = { version = "0.12" }
+alloy-sol-types = { version = "0.8", features = ["json"] }
+alloy-json-abi = { version = "0.8", features = ["serde_json"] }
+alloy-contract = { version = "0.12" }
+alloy-provider = { version = "0.12" }
+blueprint-sdk = { git = "https://github.com/tangle-network/blueprint", features = ["eigenlayer", "evm", "macros", "std", "testing"] }
+alloy-primitives = { version = "0.8" }
+
+[build-dependencies]
+blueprint-build-utils = { git = "https://github.com/tangle-network/blueprint" }
