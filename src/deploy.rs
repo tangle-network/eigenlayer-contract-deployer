@@ -1,11 +1,9 @@
 use alloy_primitives::{Address, U256};
 use alloy_sol_types::SolCall;
-use blueprint_sdk::evm::util::get_provider_from_signer;
-use blueprint_sdk::info;
-use blueprint_sdk::testing::chain_setup::anvil::get_receipt;
 use color_eyre::eyre::eyre;
 use eigensdk::utils::slashing::sdk::mockerc20::MockERC20;
 use serde::{Deserialize, Serialize};
+use tracing::info;
 
 use crate::bindings::core::islashingregistrycoordinator::ISlashingRegistryCoordinatorTypes::OperatorSetParam;
 use crate::bindings::core::slashingregistrycoordinator::IStakeRegistryTypes::StrategyParams;
@@ -14,7 +12,7 @@ use crate::bindings::{
     PauserRegistry, ProxyAdmin, SlashingRegistryCoordinator, SocketRegistry,
     SquaringServiceManager, SquaringTask, StakeRegistry, StrategyFactory,
 };
-use crate::helpers::{deploy_empty_proxy, upgrade_proxy};
+use crate::helpers::{deploy_empty_proxy, get_provider_from_signer, get_receipt, upgrade_proxy};
 
 /// Data structure to hold deployed contract addresses
 #[derive(Debug, Clone, Serialize, Deserialize)]

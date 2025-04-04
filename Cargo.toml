@@ -44,10 +44,11 @@ serde_json = { version = "1.0.67", features = ["alloc"] }
 alloy = { version = "0.12" }
 alloy-sol-types = { version = "0.8", features = ["json"] }
 alloy-json-abi = { version = "0.8", features = ["serde_json"] }
+alloy-rpc-types-eth = {version = "0.12" }
 alloy-contract = { version = "0.12" }
 alloy-provider = { version = "0.12" }
-blueprint-sdk = { git = "https://github.com/tangle-network/blueprint", branch = "drew/eigensdk-bump", features = ["eigenlayer", "evm", "macros", "std", "testing"] }
 alloy-primitives = { version = "0.8" }
+tracing = { version = "0.1.41" }
 
 [build-dependencies]
 blueprint-build-utils = { git = "https://github.com/tangle-network/blueprint", branch = "drew/eigensdk-bump" }

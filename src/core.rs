@@ -4,12 +4,11 @@ use crate::bindings::{
     PermissionController, ProxyAdmin, RewardsCoordinator, StrategyBase, StrategyFactory,
     StrategyManager, UpgradeableBeacon,
 };
-use crate::helpers::{deploy_empty_proxy, upgrade_proxy};
+use crate::helpers::{deploy_empty_proxy, get_provider_from_signer, upgrade_proxy};
 use alloy_primitives::{Address, Bytes, U256};
 use alloy_sol_types::SolCall;
-use blueprint_sdk::evm::util::get_provider_from_signer;
-use blueprint_sdk::info;
 use serde::{Deserialize, Serialize};
+use tracing::info;
 
 pub const MIDDLEWARE_VERSION: &str = "v1.4.0-testnet-holesky";
 
