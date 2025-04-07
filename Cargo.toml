@@ -51,4 +51,4 @@ alloy-primitives = { version = "0.8" }
 tracing = { version = "0.1.41" }
 
 [build-dependencies]
-blueprint-build-utils = { git = "https://github.com/tangle-network/blueprint", branch = "drew/eigensdk-bump" }
+blueprint-build-utils = { git = "https://github.com/tangle-network/blueprint", branch = "main" }
