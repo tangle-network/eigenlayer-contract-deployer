@@ -1480,25 +1480,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "blueprint-build-utils"
-version = "0.1.0"
-source = "git+https://github.com/tangle-network/blueprint?branch=drew%2Feigensdk-bump#a67b3fc4c5eb2f01e84317dc1e4d0e0086dc171c"
-dependencies = [
- "blueprint-std",
-]
-
-[[package]]
-name = "blueprint-std"
-version = "0.1.0"
-source = "git+https://github.com/tangle-network/blueprint?branch=drew%2Feigensdk-bump#a67b3fc4c5eb2f01e84317dc1e4d0e0086dc171c"
-dependencies = [
- "colored",
- "num-traits",
- "rand 0.8.5",
- "thiserror 2.0.12",
-]
-
-[[package]]
 name = "bumpalo"
 version = "3.17.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1613,15 +1594,6 @@ dependencies = [
  "owo-colors",
  "tracing-core",
  "tracing-error",
-]
-
-[[package]]
-name = "colored"
-version = "3.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fde0e0ec90c9dfb3b4b1a0891a7dcd0e2bffde2f7efed5fe7c9bb00e5bfb915e"
-dependencies = [
- "windows-sys 0.59.0",
 ]
 
 [[package]]
@@ -1947,7 +1919,8 @@ dependencies = [
 [[package]]
 name = "eigen-crypto-bls"
 version = "0.5.0"
-source = "git+https://github.com/Tjemmmic/eigensdk-rs.git?branch=reader-type-annotations#443b2fd99b25a4e1466f5d46ffa34eb82942c2ee"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "76af95503e08dfc9500910301220c4153d4de2345127326c5b4cf407fd1a02e2"
 dependencies = [
  "alloy",
  "ark-bn254",
@@ -1964,7 +1937,8 @@ dependencies = [
 [[package]]
 name = "eigen-crypto-bn254"
 version = "0.5.0"
-source = "git+https://github.com/Tjemmmic/eigensdk-rs.git?branch=reader-type-annotations#443b2fd99b25a4e1466f5d46ffa34eb82942c2ee"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "039664a95a1c6e47fde635b9a5c07f3377901bf0463e10120f96627ac4386a8b"
 dependencies = [
  "ark-bn254",
  "ark-ec",
@@ -1975,7 +1949,8 @@ dependencies = [
 [[package]]
 name = "eigen-utils"
 version = "0.5.0"
-source = "git+https://github.com/Tjemmmic/eigensdk-rs.git?branch=reader-type-annotations#443b2fd99b25a4e1466f5d46ffa34eb82942c2ee"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0813ece83d4e9c95eddad48bf6cbfe2e1c083ffbd9eac87a40d818225be31db0"
 dependencies = [
  "alloy",
  "regex",
@@ -1993,7 +1968,6 @@ dependencies = [
  "alloy-provider",
  "alloy-rpc-types-eth",
  "alloy-sol-types",
- "blueprint-build-utils",
  "color-eyre",
  "eigensdk",
  "serde",
@@ -2004,7 +1978,8 @@ dependencies = [
 [[package]]
 name = "eigensdk"
 version = "0.5.0"
-source = "git+https://github.com/Tjemmmic/eigensdk-rs.git?branch=reader-type-annotations#443b2fd99b25a4e1466f5d46ffa34eb82942c2ee"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "755d34a0a79ad84792325ca94e7c5f72d7dc5dbe92cbdd51780fa8ac0b7ba7f6"
 dependencies = [
  "eigen-crypto-bls",
  "eigen-utils",
