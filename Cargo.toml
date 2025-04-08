@@ -46,5 +46,5 @@ alloy-json-abi = { version = "0.8", features = ["serde_json"] }
 alloy-rpc-types-eth = {version = "0.12" }
 alloy-contract = { version = "0.12" }
 alloy-provider = { version = "0.12" }
-alloy-primitives = { version = "0.8" }
+alloy-primitives = { version = "1.0" }
 tracing = { version = "0.1.41" }
