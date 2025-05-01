@@ -5,7 +5,9 @@ use std::{env, fs};
 
 #[allow(clippy::too_many_lines, clippy::format_push_string)]
 fn main() {
-    println!("cargo:rerun-if-changed=build.rs");
+    if env::var("CARGO_FEATURE_BUILD_SCRIPT").is_err() {
+        return;
+    }
 
     let contract_dirs = vec![
         "./dependencies/eigenlayer-middleware-0.5.4/lib/eigenlayer-contracts",
@@ -135,6 +137,23 @@ fn main() {
         let lower_contract = contract.to_lowercase();
         let file_path = format!("src/bindings/core/{}.rs", lower_contract);
         add_imports_to_file(&file_path, contract);
+
+        if *contract == "AllocationManager" || *contract == "IAllocationManager" {
+            let path = Path::new(&file_path);
+            let mut file =
+                fs::File::open(path).unwrap_or_else(|_| panic!("Failed to modify {}", file_path));
+            let mut contents = String::new();
+            file.read_to_string(&mut contents)
+                .unwrap_or_else(|_| panic!("Failed to read {}", file_path));
+
+            let new_contents = contents.replace(
+                "#[derive(Clone)]\n    pub struct AllocateParams {",
+                "#[derive(Clone, Hash, Debug, Eq, PartialEq)]\n    pub struct AllocateParams {",
+            );
+
+            fs::write(path, new_contents)
+                .unwrap_or_else(|_| panic!("Failed to write to {}", file_path));
+        }
     }
 
     // Create the mod.rs in the bindings directory

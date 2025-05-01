@@ -367,6 +367,7 @@ pub mod IStrategy {
     pub static DEPLOYED_BYTECODE: alloy_sol_types::private::Bytes = alloy_sol_types::private::Bytes::from_static(
         b"",
     );
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `BalanceExceedsMaxTotalDeposits()` and selector `0xd86bae67`.
 ```solidity
 error BalanceExceedsMaxTotalDeposits();
@@ -433,6 +434,7 @@ error BalanceExceedsMaxTotalDeposits();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `MaxPerDepositExceedsMax()` and selector `0x14ac1edc`.
 ```solidity
 error MaxPerDepositExceedsMax();
@@ -497,6 +499,7 @@ error MaxPerDepositExceedsMax();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `NewSharesZero()` and selector `0x18725da6`.
 ```solidity
 error NewSharesZero();
@@ -561,6 +564,7 @@ error NewSharesZero();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `OnlyStrategyManager()` and selector `0x48da714f`.
 ```solidity
 error OnlyStrategyManager();
@@ -625,6 +629,7 @@ error OnlyStrategyManager();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `OnlyUnderlyingToken()` and selector `0xc4aaf740`.
 ```solidity
 error OnlyUnderlyingToken();
@@ -689,6 +694,7 @@ error OnlyUnderlyingToken();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `TotalSharesExceedsMax()` and selector `0x5e29d146`.
 ```solidity
 error TotalSharesExceedsMax();
@@ -753,6 +759,7 @@ error TotalSharesExceedsMax();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `WithdrawalAmountExceedsTotalDeposits()` and selector `0xb469df30`.
 ```solidity
 error WithdrawalAmountExceedsTotalDeposits();
@@ -819,6 +826,7 @@ error WithdrawalAmountExceedsTotalDeposits();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `ExchangeRateEmitted(uint256)` and selector `0xd2494f3479e5da49d386657c292c610b5b01df313d07c62eb0cfa49924a31be8`.
 ```solidity
 event ExchangeRateEmitted(uint256 rate);
@@ -851,38 +859,9 @@ event ExchangeRateEmitted(uint256 rate);
             type TopicList = (alloy_sol_types::sol_data::FixedBytes<32>,);
             const SIGNATURE: &'static str = "ExchangeRateEmitted(uint256)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                210u8,
-                73u8,
-                79u8,
-                52u8,
-                121u8,
-                229u8,
-                218u8,
-                73u8,
-                211u8,
-                134u8,
-                101u8,
-                124u8,
-                41u8,
-                44u8,
-                97u8,
-                11u8,
-                91u8,
-                1u8,
-                223u8,
-                49u8,
-                61u8,
-                7u8,
-                198u8,
-                46u8,
-                176u8,
-                207u8,
-                164u8,
-                153u8,
-                36u8,
-                163u8,
-                27u8,
-                232u8,
+                210u8, 73u8, 79u8, 52u8, 121u8, 229u8, 218u8, 73u8, 211u8, 134u8, 101u8,
+                124u8, 41u8, 44u8, 97u8, 11u8, 91u8, 1u8, 223u8, 49u8, 61u8, 7u8, 198u8,
+                46u8, 176u8, 207u8, 164u8, 153u8, 36u8, 163u8, 27u8, 232u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -951,6 +930,7 @@ event ExchangeRateEmitted(uint256 rate);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `StrategyTokenSet(address,uint8)` and selector `0x1c540707b00eb5427b6b774fc799d756516a54aee108b64b327acc55af557507`.
 ```solidity
 event StrategyTokenSet(address token, uint8 decimals);
@@ -988,38 +968,9 @@ event StrategyTokenSet(address token, uint8 decimals);
             type TopicList = (alloy_sol_types::sol_data::FixedBytes<32>,);
             const SIGNATURE: &'static str = "StrategyTokenSet(address,uint8)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                28u8,
-                84u8,
-                7u8,
-                7u8,
-                176u8,
-                14u8,
-                181u8,
-                66u8,
-                123u8,
-                107u8,
-                119u8,
-                79u8,
-                199u8,
-                153u8,
-                215u8,
-                86u8,
-                81u8,
-                106u8,
-                84u8,
-                174u8,
-                225u8,
-                8u8,
-                182u8,
-                75u8,
-                50u8,
-                122u8,
-                204u8,
-                85u8,
-                175u8,
-                85u8,
-                117u8,
-                7u8,
+                28u8, 84u8, 7u8, 7u8, 176u8, 14u8, 181u8, 66u8, 123u8, 107u8, 119u8,
+                79u8, 199u8, 153u8, 215u8, 86u8, 81u8, 106u8, 84u8, 174u8, 225u8, 8u8,
+                182u8, 75u8, 50u8, 122u8, 204u8, 85u8, 175u8, 85u8, 117u8, 7u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -1094,6 +1045,7 @@ event StrategyTokenSet(address token, uint8 decimals);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `deposit(address,uint256)` and selector `0x47e7ef24`.
 ```solidity
 function deposit(address token, uint256 amount) external returns (uint256);
@@ -1106,6 +1058,7 @@ function deposit(address token, uint256 amount) external returns (uint256);
         #[allow(missing_docs)]
         pub amount: alloy::sol_types::private::primitives::aliases::U256,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`deposit(address,uint256)`](depositCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -1239,6 +1192,7 @@ function deposit(address token, uint256 amount) external returns (uint256);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `explanation()` and selector `0xab5921e1`.
 ```solidity
 function explanation() external view returns (string memory);
@@ -1246,6 +1200,7 @@ function explanation() external view returns (string memory);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct explanationCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`explanation()`](explanationCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -1358,6 +1313,7 @@ function explanation() external view returns (string memory);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `shares(address)` and selector `0xce7c2ac2`.
 ```solidity
 function shares(address user) external view returns (uint256);
@@ -1368,6 +1324,7 @@ function shares(address user) external view returns (uint256);
         #[allow(missing_docs)]
         pub user: alloy::sol_types::private::Address,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`shares(address)`](sharesCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -1486,6 +1443,7 @@ function shares(address user) external view returns (uint256);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `sharesToUnderlying(uint256)` and selector `0xf3e73875`.
 ```solidity
 function sharesToUnderlying(uint256 amountShares) external returns (uint256);
@@ -1496,6 +1454,7 @@ function sharesToUnderlying(uint256 amountShares) external returns (uint256);
         #[allow(missing_docs)]
         pub amountShares: alloy::sol_types::private::primitives::aliases::U256,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`sharesToUnderlying(uint256)`](sharesToUnderlyingCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -1620,6 +1579,7 @@ function sharesToUnderlying(uint256 amountShares) external returns (uint256);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `sharesToUnderlyingView(uint256)` and selector `0x7a8b2637`.
 ```solidity
 function sharesToUnderlyingView(uint256 amountShares) external view returns (uint256);
@@ -1630,6 +1590,7 @@ function sharesToUnderlyingView(uint256 amountShares) external view returns (uin
         #[allow(missing_docs)]
         pub amountShares: alloy::sol_types::private::primitives::aliases::U256,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`sharesToUnderlyingView(uint256)`](sharesToUnderlyingViewCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -1754,6 +1715,7 @@ function sharesToUnderlyingView(uint256 amountShares) external view returns (uin
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `totalShares()` and selector `0x3a98ef39`.
 ```solidity
 function totalShares() external view returns (uint256);
@@ -1761,6 +1723,7 @@ function totalShares() external view returns (uint256);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct totalSharesCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`totalShares()`](totalSharesCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -1875,6 +1838,7 @@ function totalShares() external view returns (uint256);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `underlyingToShares(uint256)` and selector `0x8c871019`.
 ```solidity
 function underlyingToShares(uint256 amountUnderlying) external returns (uint256);
@@ -1885,6 +1849,7 @@ function underlyingToShares(uint256 amountUnderlying) external returns (uint256)
         #[allow(missing_docs)]
         pub amountUnderlying: alloy::sol_types::private::primitives::aliases::U256,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`underlyingToShares(uint256)`](underlyingToSharesCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -2009,6 +1974,7 @@ function underlyingToShares(uint256 amountUnderlying) external returns (uint256)
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `underlyingToSharesView(uint256)` and selector `0xe3dae51c`.
 ```solidity
 function underlyingToSharesView(uint256 amountUnderlying) external view returns (uint256);
@@ -2019,6 +1985,7 @@ function underlyingToSharesView(uint256 amountUnderlying) external view returns 
         #[allow(missing_docs)]
         pub amountUnderlying: alloy::sol_types::private::primitives::aliases::U256,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`underlyingToSharesView(uint256)`](underlyingToSharesViewCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -2143,6 +2110,7 @@ function underlyingToSharesView(uint256 amountUnderlying) external view returns 
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `underlyingToken()` and selector `0x2495a599`.
 ```solidity
 function underlyingToken() external view returns (address);
@@ -2150,6 +2118,7 @@ function underlyingToken() external view returns (address);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct underlyingTokenCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`underlyingToken()`](underlyingTokenCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -2264,6 +2233,7 @@ function underlyingToken() external view returns (address);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `userUnderlying(address)` and selector `0x8f6a6240`.
 ```solidity
 function userUnderlying(address user) external returns (uint256);
@@ -2274,6 +2244,7 @@ function userUnderlying(address user) external returns (uint256);
         #[allow(missing_docs)]
         pub user: alloy::sol_types::private::Address,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`userUnderlying(address)`](userUnderlyingCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -2394,6 +2365,7 @@ function userUnderlying(address user) external returns (uint256);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `userUnderlyingView(address)` and selector `0x553ca5f8`.
 ```solidity
 function userUnderlyingView(address user) external view returns (uint256);
@@ -2404,6 +2376,7 @@ function userUnderlyingView(address user) external view returns (uint256);
         #[allow(missing_docs)]
         pub user: alloy::sol_types::private::Address,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`userUnderlyingView(address)`](userUnderlyingViewCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -2526,6 +2499,7 @@ function userUnderlyingView(address user) external view returns (uint256);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `version()` and selector `0x54fd4d50`.
 ```solidity
 function version() external view returns (string memory);
@@ -2533,6 +2507,7 @@ function version() external view returns (string memory);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct versionCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`version()`](versionCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -2645,6 +2620,7 @@ function version() external view returns (string memory);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `withdraw(address,address,uint256)` and selector `0xd9caed12`.
 ```solidity
 function withdraw(address recipient, address token, uint256 amountShares) external;
@@ -2795,6 +2771,7 @@ function withdraw(address recipient, address token, uint256 amountShares) extern
         }
     };
     ///Container for all the [`IStrategy`](self) function calls.
+    #[derive()]
     pub enum IStrategyCalls {
         #[allow(missing_docs)]
         deposit(depositCall),
@@ -3225,6 +3202,7 @@ function withdraw(address recipient, address token, uint256 amountShares) extern
         }
     }
     ///Container for all the [`IStrategy`](self) custom errors.
+    #[derive(Debug, PartialEq, Eq, Hash)]
     pub enum IStrategyErrors {
         #[allow(missing_docs)]
         BalanceExceedsMaxTotalDeposits(BalanceExceedsMaxTotalDeposits),
@@ -3498,6 +3476,7 @@ function withdraw(address recipient, address token, uint256 amountShares) extern
         }
     }
     ///Container for all the [`IStrategy`](self) events.
+    #[derive(Debug, PartialEq, Eq, Hash)]
     pub enum IStrategyEvents {
         #[allow(missing_docs)]
         ExchangeRateEmitted(ExchangeRateEmitted),
@@ -3514,72 +3493,14 @@ function withdraw(address recipient, address token, uint256 amountShares) extern
         /// Prefer using `SolInterface` methods instead.
         pub const SELECTORS: &'static [[u8; 32usize]] = &[
             [
-                28u8,
-                84u8,
-                7u8,
-                7u8,
-                176u8,
-                14u8,
-                181u8,
-                66u8,
-                123u8,
-                107u8,
-                119u8,
-                79u8,
-                199u8,
-                153u8,
-                215u8,
-                86u8,
-                81u8,
-                106u8,
-                84u8,
-                174u8,
-                225u8,
-                8u8,
-                182u8,
-                75u8,
-                50u8,
-                122u8,
-                204u8,
-                85u8,
-                175u8,
-                85u8,
-                117u8,
-                7u8,
+                28u8, 84u8, 7u8, 7u8, 176u8, 14u8, 181u8, 66u8, 123u8, 107u8, 119u8,
+                79u8, 199u8, 153u8, 215u8, 86u8, 81u8, 106u8, 84u8, 174u8, 225u8, 8u8,
+                182u8, 75u8, 50u8, 122u8, 204u8, 85u8, 175u8, 85u8, 117u8, 7u8,
             ],
             [
-                210u8,
-                73u8,
-                79u8,
-                52u8,
-                121u8,
-                229u8,
-                218u8,
-                73u8,
-                211u8,
-                134u8,
-                101u8,
-                124u8,
-                41u8,
-                44u8,
-                97u8,
-                11u8,
-                91u8,
-                1u8,
-                223u8,
-                49u8,
-                61u8,
-                7u8,
-                198u8,
-                46u8,
-                176u8,
-                207u8,
-                164u8,
-                153u8,
-                36u8,
-                163u8,
-                27u8,
-                232u8,
+                210u8, 73u8, 79u8, 52u8, 121u8, 229u8, 218u8, 73u8, 211u8, 134u8, 101u8,
+                124u8, 41u8, 44u8, 97u8, 11u8, 91u8, 1u8, 223u8, 49u8, 61u8, 7u8, 198u8,
+                46u8, 176u8, 207u8, 164u8, 153u8, 36u8, 163u8, 27u8, 232u8,
             ],
         ];
     }

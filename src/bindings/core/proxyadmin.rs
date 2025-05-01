@@ -203,6 +203,7 @@ pub mod ProxyAdmin {
     pub static DEPLOYED_BYTECODE: alloy_sol_types::private::Bytes = alloy_sol_types::private::Bytes::from_static(
         b"`\x80`@R`\x046\x10a\0jW_5`\xE0\x1C\x80c N\x1Cz\x14a\0nW\x80cqP\x18\xA6\x14a\0\xA3W\x80c~\xFF'^\x14a\0\xB9W\x80c\x8D\xA5\xCB[\x14a\0\xD8W\x80c\x96#`\x9D\x14a\0\xF4W\x80c\x99\xA8\x8E\xC4\x14a\x01\x07W\x80c\xF2\xFD\xE3\x8B\x14a\x01&W\x80c\xF3\xB7\xDE\xAD\x14a\x01EW[__\xFD[4\x80\x15a\0yW__\xFD[Pa\0\x8Da\0\x886`\x04a\x04dV[a\x01dV[`@Qa\0\x9A\x91\x90a\x04\x86V[`@Q\x80\x91\x03\x90\xF3[4\x80\x15a\0\xAEW__\xFD[Pa\0\xB7a\x01\xEFV[\0[4\x80\x15a\0\xC4W__\xFD[Pa\0\xB7a\0\xD36`\x04a\x04\x9AV[a\x02\x02V[4\x80\x15a\0\xE3W__\xFD[P_T`\x01`\x01`\xA0\x1B\x03\x16a\0\x8DV[a\0\xB7a\x01\x026`\x04a\x04\xE5V[a\x02gV[4\x80\x15a\x01\x12W__\xFD[Pa\0\xB7a\x01!6`\x04a\x04\x9AV[a\x02\xD2V[4\x80\x15a\x011W__\xFD[Pa\0\xB7a\x01@6`\x04a\x04dV[a\x03\x06V[4\x80\x15a\x01PW__\xFD[Pa\0\x8Da\x01_6`\x04a\x04dV[a\x03\x84V[___\x83`\x01`\x01`\xA0\x1B\x03\x16`@Qa\x01\x88\x90c\\`\xDA\x1B`\xE0\x1B\x81R`\x04\x01\x90V[_`@Q\x80\x83\x03\x81\x85Z\xFA\x91PP=\x80_\x81\x14a\x01\xC0W`@Q\x91P`\x1F\x19`?=\x01\x16\x82\x01`@R=\x82R=_` \x84\x01>a\x01\xC5V[``\x91P[P\x91P\x91P\x81a\x01\xD3W__\xFD[\x80\x80` \x01\x90Q\x81\x01\x90a\x01\xE7\x91\x90a\x05\xBCV[\x94\x93PPPPV[a\x01\xF7a\x03\xA8V[a\x02\0_a\x04\x01V[V[a\x02\na\x03\xA8V[`@Qc\x08\xF2\x83\x97`\xE4\x1B\x81R`\x01`\x01`\xA0\x1B\x03\x83\x16\x90c\x8F(9p\x90a\x026\x90\x84\x90`\x04\x01a\x04\x86V[_`@Q\x80\x83\x03\x81_\x87\x80;\x15\x80\x15a\x02MW__\xFD[PZ\xF1\x15\x80\x15a\x02_W=__>=_\xFD[PPPPPPV[a\x02oa\x03\xA8V[`@Qc'\x8FyC`\xE1\x1B\x81R`\x01`\x01`\xA0\x1B\x03\x84\x16\x90cO\x1E\xF2\x86\x904\x90a\x02\x9F\x90\x86\x90\x86\x90`\x04\x01a\x05\xD7V[_`@Q\x80\x83\x03\x81\x85\x88\x80;\x15\x80\x15a\x02\xB6W__\xFD[PZ\xF1\x15\x80\x15a\x02\xC8W=__>=_\xFD[PPPPPPPPV[a\x02\xDAa\x03\xA8V[`@Qc\x1B,\xE7\xF3`\xE1\x1B\x81R`\x01`\x01`\xA0\x1B\x03\x83\x16\x90c6Y\xCF\xE6\x90a\x026\x90\x84\x90`\x04\x01a\x04\x86V[a\x03\x0Ea\x03\xA8V[`\x01`\x01`\xA0\x1B\x03\x81\x16a\x03xW`@QbF\x1B\xCD`\xE5\x1B\x81R` `\x04\x82\x01R`&`$\x82\x01R\x7FOwnable: new owner is the zero a`D\x82\x01Reddress`\xD0\x1B`d\x82\x01R`\x84\x01[`@Q\x80\x91\x03\x90\xFD[a\x03\x81\x81a\x04\x01V[PV[___\x83`\x01`\x01`\xA0\x1B\x03\x16`@Qa\x01\x88\x90c\x03\xE1F\x91`\xE6\x1B\x81R`\x04\x01\x90V[_T`\x01`\x01`\xA0\x1B\x03\x163\x14a\x02\0W`@QbF\x1B\xCD`\xE5\x1B\x81R` `\x04\x82\x01\x81\x90R`$\x82\x01R\x7FOwnable: caller is not the owner`D\x82\x01R`d\x01a\x03oV[_\x80T`\x01`\x01`\xA0\x1B\x03\x83\x81\x16`\x01`\x01`\xA0\x1B\x03\x19\x83\x16\x81\x17\x84U`@Q\x91\x90\x92\x16\x92\x83\x91\x7F\x8B\xE0\x07\x9CS\x16Y\x14\x13D\xCD\x1F\xD0\xA4\xF2\x84\x19I\x7F\x97\"\xA3\xDA\xAF\xE3\xB4\x18okdW\xE0\x91\x90\xA3PPV[`\x01`\x01`\xA0\x1B\x03\x81\x16\x81\x14a\x03\x81W__\xFD[_` \x82\x84\x03\x12\x15a\x04tW__\xFD[\x815a\x04\x7F\x81a\x04PV[\x93\x92PPPV[`\x01`\x01`\xA0\x1B\x03\x91\x90\x91\x16\x81R` \x01\x90V[__`@\x83\x85\x03\x12\x15a\x04\xABW__\xFD[\x825a\x04\xB6\x81a\x04PV[\x91P` \x83\x015a\x04\xC6\x81a\x04PV[\x80\x91PP\x92P\x92\x90PV[cNH{q`\xE0\x1B_R`A`\x04R`$_\xFD[___``\x84\x86\x03\x12\x15a\x04\xF7W__\xFD[\x835a\x05\x02\x81a\x04PV[\x92P` \x84\x015a\x05\x12\x81a\x04PV[\x91P`@\x84\x015g\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\x81\x11\x15a\x05-W__\xFD[\x84\x01`\x1F\x81\x01\x86\x13a\x05=W__\xFD[\x805g\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\x81\x11\x15a\x05WWa\x05Wa\x04\xD1V[`@Q`\x1F\x82\x01`\x1F\x19\x90\x81\x16`?\x01\x16\x81\x01g\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\x81\x11\x82\x82\x10\x17\x15a\x05\x86Wa\x05\x86a\x04\xD1V[`@R\x81\x81R\x82\x82\x01` \x01\x88\x10\x15a\x05\x9DW__\xFD[\x81` \x84\x01` \x83\x017_` \x83\x83\x01\x01R\x80\x93PPPP\x92P\x92P\x92V[_` \x82\x84\x03\x12\x15a\x05\xCCW__\xFD[\x81Qa\x04\x7F\x81a\x04PV[`\x01\x80`\xA0\x1B\x03\x83\x16\x81R`@` \x82\x01R_\x82Q\x80`@\x84\x01R_[\x81\x81\x10\x15a\x06\x11W` \x81\x86\x01\x81\x01Q``\x86\x84\x01\x01R\x01a\x05\xF4V[P_``\x82\x85\x01\x01R```\x1F\x19`\x1F\x83\x01\x16\x84\x01\x01\x91PP\x93\x92PPPV\xFE\xA2dipfsX\"\x12 \x9Ds\xB0\xBA\x89\xBE]N\xD8\x9E\x81\xB3\xC4\x1FhmJ\xF1p\x0E\x84I\x02\x14\xD2\xB9\xB1\x9F8\x11\xF8VdsolcC\0\x08\x1B\x003",
     );
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `OwnershipTransferred(address,address)` and selector `0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0`.
 ```solidity
 event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
@@ -241,38 +242,9 @@ event OwnershipTransferred(address indexed previousOwner, address indexed newOwn
             );
             const SIGNATURE: &'static str = "OwnershipTransferred(address,address)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                139u8,
-                224u8,
-                7u8,
-                156u8,
-                83u8,
-                22u8,
-                89u8,
-                20u8,
-                19u8,
-                68u8,
-                205u8,
-                31u8,
-                208u8,
-                164u8,
-                242u8,
-                132u8,
-                25u8,
-                73u8,
-                127u8,
-                151u8,
-                34u8,
-                163u8,
-                218u8,
-                175u8,
-                227u8,
-                180u8,
-                24u8,
-                111u8,
-                107u8,
-                100u8,
-                87u8,
-                224u8,
+                139u8, 224u8, 7u8, 156u8, 83u8, 22u8, 89u8, 20u8, 19u8, 68u8, 205u8,
+                31u8, 208u8, 164u8, 242u8, 132u8, 25u8, 73u8, 127u8, 151u8, 34u8, 163u8,
+                218u8, 175u8, 227u8, 180u8, 24u8, 111u8, 107u8, 100u8, 87u8, 224u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -350,6 +322,7 @@ event OwnershipTransferred(address indexed previousOwner, address indexed newOwn
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `changeProxyAdmin(address,address)` and selector `0x7eff275e`.
 ```solidity
 function changeProxyAdmin(address proxy, address newAdmin) external;
@@ -494,6 +467,7 @@ function changeProxyAdmin(address proxy, address newAdmin) external;
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getProxyAdmin(address)` and selector `0xf3b7dead`.
 ```solidity
 function getProxyAdmin(address proxy) external view returns (address);
@@ -504,6 +478,7 @@ function getProxyAdmin(address proxy) external view returns (address);
         #[allow(missing_docs)]
         pub proxy: alloy::sol_types::private::Address,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getProxyAdmin(address)`](getProxyAdminCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -620,6 +595,7 @@ function getProxyAdmin(address proxy) external view returns (address);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getProxyImplementation(address)` and selector `0x204e1c7a`.
 ```solidity
 function getProxyImplementation(address proxy) external view returns (address);
@@ -630,6 +606,7 @@ function getProxyImplementation(address proxy) external view returns (address);
         #[allow(missing_docs)]
         pub proxy: alloy::sol_types::private::Address,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getProxyImplementation(address)`](getProxyImplementationCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -750,6 +727,7 @@ function getProxyImplementation(address proxy) external view returns (address);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `owner()` and selector `0x8da5cb5b`.
 ```solidity
 function owner() external view returns (address);
@@ -757,6 +735,7 @@ function owner() external view returns (address);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct ownerCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`owner()`](ownerCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -869,6 +848,7 @@ function owner() external view returns (address);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `renounceOwnership()` and selector `0x715018a6`.
 ```solidity
 function renounceOwnership() external;
@@ -989,6 +969,7 @@ function renounceOwnership() external;
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `transferOwnership(address)` and selector `0xf2fde38b`.
 ```solidity
 function transferOwnership(address newOwner) external;
@@ -1116,6 +1097,7 @@ function transferOwnership(address newOwner) external;
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `upgrade(address,address)` and selector `0x99a88ec4`.
 ```solidity
 function upgrade(address proxy, address implementation) external;
@@ -1256,6 +1238,7 @@ function upgrade(address proxy, address implementation) external;
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `upgradeAndCall(address,address,bytes)` and selector `0x9623609d`.
 ```solidity
 function upgradeAndCall(address proxy, address implementation, bytes memory data) external payable;
@@ -1408,6 +1391,7 @@ function upgradeAndCall(address proxy, address implementation, bytes memory data
         }
     };
     ///Container for all the [`ProxyAdmin`](self) function calls.
+    #[derive()]
     pub enum ProxyAdminCalls {
         #[allow(missing_docs)]
         changeProxyAdmin(changeProxyAdminCall),
@@ -1699,6 +1683,7 @@ function upgradeAndCall(address proxy, address implementation, bytes memory data
         }
     }
     ///Container for all the [`ProxyAdmin`](self) events.
+    #[derive(Debug, PartialEq, Eq, Hash)]
     pub enum ProxyAdminEvents {
         #[allow(missing_docs)]
         OwnershipTransferred(OwnershipTransferred),
@@ -1713,38 +1698,9 @@ function upgradeAndCall(address proxy, address implementation, bytes memory data
         /// Prefer using `SolInterface` methods instead.
         pub const SELECTORS: &'static [[u8; 32usize]] = &[
             [
-                139u8,
-                224u8,
-                7u8,
-                156u8,
-                83u8,
-                22u8,
-                89u8,
-                20u8,
-                19u8,
-                68u8,
-                205u8,
-                31u8,
-                208u8,
-                164u8,
-                242u8,
-                132u8,
-                25u8,
-                73u8,
-                127u8,
-                151u8,
-                34u8,
-                163u8,
-                218u8,
-                175u8,
-                227u8,
-                180u8,
-                24u8,
-                111u8,
-                107u8,
-                100u8,
-                87u8,
-                224u8,
+                139u8, 224u8, 7u8, 156u8, 83u8, 22u8, 89u8, 20u8, 19u8, 68u8, 205u8,
+                31u8, 208u8, 164u8, 242u8, 132u8, 25u8, 73u8, 127u8, 151u8, 34u8, 163u8,
+                218u8, 175u8, 227u8, 180u8, 24u8, 111u8, 107u8, 100u8, 87u8, 224u8,
             ],
         ];
     }

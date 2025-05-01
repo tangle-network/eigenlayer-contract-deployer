@@ -183,6 +183,7 @@ pub mod PauserRegistry {
     pub static DEPLOYED_BYTECODE: alloy_sol_types::private::Bytes = alloy_sol_types::private::Bytes::from_static(
         b"`\x80`@R4\x80\x15a\0\x0FW__\xFD[P`\x046\x10a\0JW_5`\xE0\x1C\x80cF\xFB\xF6\x8E\x14a\0NW\x80c\x85hR\x06\x14a\0\x85W\x80c\xCET\x84(\x14a\0\x9AW\x80c\xEA\xB6mz\x14a\0\xADW[__\xFD[a\0pa\0\\6`\x04a\x02zV[_` \x81\x90R\x90\x81R`@\x90 T`\xFF\x16\x81V[`@Q\x90\x15\x15\x81R` \x01[`@Q\x80\x91\x03\x90\xF3[a\0\x98a\0\x936`\x04a\x02\x9AV[a\0\xD8V[\0[a\0\x98a\0\xA86`\x04a\x02zV[a\x01\x11V[`\x01Ta\0\xC0\x90`\x01`\x01`\xA0\x1B\x03\x16\x81V[`@Q`\x01`\x01`\xA0\x1B\x03\x90\x91\x16\x81R` \x01a\0|V[`\x01T`\x01`\x01`\xA0\x1B\x03\x163\x14a\x01\x03W`@QcyH!\xFF`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[a\x01\r\x82\x82a\x01HV[PPV[`\x01T`\x01`\x01`\xA0\x1B\x03\x163\x14a\x01<W`@QcyH!\xFF`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[a\x01E\x81a\x01\xCFV[PV[`\x01`\x01`\xA0\x1B\x03\x82\x16a\x01oW`@Qc9\xB1\x90\xBB`\xE1\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[`\x01`\x01`\xA0\x1B\x03\x82\x16_\x81\x81R` \x81\x81R`@\x91\x82\x90 \x80T`\xFF\x19\x16\x85\x15\x15\x90\x81\x17\x90\x91U\x82Q\x93\x84R\x90\x83\x01R\x7Fe\xD3\xA1\xFDL\x13\xF0\\\xBA\x16O\x80\xD0<\xE9\x0F\xB4\xB5\xE2\x19F\xBF\xC3\xAB}\xBDCL-\x0B\x91R\x91\x01`@Q\x80\x91\x03\x90\xA1PPV[`\x01`\x01`\xA0\x1B\x03\x81\x16a\x01\xF6W`@Qc9\xB1\x90\xBB`\xE1\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[`\x01T`@\x80Q`\x01`\x01`\xA0\x1B\x03\x92\x83\x16\x81R\x91\x83\x16` \x83\x01R\x7F\x06\xB4\x16z%(\x88z\x1E\x97\xA3f\xEE\xFE\x85I\xBF\xBF\x1E\xA3\xE6\xAC\x81\xCB%d\xA94\xD2\x0E\x88\x92\x91\x01`@Q\x80\x91\x03\x90\xA1`\x01\x80T`\x01`\x01`\xA0\x1B\x03\x19\x16`\x01`\x01`\xA0\x1B\x03\x92\x90\x92\x16\x91\x90\x91\x17\x90UV[\x805`\x01`\x01`\xA0\x1B\x03\x81\x16\x81\x14a\x02uW__\xFD[\x91\x90PV[_` \x82\x84\x03\x12\x15a\x02\x8AW__\xFD[a\x02\x93\x82a\x02_V[\x93\x92PPPV[__`@\x83\x85\x03\x12\x15a\x02\xABW__\xFD[a\x02\xB4\x83a\x02_V[\x91P` \x83\x015\x80\x15\x15\x81\x14a\x02\xC8W__\xFD[\x80\x91PP\x92P\x92\x90PV\xFE\xA2dipfsX\"\x12 \xAA\xC3\x8Bl\x01Q\x85h#\0\xBA\x06\xC2\x8C\x1E\x98\x9E\xC0\xAC\xD3\x18\x95\xAC\x1D\xDDB6\x1A\x85\x13\xEC}dsolcC\0\x08\x1B\x003",
     );
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `InputAddressZero()` and selector `0x73632176`.
 ```solidity
 error InputAddressZero();
@@ -247,6 +248,7 @@ error InputAddressZero();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `OnlyUnpauser()` and selector `0x794821ff`.
 ```solidity
 error OnlyUnpauser();
@@ -311,6 +313,7 @@ error OnlyUnpauser();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `PauserStatusChanged(address,bool)` and selector `0x65d3a1fd4c13f05cba164f80d03ce90fb4b5e21946bfc3ab7dbd434c2d0b9152`.
 ```solidity
 event PauserStatusChanged(address pauser, bool canPause);
@@ -348,38 +351,9 @@ event PauserStatusChanged(address pauser, bool canPause);
             type TopicList = (alloy_sol_types::sol_data::FixedBytes<32>,);
             const SIGNATURE: &'static str = "PauserStatusChanged(address,bool)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                101u8,
-                211u8,
-                161u8,
-                253u8,
-                76u8,
-                19u8,
-                240u8,
-                92u8,
-                186u8,
-                22u8,
-                79u8,
-                128u8,
-                208u8,
-                60u8,
-                233u8,
-                15u8,
-                180u8,
-                181u8,
-                226u8,
-                25u8,
-                70u8,
-                191u8,
-                195u8,
-                171u8,
-                125u8,
-                189u8,
-                67u8,
-                76u8,
-                45u8,
-                11u8,
-                145u8,
-                82u8,
+                101u8, 211u8, 161u8, 253u8, 76u8, 19u8, 240u8, 92u8, 186u8, 22u8, 79u8,
+                128u8, 208u8, 60u8, 233u8, 15u8, 180u8, 181u8, 226u8, 25u8, 70u8, 191u8,
+                195u8, 171u8, 125u8, 189u8, 67u8, 76u8, 45u8, 11u8, 145u8, 82u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -454,6 +428,7 @@ event PauserStatusChanged(address pauser, bool canPause);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `UnpauserChanged(address,address)` and selector `0x06b4167a2528887a1e97a366eefe8549bfbf1ea3e6ac81cb2564a934d20e8892`.
 ```solidity
 event UnpauserChanged(address previousUnpauser, address newUnpauser);
@@ -491,38 +466,9 @@ event UnpauserChanged(address previousUnpauser, address newUnpauser);
             type TopicList = (alloy_sol_types::sol_data::FixedBytes<32>,);
             const SIGNATURE: &'static str = "UnpauserChanged(address,address)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                6u8,
-                180u8,
-                22u8,
-                122u8,
-                37u8,
-                40u8,
-                136u8,
-                122u8,
-                30u8,
-                151u8,
-                163u8,
-                102u8,
-                238u8,
-                254u8,
-                133u8,
-                73u8,
-                191u8,
-                191u8,
-                30u8,
-                163u8,
-                230u8,
-                172u8,
-                129u8,
-                203u8,
-                37u8,
-                100u8,
-                169u8,
-                52u8,
-                210u8,
-                14u8,
-                136u8,
-                146u8,
+                6u8, 180u8, 22u8, 122u8, 37u8, 40u8, 136u8, 122u8, 30u8, 151u8, 163u8,
+                102u8, 238u8, 254u8, 133u8, 73u8, 191u8, 191u8, 30u8, 163u8, 230u8,
+                172u8, 129u8, 203u8, 37u8, 100u8, 169u8, 52u8, 210u8, 14u8, 136u8, 146u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -679,6 +625,7 @@ constructor(address[] _pausers, address _unpauser);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `isPauser(address)` and selector `0x46fbf68e`.
 ```solidity
 function isPauser(address) external view returns (bool);
@@ -689,6 +636,7 @@ function isPauser(address) external view returns (bool);
         #[allow(missing_docs)]
         pub _0: alloy::sol_types::private::Address,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`isPauser(address)`](isPauserCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -805,6 +753,7 @@ function isPauser(address) external view returns (bool);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `setIsPauser(address,bool)` and selector `0x85685206`.
 ```solidity
 function setIsPauser(address newPauser, bool canPause) external;
@@ -942,6 +891,7 @@ function setIsPauser(address newPauser, bool canPause) external;
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `setUnpauser(address)` and selector `0xce548428`.
 ```solidity
 function setUnpauser(address newUnpauser) external;
@@ -1065,6 +1015,7 @@ function setUnpauser(address newUnpauser) external;
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `unpauser()` and selector `0xeab66d7a`.
 ```solidity
 function unpauser() external view returns (address);
@@ -1072,6 +1023,7 @@ function unpauser() external view returns (address);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct unpauserCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`unpauser()`](unpauserCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -1185,6 +1137,7 @@ function unpauser() external view returns (address);
         }
     };
     ///Container for all the [`PauserRegistry`](self) function calls.
+    #[derive()]
     pub enum PauserRegistryCalls {
         #[allow(missing_docs)]
         isPauser(isPauserCall),
@@ -1362,6 +1315,7 @@ function unpauser() external view returns (address);
         }
     }
     ///Container for all the [`PauserRegistry`](self) custom errors.
+    #[derive(Debug, PartialEq, Eq, Hash)]
     pub enum PauserRegistryErrors {
         #[allow(missing_docs)]
         InputAddressZero(InputAddressZero),
@@ -1485,6 +1439,7 @@ function unpauser() external view returns (address);
         }
     }
     ///Container for all the [`PauserRegistry`](self) events.
+    #[derive(Debug, PartialEq, Eq, Hash)]
     pub enum PauserRegistryEvents {
         #[allow(missing_docs)]
         PauserStatusChanged(PauserStatusChanged),
@@ -1501,72 +1456,14 @@ function unpauser() external view returns (address);
         /// Prefer using `SolInterface` methods instead.
         pub const SELECTORS: &'static [[u8; 32usize]] = &[
             [
-                6u8,
-                180u8,
-                22u8,
-                122u8,
-                37u8,
-                40u8,
-                136u8,
-                122u8,
-                30u8,
-                151u8,
-                163u8,
-                102u8,
-                238u8,
-                254u8,
-                133u8,
-                73u8,
-                191u8,
-                191u8,
-                30u8,
-                163u8,
-                230u8,
-                172u8,
-                129u8,
-                203u8,
-                37u8,
-                100u8,
-                169u8,
-                52u8,
-                210u8,
-                14u8,
-                136u8,
-                146u8,
+                6u8, 180u8, 22u8, 122u8, 37u8, 40u8, 136u8, 122u8, 30u8, 151u8, 163u8,
+                102u8, 238u8, 254u8, 133u8, 73u8, 191u8, 191u8, 30u8, 163u8, 230u8,
+                172u8, 129u8, 203u8, 37u8, 100u8, 169u8, 52u8, 210u8, 14u8, 136u8, 146u8,
             ],
             [
-                101u8,
-                211u8,
-                161u8,
-                253u8,
-                76u8,
-                19u8,
-                240u8,
-                92u8,
-                186u8,
-                22u8,
-                79u8,
-                128u8,
-                208u8,
-                60u8,
-                233u8,
-                15u8,
-                180u8,
-                181u8,
-                226u8,
-                25u8,
-                70u8,
-                191u8,
-                195u8,
-                171u8,
-                125u8,
-                189u8,
-                67u8,
-                76u8,
-                45u8,
-                11u8,
-                145u8,
-                82u8,
+                101u8, 211u8, 161u8, 253u8, 76u8, 19u8, 240u8, 92u8, 186u8, 22u8, 79u8,
+                128u8, 208u8, 60u8, 233u8, 15u8, 180u8, 181u8, 226u8, 25u8, 70u8, 191u8,
+                195u8, 171u8, 125u8, 189u8, 67u8, 76u8, 45u8, 11u8, 145u8, 82u8,
             ],
         ];
     }

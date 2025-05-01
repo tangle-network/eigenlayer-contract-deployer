@@ -21,6 +21,7 @@ library IStakeRegistryTypes {
 pub mod IStakeRegistryTypes {
     use super::*;
     use alloy::sol_types as alloy_sol_types;
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct StakeType(u8);
@@ -145,6 +146,7 @@ pub mod IStakeRegistryTypes {
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**```solidity
 struct StakeUpdate { uint32 updateBlockNumber; uint32 nextUpdateBlockNumber; uint96 stake; }
 ```*/
@@ -398,6 +400,7 @@ struct StakeUpdate { uint32 updateBlockNumber; uint32 nextUpdateBlockNumber; uin
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**```solidity
 struct StrategyParams { address strategy; uint96 multiplier; }
 ```*/
@@ -2033,6 +2036,7 @@ pub mod StakeRegistry {
     pub static DEPLOYED_BYTECODE: alloy_sol_types::private::Bytes = alloy_sol_types::private::Bytes::from_static(
         b"`\x80`@R4\x80\x15a\0\x0FW__\xFD[P`\x046\x10a\x01\xF1W_5`\xE0\x1C\x80c\x9A\xB4\xD6\xFF\x11a\x01\x1BW\x80c\xC8)LV\x11a\0\xB4W\x80c\xDF\\\xF7#\x11a\0yW\x80c\xDF\\\xF7#\x14a\x05\xDDW\x80c\xE0\x86\xAD\xB3\x14a\x06\x04W\x80c\xF2\xBE\x94\xAE\x14a\x06\x17W\x80c\xF8Q\xE1\x98\x14a\x06*W\x80c\xFA(\xC6'\x14a\x06=W__\xFD[\x80c\xC8)LV\x14a\x05jW\x80c\xCA\x8A\xA7\xC7\x14a\x05}W\x80c\xCCZ| \x14a\x05\xA4W\x80c\xD5\xEC\xCC\x05\x14a\x05\xB7W\x80c\xDD\x98F\xB9\x14a\x05\xCAW__\xFD[\x80c\x9A\xB4\xD6\xFF\x14a\x04IW\x80c\x9F<\xCFe\x14a\x04\x83W\x80c\xACk\xFB\x03\x14a\x04\x96W\x80c\xAD\xC8\x04\xDA\x14a\x04\xB6W\x80c\xB6\x90Kx\x14a\x04\xF6W\x80c\xBC\x9A@\xC3\x14a\x05\tW\x80c\xBD)\xB8\xCD\x14a\x05\x1CW\x80c\xC4gx\xA5\x14a\x05/W\x80c\xC6\x01R}\x14a\x05WW__\xFD[\x80c^Zgu\x11a\x01\x8DW\x80c^Zgu\x14a\x030W\x80c_\x1F-w\x14a\x03?W\x80ci\x7F\xBD\x93\x14a\x03RW\x80ck:\xA7.\x14a\x03\x81W\x80cl?\xB4\xBF\x14a\x03\xB5W\x80cm\x14\xA9\x87\x14a\x03\xD5W\x80cu\xD4\x17:\x14a\x03\xFCW\x80c|\x17#G\x14a\x04\x0FW\x80c\x81\xC0u\x02\x14a\x04)W__\xFD[\x80c\x04\x91\xB4\x1C\x14a\x01\xF5W\x80c\x08s$a\x14a\x02*W\x80c\x1F\x9Bt\xE0\x14a\x02KW\x80c \xB6b\x98\x14a\x02vW\x80c%PGw\x14a\x02\x8BW\x80c,\xD9Y@\x14a\x02\xACW\x80c<\xA5\xA5\xF5\x14a\x02\xCCW\x80cK\xD2n\t\x14a\x02\xEEW\x80cT\x01\xED'\x14a\x03\x1DW[__\xFD[a\x02\x17a\x02\x036`\x04a-qV[`\xFF\x16_\x90\x81R`\x01` R`@\x90 T\x90V[`@Q\x90\x81R` \x01[`@Q\x80\x91\x03\x90\xF3[a\x02=a\x0286`\x04a-\x8AV[a\x06PV[`@Qa\x02!\x92\x91\x90a-\xB2V[a\x02^a\x02Y6`\x04a-\xE8V[a\x06\x95V[`@Q`\x01`\x01``\x1B\x03\x90\x91\x16\x81R` \x01a\x02!V[a\x02\x89a\x02\x846`\x04a.]V[a\x06\xB7V[\0[a\x02\x9Ea\x02\x996`\x04a/\x18V[a\x08BV[`@Qa\x02!\x92\x91\x90a/\xB2V[a\x02\xBFa\x02\xBA6`\x04a/\xD6V[a\t\xCAV[`@Qa\x02!\x91\x90a01V[a\x02\x17a\x02\xDA6`\x04a-qV[`\xFF\x16_\x90\x81R`\x03` R`@\x90 T\x90V[a\x02\x17a\x02\xFC6`\x04a/\xD6V[_\x91\x82R`\x02` \x90\x81R`@\x80\x84 `\xFF\x93\x90\x93\x16\x84R\x91\x90R\x90 T\x90V[a\x02^a\x03+6`\x04a/\xD6V[a\ngV[a\x02\x17g\r\xE0\xB6\xB3\xA7d\0\0\x81V[a\x02\x89a\x03M6`\x04a1\x0CV[a\n\x7FV[a\x03ta\x03`6`\x04a-qV[`\x05` R_\x90\x81R`@\x90 T`\xFF\x16\x81V[`@Qa\x02!\x91\x90a1\xC8V[a\x03\xA8\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x81V[`@Qa\x02!\x91\x90a1\xEEV[a\x03\xC8a\x03\xC36`\x04a2gV[a\x0F\xAEV[`@Qa\x02!\x91\x90a39V[a\x03\xA8\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x81V[a\x02\x89a\x04\n6`\x04a4\x1DV[a\x11\tV[a\x04\x17` \x81V[`@Q`\xFF\x90\x91\x16\x81R` \x01a\x02!V[a\x04<a\x0476`\x04a4\x89V[a\x11\xEFV[`@Qa\x02!\x91\x90a4\xD7V[a\x04na\x04W6`\x04a-qV[`\x06` R_\x90\x81R`@\x90 Tc\xFF\xFF\xFF\xFF\x16\x81V[`@Qc\xFF\xFF\xFF\xFF\x90\x91\x16\x81R` \x01a\x02!V[a\x03\xA8a\x04\x916`\x04a-\x8AV[a\x13\x95V[a\x04\xA9a\x04\xA46`\x04a5\x14V[a\x13\xC9V[`@Qa\x02!\x91\x90a5DV[a\x04\xC9a\x04\xC46`\x04a-\x8AV[a\x14PV[`@\x80Q\x82Q`\x01`\x01`\xA0\x1B\x03\x16\x81R` \x92\x83\x01Q`\x01`\x01``\x1B\x03\x16\x92\x81\x01\x92\x90\x92R\x01a\x02!V[a\x04\xA9a\x05\x046`\x04a-\x8AV[a\x14\xC7V[a\x02\x89a\x05\x176`\x04a5RV[a\x15CV[a\x02\x89a\x05*6`\x04a5zV[a\x15dV[a\x02^a\x05=6`\x04a-qV[_` \x81\x90R\x90\x81R`@\x90 T`\x01`\x01``\x1B\x03\x16\x81V[a\x02\x89a\x05e6`\x04a5\xA8V[a\x15\xC7V[a\x02^a\x05x6`\x04a5\xF2V[a\x187V[a\x03\xA8\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x81V[a\x02\x89a\x05\xB26`\x04a6,V[a\x18\xB3V[a\x02^a\x05\xC56`\x04a-qV[a\x19\xA5V[a\x04na\x05\xD86`\x04a6\x96V[a\x19\xF6V[a\x03\xA8\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x81V[a\x02\x89a\x06\x126`\x04a6\xC6V[a\x1A\nV[a\x02^a\x06%6`\x04a6\xEEV[a\x1A&V[a\x04\xA9a\x0686`\x04a/\xD6V[a\x1A\xB9V[a\x02^a\x06K6`\x04a6\x96V[a\x1B\x87V[`\x03` R\x81_R`@_ \x81\x81T\x81\x10a\x06iW_\x80\xFD[_\x91\x82R` \x90\x91 \x01T`\x01`\x01`\xA0\x1B\x03\x81\x16\x92P`\x01`\xA0\x1B\x90\x04`\x01`\x01``\x1B\x03\x16\x90P\x82V[_\x82a\x06\xA0\x81a\x1B\xE6V[_a\x06\xAB\x85\x85a\x1C\x18V[P\x92PP[P\x92\x91PPV[a\x06\xBFa\x1C\xC3V[\x84a\x06\xC9\x81a\x1B\xE6V[\x83\x80a\x06\xE8W`@Qcyl\xC5%`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[\x82\x81\x14a\x07\x08W`@QcCqJ\xFD`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[`\xFF\x87\x16_\x90\x81R`\x03` R`@\x81 \x90[\x82\x81\x10\x15a\x087W\x85\x85\x82\x81\x81\x10a\x075Wa\x075a7-V[\x90P` \x02\x01` \x81\x01\x90a\x07J\x91\x90a7AV[\x82\x89\x89\x84\x81\x81\x10a\x07]Wa\x07]a7-V[\x90P` \x02\x015\x81T\x81\x10a\x07tWa\x07ta7-V[\x90_R` _ \x01_\x01`\x14a\x01\0\n\x81T\x81`\x01`\x01``\x1B\x03\x02\x19\x16\x90\x83`\x01`\x01``\x1B\x03\x16\x02\x17\x90UP\x88`\xFF\x16_Q` a;U_9_Q\x90_R\x83\x8A\x8A\x85\x81\x81\x10a\x07\xC7Wa\x07\xC7a7-V[\x90P` \x02\x015\x81T\x81\x10a\x07\xDEWa\x07\xDEa7-V[_\x91\x82R` \x90\x91 \x01T`\x01`\x01`\xA0\x1B\x03\x16\x88\x88\x85\x81\x81\x10a\x08\x04Wa\x08\x04a7-V[\x90P` \x02\x01` \x81\x01\x90a\x08\x19\x91\x90a7AV[`@Qa\x08'\x92\x91\x90a-\xB2V[`@Q\x80\x91\x03\x90\xA2`\x01\x01a\x07\x1BV[PPPPPPPPPV[``\x80a\x08Ma\x1DvV[_\x83`\x01`\x01`@\x1B\x03\x81\x11\x15a\x08fWa\x08fa0~V[`@Q\x90\x80\x82R\x80` \x02` \x01\x82\x01`@R\x80\x15a\x08\x8FW\x81` \x01` \x82\x02\x806\x837\x01\x90P[P\x90P_\x84`\x01`\x01`@\x1B\x03\x81\x11\x15a\x08\xABWa\x08\xABa0~V[`@Q\x90\x80\x82R\x80` \x02` \x01\x82\x01`@R\x80\x15a\x08\xD4W\x81` \x01` \x82\x02\x806\x837\x01\x90P[P\x90P_[\x85\x81\x10\x15a\t\xBCW_\x87\x87\x83\x81\x81\x10a\x08\xF4Wa\x08\xF4a7-V[\x91\x90\x91\x015`\xF8\x1C\x91Pa\t\t\x90P\x81a\x1B\xE6V[__a\t\x15\x83\x8Da\x1C\x18V[\x91P\x91P\x80a\t7W`@Qc \x7F\x13\xE3`\xE1\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[_a\tC\x8C\x85\x85a\x1D\xBFV[\x90P\x82\x87\x86\x81Q\x81\x10a\tXWa\tXa7-V[` \x02` \x01\x01\x90`\x01`\x01``\x1B\x03\x16\x90\x81`\x01`\x01``\x1B\x03\x16\x81RPPa\t\x82\x84\x82a 8V[\x86\x86\x81Q\x81\x10a\t\x94Wa\t\x94a7-V[`\x01`\x01``\x1B\x03\x90\x92\x16` \x92\x83\x02\x91\x90\x91\x01\x90\x91\x01RPP`\x01\x90\x92\x01\x91Pa\x08\xD9\x90PV[P\x90\x97\x90\x96P\x94PPPPPV[_\x82\x81R`\x02` \x90\x81R`@\x80\x83 `\xFF\x85\x16\x84R\x82R\x80\x83 \x80T\x82Q\x81\x85\x02\x81\x01\x85\x01\x90\x93R\x80\x83R``\x94\x92\x93\x91\x92\x90\x91\x84\x01[\x82\x82\x10\x15a\nZW_\x84\x81R` \x90\x81\x90 `@\x80Q``\x81\x01\x82R\x91\x85\x01Tc\xFF\xFF\xFF\xFF\x80\x82\x16\x84R`\x01` \x1B\x82\x04\x16\x83\x85\x01R`\x01`@\x1B\x90\x04`\x01`\x01``\x1B\x03\x16\x90\x82\x01R\x82R`\x01\x90\x92\x01\x91\x01a\n\x02V[PPPP\x90P[\x92\x91PPV[__a\ns\x84\x84a\x1A\xB9V[`@\x01Q\x94\x93PPPPV[a\n\x87a\x1C\xC3V[\x81a\n\x91\x81a\x1B\xE6V[\x81Q\x80a\n\xB1W`@Qcyl\xC5%`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[`\xFF\x84\x16_\x90\x81R`\x03` \x90\x81R`@\x80\x83 `\x04\x90\x92R\x82 \x90\x91\x83`\x01`\x01`@\x1B\x03\x81\x11\x15a\n\xE6Wa\n\xE6a0~V[`@Q\x90\x80\x82R\x80` \x02` \x01\x82\x01`@R\x80\x15a\x0B\x0FW\x81` \x01` \x82\x02\x806\x837\x01\x90P[P\x90P_[\x84\x81\x10\x15a\r\xFBW\x83\x87\x82\x81Q\x81\x10a\x0B/Wa\x0B/a7-V[` \x02` \x01\x01Q\x81T\x81\x10a\x0BGWa\x0BGa7-V[_\x91\x82R` \x90\x91 \x01T\x82Q`\x01`\x01`\xA0\x1B\x03\x90\x91\x16\x90\x83\x90\x83\x90\x81\x10a\x0BrWa\x0Bra7-V[` \x02` \x01\x01\x90`\x01`\x01`\xA0\x1B\x03\x16\x90\x81`\x01`\x01`\xA0\x1B\x03\x16\x81RPP\x87`\xFF\x16\x7F1\xFA.,\xD2\x80\xC97^\x13\xFF\xCF=\x81\xE27\x81\0\x18n@X\xF8\xD3\xDD\xB6\x90\xB8-\xCD1\xF7\x85\x89\x84\x81Q\x81\x10a\x0B\xCAWa\x0B\xCAa7-V[` \x02` \x01\x01Q\x81T\x81\x10a\x0B\xE2Wa\x0B\xE2a7-V[_\x91\x82R` \x90\x91 \x01T`@Qa\x0C\x03\x91`\x01`\x01`\xA0\x1B\x03\x16\x90a1\xEEV[`@Q\x80\x91\x03\x90\xA2\x87`\xFF\x16_Q` a;U_9_Q\x90_R\x85\x89\x84\x81Q\x81\x10a\x0C0Wa\x0C0a7-V[` \x02` \x01\x01Q\x81T\x81\x10a\x0CHWa\x0CHa7-V[_\x91\x82R` \x80\x83 \x91\x90\x91\x01T`@\x80Q`\x01`\x01`\xA0\x1B\x03\x90\x92\x16\x82R\x91\x81\x01\x92\x90\x92R\x01`@Q\x80\x91\x03\x90\xA2\x83T\x84\x90a\x0C\x87\x90`\x01\x90a7nV[\x81T\x81\x10a\x0C\x97Wa\x0C\x97a7-V[\x90_R` _ \x01\x84\x88\x83\x81Q\x81\x10a\x0C\xB2Wa\x0C\xB2a7-V[` \x02` \x01\x01Q\x81T\x81\x10a\x0C\xCAWa\x0C\xCAa7-V[_\x91\x82R` \x90\x91 \x82T\x91\x01\x80T`\x01`\x01`\xA0\x1B\x03\x19\x16`\x01`\x01`\xA0\x1B\x03\x90\x92\x16\x91\x82\x17\x81U\x91T`\x01`\x01``\x1B\x03`\x01`\xA0\x1B\x91\x82\x90\x04\x16\x02\x17\x90U\x83T\x84\x90\x80a\r\x1CWa\r\x1Ca7\x81V[_\x82\x81R` \x81 \x82\x01_\x19\x90\x81\x01\x91\x90\x91U\x01\x90U\x82T\x83\x90a\rB\x90`\x01\x90a7nV[\x81T\x81\x10a\rRWa\rRa7-V[\x90_R` _ \x01_\x90T\x90a\x01\0\n\x90\x04`\x01`\x01`\xA0\x1B\x03\x16\x83\x88\x83\x81Q\x81\x10a\r\x80Wa\r\x80a7-V[` \x02` \x01\x01Q\x81T\x81\x10a\r\x98Wa\r\x98a7-V[\x90_R` _ \x01_a\x01\0\n\x81T\x81`\x01`\x01`\xA0\x1B\x03\x02\x19\x16\x90\x83`\x01`\x01`\xA0\x1B\x03\x16\x02\x17\x90UP\x82\x80T\x80a\r\xD3Wa\r\xD3a7\x81V[_\x82\x81R` \x90 \x81\x01_\x19\x90\x81\x01\x80T`\x01`\x01`\xA0\x1B\x03\x19\x16\x90U\x01\x90U`\x01\x01a\x0B\x14V[P_\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0`\x01`\x01`\xA0\x1B\x03\x16c\xDE\x11d\xBB`@Q\x81c\xFF\xFF\xFF\xFF\x16`\xE0\x1B\x81R`\x04\x01` `@Q\x80\x83\x03\x81\x86Z\xFA\x15\x80\x15a\x0EYW=__>=_\xFD[PPPP`@Q=`\x1F\x19`\x1F\x82\x01\x16\x82\x01\x80`@RP\x81\x01\x90a\x0E}\x91\x90a7\x95V[`@\x80Q\x80\x82\x01\x82R`\x01`\x01`\xA0\x1B\x03\x83\x81\x16\x82R`\xFF\x8C\x16` \x83\x01R\x91Qc\x04\xC1\xB8\xEB`\xE3\x1B\x81R\x92\x93P\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x90\x91\x16\x91c&\r\xC7X\x91a\x0E\xE2\x91`\x04\x01a7\xB0V[` `@Q\x80\x83\x03\x81\x86Z\xFA\x15\x80\x15a\x0E\xFDW=__>=_\xFD[PPPP`@Q=`\x1F\x19`\x1F\x82\x01\x16\x82\x01\x80`@RP\x81\x01\x90a\x0F!\x91\x90a7\xD6V[\x15a\x0F\xA4W`@Qc\xB6k\xD9\x89`\xE0\x1B\x81R`\x01`\x01`\xA0\x1B\x03\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x16\x90c\xB6k\xD9\x89\x90a\x0Fv\x90\x84\x90\x8C\x90\x87\x90`\x04\x01a7\xF5V[_`@Q\x80\x83\x03\x81_\x87\x80;\x15\x80\x15a\x0F\x8DW__\xFD[PZ\xF1\x15\x80\x15a\x0F\x9FW=__>=_\xFD[PPPP[PPPPPPPPV[``a\x0F\xB8a\x1DvV[_\x84Q`\x01`\x01`@\x1B\x03\x81\x11\x15a\x0F\xD2Wa\x0F\xD2a0~V[`@Q\x90\x80\x82R\x80` \x02` \x01\x82\x01`@R\x80\x15a\x0F\xFBW\x81` \x01` \x82\x02\x806\x837\x01\x90P[P\x90Pa\x10\x07\x83a\x1B\xE6V[__a\x10\x13\x85\x88a!\xA9V[\x90\x92P\x90P_\x80[\x88Q\x81\x10\x15a\x10\xEFW\x82\x81\x81Q\x81\x10a\x106Wa\x106a7-V[` \x02` \x01\x01Qa\x10\x9AW_\x84\x82\x81Q\x81\x10a\x10UWa\x10Ua7-V[` \x02` \x01\x01\x90`\x01`\x01``\x1B\x03\x16\x90\x81`\x01`\x01``\x1B\x03\x16\x81RPP`\x01\x85\x82\x81Q\x81\x10a\x10\x89Wa\x10\x89a7-V[\x91\x15\x15` \x92\x83\x02\x91\x90\x91\x01\x90\x91\x01R[_a\x10\xD8\x89\x83\x81Q\x81\x10a\x10\xB0Wa\x10\xB0a7-V[` \x02` \x01\x01Q\x89\x87\x85\x81Q\x81\x10a\x10\xCBWa\x10\xCBa7-V[` \x02` \x01\x01Qa\x1D\xBFV[\x90Pa\x10\xE4\x81\x84a8_V[\x92PP`\x01\x01a\x10\x1BV[Pa\x10\xFA\x86\x82a 8V[P\x92\x93PPPP[\x93\x92PPPV[a\x11\x11a\x1DvV[`\xFF\x83\x16_\x90\x81R`\x01` R`@\x90 T\x15a\x11AW`@Qc\x10\xCD\xA5\x17`\xE2\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[a\x11K\x83\x82a%OV[a\x11U\x83\x83a('V[a\x11_\x83_a(\x8FV[PP`\xFF\x16_\x90\x81R`\x01` \x81\x81R`@\x80\x84 \x81Q``\x81\x01\x83Rc\xFF\xFF\xFF\xFFC\x81\x16\x82R\x81\x85\x01\x87\x81R\x93\x82\x01\x87\x81R\x83T\x96\x87\x01\x84U\x92\x87R\x93\x90\x95 \x94Q\x94\x90\x93\x01\x80T\x91Q\x93Q`\x01`\x01``\x1B\x03\x16`\x01`@\x1B\x02`\x01`@\x1B`\x01`\xA0\x1B\x03\x19\x94\x84\x16`\x01` \x1B\x02g\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\x19\x90\x93\x16\x95\x90\x93\x16\x94\x90\x94\x17\x17\x91\x90\x91\x16\x17\x90UV[``_\x82`\x01`\x01`@\x1B\x03\x81\x11\x15a\x12\nWa\x12\na0~V[`@Q\x90\x80\x82R\x80` \x02` \x01\x82\x01`@R\x80\x15a\x123W\x81` \x01` \x82\x02\x806\x837\x01\x90P[P\x90P_[\x83\x81\x10\x15a\x13\x8CW_\x85\x85\x83\x81\x81\x10a\x12SWa\x12Sa7-V[\x91\x90\x91\x015`\xF8\x1C\x91Pa\x12h\x90P\x81a\x1B\xE6V[`\xFF\x81\x16_\x90\x81R`\x01` R`@\x81 \x80Tc\xFF\xFF\xFF\xFF\x8A\x16\x92\x90a\x12\x90Wa\x12\x90a7-V[_\x91\x82R` \x90\x91 \x01Tc\xFF\xFF\xFF\xFF\x16\x11\x15a\x12\xC0W`@Qc\xCCdes`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[`\xFF\x81\x16_\x90\x81R`\x01` R`@\x81 T\x90[\x81\x81\x10\x15a\x13\x81W`\xFF\x83\x16_\x90\x81R`\x01` \x81\x90R`@\x90\x91 c\xFF\xFF\xFF\xFF\x8B\x16\x91a\x13\x02\x84\x86a7nV[a\x13\x0C\x91\x90a7nV[\x81T\x81\x10a\x13\x1CWa\x13\x1Ca7-V[_\x91\x82R` \x90\x91 \x01Tc\xFF\xFF\xFF\xFF\x16\x11a\x13yW`\x01a\x13>\x82\x84a7nV[a\x13H\x91\x90a7nV[\x85\x85\x81Q\x81\x10a\x13ZWa\x13Za7-V[` \x02` \x01\x01\x90c\xFF\xFF\xFF\xFF\x16\x90\x81c\xFF\xFF\xFF\xFF\x16\x81RPPa\x13\x81V[`\x01\x01a\x12\xD4V[PPP`\x01\x01a\x128V[P\x94\x93PPPPV[`\x04` R\x81_R`@_ \x81\x81T\x81\x10a\x13\xAEW_\x80\xFD[_\x91\x82R` \x90\x91 \x01T`\x01`\x01`\xA0\x1B\x03\x16\x91P\x82\x90PV[a\x13\xD1a-=V[_\x83\x81R`\x02` \x90\x81R`@\x80\x83 `\xFF\x88\x16\x84R\x90\x91R\x90 \x80T\x83\x90\x81\x10a\x13\xFEWa\x13\xFEa7-V[_\x91\x82R` \x91\x82\x90 `@\x80Q``\x81\x01\x82R\x92\x90\x91\x01Tc\xFF\xFF\xFF\xFF\x80\x82\x16\x84R`\x01` \x1B\x82\x04\x16\x93\x83\x01\x93\x90\x93R`\x01`@\x1B\x90\x92\x04`\x01`\x01``\x1B\x03\x16\x91\x81\x01\x91\x90\x91R\x94\x93PPPPV[`@\x80Q\x80\x82\x01\x90\x91R_\x80\x82R` \x82\x01R`\xFF\x83\x16_\x90\x81R`\x03` R`@\x90 \x80T\x83\x90\x81\x10a\x14\x86Wa\x14\x86a7-V[_\x91\x82R` \x91\x82\x90 `@\x80Q\x80\x82\x01\x90\x91R\x91\x01T`\x01`\x01`\xA0\x1B\x03\x81\x16\x82R`\x01`\xA0\x1B\x90\x04`\x01`\x01``\x1B\x03\x16\x91\x81\x01\x91\x90\x91R\x93\x92PPPV[a\x14\xCFa-=V[`\xFF\x83\x16_\x90\x81R`\x01` R`@\x90 \x80T\x83\x90\x81\x10a\x14\xF2Wa\x14\xF2a7-V[_\x91\x82R` \x91\x82\x90 `@\x80Q``\x81\x01\x82R\x92\x90\x91\x01Tc\xFF\xFF\xFF\xFF\x80\x82\x16\x84R`\x01` \x1B\x82\x04\x16\x93\x83\x01\x93\x90\x93R`\x01`@\x1B\x90\x92\x04`\x01`\x01``\x1B\x03\x16\x91\x81\x01\x91\x90\x91R\x93\x92PPPV[a\x15Ka\x1C\xC3V[\x81a\x15U\x81a\x1B\xE6V[a\x15_\x83\x83a('V[PPPV[a\x15la\x1DvV[_[\x81\x81\x10\x15a\x15\xC1W_\x83\x83\x83\x81\x81\x10a\x15\x89Wa\x15\x89a7-V[\x91\x90\x91\x015`\xF8\x1C\x91Pa\x15\x9E\x90P\x81a\x1B\xE6V[_a\x15\xAA\x86\x83_a\x1D\xBFV[\x90Pa\x15\xB6\x82\x82a 8V[PPP`\x01\x01a\x15nV[PPPPV[a\x15\xCFa\x1C\xC3V[\x81a\x15\xD9\x81a\x1B\xE6V[a\x15\xE3\x83\x83a%OV[_\x82Q\x90P_\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0`\x01`\x01`\xA0\x1B\x03\x16c\xDE\x11d\xBB`@Q\x81c\xFF\xFF\xFF\xFF\x16`\xE0\x1B\x81R`\x04\x01` `@Q\x80\x83\x03\x81\x86Z\xFA\x15\x80\x15a\x16EW=__>=_\xFD[PPPP`@Q=`\x1F\x19`\x1F\x82\x01\x16\x82\x01\x80`@RP\x81\x01\x90a\x16i\x91\x90a7\x95V[`@\x80Q\x80\x82\x01\x82R`\x01`\x01`\xA0\x1B\x03\x83\x81\x16\x82R`\xFF\x89\x16` \x83\x01R\x91Qc\x04\xC1\xB8\xEB`\xE3\x1B\x81R\x92\x93P\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x90\x91\x16\x91c&\r\xC7X\x91a\x16\xCE\x91`\x04\x01a7\xB0V[` `@Q\x80\x83\x03\x81\x86Z\xFA\x15\x80\x15a\x16\xE9W=__>=_\xFD[PPPP`@Q=`\x1F\x19`\x1F\x82\x01\x16\x82\x01\x80`@RP\x81\x01\x90a\x17\r\x91\x90a7\xD6V[\x15a\x180W_\x82`\x01`\x01`@\x1B\x03\x81\x11\x15a\x17+Wa\x17+a0~V[`@Q\x90\x80\x82R\x80` \x02` \x01\x82\x01`@R\x80\x15a\x17TW\x81` \x01` \x82\x02\x806\x837\x01\x90P[P\x90P_[\x83\x81\x10\x15a\x17\xB0W\x85\x81\x81Q\x81\x10a\x17sWa\x17sa7-V[` \x02` \x01\x01Q_\x01Q\x82\x82\x81Q\x81\x10a\x17\x90Wa\x17\x90a7-V[`\x01`\x01`\xA0\x1B\x03\x90\x92\x16` \x92\x83\x02\x91\x90\x91\x01\x90\x91\x01R`\x01\x01a\x17YV[P`@Qc\x02\x87\xF7Q`\xE5\x1B\x81R`\x01`\x01`\xA0\x1B\x03\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x16\x90cP\xFE\xEA \x90a\x18\x01\x90\x85\x90\x8A\x90\x86\x90`\x04\x01a7\xF5V[_`@Q\x80\x83\x03\x81_\x87\x80;\x15\x80\x15a\x18\x18W__\xFD[PZ\xF1\x15\x80\x15a\x18*W=__>=_\xFD[PPPPP[PPPPPV[`\xFF\x83\x16_\x90\x81R`\x01` R`@\x81 \x80T\x82\x91\x90\x84\x90\x81\x10a\x18]Wa\x18]a7-V[_\x91\x82R` \x91\x82\x90 `@\x80Q``\x81\x01\x82R\x91\x90\x92\x01Tc\xFF\xFF\xFF\xFF\x80\x82\x16\x83R`\x01` \x1B\x82\x04\x16\x93\x82\x01\x93\x90\x93R`\x01`\x01``\x1B\x03`\x01`@\x1B\x90\x93\x04\x92\x90\x92\x16\x90\x82\x01R\x90Pa\ns\x81\x85a(\xFCV[a\x18\xBBa\x1DvV[`\xFF\x84\x16_\x90\x81R`\x01` R`@\x90 T\x15a\x18\xEBW`@Qc\x10\xCD\xA5\x17`\xE2\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[a\x18\xF5\x84\x82a%OV[a\x18\xFF\x84\x84a('V[a\x19\n\x84`\x01a(\x8FV[a\x19\x14\x84\x83a)sV[PPP`\xFF\x16_\x90\x81R`\x01` \x81\x81R`@\x80\x84 \x81Q``\x81\x01\x83Rc\xFF\xFF\xFF\xFFC\x81\x16\x82R\x81\x85\x01\x87\x81R\x93\x82\x01\x87\x81R\x83T\x96\x87\x01\x84U\x92\x87R\x93\x90\x95 \x94Q\x94\x90\x93\x01\x80T\x91Q\x93Q`\x01`\x01``\x1B\x03\x16`\x01`@\x1B\x02`\x01`@\x1B`\x01`\xA0\x1B\x03\x19\x94\x84\x16`\x01` \x1B\x02g\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\x19\x90\x93\x16\x95\x90\x93\x16\x94\x90\x94\x17\x17\x91\x90\x91\x16\x17\x90UV[`\xFF\x81\x16_\x90\x81R`\x01` \x81\x90R`@\x82 \x80T\x90\x91a\x19\xC5\x91a7nV[\x81T\x81\x10a\x19\xD5Wa\x19\xD5a7-V[_\x91\x82R` \x90\x91 \x01T`\x01`@\x1B\x90\x04`\x01`\x01``\x1B\x03\x16\x92\x91PPV[_a\x1A\x02\x84\x84\x84a*$V[\x94\x93PPPPV[a\x1A\x12a\x1C\xC3V[\x81a\x1A\x1C\x81a\x1B\xE6V[a\x15_\x83\x83a)sV[_\x82\x81R`\x02` \x90\x81R`@\x80\x83 `\xFF\x88\x16\x84R\x90\x91R\x81 \x80T\x82\x91\x90\x84\x90\x81\x10a\x1AVWa\x1AVa7-V[_\x91\x82R` \x91\x82\x90 `@\x80Q``\x81\x01\x82R\x91\x90\x92\x01Tc\xFF\xFF\xFF\xFF\x80\x82\x16\x83R`\x01` \x1B\x82\x04\x16\x93\x82\x01\x93\x90\x93R`\x01`\x01``\x1B\x03`\x01`@\x1B\x90\x93\x04\x92\x90\x92\x16\x90\x82\x01R\x90Pa\x1A\xAC\x81\x86a(\xFCV[`@\x01Q\x95\x94PPPPPV[a\x1A\xC1a-=V[_\x83\x81R`\x02` \x90\x81R`@\x80\x83 `\xFF\x86\x16\x84R\x90\x91R\x90 Ta\x1A\xE5a-=V[\x81_\x03a\x1A\xF5W\x91Pa\na\x90PV[_\x85\x81R`\x02` \x90\x81R`@\x80\x83 `\xFF\x88\x16\x84R\x90\x91R\x90 a\x1B\x1B`\x01\x84a7nV[\x81T\x81\x10a\x1B+Wa\x1B+a7-V[_\x91\x82R` \x91\x82\x90 `@\x80Q``\x81\x01\x82R\x91\x90\x92\x01Tc\xFF\xFF\xFF\xFF\x80\x82\x16\x83R`\x01` \x1B\x82\x04\x16\x93\x82\x01\x93\x90\x93R`\x01`\x01``\x1B\x03`\x01`@\x1B\x90\x93\x04\x92\x90\x92\x16\x90\x82\x01R\x92Pa\na\x91PPV[PP\x92\x91PPV[_\x83\x81R`\x02` \x90\x81R`@\x80\x83 `\xFF\x86\x16\x84R\x90\x91R\x81 a\x1B\xAD\x85\x85\x85a*$V[c\xFF\xFF\xFF\xFF\x16\x81T\x81\x10a\x1B\xC3Wa\x1B\xC3a7-V[_\x91\x82R` \x90\x91 \x01T`\x01`@\x1B\x90\x04`\x01`\x01``\x1B\x03\x16\x94\x93PPPPV[`\xFF\x81\x16_\x90\x81R`\x01` R`@\x90 Ta\x1C\x15W`@Qcs\x10\xCF\xF5`\xE1\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[PV[`@\x80Q`\x01\x80\x82R\x81\x83\x01\x90\x92R_\x91\x82\x91\x82\x91` \x80\x83\x01\x90\x806\x837\x01\x90PP\x90P\x83\x81_\x81Q\x81\x10a\x1CPWa\x1CPa7-V[` \x02` \x01\x01\x90`\x01`\x01`\xA0\x1B\x03\x16\x90\x81`\x01`\x01`\xA0\x1B\x03\x16\x81RPP__a\x1C|\x87\x84a!\xA9V[\x91P\x91P\x81_\x81Q\x81\x10a\x1C\x92Wa\x1C\x92a7-V[` \x02` \x01\x01Q\x81_\x81Q\x81\x10a\x1C\xACWa\x1C\xACa7-V[` \x02` \x01\x01Q\x94P\x94PPPP[\x92P\x92\x90PV[\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0`\x01`\x01`\xA0\x1B\x03\x16c\x8D\xA5\xCB[`@Q\x81c\xFF\xFF\xFF\xFF\x16`\xE0\x1B\x81R`\x04\x01` `@Q\x80\x83\x03\x81\x86Z\xFA\x15\x80\x15a\x1D\x1FW=__>=_\xFD[PPPP`@Q=`\x1F\x19`\x1F\x82\x01\x16\x82\x01\x80`@RP\x81\x01\x90a\x1DC\x91\x90a7\x95V[`\x01`\x01`\xA0\x1B\x03\x163`\x01`\x01`\xA0\x1B\x03\x16\x14a\x1DtW`@Qc\xCE\x98\xC2K`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[V[3`\x01`\x01`\xA0\x1B\x03\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x16\x14a\x1DtW`@Qc,\x01\xB2\x05`\xE2\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[_\x83\x81R`\x02` \x90\x81R`@\x80\x83 `\xFF\x86\x16\x84R\x90\x91R\x81 T\x81\x90\x80\x82\x03a\x1E\x83W_\x86\x81R`\x02` \x90\x81R`@\x80\x83 `\xFF\x89\x16\x84R\x82R\x80\x83 \x81Q``\x81\x01\x83Rc\xFF\xFF\xFF\xFFC\x81\x16\x82R\x81\x85\x01\x86\x81R`\x01`\x01``\x1B\x03\x80\x8C\x16\x95\x84\x01\x95\x86R\x84T`\x01\x81\x01\x86U\x94\x88R\x95\x90\x96 \x91Q\x91\x90\x92\x01\x80T\x95Q\x93Q\x90\x94\x16`\x01`@\x1B\x02`\x01`@\x1B`\x01`\xA0\x1B\x03\x19\x93\x83\x16`\x01` \x1B\x02g\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\x19\x90\x96\x16\x91\x90\x92\x16\x17\x93\x90\x93\x17\x16\x91\x90\x91\x17\x90Ua\x1F\xDEV[_\x86\x81R`\x02` \x90\x81R`@\x80\x83 `\xFF\x89\x16\x84R\x90\x91R\x81 a\x1E\xA9`\x01\x84a7nV[\x81T\x81\x10a\x1E\xB9Wa\x1E\xB9a7-V[_\x91\x82R` \x90\x91 \x01\x80T`\x01`\x01``\x1B\x03`\x01`@\x1B\x90\x91\x04\x81\x16\x94P\x90\x91P\x85\x16\x83\x03a\x1E\xEFW_\x93PPPPa\x11\x02V[\x80Tc\xFF\xFF\xFF\xFFC\x81\x16\x91\x16\x03a\x1F'W\x80T`\x01`@\x1B`\x01`\xA0\x1B\x03\x19\x16`\x01`@\x1B`\x01`\x01``\x1B\x03\x87\x16\x02\x17\x81Ua\x1F\xDCV[\x80Tg\xFF\xFF\xFF\xFF\0\0\0\0\x19\x16`\x01` \x1BCc\xFF\xFF\xFF\xFF\x90\x81\x16\x82\x81\x02\x93\x90\x93\x17\x84U_\x8A\x81R`\x02` \x90\x81R`@\x80\x83 `\xFF\x8D\x16\x84R\x82R\x80\x83 \x81Q``\x81\x01\x83R\x96\x87R\x86\x83\x01\x84\x81R`\x01`\x01``\x1B\x03\x8D\x81\x16\x93\x89\x01\x93\x84R\x82T`\x01\x81\x01\x84U\x92\x86R\x93\x90\x94 \x96Q\x96\x01\x80T\x93Q\x91Q\x96\x85\x16g\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\x19\x90\x94\x16\x93\x90\x93\x17\x93\x16\x90\x93\x02\x91\x90\x91\x17`\x01`@\x1B`\x01`\xA0\x1B\x03\x19\x16`\x01`@\x1B\x93\x90\x92\x16\x92\x90\x92\x02\x17\x90U[P[`@\x80Q`\xFF\x87\x16\x81R`\x01`\x01``\x1B\x03\x86\x16` \x82\x01R\x87\x91\x7F/R}R~\x95\xD8\xFE@\xAE\xC5Swt;\xB7y\x08}\xA3\xF6\xD0\xD0\x8F\x12\xE3dD\xDAb2}\x91\x01`@Q\x80\x91\x03\x90\xA2a .\x82\x85a+\x8BV[\x96\x95PPPPPPV[`\xFF\x82\x16_\x90\x81R`\x01` \x81\x90R`@\x82 \x80T\x91\x83\x91\x90a [\x90\x84a7nV[\x81T\x81\x10a kWa ka7-V[\x90_R` _ \x01\x90P\x83_\x03a \x96WT`\x01`@\x1B\x90\x04`\x01`\x01``\x1B\x03\x16\x91Pa\na\x90PV[\x80T_\x90a \xB4\x90`\x01`@\x1B\x90\x04`\x01`\x01``\x1B\x03\x16\x86a+\xA2V[\x82T\x90\x91Pc\xFF\xFF\xFF\xFFC\x81\x16\x91\x16\x03a \xEFW\x81T`\x01`@\x1B`\x01`\xA0\x1B\x03\x19\x16`\x01`@\x1B`\x01`\x01``\x1B\x03\x83\x16\x02\x17\x82Ua!\xA0V[\x81Tc\xFF\xFF\xFF\xFFC\x81\x16`\x01` \x1B\x81\x81\x02g\xFF\xFF\xFF\xFF\0\0\0\0\x19\x90\x94\x16\x93\x90\x93\x17\x85U`\xFF\x89\x16_\x90\x81R`\x01` \x81\x81R`@\x80\x84 \x81Q``\x81\x01\x83R\x95\x86R\x85\x83\x01\x85\x81R`\x01`\x01``\x1B\x03\x80\x8B\x16\x93\x88\x01\x93\x84R\x82T\x95\x86\x01\x83U\x91\x86R\x92\x90\x94 \x94Q\x94\x90\x92\x01\x80T\x91Q\x92Q\x90\x93\x16`\x01`@\x1B\x02`\x01`@\x1B`\x01`\xA0\x1B\x03\x19\x92\x86\x16\x90\x96\x02g\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\x19\x90\x91\x16\x93\x90\x94\x16\x92\x90\x92\x17\x92\x90\x92\x17\x16\x91\x90\x91\x17\x90U[\x95\x94PPPPPV[``\x80_\x83Q`\x01`\x01`@\x1B\x03\x81\x11\x15a!\xC6Wa!\xC6a0~V[`@Q\x90\x80\x82R\x80` \x02` \x01\x82\x01`@R\x80\x15a!\xEFW\x81` \x01` \x82\x02\x806\x837\x01\x90P[P\x90P_\x84Q`\x01`\x01`@\x1B\x03\x81\x11\x15a\"\x0CWa\"\x0Ca0~V[`@Q\x90\x80\x82R\x80` \x02` \x01\x82\x01`@R\x80\x15a\"5W\x81` \x01` \x82\x02\x806\x837\x01\x90P[P\x90P_a\"Q\x87`\xFF\x16_\x90\x81R`\x03` R`@\x90 T\x90V[`\xFF\x88\x16_\x90\x81R`\x03` \x90\x81R`@\x80\x83 \x80T\x82Q\x81\x85\x02\x81\x01\x85\x01\x90\x93R\x80\x83R\x94\x95P\x92\x93\x90\x92\x91\x84\x90\x84\x01[\x82\x82\x10\x15a\"\xD1W_\x84\x81R` \x90\x81\x90 `@\x80Q\x80\x82\x01\x90\x91R\x90\x84\x01T`\x01`\x01`\xA0\x1B\x03\x81\x16\x82R`\x01`\xA0\x1B\x90\x04`\x01`\x01``\x1B\x03\x16\x81\x83\x01R\x82R`\x01\x90\x92\x01\x91\x01a\"\x83V[PPPP\x90P```\x01\x80\x81\x11\x15a\"\xEBWa\"\xEBa1\xB4V[`\xFF\x80\x8B\x16_\x90\x81R`\x05` R`@\x90 T\x16`\x01\x81\x11\x15a#\x10Wa#\x10a1\xB4V[\x03a#&Wa#\x1F\x89\x89a+\xCFV[\x90Pa#\xC9V[`\xFF\x89\x16_\x90\x81R`\x04` \x81\x90R`@\x91\x82\x90 \x91Qcxps;`\xE1\x1B\x81R`\x01`\x01`\xA0\x1B\x03\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x16\x92c\xF0\xE0\xE6v\x92a#\x85\x92\x8D\x92\x91\x01a8\xF3V[_`@Q\x80\x83\x03\x81\x86Z\xFA\x15\x80\x15a#\x9FW=__>=_\xFD[PPPP`@Q=_\x82>`\x1F=\x90\x81\x01`\x1F\x19\x16\x82\x01`@Ra#\xC6\x91\x90\x81\x01\x90a9\x17V[\x90P[_[\x88Q\x81\x10\x15a%?W_[\x84\x81\x10\x15a$\xCFW_\x84\x82\x81Q\x81\x10a#\xF1Wa#\xF1a7-V[` \x02` \x01\x01Q\x90P_\x84\x84\x81Q\x81\x10a$\x0EWa$\x0Ea7-V[` \x02` \x01\x01Q\x83\x81Q\x81\x10a$'Wa$'a7-V[` \x02` \x01\x01Q\x11\x15a$\xC6Wg\r\xE0\xB6\xB3\xA7d\0\0\x81` \x01Q`\x01`\x01``\x1B\x03\x16\x85\x85\x81Q\x81\x10a$^Wa$^a7-V[` \x02` \x01\x01Q\x84\x81Q\x81\x10a$wWa$wa7-V[` \x02` \x01\x01Qa$\x89\x91\x90a:#V[a$\x93\x91\x90a::V[\x88\x84\x81Q\x81\x10a$\xA5Wa$\xA5a7-V[` \x02` \x01\x01\x81\x81Qa$\xB9\x91\x90a:YV[`\x01`\x01``\x1B\x03\x16\x90RP[P`\x01\x01a#\xD6V[P`\xFF\x8A\x16_\x90\x81R` \x81\x90R`@\x90 T\x86Q`\x01`\x01``\x1B\x03\x90\x91\x16\x90\x87\x90\x83\x90\x81\x10a%\x02Wa%\x02a7-V[` \x02` \x01\x01Q`\x01`\x01``\x1B\x03\x16\x10\x15\x85\x82\x81Q\x81\x10a%'Wa%'a7-V[\x91\x15\x15` \x92\x83\x02\x91\x90\x91\x01\x90\x91\x01R`\x01\x01a#\xCBV[P\x93\x98\x92\x97P\x91\x95PPPPPPV[_\x81Q\x11a%pW`@Qcyl\xC5%`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[\x80Q`\xFF\x83\x16_\x90\x81R`\x03` \x90\x81R`@\x90\x91 T\x90a%\x92\x83\x83a:xV[\x11\x15a%\xB1W`@QcCqJ\xFD`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[_[\x82\x81\x10\x15a\x180W_[a%\xC7\x82\x84a:xV[\x81\x10\x15a&VW\x84\x82\x81Q\x81\x10a%\xE0Wa%\xE0a7-V[` \x02` \x01\x01Q_\x01Q`\x01`\x01`\xA0\x1B\x03\x16`\x03_\x88`\xFF\x16`\xFF\x16\x81R` \x01\x90\x81R` \x01_ \x82\x81T\x81\x10a&\x1CWa&\x1Ca7-V[_\x91\x82R` \x90\x91 \x01T`\x01`\x01`\xA0\x1B\x03\x16\x03a&NW`@Qc{t4\x0B`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[`\x01\x01a%\xBDV[P_\x84\x82\x81Q\x81\x10a&jWa&ja7-V[` \x02` \x01\x01Q` \x01Q`\x01`\x01``\x1B\x03\x16\x11a&\x9DW`@QcrW\x12Q`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[`\xFF\x85\x16_\x90\x81R`\x03` R`@\x90 \x84Q\x85\x90\x83\x90\x81\x10a&\xC2Wa&\xC2a7-V[` \x90\x81\x02\x91\x90\x91\x01\x81\x01Q\x82T`\x01\x81\x01\x84U_\x93\x84R\x82\x84 \x82Q\x92\x84\x01Q`\x01`\x01``\x1B\x03\x16`\x01`\xA0\x1B\x02`\x01`\x01`\xA0\x1B\x03\x90\x93\x16\x92\x90\x92\x17\x91\x01U`\xFF\x87\x16\x82R`\x04\x90R`@\x90 \x84Q\x85\x90\x83\x90\x81\x10a'&Wa'&a7-V[` \x90\x81\x02\x91\x90\x91\x01\x81\x01QQ\x82T`\x01\x81\x01\x84U_\x93\x84R\x91\x90\x92 \x01\x80T`\x01`\x01`\xA0\x1B\x03\x19\x16`\x01`\x01`\xA0\x1B\x03\x90\x92\x16\x91\x90\x91\x17\x90U\x83Q`\xFF\x86\x16\x90\x7F\x10V^V\xCA\xCB\xF3.\xCA&yE\xF0T\xFE\xC0.Yu\x002\xD1\x13\xD30!\x82\xAD\x96\x7FT\x04\x90\x86\x90\x84\x90\x81\x10a'\x9CWa'\x9Ca7-V[` \x02` \x01\x01Q_\x01Q`@Qa'\xB4\x91\x90a1\xEEV[`@Q\x80\x91\x03\x90\xA2\x84`\xFF\x16_Q` a;U_9_Q\x90_R\x85\x83\x81Q\x81\x10a'\xE0Wa'\xE0a7-V[` \x02` \x01\x01Q_\x01Q\x86\x84\x81Q\x81\x10a'\xFDWa'\xFDa7-V[` \x02` \x01\x01Q` \x01Q`@Qa(\x17\x92\x91\x90a-\xB2V[`@Q\x80\x91\x03\x90\xA2`\x01\x01a%\xB3V[`\xFF\x82\x16_\x81\x81R` \x81\x81R`@\x91\x82\x90 \x80Tk\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\x19\x16`\x01`\x01``\x1B\x03\x86\x16\x90\x81\x17\x90\x91U\x91Q\x91\x82R\x7F&\xEE\xCF\xF2\xB7\x0B\nq\x10O\xF4\xD9@\xBAqb\xD2:\x95\xC2Hw\x1F\xC4\x87\xA7\xBE\x17\xA5\x96\xB3\xCF\x91\x01`@Q\x80\x91\x03\x90\xA2PPV[`\xFF\x82\x16_\x90\x81R`\x05` R`@\x90 \x80T\x82\x91\x90`\xFF\x19\x16`\x01\x83\x81\x81\x11\x15a(\xBCWa(\xBCa1\xB4V[\x02\x17\x90UP\x7F|\x11.\x86<\xCF\0xb\xE2\xC9\xE2X\x19\xC93\xFE\xDB\xC95\ndCB;J\x85\x99\xC2\xE8\xA5-\x81`@Qa(\xF0\x91\x90a1\xC8V[`@Q\x80\x91\x03\x90\xA1PPV[\x81_\x01Qc\xFF\xFF\xFF\xFF\x16\x81c\xFF\xFF\xFF\xFF\x16\x10\x15a),W`@Qc\x13\x91\xE1\x1B`\xE2\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[` \x82\x01Qc\xFF\xFF\xFF\xFF\x16\x15\x80a)RWP\x81` \x01Qc\xFF\xFF\xFF\xFF\x16\x81c\xFF\xFF\xFF\xFF\x16\x10[a)oW`@Qc\x13\x91\xE1\x1B`\xE2\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[PPV[`\x01`\xFF\x80\x84\x16_\x90\x81R`\x05` R`@\x90 T\x16`\x01\x81\x11\x15a)\x9AWa)\x9Aa1\xB4V[\x14a)\xB8W`@Qc\xA3\xBE%\x83`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[`\xFF\x82\x16_\x90\x81R`\x06` \x90\x81R`@\x91\x82\x90 \x80Tc\xFF\xFF\xFF\xFF\x19\x81\x16c\xFF\xFF\xFF\xFF\x86\x81\x16\x91\x82\x17\x90\x93U\x84Q\x92\x90\x91\x16\x80\x83R\x92\x82\x01R\x90\x91\x7F(\xD75\x8By\xF0-!\xB8\xB7\xE1z\xEF\xC4\x18Zd0\x8A\xA3t\x06\xFA[\xEF\xC0[\x91\x93,9\xC7\x91\x01`@Q\x80\x91\x03\x90\xA1PPPV[_\x83\x81R`\x02` \x90\x81R`@\x80\x83 `\xFF\x86\x16\x84R\x90\x91R\x81 T\x80[\x80\x15a*\xC2W_\x86\x81R`\x02` \x90\x81R`@\x80\x83 `\xFF\x89\x16\x84R\x90\x91R\x90 c\xFF\xFF\xFF\xFF\x85\x16\x90a*v`\x01\x84a7nV[\x81T\x81\x10a*\x86Wa*\x86a7-V[_\x91\x82R` \x90\x91 \x01Tc\xFF\xFF\xFF\xFF\x16\x11a*\xB0Wa*\xA7`\x01\x82a7nV[\x92PPPa\x11\x02V[\x80a*\xBA\x81a:\x8BV[\x91PPa*BV[P`@QbF\x1B\xCD`\xE5\x1B\x81R` `\x04\x82\x01R`\x81`$\x82\x01R\x7FStakeRegistry._getStakeUpdateInd`D\x82\x01R\x7FexForOperatorAtBlockNumber: no s`d\x82\x01R\x7Ftake update found for operatorId`\x84\x82\x01R\x7F and quorumNumber at block numbe`\xA4\x82\x01R`9`\xF9\x1B`\xC4\x82\x01R`\xE4\x01`@Q\x80\x91\x03\x90\xFD[_a\x11\x02`\x01`\x01``\x1B\x03\x80\x85\x16\x90\x84\x16a:\xA0V[__\x82\x12\x15a+\xC5Wa+\xB4\x82a:\xBFV[a+\xBE\x90\x84a:\xD9V[\x90Pa\naV[a+\xBE\x82\x84a:YV[`\xFF\x82\x16_\x90\x81R`\x06` R`@\x81 T``\x91\x90a+\xF5\x90c\xFF\xFF\xFF\xFF\x16Ca:xV[\x90P_\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0`\x01`\x01`\xA0\x1B\x03\x16c+\xAB,J`@Q\x80`@\x01`@R\x80\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0`\x01`\x01`\xA0\x1B\x03\x16c\xDE\x11d\xBB`@Q\x81c\xFF\xFF\xFF\xFF\x16`\xE0\x1B\x81R`\x04\x01` `@Q\x80\x83\x03\x81\x86Z\xFA\x15\x80\x15a,\x8EW=__>=_\xFD[PPPP`@Q=`\x1F\x19`\x1F\x82\x01\x16\x82\x01\x80`@RP\x81\x01\x90a,\xB2\x91\x90a7\x95V[`\x01`\x01`\xA0\x1B\x03\x16\x81R`\xFF\x89\x16` \x91\x82\x01\x81\x90R_\x90\x81R`\x04\x91\x82\x90R`@\x90\x81\x90 \x90Q`\x01`\x01`\xE0\x1B\x03\x19`\xE0\x86\x90\x1B\x16\x81Ra,\xFC\x93\x92\x8A\x92\x91\x89\x91\x01a:\xF8V[_`@Q\x80\x83\x03\x81\x86Z\xFA\x15\x80\x15a-\x16W=__>=_\xFD[PPPP`@Q=_\x82>`\x1F=\x90\x81\x01`\x1F\x19\x16\x82\x01`@Ra!\xA0\x91\x90\x81\x01\x90a9\x17V[`@\x80Q``\x81\x01\x82R_\x80\x82R` \x82\x01\x81\x90R\x91\x81\x01\x91\x90\x91R\x90V[\x805`\xFF\x81\x16\x81\x14a-lW__\xFD[\x91\x90PV[_` \x82\x84\x03\x12\x15a-\x81W__\xFD[a\x11\x02\x82a-\\V[__`@\x83\x85\x03\x12\x15a-\x9BW__\xFD[a-\xA4\x83a-\\V[\x94` \x93\x90\x93\x015\x93PPPV[`\x01`\x01`\xA0\x1B\x03\x92\x90\x92\x16\x82R`\x01`\x01``\x1B\x03\x16` \x82\x01R`@\x01\x90V[`\x01`\x01`\xA0\x1B\x03\x81\x16\x81\x14a\x1C\x15W__\xFD[__`@\x83\x85\x03\x12\x15a-\xF9W__\xFD[a.\x02\x83a-\\V[\x91P` \x83\x015a.\x12\x81a-\xD4V[\x80\x91PP\x92P\x92\x90PV[__\x83`\x1F\x84\x01\x12a.-W__\xFD[P\x815`\x01`\x01`@\x1B\x03\x81\x11\x15a.CW__\xFD[` \x83\x01\x91P\x83` \x82`\x05\x1B\x85\x01\x01\x11\x15a\x1C\xBCW__\xFD[_____``\x86\x88\x03\x12\x15a.qW__\xFD[a.z\x86a-\\V[\x94P` \x86\x015`\x01`\x01`@\x1B\x03\x81\x11\x15a.\x94W__\xFD[a.\xA0\x88\x82\x89\x01a.\x1DV[\x90\x95P\x93PP`@\x86\x015`\x01`\x01`@\x1B\x03\x81\x11\x15a.\xBEW__\xFD[a.\xCA\x88\x82\x89\x01a.\x1DV[\x96\x99\x95\x98P\x93\x96P\x92\x94\x93\x92PPPV[__\x83`\x1F\x84\x01\x12a.\xEBW__\xFD[P\x815`\x01`\x01`@\x1B\x03\x81\x11\x15a/\x01W__\xFD[` \x83\x01\x91P\x83` \x82\x85\x01\x01\x11\x15a\x1C\xBCW__\xFD[____``\x85\x87\x03\x12\x15a/+W__\xFD[\x845a/6\x81a-\xD4V[\x93P` \x85\x015\x92P`@\x85\x015`\x01`\x01`@\x1B\x03\x81\x11\x15a/WW__\xFD[a/c\x87\x82\x88\x01a.\xDBV[\x95\x98\x94\x97P\x95PPPPV[_\x81Q\x80\x84R` \x84\x01\x93P` \x83\x01_[\x82\x81\x10\x15a/\xA8W\x81Q`\x01`\x01``\x1B\x03\x16\x86R` \x95\x86\x01\x95\x90\x91\x01\x90`\x01\x01a/\x81V[P\x93\x94\x93PPPPV[`@\x81R_a/\xC4`@\x83\x01\x85a/oV[\x82\x81\x03` \x84\x01Ra!\xA0\x81\x85a/oV[__`@\x83\x85\x03\x12\x15a/\xE7W__\xFD[\x825\x91Pa/\xF7` \x84\x01a-\\V[\x90P\x92P\x92\x90PV[c\xFF\xFF\xFF\xFF\x81Q\x16\x82Rc\xFF\xFF\xFF\xFF` \x82\x01Q\x16` \x83\x01R`\x01`\x01``\x1B\x03`@\x82\x01Q\x16`@\x83\x01RPPV[` \x80\x82R\x82Q\x82\x82\x01\x81\x90R_\x91\x84\x01\x90`@\x84\x01\x90\x83[\x81\x81\x10\x15a0sWa0]\x83\x85Qa0\0V[` \x93\x90\x93\x01\x92``\x92\x90\x92\x01\x91`\x01\x01a0JV[P\x90\x95\x94PPPPPV[cNH{q`\xE0\x1B_R`A`\x04R`$_\xFD[`@\x80Q\x90\x81\x01`\x01`\x01`@\x1B\x03\x81\x11\x82\x82\x10\x17\x15a0\xB4Wa0\xB4a0~V[`@R\x90V[`@Q`\x1F\x82\x01`\x1F\x19\x16\x81\x01`\x01`\x01`@\x1B\x03\x81\x11\x82\x82\x10\x17\x15a0\xE2Wa0\xE2a0~V[`@R\x91\x90PV[_`\x01`\x01`@\x1B\x03\x82\x11\x15a1\x02Wa1\x02a0~V[P`\x05\x1B` \x01\x90V[__`@\x83\x85\x03\x12\x15a1\x1DW__\xFD[a1&\x83a-\\V[\x91P` \x83\x015`\x01`\x01`@\x1B\x03\x81\x11\x15a1@W__\xFD[\x83\x01`\x1F\x81\x01\x85\x13a1PW__\xFD[\x805a1ca1^\x82a0\xEAV[a0\xBAV[\x80\x82\x82R` \x82\x01\x91P` \x83`\x05\x1B\x85\x01\x01\x92P\x87\x83\x11\x15a1\x84W__\xFD[` \x84\x01\x93P[\x82\x84\x10\x15a1\xA6W\x835\x82R` \x93\x84\x01\x93\x90\x91\x01\x90a1\x8BV[\x80\x94PPPPP\x92P\x92\x90PV[cNH{q`\xE0\x1B_R`!`\x04R`$_\xFD[` \x81\x01`\x02\x83\x10a1\xE8WcNH{q`\xE0\x1B_R`!`\x04R`$_\xFD[\x91\x90R\x90V[`\x01`\x01`\xA0\x1B\x03\x91\x90\x91\x16\x81R` \x01\x90V[_\x82`\x1F\x83\x01\x12a2\x11W__\xFD[\x815a2\x1Fa1^\x82a0\xEAV[\x80\x82\x82R` \x82\x01\x91P` \x83`\x05\x1B\x86\x01\x01\x92P\x85\x83\x11\x15a2@W__\xFD[` \x85\x01[\x83\x81\x10\x15a2]W\x805\x83R` \x92\x83\x01\x92\x01a2EV[P\x95\x94PPPPPV[___``\x84\x86\x03\x12\x15a2yW__\xFD[\x835`\x01`\x01`@\x1B\x03\x81\x11\x15a2\x8EW__\xFD[\x84\x01`\x1F\x81\x01\x86\x13a2\x9EW__\xFD[\x805a2\xACa1^\x82a0\xEAV[\x80\x82\x82R` \x82\x01\x91P` \x83`\x05\x1B\x85\x01\x01\x92P\x88\x83\x11\x15a2\xCDW__\xFD[` \x84\x01\x93P[\x82\x84\x10\x15a2\xF8W\x835a2\xE7\x81a-\xD4V[\x82R` \x93\x84\x01\x93\x90\x91\x01\x90a2\xD4V[\x95PPPP` \x84\x015`\x01`\x01`@\x1B\x03\x81\x11\x15a3\x15W__\xFD[a3!\x86\x82\x87\x01a2\x02V[\x92PPa30`@\x85\x01a-\\V[\x90P\x92P\x92P\x92V[` \x80\x82R\x82Q\x82\x82\x01\x81\x90R_\x91\x84\x01\x90`@\x84\x01\x90\x83[\x81\x81\x10\x15a0sW\x83Q\x15\x15\x83R` \x93\x84\x01\x93\x90\x92\x01\x91`\x01\x01a3RV[\x805`\x01`\x01``\x1B\x03\x81\x16\x81\x14a-lW__\xFD[_\x82`\x1F\x83\x01\x12a3\x97W__\xFD[\x815a3\xA5a1^\x82a0\xEAV[\x80\x82\x82R` \x82\x01\x91P` \x83`\x06\x1B\x86\x01\x01\x92P\x85\x83\x11\x15a3\xC6W__\xFD[` \x85\x01[\x83\x81\x10\x15a2]W`@\x81\x88\x03\x12\x15a3\xE2W__\xFD[a3\xEAa0\x92V[\x815a3\xF5\x81a-\xD4V[\x81Ra4\x03` \x83\x01a3rV[` \x82\x01R\x80\x84RP` \x83\x01\x92P`@\x81\x01\x90Pa3\xCBV[___``\x84\x86\x03\x12\x15a4/W__\xFD[a48\x84a-\\V[\x92Pa4F` \x85\x01a3rV[\x91P`@\x84\x015`\x01`\x01`@\x1B\x03\x81\x11\x15a4`W__\xFD[a4l\x86\x82\x87\x01a3\x88V[\x91PP\x92P\x92P\x92V[\x805c\xFF\xFF\xFF\xFF\x81\x16\x81\x14a-lW__\xFD[___`@\x84\x86\x03\x12\x15a4\x9BW__\xFD[a4\xA4\x84a4vV[\x92P` \x84\x015`\x01`\x01`@\x1B\x03\x81\x11\x15a4\xBEW__\xFD[a4\xCA\x86\x82\x87\x01a.\xDBV[\x94\x97\x90\x96P\x93\x94PPPPV[` \x80\x82R\x82Q\x82\x82\x01\x81\x90R_\x91\x84\x01\x90`@\x84\x01\x90\x83[\x81\x81\x10\x15a0sW\x83Qc\xFF\xFF\xFF\xFF\x16\x83R` \x93\x84\x01\x93\x90\x92\x01\x91`\x01\x01a4\xF0V[___``\x84\x86\x03\x12\x15a5&W__\xFD[a5/\x84a-\\V[\x95` \x85\x015\x95P`@\x90\x94\x015\x93\x92PPPV[``\x81\x01a\na\x82\x84a0\0V[__`@\x83\x85\x03\x12\x15a5cW__\xFD[a5l\x83a-\\V[\x91Pa/\xF7` \x84\x01a3rV[___`@\x84\x86\x03\x12\x15a5\x8CW__\xFD[\x835\x92P` \x84\x015`\x01`\x01`@\x1B\x03\x81\x11\x15a4\xBEW__\xFD[__`@\x83\x85\x03\x12\x15a5\xB9W__\xFD[a5\xC2\x83a-\\V[\x91P` \x83\x015`\x01`\x01`@\x1B\x03\x81\x11\x15a5\xDCW__\xFD[a5\xE8\x85\x82\x86\x01a3\x88V[\x91PP\x92P\x92\x90PV[___``\x84\x86\x03\x12\x15a6\x04W__\xFD[a6\r\x84a-\\V[\x92Pa6\x1B` \x85\x01a4vV[\x92\x95\x92\x94PPP`@\x91\x90\x91\x015\x90V[____`\x80\x85\x87\x03\x12\x15a6?W__\xFD[a6H\x85a-\\V[\x93Pa6V` \x86\x01a3rV[\x92Pa6d`@\x86\x01a4vV[\x91P``\x85\x015`\x01`\x01`@\x1B\x03\x81\x11\x15a6~W__\xFD[a6\x8A\x87\x82\x88\x01a3\x88V[\x91PP\x92\x95\x91\x94P\x92PV[___``\x84\x86\x03\x12\x15a6\xA8W__\xFD[\x835\x92Pa6\xB8` \x85\x01a-\\V[\x91Pa30`@\x85\x01a4vV[__`@\x83\x85\x03\x12\x15a6\xD7W__\xFD[a6\xE0\x83a-\\V[\x91Pa/\xF7` \x84\x01a4vV[____`\x80\x85\x87\x03\x12\x15a7\x01W__\xFD[a7\n\x85a-\\V[\x93Pa7\x18` \x86\x01a4vV[\x93\x96\x93\x95PPPP`@\x82\x015\x91``\x015\x90V[cNH{q`\xE0\x1B_R`2`\x04R`$_\xFD[_` \x82\x84\x03\x12\x15a7QW__\xFD[a\x11\x02\x82a3rV[cNH{q`\xE0\x1B_R`\x11`\x04R`$_\xFD[\x81\x81\x03\x81\x81\x11\x15a\naWa\naa7ZV[cNH{q`\xE0\x1B_R`1`\x04R`$_\xFD[_` \x82\x84\x03\x12\x15a7\xA5W__\xFD[\x81Qa\x11\x02\x81a-\xD4V[\x81Q`\x01`\x01`\xA0\x1B\x03\x16\x81R` \x80\x83\x01Qc\xFF\xFF\xFF\xFF\x16\x90\x82\x01R`@\x81\x01a\naV[_` \x82\x84\x03\x12\x15a7\xE6W__\xFD[\x81Q\x80\x15\x15\x81\x14a\x11\x02W__\xFD[`\x01`\x01`\xA0\x1B\x03\x84\x16\x81R`\xFF\x83\x16` \x80\x83\x01\x91\x90\x91R```@\x83\x01\x81\x90R\x83Q\x90\x83\x01\x81\x90R_\x91\x84\x01\x90`\x80\x84\x01\x90\x83[\x81\x81\x10\x15a8RW\x83Q`\x01`\x01`\xA0\x1B\x03\x16\x83R` \x93\x84\x01\x93\x90\x92\x01\x91`\x01\x01a8+V[P\x90\x97\x96PPPPPPPV[\x80\x82\x01\x82\x81\x12_\x83\x12\x80\x15\x82\x16\x82\x15\x82\x16\x17\x15a\x1B\x7FWa\x1B\x7Fa7ZV[_\x81Q\x80\x84R` \x84\x01\x93P` \x83\x01_[\x82\x81\x10\x15a/\xA8W\x81Q`\x01`\x01`\xA0\x1B\x03\x16\x86R` \x95\x86\x01\x95\x90\x91\x01\x90`\x01\x01a8\x90V[_\x81T\x80\x84R` \x84\x01\x93P\x82_R` _ _[\x82\x81\x10\x15a/\xA8W\x81T`\x01`\x01`\xA0\x1B\x03\x16\x86R` \x90\x95\x01\x94`\x01\x91\x82\x01\x91\x01a8\xCCV[`@\x81R_a9\x05`@\x83\x01\x85a8~V[\x82\x81\x03` \x84\x01Ra!\xA0\x81\x85a8\xB7V[_` \x82\x84\x03\x12\x15a9'W__\xFD[\x81Q`\x01`\x01`@\x1B\x03\x81\x11\x15a9<W__\xFD[\x82\x01`\x1F\x81\x01\x84\x13a9LW__\xFD[\x80Qa9Za1^\x82a0\xEAV[\x80\x82\x82R` \x82\x01\x91P` \x83`\x05\x1B\x85\x01\x01\x92P\x86\x83\x11\x15a9{W__\xFD[` \x84\x01[\x83\x81\x10\x15a:\x18W\x80Q`\x01`\x01`@\x1B\x03\x81\x11\x15a9\x9DW__\xFD[\x85\x01`?\x81\x01\x89\x13a9\xADW__\xFD[` \x81\x01Qa9\xBEa1^\x82a0\xEAV[\x80\x82\x82R` \x82\x01\x91P` \x80\x84`\x05\x1B\x86\x01\x01\x01\x92P\x8B\x83\x11\x15a9\xE1W__\xFD[`@\x84\x01\x93P[\x82\x84\x10\x15a:\x03W\x83Q\x82R` \x93\x84\x01\x93\x90\x91\x01\x90a9\xE8V[\x86RPP` \x93\x84\x01\x93\x91\x90\x91\x01\x90Pa9\x80V[P\x96\x95PPPPPPV[\x80\x82\x02\x81\x15\x82\x82\x04\x84\x14\x17a\naWa\naa7ZV[_\x82a:TWcNH{q`\xE0\x1B_R`\x12`\x04R`$_\xFD[P\x04\x90V[`\x01`\x01``\x1B\x03\x81\x81\x16\x83\x82\x16\x01\x90\x81\x11\x15a\naWa\naa7ZV[\x80\x82\x01\x80\x82\x11\x15a\naWa\naa7ZV[_\x81a:\x99Wa:\x99a7ZV[P_\x19\x01\x90V[\x81\x81\x03_\x83\x12\x80\x15\x83\x83\x13\x16\x83\x83\x12\x82\x16\x17\x15a\x06\xB0Wa\x06\xB0a7ZV[_`\x01`\xFF\x1B\x82\x01a:\xD3Wa:\xD3a7ZV[P_\x03\x90V[`\x01`\x01``\x1B\x03\x82\x81\x16\x82\x82\x16\x03\x90\x81\x11\x15a\naWa\naa7ZV[\x84Q`\x01`\x01`\xA0\x1B\x03\x16\x81R` \x80\x86\x01Qc\xFF\xFF\xFF\xFF\x16\x90\x82\x01R`\xA0`@\x82\x01R_a;*`\xA0\x83\x01\x86a8~V[\x82\x81\x03``\x84\x01Ra;<\x81\x86a8\xB7V[\x91PPc\xFF\xFF\xFF\xFF\x83\x16`\x80\x83\x01R\x95\x94PPPPPV\xFE\x11\xA5d\x13\"\xDA\x1D\xFFV\xA4\xB6n\xAA\xC3\x1F\xFAFR\x95\xEC\xE9\x07\xCD\x1647y;M\0\x9Au\xA2dipfsX\"\x12 =\x9E{?e\xC3\xE0\x80\xB6\x15\xC7\"\xEC\x1F\x1F\x88\x9Ay\xC4\x19_\xD0'\xF2-?\x1A\x10\xA0R\xAAydsolcC\0\x08\x1B\x003",
     );
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `BelowMinimumStakeRequirement()` and selector `0x40fe27c6`.
 ```solidity
 error BelowMinimumStakeRequirement();
@@ -2099,6 +2103,7 @@ error BelowMinimumStakeRequirement();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `EmptyStakeHistory()` and selector `0xcc646573`.
 ```solidity
 error EmptyStakeHistory();
@@ -2163,6 +2168,7 @@ error EmptyStakeHistory();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `InputArrayLengthMismatch()` and selector `0x43714afd`.
 ```solidity
 error InputArrayLengthMismatch();
@@ -2229,6 +2235,7 @@ error InputArrayLengthMismatch();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `InputArrayLengthZero()` and selector `0x796cc525`.
 ```solidity
 error InputArrayLengthZero();
@@ -2293,6 +2300,7 @@ error InputArrayLengthZero();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `InputDuplicateStrategy()` and selector `0x7b74340b`.
 ```solidity
 error InputDuplicateStrategy();
@@ -2357,6 +2365,7 @@ error InputDuplicateStrategy();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `InputMultiplierZero()` and selector `0x72571251`.
 ```solidity
 error InputMultiplierZero();
@@ -2421,6 +2430,7 @@ error InputMultiplierZero();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `InvalidBlockNumber()` and selector `0x4e47846c`.
 ```solidity
 error InvalidBlockNumber();
@@ -2485,6 +2495,7 @@ error InvalidBlockNumber();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `OnlySlashingRegistryCoordinator()` and selector `0xb006c814`.
 ```solidity
 error OnlySlashingRegistryCoordinator();
@@ -2551,6 +2562,7 @@ error OnlySlashingRegistryCoordinator();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `OnlySlashingRegistryCoordinatorOwner()` and selector `0xce98c24b`.
 ```solidity
 error OnlySlashingRegistryCoordinatorOwner();
@@ -2617,6 +2629,7 @@ error OnlySlashingRegistryCoordinatorOwner();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `QuorumAlreadyExists()` and selector `0x4336945c`.
 ```solidity
 error QuorumAlreadyExists();
@@ -2681,6 +2694,7 @@ error QuorumAlreadyExists();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `QuorumDoesNotExist()` and selector `0xe6219fea`.
 ```solidity
 error QuorumDoesNotExist();
@@ -2745,6 +2759,7 @@ error QuorumDoesNotExist();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `QuorumNotSlashable()` and selector `0xa3be2583`.
 ```solidity
 error QuorumNotSlashable();
@@ -2809,6 +2824,7 @@ error QuorumNotSlashable();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `LookAheadPeriodChanged(uint32,uint32)` and selector `0x28d7358b79f02d21b8b7e17aefc4185a64308aa37406fa5befc05b91932c39c7`.
 ```solidity
 event LookAheadPeriodChanged(uint32 oldLookAheadBlocks, uint32 newLookAheadBlocks);
@@ -2846,38 +2862,9 @@ event LookAheadPeriodChanged(uint32 oldLookAheadBlocks, uint32 newLookAheadBlock
             type TopicList = (alloy_sol_types::sol_data::FixedBytes<32>,);
             const SIGNATURE: &'static str = "LookAheadPeriodChanged(uint32,uint32)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                40u8,
-                215u8,
-                53u8,
-                139u8,
-                121u8,
-                240u8,
-                45u8,
-                33u8,
-                184u8,
-                183u8,
-                225u8,
-                122u8,
-                239u8,
-                196u8,
-                24u8,
-                90u8,
-                100u8,
-                48u8,
-                138u8,
-                163u8,
-                116u8,
-                6u8,
-                250u8,
-                91u8,
-                239u8,
-                192u8,
-                91u8,
-                145u8,
-                147u8,
-                44u8,
-                57u8,
-                199u8,
+                40u8, 215u8, 53u8, 139u8, 121u8, 240u8, 45u8, 33u8, 184u8, 183u8, 225u8,
+                122u8, 239u8, 196u8, 24u8, 90u8, 100u8, 48u8, 138u8, 163u8, 116u8, 6u8,
+                250u8, 91u8, 239u8, 192u8, 91u8, 145u8, 147u8, 44u8, 57u8, 199u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -2952,6 +2939,7 @@ event LookAheadPeriodChanged(uint32 oldLookAheadBlocks, uint32 newLookAheadBlock
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `MinimumStakeForQuorumUpdated(uint8,uint96)` and selector `0x26eecff2b70b0a71104ff4d940ba7162d23a95c248771fc487a7be17a596b3cf`.
 ```solidity
 event MinimumStakeForQuorumUpdated(uint8 indexed quorumNumber, uint96 minimumStake);
@@ -2989,38 +2977,9 @@ event MinimumStakeForQuorumUpdated(uint8 indexed quorumNumber, uint96 minimumSta
             );
             const SIGNATURE: &'static str = "MinimumStakeForQuorumUpdated(uint8,uint96)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                38u8,
-                238u8,
-                207u8,
-                242u8,
-                183u8,
-                11u8,
-                10u8,
-                113u8,
-                16u8,
-                79u8,
-                244u8,
-                217u8,
-                64u8,
-                186u8,
-                113u8,
-                98u8,
-                210u8,
-                58u8,
-                149u8,
-                194u8,
-                72u8,
-                119u8,
-                31u8,
-                196u8,
-                135u8,
-                167u8,
-                190u8,
-                23u8,
-                165u8,
-                150u8,
-                179u8,
-                207u8,
+                38u8, 238u8, 207u8, 242u8, 183u8, 11u8, 10u8, 113u8, 16u8, 79u8, 244u8,
+                217u8, 64u8, 186u8, 113u8, 98u8, 210u8, 58u8, 149u8, 194u8, 72u8, 119u8,
+                31u8, 196u8, 135u8, 167u8, 190u8, 23u8, 165u8, 150u8, 179u8, 207u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -3097,6 +3056,7 @@ event MinimumStakeForQuorumUpdated(uint8 indexed quorumNumber, uint96 minimumSta
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `OperatorStakeUpdate(bytes32,uint8,uint96)` and selector `0x2f527d527e95d8fe40aec55377743bb779087da3f6d0d08f12e36444da62327d`.
 ```solidity
 event OperatorStakeUpdate(bytes32 indexed operatorId, uint8 quorumNumber, uint96 stake);
@@ -3139,38 +3099,9 @@ event OperatorStakeUpdate(bytes32 indexed operatorId, uint8 quorumNumber, uint96
             );
             const SIGNATURE: &'static str = "OperatorStakeUpdate(bytes32,uint8,uint96)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                47u8,
-                82u8,
-                125u8,
-                82u8,
-                126u8,
-                149u8,
-                216u8,
-                254u8,
-                64u8,
-                174u8,
-                197u8,
-                83u8,
-                119u8,
-                116u8,
-                59u8,
-                183u8,
-                121u8,
-                8u8,
-                125u8,
-                163u8,
-                246u8,
-                208u8,
-                208u8,
-                143u8,
-                18u8,
-                227u8,
-                100u8,
-                68u8,
-                218u8,
-                98u8,
-                50u8,
-                125u8,
+                47u8, 82u8, 125u8, 82u8, 126u8, 149u8, 216u8, 254u8, 64u8, 174u8, 197u8,
+                83u8, 119u8, 116u8, 59u8, 183u8, 121u8, 8u8, 125u8, 163u8, 246u8, 208u8,
+                208u8, 143u8, 18u8, 227u8, 100u8, 68u8, 218u8, 98u8, 50u8, 125u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -3249,6 +3180,7 @@ event OperatorStakeUpdate(bytes32 indexed operatorId, uint8 quorumNumber, uint96
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `QuorumCreated(uint8)` and selector `0x831a9c86c45bb303caf3f064be2bc2b9fd4ecf19e47c4ac02a61e75dabfe55b4`.
 ```solidity
 event QuorumCreated(uint8 indexed quorumNumber);
@@ -3284,38 +3216,9 @@ event QuorumCreated(uint8 indexed quorumNumber);
             );
             const SIGNATURE: &'static str = "QuorumCreated(uint8)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                131u8,
-                26u8,
-                156u8,
-                134u8,
-                196u8,
-                91u8,
-                179u8,
-                3u8,
-                202u8,
-                243u8,
-                240u8,
-                100u8,
-                190u8,
-                43u8,
-                194u8,
-                185u8,
-                253u8,
-                78u8,
-                207u8,
-                25u8,
-                228u8,
-                124u8,
-                74u8,
-                192u8,
-                42u8,
-                97u8,
-                231u8,
-                93u8,
-                171u8,
-                254u8,
-                85u8,
-                180u8,
+                131u8, 26u8, 156u8, 134u8, 196u8, 91u8, 179u8, 3u8, 202u8, 243u8, 240u8,
+                100u8, 190u8, 43u8, 194u8, 185u8, 253u8, 78u8, 207u8, 25u8, 228u8, 124u8,
+                74u8, 192u8, 42u8, 97u8, 231u8, 93u8, 171u8, 254u8, 85u8, 180u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -3383,6 +3286,7 @@ event QuorumCreated(uint8 indexed quorumNumber);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `StakeTypeSet(uint8)` and selector `0x7c112e863ccf007862e2c9e25819c933fedbc9350a6443423b4a8599c2e8a52d`.
 ```solidity
 event StakeTypeSet(IStakeRegistryTypes.StakeType newStakeType);
@@ -3415,38 +3319,9 @@ event StakeTypeSet(IStakeRegistryTypes.StakeType newStakeType);
             type TopicList = (alloy_sol_types::sol_data::FixedBytes<32>,);
             const SIGNATURE: &'static str = "StakeTypeSet(uint8)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                124u8,
-                17u8,
-                46u8,
-                134u8,
-                60u8,
-                207u8,
-                0u8,
-                120u8,
-                98u8,
-                226u8,
-                201u8,
-                226u8,
-                88u8,
-                25u8,
-                201u8,
-                51u8,
-                254u8,
-                219u8,
-                201u8,
-                53u8,
-                10u8,
-                100u8,
-                67u8,
-                66u8,
-                59u8,
-                74u8,
-                133u8,
-                153u8,
-                194u8,
-                232u8,
-                165u8,
-                45u8,
+                124u8, 17u8, 46u8, 134u8, 60u8, 207u8, 0u8, 120u8, 98u8, 226u8, 201u8,
+                226u8, 88u8, 25u8, 201u8, 51u8, 254u8, 219u8, 201u8, 53u8, 10u8, 100u8,
+                67u8, 66u8, 59u8, 74u8, 133u8, 153u8, 194u8, 232u8, 165u8, 45u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -3515,6 +3390,7 @@ event StakeTypeSet(IStakeRegistryTypes.StakeType newStakeType);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `StrategyAddedToQuorum(uint8,address)` and selector `0x10565e56cacbf32eca267945f054fec02e59750032d113d3302182ad967f5404`.
 ```solidity
 event StrategyAddedToQuorum(uint8 indexed quorumNumber, address strategy);
@@ -3552,38 +3428,9 @@ event StrategyAddedToQuorum(uint8 indexed quorumNumber, address strategy);
             );
             const SIGNATURE: &'static str = "StrategyAddedToQuorum(uint8,address)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                16u8,
-                86u8,
-                94u8,
-                86u8,
-                202u8,
-                203u8,
-                243u8,
-                46u8,
-                202u8,
-                38u8,
-                121u8,
-                69u8,
-                240u8,
-                84u8,
-                254u8,
-                192u8,
-                46u8,
-                89u8,
-                117u8,
-                0u8,
-                50u8,
-                209u8,
-                19u8,
-                211u8,
-                48u8,
-                33u8,
-                130u8,
-                173u8,
-                150u8,
-                127u8,
-                84u8,
-                4u8,
+                16u8, 86u8, 94u8, 86u8, 202u8, 203u8, 243u8, 46u8, 202u8, 38u8, 121u8,
+                69u8, 240u8, 84u8, 254u8, 192u8, 46u8, 89u8, 117u8, 0u8, 50u8, 209u8,
+                19u8, 211u8, 48u8, 33u8, 130u8, 173u8, 150u8, 127u8, 84u8, 4u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -3658,6 +3505,7 @@ event StrategyAddedToQuorum(uint8 indexed quorumNumber, address strategy);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `StrategyMultiplierUpdated(uint8,address,uint256)` and selector `0x11a5641322da1dff56a4b66eaac31ffa465295ece907cd163437793b4d009a75`.
 ```solidity
 event StrategyMultiplierUpdated(uint8 indexed quorumNumber, address strategy, uint256 multiplier);
@@ -3700,38 +3548,9 @@ event StrategyMultiplierUpdated(uint8 indexed quorumNumber, address strategy, ui
             );
             const SIGNATURE: &'static str = "StrategyMultiplierUpdated(uint8,address,uint256)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                17u8,
-                165u8,
-                100u8,
-                19u8,
-                34u8,
-                218u8,
-                29u8,
-                255u8,
-                86u8,
-                164u8,
-                182u8,
-                110u8,
-                170u8,
-                195u8,
-                31u8,
-                250u8,
-                70u8,
-                82u8,
-                149u8,
-                236u8,
-                233u8,
-                7u8,
-                205u8,
-                22u8,
-                52u8,
-                55u8,
-                121u8,
-                59u8,
-                77u8,
-                0u8,
-                154u8,
-                117u8,
+                17u8, 165u8, 100u8, 19u8, 34u8, 218u8, 29u8, 255u8, 86u8, 164u8, 182u8,
+                110u8, 170u8, 195u8, 31u8, 250u8, 70u8, 82u8, 149u8, 236u8, 233u8, 7u8,
+                205u8, 22u8, 52u8, 55u8, 121u8, 59u8, 77u8, 0u8, 154u8, 117u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -3812,6 +3631,7 @@ event StrategyMultiplierUpdated(uint8 indexed quorumNumber, address strategy, ui
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `StrategyRemovedFromQuorum(uint8,address)` and selector `0x31fa2e2cd280c9375e13ffcf3d81e2378100186e4058f8d3ddb690b82dcd31f7`.
 ```solidity
 event StrategyRemovedFromQuorum(uint8 indexed quorumNumber, address strategy);
@@ -3849,38 +3669,9 @@ event StrategyRemovedFromQuorum(uint8 indexed quorumNumber, address strategy);
             );
             const SIGNATURE: &'static str = "StrategyRemovedFromQuorum(uint8,address)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                49u8,
-                250u8,
-                46u8,
-                44u8,
-                210u8,
-                128u8,
-                201u8,
-                55u8,
-                94u8,
-                19u8,
-                255u8,
-                207u8,
-                61u8,
-                129u8,
-                226u8,
-                55u8,
-                129u8,
-                0u8,
-                24u8,
-                110u8,
-                64u8,
-                88u8,
-                248u8,
-                211u8,
-                221u8,
-                182u8,
-                144u8,
-                184u8,
-                45u8,
-                205u8,
-                49u8,
-                247u8,
+                49u8, 250u8, 46u8, 44u8, 210u8, 128u8, 201u8, 55u8, 94u8, 19u8, 255u8,
+                207u8, 61u8, 129u8, 226u8, 55u8, 129u8, 0u8, 24u8, 110u8, 64u8, 88u8,
+                248u8, 211u8, 221u8, 182u8, 144u8, 184u8, 45u8, 205u8, 49u8, 247u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -4062,6 +3853,7 @@ constructor(address _slashingRegistryCoordinator, address _delegationManager, ad
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `MAX_WEIGHING_FUNCTION_LENGTH()` and selector `0x7c172347`.
 ```solidity
 function MAX_WEIGHING_FUNCTION_LENGTH() external view returns (uint8);
@@ -4069,6 +3861,7 @@ function MAX_WEIGHING_FUNCTION_LENGTH() external view returns (uint8);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct MAX_WEIGHING_FUNCTION_LENGTHCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`MAX_WEIGHING_FUNCTION_LENGTH()`](MAX_WEIGHING_FUNCTION_LENGTHCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -4185,6 +3978,7 @@ function MAX_WEIGHING_FUNCTION_LENGTH() external view returns (uint8);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `WEIGHTING_DIVISOR()` and selector `0x5e5a6775`.
 ```solidity
 function WEIGHTING_DIVISOR() external view returns (uint256);
@@ -4192,6 +3986,7 @@ function WEIGHTING_DIVISOR() external view returns (uint256);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct WEIGHTING_DIVISORCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`WEIGHTING_DIVISOR()`](WEIGHTING_DIVISORCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -4310,6 +4105,7 @@ function WEIGHTING_DIVISOR() external view returns (uint256);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `addStrategies(uint8,(address,uint96)[])` and selector `0xc601527d`.
 ```solidity
 function addStrategies(uint8 quorumNumber, IStakeRegistryTypes.StrategyParams[] memory _strategyParams) external;
@@ -4454,6 +4250,7 @@ function addStrategies(uint8 quorumNumber, IStakeRegistryTypes.StrategyParams[] 
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `allocationManager()` and selector `0xca8aa7c7`.
 ```solidity
 function allocationManager() external view returns (address);
@@ -4461,6 +4258,7 @@ function allocationManager() external view returns (address);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct allocationManagerCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`allocationManager()`](allocationManagerCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -4577,6 +4375,7 @@ function allocationManager() external view returns (address);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `avsDirectory()` and selector `0x6b3aa72e`.
 ```solidity
 function avsDirectory() external view returns (address);
@@ -4584,6 +4383,7 @@ function avsDirectory() external view returns (address);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct avsDirectoryCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`avsDirectory()`](avsDirectoryCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -4696,6 +4496,7 @@ function avsDirectory() external view returns (address);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `delegation()` and selector `0xdf5cf723`.
 ```solidity
 function delegation() external view returns (address);
@@ -4703,6 +4504,7 @@ function delegation() external view returns (address);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct delegationCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`delegation()`](delegationCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -4815,6 +4617,7 @@ function delegation() external view returns (address);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `deregisterOperator(bytes32,bytes)` and selector `0xbd29b8cd`.
 ```solidity
 function deregisterOperator(bytes32 operatorId, bytes memory quorumNumbers) external;
@@ -4959,6 +4762,7 @@ function deregisterOperator(bytes32 operatorId, bytes memory quorumNumbers) exte
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getCurrentStake(bytes32,uint8)` and selector `0x5401ed27`.
 ```solidity
 function getCurrentStake(bytes32 operatorId, uint8 quorumNumber) external view returns (uint96);
@@ -4971,6 +4775,7 @@ function getCurrentStake(bytes32 operatorId, uint8 quorumNumber) external view r
         #[allow(missing_docs)]
         pub quorumNumber: u8,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getCurrentStake(bytes32,uint8)`](getCurrentStakeCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -5106,6 +4911,7 @@ function getCurrentStake(bytes32 operatorId, uint8 quorumNumber) external view r
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getCurrentTotalStake(uint8)` and selector `0xd5eccc05`.
 ```solidity
 function getCurrentTotalStake(uint8 quorumNumber) external view returns (uint96);
@@ -5116,6 +4922,7 @@ function getCurrentTotalStake(uint8 quorumNumber) external view returns (uint96)
         #[allow(missing_docs)]
         pub quorumNumber: u8,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getCurrentTotalStake(uint8)`](getCurrentTotalStakeCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -5238,6 +5045,7 @@ function getCurrentTotalStake(uint8 quorumNumber) external view returns (uint96)
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getLatestStakeUpdate(bytes32,uint8)` and selector `0xf851e198`.
 ```solidity
 function getLatestStakeUpdate(bytes32 operatorId, uint8 quorumNumber) external view returns (IStakeRegistryTypes.StakeUpdate memory);
@@ -5250,6 +5058,7 @@ function getLatestStakeUpdate(bytes32 operatorId, uint8 quorumNumber) external v
         #[allow(missing_docs)]
         pub quorumNumber: u8,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getLatestStakeUpdate(bytes32,uint8)`](getLatestStakeUpdateCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -5387,6 +5196,7 @@ function getLatestStakeUpdate(bytes32 operatorId, uint8 quorumNumber) external v
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getStakeAtBlockNumber(bytes32,uint8,uint32)` and selector `0xfa28c627`.
 ```solidity
 function getStakeAtBlockNumber(bytes32 operatorId, uint8 quorumNumber, uint32 blockNumber) external view returns (uint96);
@@ -5401,6 +5211,7 @@ function getStakeAtBlockNumber(bytes32 operatorId, uint8 quorumNumber, uint32 bl
         #[allow(missing_docs)]
         pub blockNumber: u32,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getStakeAtBlockNumber(bytes32,uint8,uint32)`](getStakeAtBlockNumberCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -5545,6 +5356,7 @@ function getStakeAtBlockNumber(bytes32 operatorId, uint8 quorumNumber, uint32 bl
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getStakeAtBlockNumberAndIndex(uint8,uint32,bytes32,uint256)` and selector `0xf2be94ae`.
 ```solidity
 function getStakeAtBlockNumberAndIndex(uint8 quorumNumber, uint32 blockNumber, bytes32 operatorId, uint256 index) external view returns (uint96);
@@ -5561,6 +5373,7 @@ function getStakeAtBlockNumberAndIndex(uint8 quorumNumber, uint32 blockNumber, b
         #[allow(missing_docs)]
         pub index: alloy::sol_types::private::primitives::aliases::U256,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getStakeAtBlockNumberAndIndex(uint8,uint32,bytes32,uint256)`](getStakeAtBlockNumberAndIndexCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -5717,6 +5530,7 @@ function getStakeAtBlockNumberAndIndex(uint8 quorumNumber, uint32 blockNumber, b
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getStakeHistory(bytes32,uint8)` and selector `0x2cd95940`.
 ```solidity
 function getStakeHistory(bytes32 operatorId, uint8 quorumNumber) external view returns (IStakeRegistryTypes.StakeUpdate[] memory);
@@ -5729,6 +5543,7 @@ function getStakeHistory(bytes32 operatorId, uint8 quorumNumber) external view r
         #[allow(missing_docs)]
         pub quorumNumber: u8,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getStakeHistory(bytes32,uint8)`](getStakeHistoryCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -5872,6 +5687,7 @@ function getStakeHistory(bytes32 operatorId, uint8 quorumNumber) external view r
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getStakeHistoryLength(bytes32,uint8)` and selector `0x4bd26e09`.
 ```solidity
 function getStakeHistoryLength(bytes32 operatorId, uint8 quorumNumber) external view returns (uint256);
@@ -5884,6 +5700,7 @@ function getStakeHistoryLength(bytes32 operatorId, uint8 quorumNumber) external 
         #[allow(missing_docs)]
         pub quorumNumber: u8,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getStakeHistoryLength(bytes32,uint8)`](getStakeHistoryLengthCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -6021,6 +5838,7 @@ function getStakeHistoryLength(bytes32 operatorId, uint8 quorumNumber) external 
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getStakeUpdateAtIndex(uint8,bytes32,uint256)` and selector `0xac6bfb03`.
 ```solidity
 function getStakeUpdateAtIndex(uint8 quorumNumber, bytes32 operatorId, uint256 index) external view returns (IStakeRegistryTypes.StakeUpdate memory);
@@ -6035,6 +5853,7 @@ function getStakeUpdateAtIndex(uint8 quorumNumber, bytes32 operatorId, uint256 i
         #[allow(missing_docs)]
         pub index: alloy::sol_types::private::primitives::aliases::U256,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getStakeUpdateAtIndex(uint8,bytes32,uint256)`](getStakeUpdateAtIndexCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -6179,6 +5998,7 @@ function getStakeUpdateAtIndex(uint8 quorumNumber, bytes32 operatorId, uint256 i
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getStakeUpdateIndexAtBlockNumber(bytes32,uint8,uint32)` and selector `0xdd9846b9`.
 ```solidity
 function getStakeUpdateIndexAtBlockNumber(bytes32 operatorId, uint8 quorumNumber, uint32 blockNumber) external view returns (uint32);
@@ -6193,6 +6013,7 @@ function getStakeUpdateIndexAtBlockNumber(bytes32 operatorId, uint8 quorumNumber
         #[allow(missing_docs)]
         pub blockNumber: u32,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getStakeUpdateIndexAtBlockNumber(bytes32,uint8,uint32)`](getStakeUpdateIndexAtBlockNumberCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -6335,6 +6156,7 @@ function getStakeUpdateIndexAtBlockNumber(bytes32 operatorId, uint8 quorumNumber
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getTotalStakeAtBlockNumberFromIndex(uint8,uint32,uint256)` and selector `0xc8294c56`.
 ```solidity
 function getTotalStakeAtBlockNumberFromIndex(uint8 quorumNumber, uint32 blockNumber, uint256 index) external view returns (uint96);
@@ -6349,6 +6171,7 @@ function getTotalStakeAtBlockNumberFromIndex(uint8 quorumNumber, uint32 blockNum
         #[allow(missing_docs)]
         pub index: alloy::sol_types::private::primitives::aliases::U256,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getTotalStakeAtBlockNumberFromIndex(uint8,uint32,uint256)`](getTotalStakeAtBlockNumberFromIndexCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -6493,6 +6316,7 @@ function getTotalStakeAtBlockNumberFromIndex(uint8 quorumNumber, uint32 blockNum
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getTotalStakeHistoryLength(uint8)` and selector `0x0491b41c`.
 ```solidity
 function getTotalStakeHistoryLength(uint8 quorumNumber) external view returns (uint256);
@@ -6503,6 +6327,7 @@ function getTotalStakeHistoryLength(uint8 quorumNumber) external view returns (u
         #[allow(missing_docs)]
         pub quorumNumber: u8,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getTotalStakeHistoryLength(uint8)`](getTotalStakeHistoryLengthCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -6625,6 +6450,7 @@ function getTotalStakeHistoryLength(uint8 quorumNumber) external view returns (u
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getTotalStakeIndicesAtBlockNumber(uint32,bytes)` and selector `0x81c07502`.
 ```solidity
 function getTotalStakeIndicesAtBlockNumber(uint32 blockNumber, bytes memory quorumNumbers) external view returns (uint32[] memory);
@@ -6637,6 +6463,7 @@ function getTotalStakeIndicesAtBlockNumber(uint32 blockNumber, bytes memory quor
         #[allow(missing_docs)]
         pub quorumNumbers: alloy::sol_types::private::Bytes,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getTotalStakeIndicesAtBlockNumber(uint32,bytes)`](getTotalStakeIndicesAtBlockNumberCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -6773,6 +6600,7 @@ function getTotalStakeIndicesAtBlockNumber(uint32 blockNumber, bytes memory quor
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getTotalStakeUpdateAtIndex(uint8,uint256)` and selector `0xb6904b78`.
 ```solidity
 function getTotalStakeUpdateAtIndex(uint8 quorumNumber, uint256 index) external view returns (IStakeRegistryTypes.StakeUpdate memory);
@@ -6785,6 +6613,7 @@ function getTotalStakeUpdateAtIndex(uint8 quorumNumber, uint256 index) external 
         #[allow(missing_docs)]
         pub index: alloy::sol_types::private::primitives::aliases::U256,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getTotalStakeUpdateAtIndex(uint8,uint256)`](getTotalStakeUpdateAtIndexCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -6922,6 +6751,7 @@ function getTotalStakeUpdateAtIndex(uint8 quorumNumber, uint256 index) external 
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `initializeDelegatedStakeQuorum(uint8,uint96,(address,uint96)[])` and selector `0x75d4173a`.
 ```solidity
 function initializeDelegatedStakeQuorum(uint8 quorumNumber, uint96 minimumStake, IStakeRegistryTypes.StrategyParams[] memory _strategyParams) external;
@@ -7079,6 +6909,7 @@ function initializeDelegatedStakeQuorum(uint8 quorumNumber, uint96 minimumStake,
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `initializeSlashableStakeQuorum(uint8,uint96,uint32,(address,uint96)[])` and selector `0xcc5a7c20`.
 ```solidity
 function initializeSlashableStakeQuorum(uint8 quorumNumber, uint96 minimumStake, uint32 lookAheadPeriod, IStakeRegistryTypes.StrategyParams[] memory _strategyParams) external;
@@ -7250,6 +7081,7 @@ function initializeSlashableStakeQuorum(uint8 quorumNumber, uint96 minimumStake,
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `minimumStakeForQuorum(uint8)` and selector `0xc46778a5`.
 ```solidity
 function minimumStakeForQuorum(uint8) external view returns (uint96);
@@ -7260,6 +7092,7 @@ function minimumStakeForQuorum(uint8) external view returns (uint96);
         #[allow(missing_docs)]
         pub _0: u8,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`minimumStakeForQuorum(uint8)`](minimumStakeForQuorumCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -7382,6 +7215,7 @@ function minimumStakeForQuorum(uint8) external view returns (uint96);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `modifyStrategyParams(uint8,uint256[],uint96[])` and selector `0x20b66298`.
 ```solidity
 function modifyStrategyParams(uint8 quorumNumber, uint256[] memory strategyIndices, uint96[] memory newMultipliers) external;
@@ -7543,6 +7377,7 @@ function modifyStrategyParams(uint8 quorumNumber, uint256[] memory strategyIndic
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `registerOperator(address,bytes32,bytes)` and selector `0x25504777`.
 ```solidity
 function registerOperator(address operator, bytes32 operatorId, bytes memory quorumNumbers) external returns (uint96[] memory, uint96[] memory);
@@ -7557,6 +7392,7 @@ function registerOperator(address operator, bytes32 operatorId, bytes memory quo
         #[allow(missing_docs)]
         pub quorumNumbers: alloy::sol_types::private::Bytes,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`registerOperator(address,bytes32,bytes)`](registerOperatorCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -7718,6 +7554,7 @@ function registerOperator(address operator, bytes32 operatorId, bytes memory quo
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `registryCoordinator()` and selector `0x6d14a987`.
 ```solidity
 function registryCoordinator() external view returns (address);
@@ -7725,6 +7562,7 @@ function registryCoordinator() external view returns (address);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct registryCoordinatorCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`registryCoordinator()`](registryCoordinatorCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -7841,6 +7679,7 @@ function registryCoordinator() external view returns (address);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `removeStrategies(uint8,uint256[])` and selector `0x5f1f2d77`.
 ```solidity
 function removeStrategies(uint8 quorumNumber, uint256[] memory indicesToRemove) external;
@@ -7989,6 +7828,7 @@ function removeStrategies(uint8 quorumNumber, uint256[] memory indicesToRemove) 
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `setMinimumStakeForQuorum(uint8,uint96)` and selector `0xbc9a40c3`.
 ```solidity
 function setMinimumStakeForQuorum(uint8 quorumNumber, uint96 minimumStake) external;
@@ -8133,6 +7973,7 @@ function setMinimumStakeForQuorum(uint8 quorumNumber, uint96 minimumStake) exter
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `setSlashableStakeLookahead(uint8,uint32)` and selector `0xe086adb3`.
 ```solidity
 function setSlashableStakeLookahead(uint8 quorumNumber, uint32 _lookAheadBlocks) external;
@@ -8274,6 +8115,7 @@ function setSlashableStakeLookahead(uint8 quorumNumber, uint32 _lookAheadBlocks)
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `slashableStakeLookAheadPerQuorum(uint8)` and selector `0x9ab4d6ff`.
 ```solidity
 function slashableStakeLookAheadPerQuorum(uint8 quorumNumber) external view returns (uint32);
@@ -8284,6 +8126,7 @@ function slashableStakeLookAheadPerQuorum(uint8 quorumNumber) external view retu
         #[allow(missing_docs)]
         pub quorumNumber: u8,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`slashableStakeLookAheadPerQuorum(uint8)`](slashableStakeLookAheadPerQuorumCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -8404,6 +8247,7 @@ function slashableStakeLookAheadPerQuorum(uint8 quorumNumber) external view retu
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `stakeTypePerQuorum(uint8)` and selector `0x697fbd93`.
 ```solidity
 function stakeTypePerQuorum(uint8 quorumNumber) external view returns (IStakeRegistryTypes.StakeType);
@@ -8414,6 +8258,7 @@ function stakeTypePerQuorum(uint8 quorumNumber) external view returns (IStakeReg
         #[allow(missing_docs)]
         pub quorumNumber: u8,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`stakeTypePerQuorum(uint8)`](stakeTypePerQuorumCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -8536,6 +8381,7 @@ function stakeTypePerQuorum(uint8 quorumNumber) external view returns (IStakeReg
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `strategiesPerQuorum(uint8,uint256)` and selector `0x9f3ccf65`.
 ```solidity
 function strategiesPerQuorum(uint8 quorumNumber, uint256) external view returns (address);
@@ -8548,6 +8394,7 @@ function strategiesPerQuorum(uint8 quorumNumber, uint256) external view returns 
         #[allow(missing_docs)]
         pub _1: alloy::sol_types::private::primitives::aliases::U256,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`strategiesPerQuorum(uint8,uint256)`](strategiesPerQuorumCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -8683,6 +8530,7 @@ function strategiesPerQuorum(uint8 quorumNumber, uint256) external view returns 
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `strategyParams(uint8,uint256)` and selector `0x08732461`.
 ```solidity
 function strategyParams(uint8 quorumNumber, uint256) external view returns (address strategy, uint96 multiplier);
@@ -8695,6 +8543,7 @@ function strategyParams(uint8 quorumNumber, uint256) external view returns (addr
         #[allow(missing_docs)]
         pub _1: alloy::sol_types::private::primitives::aliases::U256,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`strategyParams(uint8,uint256)`](strategyParamsCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -8842,6 +8691,7 @@ function strategyParams(uint8 quorumNumber, uint256) external view returns (addr
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `strategyParamsByIndex(uint8,uint256)` and selector `0xadc804da`.
 ```solidity
 function strategyParamsByIndex(uint8 quorumNumber, uint256 index) external view returns (IStakeRegistryTypes.StrategyParams memory);
@@ -8854,6 +8704,7 @@ function strategyParamsByIndex(uint8 quorumNumber, uint256 index) external view 
         #[allow(missing_docs)]
         pub index: alloy::sol_types::private::primitives::aliases::U256,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`strategyParamsByIndex(uint8,uint256)`](strategyParamsByIndexCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -8991,6 +8842,7 @@ function strategyParamsByIndex(uint8 quorumNumber, uint256 index) external view 
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `strategyParamsLength(uint8)` and selector `0x3ca5a5f5`.
 ```solidity
 function strategyParamsLength(uint8 quorumNumber) external view returns (uint256);
@@ -9001,6 +8853,7 @@ function strategyParamsLength(uint8 quorumNumber) external view returns (uint256
         #[allow(missing_docs)]
         pub quorumNumber: u8,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`strategyParamsLength(uint8)`](strategyParamsLengthCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -9123,6 +8976,7 @@ function strategyParamsLength(uint8 quorumNumber) external view returns (uint256
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `updateOperatorsStake(address[],bytes32[],uint8)` and selector `0x6c3fb4bf`.
 ```solidity
 function updateOperatorsStake(address[] memory operators, bytes32[] memory operatorIds, uint8 quorumNumber) external returns (bool[] memory);
@@ -9141,6 +8995,7 @@ function updateOperatorsStake(address[] memory operators, bytes32[] memory opera
         #[allow(missing_docs)]
         pub quorumNumber: u8,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`updateOperatorsStake(address[],bytes32[],uint8)`](updateOperatorsStakeCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -9293,6 +9148,7 @@ function updateOperatorsStake(address[] memory operators, bytes32[] memory opera
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `weightOfOperatorForQuorum(uint8,address)` and selector `0x1f9b74e0`.
 ```solidity
 function weightOfOperatorForQuorum(uint8 quorumNumber, address operator) external view returns (uint96);
@@ -9305,6 +9161,7 @@ function weightOfOperatorForQuorum(uint8 quorumNumber, address operator) externa
         #[allow(missing_docs)]
         pub operator: alloy::sol_types::private::Address,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`weightOfOperatorForQuorum(uint8,address)`](weightOfOperatorForQuorumCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -9440,6 +9297,7 @@ function weightOfOperatorForQuorum(uint8 quorumNumber, address operator) externa
         }
     };
     ///Container for all the [`StakeRegistry`](self) function calls.
+    #[derive()]
     pub enum StakeRegistryCalls {
         #[allow(missing_docs)]
         MAX_WEIGHING_FUNCTION_LENGTH(MAX_WEIGHING_FUNCTION_LENGTHCall),
@@ -10613,6 +10471,7 @@ function weightOfOperatorForQuorum(uint8 quorumNumber, address operator) externa
         }
     }
     ///Container for all the [`StakeRegistry`](self) custom errors.
+    #[derive(Debug, PartialEq, Eq, Hash)]
     pub enum StakeRegistryErrors {
         #[allow(missing_docs)]
         BelowMinimumStakeRequirement(BelowMinimumStakeRequirement),
@@ -11040,6 +10899,7 @@ function weightOfOperatorForQuorum(uint8 quorumNumber, address operator) externa
         }
     }
     ///Container for all the [`StakeRegistry`](self) events.
+    #[derive(Debug, PartialEq, Eq, Hash)]
     pub enum StakeRegistryEvents {
         #[allow(missing_docs)]
         LookAheadPeriodChanged(LookAheadPeriodChanged),
@@ -11068,276 +10928,44 @@ function weightOfOperatorForQuorum(uint8 quorumNumber, address operator) externa
         /// Prefer using `SolInterface` methods instead.
         pub const SELECTORS: &'static [[u8; 32usize]] = &[
             [
-                16u8,
-                86u8,
-                94u8,
-                86u8,
-                202u8,
-                203u8,
-                243u8,
-                46u8,
-                202u8,
-                38u8,
-                121u8,
-                69u8,
-                240u8,
-                84u8,
-                254u8,
-                192u8,
-                46u8,
-                89u8,
-                117u8,
-                0u8,
-                50u8,
-                209u8,
-                19u8,
-                211u8,
-                48u8,
-                33u8,
-                130u8,
-                173u8,
-                150u8,
-                127u8,
-                84u8,
-                4u8,
+                16u8, 86u8, 94u8, 86u8, 202u8, 203u8, 243u8, 46u8, 202u8, 38u8, 121u8,
+                69u8, 240u8, 84u8, 254u8, 192u8, 46u8, 89u8, 117u8, 0u8, 50u8, 209u8,
+                19u8, 211u8, 48u8, 33u8, 130u8, 173u8, 150u8, 127u8, 84u8, 4u8,
             ],
             [
-                17u8,
-                165u8,
-                100u8,
-                19u8,
-                34u8,
-                218u8,
-                29u8,
-                255u8,
-                86u8,
-                164u8,
-                182u8,
-                110u8,
-                170u8,
-                195u8,
-                31u8,
-                250u8,
-                70u8,
-                82u8,
-                149u8,
-                236u8,
-                233u8,
-                7u8,
-                205u8,
-                22u8,
-                52u8,
-                55u8,
-                121u8,
-                59u8,
-                77u8,
-                0u8,
-                154u8,
-                117u8,
+                17u8, 165u8, 100u8, 19u8, 34u8, 218u8, 29u8, 255u8, 86u8, 164u8, 182u8,
+                110u8, 170u8, 195u8, 31u8, 250u8, 70u8, 82u8, 149u8, 236u8, 233u8, 7u8,
+                205u8, 22u8, 52u8, 55u8, 121u8, 59u8, 77u8, 0u8, 154u8, 117u8,
             ],
             [
-                38u8,
-                238u8,
-                207u8,
-                242u8,
-                183u8,
-                11u8,
-                10u8,
-                113u8,
-                16u8,
-                79u8,
-                244u8,
-                217u8,
-                64u8,
-                186u8,
-                113u8,
-                98u8,
-                210u8,
-                58u8,
-                149u8,
-                194u8,
-                72u8,
-                119u8,
-                31u8,
-                196u8,
-                135u8,
-                167u8,
-                190u8,
-                23u8,
-                165u8,
-                150u8,
-                179u8,
-                207u8,
+                38u8, 238u8, 207u8, 242u8, 183u8, 11u8, 10u8, 113u8, 16u8, 79u8, 244u8,
+                217u8, 64u8, 186u8, 113u8, 98u8, 210u8, 58u8, 149u8, 194u8, 72u8, 119u8,
+                31u8, 196u8, 135u8, 167u8, 190u8, 23u8, 165u8, 150u8, 179u8, 207u8,
             ],
             [
-                40u8,
-                215u8,
-                53u8,
-                139u8,
-                121u8,
-                240u8,
-                45u8,
-                33u8,
-                184u8,
-                183u8,
-                225u8,
-                122u8,
-                239u8,
-                196u8,
-                24u8,
-                90u8,
-                100u8,
-                48u8,
-                138u8,
-                163u8,
-                116u8,
-                6u8,
-                250u8,
-                91u8,
-                239u8,
-                192u8,
-                91u8,
-                145u8,
-                147u8,
-                44u8,
-                57u8,
-                199u8,
+                40u8, 215u8, 53u8, 139u8, 121u8, 240u8, 45u8, 33u8, 184u8, 183u8, 225u8,
+                122u8, 239u8, 196u8, 24u8, 90u8, 100u8, 48u8, 138u8, 163u8, 116u8, 6u8,
+                250u8, 91u8, 239u8, 192u8, 91u8, 145u8, 147u8, 44u8, 57u8, 199u8,
             ],
             [
-                47u8,
-                82u8,
-                125u8,
-                82u8,
-                126u8,
-                149u8,
-                216u8,
-                254u8,
-                64u8,
-                174u8,
-                197u8,
-                83u8,
-                119u8,
-                116u8,
-                59u8,
-                183u8,
-                121u8,
-                8u8,
-                125u8,
-                163u8,
-                246u8,
-                208u8,
-                208u8,
-                143u8,
-                18u8,
-                227u8,
-                100u8,
-                68u8,
-                218u8,
-                98u8,
-                50u8,
-                125u8,
+                47u8, 82u8, 125u8, 82u8, 126u8, 149u8, 216u8, 254u8, 64u8, 174u8, 197u8,
+                83u8, 119u8, 116u8, 59u8, 183u8, 121u8, 8u8, 125u8, 163u8, 246u8, 208u8,
+                208u8, 143u8, 18u8, 227u8, 100u8, 68u8, 218u8, 98u8, 50u8, 125u8,
             ],
             [
-                49u8,
-                250u8,
-                46u8,
-                44u8,
-                210u8,
-                128u8,
-                201u8,
-                55u8,
-                94u8,
-                19u8,
-                255u8,
-                207u8,
-                61u8,
-                129u8,
-                226u8,
-                55u8,
-                129u8,
-                0u8,
-                24u8,
-                110u8,
-                64u8,
-                88u8,
-                248u8,
-                211u8,
-                221u8,
-                182u8,
-                144u8,
-                184u8,
-                45u8,
-                205u8,
-                49u8,
-                247u8,
+                49u8, 250u8, 46u8, 44u8, 210u8, 128u8, 201u8, 55u8, 94u8, 19u8, 255u8,
+                207u8, 61u8, 129u8, 226u8, 55u8, 129u8, 0u8, 24u8, 110u8, 64u8, 88u8,
+                248u8, 211u8, 221u8, 182u8, 144u8, 184u8, 45u8, 205u8, 49u8, 247u8,
             ],
             [
-                124u8,
-                17u8,
-                46u8,
-                134u8,
-                60u8,
-                207u8,
-                0u8,
-                120u8,
-                98u8,
-                226u8,
-                201u8,
-                226u8,
-                88u8,
-                25u8,
-                201u8,
-                51u8,
-                254u8,
-                219u8,
-                201u8,
-                53u8,
-                10u8,
-                100u8,
-                67u8,
-                66u8,
-                59u8,
-                74u8,
-                133u8,
-                153u8,
-                194u8,
-                232u8,
-                165u8,
-                45u8,
+                124u8, 17u8, 46u8, 134u8, 60u8, 207u8, 0u8, 120u8, 98u8, 226u8, 201u8,
+                226u8, 88u8, 25u8, 201u8, 51u8, 254u8, 219u8, 201u8, 53u8, 10u8, 100u8,
+                67u8, 66u8, 59u8, 74u8, 133u8, 153u8, 194u8, 232u8, 165u8, 45u8,
             ],
             [
-                131u8,
-                26u8,
-                156u8,
-                134u8,
-                196u8,
-                91u8,
-                179u8,
-                3u8,
-                202u8,
-                243u8,
-                240u8,
-                100u8,
-                190u8,
-                43u8,
-                194u8,
-                185u8,
-                253u8,
-                78u8,
-                207u8,
-                25u8,
-                228u8,
-                124u8,
-                74u8,
-                192u8,
-                42u8,
-                97u8,
-                231u8,
-                93u8,
-                171u8,
-                254u8,
-                85u8,
-                180u8,
+                131u8, 26u8, 156u8, 134u8, 196u8, 91u8, 179u8, 3u8, 202u8, 243u8, 240u8,
+                100u8, 190u8, 43u8, 194u8, 185u8, 253u8, 78u8, 207u8, 25u8, 228u8, 124u8,
+                74u8, 192u8, 42u8, 97u8, 231u8, 93u8, 171u8, 254u8, 85u8, 180u8,
             ],
         ];
     }

@@ -137,6 +137,7 @@ pub mod SocketRegistry {
     pub static DEPLOYED_BYTECODE: alloy_sol_types::private::Bytes = alloy_sol_types::private::Bytes::from_static(
         b"`\x80`@R4\x80\x15a\0\x0FW__\xFD[P`\x046\x10a\0JW_5`\xE0\x1C\x80c\x10\xBE\xA0\xD7\x14a\0NW\x80c\xAFe\xFD\xFC\x14a\0wW\x80c\xCF\x1DkB\x14a\0\x8AW\x80c\xF0C6~\x14a\0\xC9W[__\xFD[a\0aa\0\\6`\x04a\x02yV[a\0\xDEV[`@Qa\0n\x91\x90a\x02\x90V[`@Q\x80\x91\x03\x90\xF3[a\0aa\0\x856`\x04a\x02yV[a\x01}V[a\0\xB1\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x81V[`@Q`\x01`\x01`\xA0\x1B\x03\x90\x91\x16\x81R` \x01a\0nV[a\0\xDCa\0\xD76`\x04a\x02\xEFV[a\x02\x14V[\0[_\x81\x81R` \x81\x90R`@\x90 \x80T``\x91\x90a\0\xFA\x90a\x03\xACV[\x80`\x1F\x01` \x80\x91\x04\x02` \x01`@Q\x90\x81\x01`@R\x80\x92\x91\x90\x81\x81R` \x01\x82\x80Ta\x01&\x90a\x03\xACV[\x80\x15a\x01qW\x80`\x1F\x10a\x01HWa\x01\0\x80\x83T\x04\x02\x83R\x91` \x01\x91a\x01qV[\x82\x01\x91\x90_R` _ \x90[\x81T\x81R\x90`\x01\x01\x90` \x01\x80\x83\x11a\x01TW\x82\x90\x03`\x1F\x16\x82\x01\x91[PPPPP\x90P\x91\x90PV[_` \x81\x90R\x90\x81R`@\x90 \x80Ta\x01\x95\x90a\x03\xACV[\x80`\x1F\x01` \x80\x91\x04\x02` \x01`@Q\x90\x81\x01`@R\x80\x92\x91\x90\x81\x81R` \x01\x82\x80Ta\x01\xC1\x90a\x03\xACV[\x80\x15a\x02\x0CW\x80`\x1F\x10a\x01\xE3Wa\x01\0\x80\x83T\x04\x02\x83R\x91` \x01\x91a\x02\x0CV[\x82\x01\x91\x90_R` _ \x90[\x81T\x81R\x90`\x01\x01\x90` \x01\x80\x83\x11a\x01\xEFW\x82\x90\x03`\x1F\x16\x82\x01\x91[PPPPP\x81V[3`\x01`\x01`\xA0\x1B\x03\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x16\x14a\x02]W`@Qc,\x01\xB2\x05`\xE2\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[_\x82\x81R` \x81\x90R`@\x90 a\x02t\x82\x82a\x04/V[PPPV[_` \x82\x84\x03\x12\x15a\x02\x89W__\xFD[P5\x91\x90PV[` \x81R_\x82Q\x80` \x84\x01R_[\x81\x81\x10\x15a\x02\xBCW` \x81\x86\x01\x81\x01Q`@\x86\x84\x01\x01R\x01a\x02\x9FV[P_`@\x82\x85\x01\x01R`@`\x1F\x19`\x1F\x83\x01\x16\x84\x01\x01\x91PP\x92\x91PPV[cNH{q`\xE0\x1B_R`A`\x04R`$_\xFD[__`@\x83\x85\x03\x12\x15a\x03\0W__\xFD[\x825\x91P` \x83\x015g\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\x81\x11\x15a\x03\x1DW__\xFD[\x83\x01`\x1F\x81\x01\x85\x13a\x03-W__\xFD[\x805g\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\x81\x11\x15a\x03GWa\x03Ga\x02\xDBV[`@Q`\x1F\x82\x01`\x1F\x19\x90\x81\x16`?\x01\x16\x81\x01g\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\x81\x11\x82\x82\x10\x17\x15a\x03vWa\x03va\x02\xDBV[`@R\x81\x81R\x82\x82\x01` \x01\x87\x10\x15a\x03\x8DW__\xFD[\x81` \x84\x01` \x83\x017_` \x83\x83\x01\x01R\x80\x93PPPP\x92P\x92\x90PV[`\x01\x81\x81\x1C\x90\x82\x16\x80a\x03\xC0W`\x7F\x82\x16\x91P[` \x82\x10\x81\x03a\x03\xDEWcNH{q`\xE0\x1B_R`\"`\x04R`$_\xFD[P\x91\x90PV[`\x1F\x82\x11\x15a\x02tW\x80_R` _ `\x1F\x84\x01`\x05\x1C\x81\x01` \x85\x10\x15a\x04\tWP\x80[`\x1F\x84\x01`\x05\x1C\x82\x01\x91P[\x81\x81\x10\x15a\x04(W_\x81U`\x01\x01a\x04\x15V[PPPPPV[\x81Qg\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\x81\x11\x15a\x04IWa\x04Ia\x02\xDBV[a\x04]\x81a\x04W\x84Ta\x03\xACV[\x84a\x03\xE4V[` `\x1F\x82\x11`\x01\x81\x14a\x04\x8FW_\x83\x15a\x04xWP\x84\x82\x01Q[_\x19`\x03\x85\x90\x1B\x1C\x19\x16`\x01\x84\x90\x1B\x17\x84Ua\x04(V[_\x84\x81R` \x81 `\x1F\x19\x85\x16\x91[\x82\x81\x10\x15a\x04\xBEW\x87\x85\x01Q\x82U` \x94\x85\x01\x94`\x01\x90\x92\x01\x91\x01a\x04\x9EV[P\x84\x82\x10\x15a\x04\xDBW\x86\x84\x01Q_\x19`\x03\x87\x90\x1B`\xF8\x16\x1C\x19\x16\x81U[PPPP`\x01\x90\x81\x1B\x01\x90UPV\xFE\xA2dipfsX\"\x12 \x05%\t\xEC\x16H\xDC\x0E\x94\x8D2\xF8a\xF5\x8BT\xBD@\x96\xA6Z-j\x18\x98\xDE#T\xE5\x0B\x89\xFFdsolcC\0\x08\x1B\x003",
     );
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `OnlySlashingRegistryCoordinator()` and selector `0xb006c814`.
 ```solidity
 error OnlySlashingRegistryCoordinator();
@@ -270,6 +271,7 @@ constructor(address _slashingRegistryCoordinator);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getOperatorSocket(bytes32)` and selector `0x10bea0d7`.
 ```solidity
 function getOperatorSocket(bytes32 _operatorId) external view returns (string memory);
@@ -280,6 +282,7 @@ function getOperatorSocket(bytes32 _operatorId) external view returns (string me
         #[allow(missing_docs)]
         pub _operatorId: alloy::sol_types::private::FixedBytes<32>,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getOperatorSocket(bytes32)`](getOperatorSocketCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -400,6 +403,7 @@ function getOperatorSocket(bytes32 _operatorId) external view returns (string me
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `operatorIdToSocket(bytes32)` and selector `0xaf65fdfc`.
 ```solidity
 function operatorIdToSocket(bytes32) external view returns (string memory);
@@ -410,6 +414,7 @@ function operatorIdToSocket(bytes32) external view returns (string memory);
         #[allow(missing_docs)]
         pub _0: alloy::sol_types::private::FixedBytes<32>,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`operatorIdToSocket(bytes32)`](operatorIdToSocketCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -530,6 +535,7 @@ function operatorIdToSocket(bytes32) external view returns (string memory);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `setOperatorSocket(bytes32,string)` and selector `0xf043367e`.
 ```solidity
 function setOperatorSocket(bytes32 _operatorId, string memory _socket) external;
@@ -674,6 +680,7 @@ function setOperatorSocket(bytes32 _operatorId, string memory _socket) external;
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `slashingRegistryCoordinator()` and selector `0xcf1d6b42`.
 ```solidity
 function slashingRegistryCoordinator() external view returns (address);
@@ -681,6 +688,7 @@ function slashingRegistryCoordinator() external view returns (address);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct slashingRegistryCoordinatorCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`slashingRegistryCoordinator()`](slashingRegistryCoordinatorCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -798,6 +806,7 @@ function slashingRegistryCoordinator() external view returns (address);
         }
     };
     ///Container for all the [`SocketRegistry`](self) function calls.
+    #[derive()]
     pub enum SocketRegistryCalls {
         #[allow(missing_docs)]
         getOperatorSocket(getOperatorSocketCall),
@@ -983,6 +992,7 @@ function slashingRegistryCoordinator() external view returns (address);
         }
     }
     ///Container for all the [`SocketRegistry`](self) custom errors.
+    #[derive(Debug, PartialEq, Eq, Hash)]
     pub enum SocketRegistryErrors {
         #[allow(missing_docs)]
         OnlySlashingRegistryCoordinator(OnlySlashingRegistryCoordinator),

@@ -58,6 +58,7 @@ pub mod EmptyContract {
     pub static DEPLOYED_BYTECODE: alloy_sol_types::private::Bytes = alloy_sol_types::private::Bytes::from_static(
         b"`\x80`@R4\x80\x15`\x0EW__\xFD[P`\x046\x10`&W_5`\xE0\x1C\x80c\xC2\x98Ux\x14`*W[__\xFD[_`@Q\x90\x81R` \x01`@Q\x80\x91\x03\x90\xF3\xFE\xA2dipfsX\"\x12 I\0\xA5\x94a\x01oE=D\x10No\x06(\xC7\xE6\xB6\xB5\x01\xF9{$o\x86\x90\xFA\xE2\xECA\xD6PdsolcC\0\x08\x1B\x003",
     );
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `foo()` and selector `0xc2985578`.
 ```solidity
 function foo() external pure returns (uint256);
@@ -65,6 +66,7 @@ function foo() external pure returns (uint256);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct fooCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`foo()`](fooCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -180,6 +182,7 @@ function foo() external pure returns (uint256);
         }
     };
     ///Container for all the [`EmptyContract`](self) function calls.
+    #[derive()]
     pub enum EmptyContractCalls {
         #[allow(missing_docs)]
         foo(fooCall),
