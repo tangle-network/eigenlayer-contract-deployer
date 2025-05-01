@@ -147,12 +147,12 @@ fn main() {
                 .unwrap_or_else(|_| panic!("Failed to read {}", file_path));
 
             let new_contents = contents.replace(
-                "#[derive(Clone)]
-    pub struct AllocateParams {",
-                "#[derive(Clone, Hash, Debug, Eq, PartialEq)]\n\tpub struct AllocateParams {",
+                "#[derive(Clone)]\n    pub struct AllocateParams {",
+                "#[derive(Clone, Hash, Debug, Eq, PartialEq)]\n    pub struct AllocateParams {",
             );
 
-            fs::write(path, new_contents).expect(&format!("Failed to write to {}", file_path));
+            fs::write(path, new_contents)
+                .unwrap_or_else(|_| panic!("Failed to write to {}", file_path));
         }
     }
 
