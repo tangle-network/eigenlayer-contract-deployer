@@ -7,7 +7,7 @@ edition = "2024"
 license = "MIT OR Apache-2.0"
 homepage = "https://tangle.tools"
 repository = "https://github.com/tangle-network/eigenlayer-contract-deployer"
-rust-version = "1.85"
+rust-version = "1.86"
 
 [lints.rust]
 rust_2018_idioms = { level = "deny", priority = -1 }
@@ -38,8 +38,8 @@ broken_intra_doc_links = "deny"
 [dependencies]
 color-eyre = { version = "0.6" }
 eigensdk = { version = "0.5.0", features = ["crypto-bls", "utils"] }
-serde = { version = "1.0.127", features = ["derive"] }
-serde_json = { version = "1.0.67", features = ["alloc"] }
+serde = { version = "1.0.208", features = ["derive"] }
+serde_json = { version = "1.0", features = ["alloc"] }
 alloy = { version = "0.12" }
 alloy-sol-types = { version = "0.8", features = ["json"] }
 alloy-json-abi = { version = "0.8", features = ["serde_json"] }
@@ -47,4 +47,4 @@ alloy-rpc-types-eth = {version = "0.12" }
 alloy-contract = { version = "0.12" }
 alloy-provider = { version = "0.12" }
 alloy-primitives = { version = "0.8" }
-tracing = { version = "0.1.41" }
+tracing = { version = "0.1" }

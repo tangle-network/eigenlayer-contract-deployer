@@ -29,7 +29,8 @@ struct AllocateParams { OperatorSet operatorSet; address[] strategies; uint64[] 
 ```*/
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
-    pub struct AllocateParams {
+    #[derive(Debug, PartialEq, Eq, Hash)]
+pub struct AllocateParams {
         #[allow(missing_docs)]
         pub operatorSet: <OperatorSet as alloy::sol_types::SolType>::RustType,
         #[allow(missing_docs)]
@@ -3736,7 +3737,8 @@ struct OperatorSet { address avs; uint32 id; }
 ```*/
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
-    pub struct OperatorSet {
+    #[derive(Debug, PartialEq, Eq, Hash)]
+pub struct OperatorSet {
         #[allow(missing_docs)]
         pub avs: alloy::sol_types::private::Address,
         #[allow(missing_docs)]

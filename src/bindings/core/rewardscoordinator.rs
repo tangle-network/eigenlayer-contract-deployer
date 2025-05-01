@@ -5699,7 +5699,8 @@ struct OperatorSet { address avs; uint32 id; }
 ```*/
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
-    pub struct OperatorSet {
+    #[derive(Debug, PartialEq, Eq, Hash)]
+pub struct OperatorSet {
         #[allow(missing_docs)]
         pub avs: alloy::sol_types::private::Address,
         #[allow(missing_docs)]

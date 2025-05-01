@@ -213,10 +213,29 @@ fn add_imports_to_file(file_path: &str, contract: &str) {
         .unwrap_or_else(|_| panic!("Failed to read {}", file_path));
 
     // Add the imports at the top
-    let new_contents = format!(
-        "#![allow(clippy::all, clippy::pedantic, clippy::nursery, warnings, unknown_lints, rustdoc::all, elided_lifetimes_in_paths)]\nuse {}::*;\n\n{}",
-        contract, contents
+    let mut new_contents = format!(
+        "#![allow(clippy::all, clippy::pedantic, clippy::nursery, warnings, unknown_lints, rustdoc::all, elided_lifetimes_in_paths)]\nuse {}::*;\n\n",
+        contract
     );
+
+    // Add derive attributes to specific structs that need them
+    let mut modified_contents = contents.clone();
+    
+    // List of structs that need derive attributes
+    let structs_to_modify = [
+        "pub struct AllocateParams {",
+        "pub struct OperatorSet {",
+    ];
+    
+    // Add derive attributes to each struct
+    for struct_def in &structs_to_modify {
+        modified_contents = modified_contents.replace(
+            struct_def,
+            &format!("#[derive(Debug, PartialEq, Eq, Hash)]\n{}", struct_def)
+        );
+    }
+    
+    new_contents.push_str(&modified_contents);
 
     // Write back to the file
     let mut file =
