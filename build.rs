@@ -140,7 +140,8 @@ fn main() {
 
         if *contract == "AllocationManager" || *contract == "IAllocationManager" {
             let path = Path::new(&file_path);
-            let mut file = fs::File::open(path).unwrap_or_else(|_| panic!("Failed to modify {}", file_path));
+            let mut file =
+                fs::File::open(path).unwrap_or_else(|_| panic!("Failed to modify {}", file_path));
             let mut contents = String::new();
             file.read_to_string(&mut contents)
                 .unwrap_or_else(|_| panic!("Failed to read {}", file_path));
