@@ -27,6 +27,7 @@ library IRewardsCoordinatorTypes {
 pub mod IRewardsCoordinatorTypes {
     use super::*;
     use alloy::sol_types as alloy_sol_types;
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**```solidity
 struct DistributionRoot { bytes32 root; uint32 rewardsCalculationEndTimestamp; uint32 activatedAt; bool disabled; }
 ```*/
@@ -302,6 +303,7 @@ struct DistributionRoot { bytes32 root; uint32 rewardsCalculationEndTimestamp; u
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**```solidity
 struct EarnerTreeMerkleLeaf { address earner; bytes32 earnerTokenRoot; }
 ```*/
@@ -526,6 +528,7 @@ struct EarnerTreeMerkleLeaf { address earner; bytes32 earnerTokenRoot; }
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**```solidity
 struct OperatorDirectedRewardsSubmission { StrategyAndMultiplier[] strategiesAndMultipliers; address token; OperatorReward[] operatorRewards; uint32 startTimestamp; uint32 duration; string description; }
 ```*/
@@ -875,6 +878,7 @@ struct OperatorDirectedRewardsSubmission { StrategyAndMultiplier[] strategiesAnd
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**```solidity
 struct OperatorReward { address operator; uint256 amount; }
 ```*/
@@ -1097,6 +1101,7 @@ struct OperatorReward { address operator; uint256 amount; }
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**```solidity
 struct RewardsCoordinatorConstructorParams { address delegationManager; address strategyManager; address allocationManager; address pauserRegistry; address permissionController; uint32 CALCULATION_INTERVAL_SECONDS; uint32 MAX_REWARDS_DURATION; uint32 MAX_RETROACTIVE_LENGTH; uint32 MAX_FUTURE_LENGTH; uint32 GENESIS_REWARDS_TIMESTAMP; string version; }
 ```*/
@@ -1537,6 +1542,7 @@ struct RewardsCoordinatorConstructorParams { address delegationManager; address 
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**```solidity
 struct RewardsMerkleClaim { uint32 rootIndex; uint32 earnerIndex; bytes earnerTreeProof; EarnerTreeMerkleLeaf earnerLeaf; uint32[] tokenIndices; bytes[] tokenTreeProofs; TokenTreeMerkleLeaf[] tokenLeaves; }
 ```*/
@@ -1899,6 +1905,7 @@ struct RewardsMerkleClaim { uint32 rootIndex; uint32 earnerIndex; bytes earnerTr
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**```solidity
 struct RewardsSubmission { StrategyAndMultiplier[] strategiesAndMultipliers; address token; uint256 amount; uint32 startTimestamp; uint32 duration; }
 ```*/
@@ -2211,6 +2218,7 @@ struct RewardsSubmission { StrategyAndMultiplier[] strategiesAndMultipliers; add
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**```solidity
 struct StrategyAndMultiplier { address strategy; uint96 multiplier; }
 ```*/
@@ -2433,6 +2441,7 @@ struct StrategyAndMultiplier { address strategy; uint96 multiplier; }
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**```solidity
 struct TokenTreeMerkleLeaf { address token; uint256 cumulativeEarnings; }
 ```*/
@@ -5694,6 +5703,7 @@ pub mod RewardsCoordinator {
     pub static DEPLOYED_BYTECODE: alloy_sol_types::private::Bytes = alloy_sol_types::private::Bytes::from_static(
         b"`\x80`@R4\x80\x15a\0\x0FW__\xFD[P`\x046\x10a\x03;W_5`\xE0\x1C\x80c\x88o\x11\x95\x11a\x01\xB9W\x80c\xDE\x02\xE5\x03\x11a\0\xF6W\x80c\xF6\xEF\xBBY\x11a\0\x9AW\x80c\xF6\xEF\xBBY\x14a\tdW\x80c\xF7N\x8E\xAC\x14a\twW\x80c\xF8\xCD\x84H\x14a\t\x8AW\x80c\xF9j\xBF.\x14a\t\x9DW\x80c\xFA\xBC\x1C\xBC\x14a\t\xB0W\x80c\xFB\xF1\xE2\xC1\x14a\t\xC3W\x80c\xFC\xE3l}\x14a\t\xD6W\x80c\xFF\x9Fl\xCE\x14a\t\xE9W__\xFD[\x80c\xDE\x02\xE5\x03\x14a\x08\x84W\x80c\xE0c\xF8\x1F\x14a\x08\x97W\x80c\xE8\x10\xCE!\x14a\x08\xAAW\x80c\xEAM<\x9B\x14a\x08\xBDW\x80c\xEDq\xE6\xA2\x14a\x08\xE4W\x80c\xF2,\xEF\x85\x14a\t\x11W\x80c\xF2\xF0z\xB4\x14a\t$W\x80c\xF2\xFD\xE3\x8B\x14a\tQW__\xFD[\x80c\xA5\n\x1D\x9C\x11a\x01]W\x80c\xA5\n\x1D\x9C\x14a\x07\x84W\x80c\xAE\xBD\x8B\xAE\x14a\x07\x97W\x80c\xB3\xDB\xB0\xE0\x14a\x07\xC4W\x80c\xBB~E\x1F\x14a\x07\xD7W\x80c\xBF!\xA8\xAA\x14a\x07\xF6W\x80c\xC4m\xB6\x06\x14a\x08\x1DW\x80c\xCA\x8A\xA7\xC7\x14a\x08JW\x80c\xDC\xBB\x03\xB3\x14a\x08qW__\xFD[\x80c\x88o\x11\x95\x14a\x06\xC9W\x80c\x8D\xA5\xCB[\x14a\x06\xF0W\x80c\x91\x04\xC3\x19\x14a\x07\x01W\x80c\x9B\xE3\xD4\xE4\x14a\x07\x1CW\x80c\x9C\xB9\xA5\xFA\x14a\x07$W\x80c\x9DE\xC2\x81\x14a\x077W\x80c\x9D\xE4\xB3_\x14a\x07^W\x80c\xA0\x16\x9D\xDD\x14a\x07qW__\xFD[\x80cE\x96\x02\x1C\x11a\x02\x87W\x80c\\\x97Z\xBB\x11a\x02+W\x80c\\\x97Z\xBB\x14a\x06\x1FW\x80c^\x9D\x83H\x14a\x06'W\x80cc\xF6\xA7\x98\x14a\x06:W\x80cm!\x11~\x14a\x06OW\x80cqP\x18\xA6\x14a\x06|W\x80c{\x8F\x8B\x05\x14a\x06\x84W\x80c\x86<\xB9\xA9\x14a\x06\x8CW\x80c\x86\\iS\x14a\x06\x9FW__\xFD[\x80cE\x96\x02\x1C\x14a\x05UW\x80cFW\xE2j\x14a\x05hW\x80cK\x949`\x14a\x05\x8FW\x80cM\x18\xCC5\x14a\x05\xB5W\x80cT\xFDMP\x14a\x05\xCCW\x80cX\xBA\xAA>\x14a\x05\xE1W\x80cY\\jg\x14a\x05\xF4W\x80cZ\xC8j\xB7\x14a\x05\xFCW__\xFD[\x80c\x14\x9B\xC8r\x11a\x02\xEEW\x80c\x14\x9B\xC8r\x14a\x04aW\x80c+\x9Fd\xA4\x14a\x04\x82W\x80c6\xAFA\xFA\x14a\x04\xB7W\x80c7\x83\x8E\xD0\x14a\x04\xCAW\x80c9\xB7\x0E8\x14a\x04\xF1W\x80c:\x8C\x07\x86\x14a\x05\x18W\x80c<\xCC\x86\x1D\x14a\x05/W\x80c>\xFE\x1D\xB6\x14a\x05BW__\xFD[\x80b\x18W,\x14a\x03?W\x80c\x04\xA0\xC5\x02\x14a\x03vW\x80c\x0C\xA2\x98\x99\x14a\x03\xB2W\x80c\x0E\x9AS\xCF\x14a\x03\xC7W\x80c\x0E\xB3\x83E\x14a\x04\x14W\x80c\x13\x143\xB4\x14a\x04'W\x80c\x13d9\xDD\x14a\x04NW[__\xFD[a\x03aa\x03M6`\x04a;\x10V[`\xD1` R_\x90\x81R`@\x90 T`\xFF\x16\x81V[`@Q\x90\x15\x15\x81R` \x01[`@Q\x80\x91\x03\x90\xF3[a\x03\x9D\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x81V[`@Qc\xFF\xFF\xFF\xFF\x90\x91\x16\x81R` \x01a\x03mV[a\x03\xC5a\x03\xC06`\x04a;\x88V[a\t\xFCV[\0[a\x03\xCFa\x0C\xC1V[`@Qa\x03m\x91\x90_`\x80\x82\x01\x90P\x82Q\x82Rc\xFF\xFF\xFF\xFF` \x84\x01Q\x16` \x83\x01Rc\xFF\xFF\xFF\xFF`@\x84\x01Q\x16`@\x83\x01R``\x83\x01Q\x15\x15``\x83\x01R\x92\x91PPV[a\x03\xC5a\x04\"6`\x04a;\xE4V[a\r\xA6V[a\x03\x9D\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x81V[a\x03\xC5a\x04\\6`\x04a<\x1BV[a\x0E&V[a\x04ta\x04o6`\x04a<2V[a\x0F\0V[`@Q\x90\x81R` \x01a\x03mV[a\x04\xAAa\x04\x906`\x04a;\x10V[`\xCC` R_\x90\x81R`@\x90 T`\x01`\x01`\xA0\x1B\x03\x16\x81V[`@Qa\x03m\x91\x90a<LV[a\x03\xC5a\x04\xC56`\x04a<`V[a\x0FpV[a\x03\x9D\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x81V[a\x04\xAA\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x81V[`\xCBTa\x03\x9D\x90`\x01`\xA0\x1B\x90\x04c\xFF\xFF\xFF\xFF\x16\x81V[a\x03\xC5a\x05=6`\x04a<\xAFV[a\x10\xFFV[a\x03\xC5a\x05P6`\x04a=\x05V[a\x11DV[a\x03\xC5a\x05c6`\x04a=/V[a\x138V[a\x04\xAA\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x81V[a\x05\xA2a\x05\x9D6`\x04a;\x10V[a\x13\xB9V[`@Qa\xFF\xFF\x90\x91\x16\x81R` \x01a\x03mV[`\xCBTa\x03\x9D\x90`\x01`\xC0\x1B\x90\x04c\xFF\xFF\xFF\xFF\x16\x81V[a\x05\xD4a\x14\x14V[`@Qa\x03m\x91\x90a=\xA3V[a\x03\xC5a\x05\xEF6`\x04a=\xD5V[a\x14DV[a\x03\xC5a\x14XV[a\x03aa\x06\n6`\x04a=\xEEV[`fT`\x01`\xFF\x90\x92\x16\x91\x90\x91\x1B\x90\x81\x16\x14\x90V[`fTa\x04tV[a\x03aa\x0656`\x04a>\x0EV[a\x15\x0CV[`\xCBTa\x05\xA2\x90`\x01`\xE0\x1B\x90\x04a\xFF\xFF\x16\x81V[a\x03aa\x06]6`\x04a>?V[`\xCF` \x90\x81R_\x92\x83R`@\x80\x84 \x90\x91R\x90\x82R\x90 T`\xFF\x16\x81V[a\x03\xC5a\x15\x97V[`\xCATa\x04tV[a\x03\xC5a\x06\x9A6`\x04a;\x10V[a\x15\xA8V[a\x04ta\x06\xAD6`\x04a>iV[`\xCD` \x90\x81R_\x92\x83R`@\x80\x84 \x90\x91R\x90\x82R\x90 T\x81V[a\x04\xAA\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x81V[`3T`\x01`\x01`\xA0\x1B\x03\x16a\x04\xAAV[a\x04\xAAs\xBE\xAC\x0E\xEE\xEE\xEE\xEE\xEE\xEE\xEE\xEE\xEE\xEE\xEE\xEE\xEE\xEE\xEB\xEA\xC0\x81V[a\x03\xCFa\x15\xB9V[a\x03\xC5a\x0726`\x04a>\x95V[a\x16:V[a\x03\x9D\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x81V[a\x05\xA2a\x07l6`\x04a>\xCCV[a\x17\xD3V[a\x03\xC5a\x07\x7F6`\x04a;\x10V[a\x18VV[a\x03\xC5a\x07\x926`\x04a?\x08V[a\x18aV[a\x03aa\x07\xA56`\x04a>?V[`\xD2` \x90\x81R_\x92\x83R`@\x80\x84 \x90\x91R\x90\x82R\x90 T`\xFF\x16\x81V[a\x03\xC5a\x07\xD26`\x04a?!V[a\x18rV[a\x04ta\x07\xE56`\x04a;\x10V[`\xCE` R_\x90\x81R`@\x90 T\x81V[a\x03\x9D\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x81V[a\x03aa\x08+6`\x04a>?V[`\xD0` \x90\x81R_\x92\x83R`@\x80\x84 \x90\x91R\x90\x82R\x90 T`\xFF\x16\x81V[a\x04\xAA\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x81V[a\x03\xC5a\x08\x7F6`\x04a?KV[a\x19\xBBV[a\x03\xCFa\x08\x926`\x04a<\x1BV[a\x1B&V[a\x05\xA2a\x08\xA56`\x04a>iV[a\x1B\x9BV[a\x03\x9Da\x08\xB86`\x04a<\x1BV[a\x1C\0V[a\x04\xAA\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x81V[a\x03aa\x08\xF26`\x04a>?V[`\xD3` \x90\x81R_\x92\x83R`@\x80\x84 \x90\x91R\x90\x82R\x90 T`\xFF\x16\x81V[a\x03\xC5a\t\x1F6`\x04a>iV[a\x1C\x81V[a\x03aa\t26`\x04a>?V[`\xD7` \x90\x81R_\x92\x83R`@\x80\x84 \x90\x91R\x90\x82R\x90 T`\xFF\x16\x81V[a\x03\xC5a\t_6`\x04a;\x10V[a\x1D\xEFV[a\x03\xC5a\tr6`\x04a?\x8FV[a\x1EjV[a\x03\xC5a\t\x856`\x04a?\xEDV[a\x1F\x9FV[a\x04ta\t\x986`\x04a<2V[a!\x85V[a\x03\xC5a\t\xAB6`\x04a=\xD5V[a!\x95V[a\x03\xC5a\t\xBE6`\x04a<\x1BV[a\"\xE4V[`\xCBTa\x04\xAA\x90`\x01`\x01`\xA0\x1B\x03\x16\x81V[a\x03\xC5a\t\xE46`\x04a<`V[a#\xFAV[a\x03\xC5a\t\xF76`\x04a<`V[a%IV[`fT`\t\x90a\x02\0\x90\x81\x16\x03a\n&W`@Qc\x84\nH\xD5`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[a\n3` \x85\x01\x85a;\x10V[a\n<\x81a&\xC8V[a\nYW`@Qc\x93-\x94\xF7`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[a\naa'rV[`@Qc\x04\xC1\xB8\xEB`\xE3\x1B\x81R`\x01`\x01`\xA0\x1B\x03\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x16\x90c&\r\xC7X\x90a\n\xAD\x90\x88\x90`\x04\x01a@XV[` `@Q\x80\x83\x03\x81\x86Z\xFA\x15\x80\x15a\n\xC8W=__>=_\xFD[PPPP`@Q=`\x1F\x19`\x1F\x82\x01\x16\x82\x01\x80`@RP\x81\x01\x90a\n\xEC\x91\x90a@fV[a\x0B\tW`@Qc\x1F\xB1pU`\xE2\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[_[\x83\x81\x10\x15a\x0C\xAFW6\x85\x85\x83\x81\x81\x10a\x0B&Wa\x0B&a@\x81V[\x90P` \x02\x81\x01\x90a\x0B8\x91\x90a@\x95V[\x90P_`\xCE\x81a\x0BK` \x8B\x01\x8Ba;\x10V[`\x01`\x01`\xA0\x1B\x03\x16\x81R` \x80\x82\x01\x92\x90\x92R`@\x01_\x90\x81 T\x92P\x90a\x0Bv\x90\x8A\x01\x8Aa;\x10V[\x82\x84`@Q` \x01a\x0B\x8A\x93\x92\x91\x90aB\xBDV[`@Q` \x81\x83\x03\x03\x81R\x90`@R\x80Q\x90` \x01 \x90P_a\x0B\xAC\x84a'\xCBV[\x90P`\x01`\xD7_a\x0B\xC0` \x8E\x01\x8Ea;\x10V[`\x01`\x01`\xA0\x1B\x03\x16\x81R` \x80\x82\x01\x92\x90\x92R`@\x90\x81\x01_\x90\x81 \x86\x82R\x90\x92R\x90 \x80T`\xFF\x19\x16\x91\x15\x15\x91\x90\x91\x17\x90Ua\x0B\xFF\x83`\x01aC\0V[`\xCE_a\x0C\x0F` \x8E\x01\x8Ea;\x10V[`\x01`\x01`\xA0\x1B\x03\x16`\x01`\x01`\xA0\x1B\x03\x16\x81R` \x01\x90\x81R` \x01_ \x81\x90UP\x813`\x01`\x01`\xA0\x1B\x03\x16\x7F\xFF\xF0u\x9C\xCB7\x1D\xFBV\x91y\x87$\xE7\x0BO\xA6\x1C\xB3\xBF\xE70\xA3:\xC1\x9F\xB8jH\xEF\xC7V\x8C\x86\x88`@Qa\x0Cp\x93\x92\x91\x90aC\x13V[`@Q\x80\x91\x03\x90\xA3a\x0C\x9F30\x83a\x0C\x8E`@\x89\x01` \x8A\x01a;\x10V[`\x01`\x01`\xA0\x1B\x03\x16\x92\x91\x90a)\xB6V[PP`\x01\x90\x92\x01\x91Pa\x0B\x0B\x90PV[Pa\x0C\xBA`\x01`\x97UV[PPPPPV[a\x0C\xC9a:\xD6V[`\xCAT[\x80\x15a\r~W_`\xCAa\x0C\xE1`\x01\x84aC8V[\x81T\x81\x10a\x0C\xF1Wa\x0C\xF1a@\x81V[_\x91\x82R` \x91\x82\x90 `@\x80Q`\x80\x81\x01\x82R`\x02\x93\x90\x93\x02\x90\x91\x01\x80T\x83R`\x01\x01Tc\xFF\xFF\xFF\xFF\x80\x82\x16\x94\x84\x01\x94\x90\x94R`\x01` \x1B\x81\x04\x90\x93\x16\x90\x82\x01R`\x01`@\x1B\x90\x91\x04`\xFF\x16\x15\x80\x15``\x83\x01\x81\x90R\x91\x92P\x90a\r`WP\x80`@\x01Qc\xFF\xFF\xFF\xFF\x16B\x10\x15[\x15a\rkW\x92\x91PPV[P\x80a\rv\x81aCKV[\x91PPa\x0C\xCDV[PP`@\x80Q`\x80\x81\x01\x82R_\x80\x82R` \x82\x01\x81\x90R\x91\x81\x01\x82\x90R``\x81\x01\x91\x90\x91R\x90V[a\r\xAEa*!V[`\x01`\x01`\xA0\x1B\x03\x82\x16_\x81\x81R`\xD1` R`@\x80\x82 T\x90Q`\xFF\x90\x91\x16\x92\x84\x15\x15\x92\x84\x15\x15\x92\x7FM\xE6)>f\x8D\xF19\x84\"\xE1\xDE\xF1!\x18\x05,\x159\xA0<\xBF\xED\xC1E\x89]H\xD7h_\x1C\x91\x90\xA4P`\x01`\x01`\xA0\x1B\x03\x91\x90\x91\x16_\x90\x81R`\xD1` R`@\x90 \x80T`\xFF\x19\x16\x91\x15\x15\x91\x90\x91\x17\x90UV[`@Qc#}\xFBG`\xE1\x1B\x81R`\x01`\x01`\xA0\x1B\x03\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x16\x90cF\xFB\xF6\x8E\x90a\x0Er\x903\x90`\x04\x01a<LV[` `@Q\x80\x83\x03\x81\x86Z\xFA\x15\x80\x15a\x0E\x8DW=__>=_\xFD[PPPP`@Q=`\x1F\x19`\x1F\x82\x01\x16\x82\x01\x80`@RP\x81\x01\x90a\x0E\xB1\x91\x90a@fV[a\x0E\xCEW`@Qc\x1Dw\xD4w`\xE2\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[`fT\x81\x81\x16\x81\x14a\x0E\xF3W`@Qc\xC6\x1D\xCA]`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[a\x0E\xFC\x82a*{V[PPV[_\x80a\x0F\x0F` \x84\x01\x84a;\x10V[\x83` \x015`@Q` \x01a\x0FS\x93\x92\x91\x90`\xF8\x93\x90\x93\x1B`\x01`\x01`\xF8\x1B\x03\x19\x16\x83R``\x91\x90\x91\x1B`\x01`\x01``\x1B\x03\x19\x16`\x01\x83\x01R`\x15\x82\x01R`5\x01\x90V[`@Q` \x81\x83\x03\x03\x81R\x90`@R\x80Q\x90` \x01 \x90P\x91\x90PV[`fT`\x01\x90`\x02\x90\x81\x16\x03a\x0F\x99W`@Qc\x84\nH\xD5`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[3_\x90\x81R`\xD1` R`@\x90 T`\xFF\x16a\x0F\xC8W`@Qc\\B|\xD9`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[a\x0F\xD0a'rV[_[\x82\x81\x10\x15a\x10\xEFW6\x84\x84\x83\x81\x81\x10a\x0F\xEDWa\x0F\xEDa@\x81V[\x90P` \x02\x81\x01\x90a\x0F\xFF\x91\x90aC`V[3_\x81\x81R`\xCE` \x90\x81R`@\x80\x83 T\x90Q\x94\x95P\x93\x91\x92a\x10)\x92\x90\x91\x85\x91\x87\x91\x01aC\xF2V[`@Q` \x81\x83\x03\x03\x81R\x90`@R\x80Q\x90` \x01 \x90Pa\x10J\x83a*\xB8V[3_\x90\x81R`\xD0` \x90\x81R`@\x80\x83 \x84\x84R\x90\x91R\x90 \x80T`\xFF\x19\x16`\x01\x90\x81\x17\x90\x91Ua\x10|\x90\x83\x90aC\0V[3_\x81\x81R`\xCE` R`@\x90\x81\x90 \x92\x90\x92U\x90Q\x82\x91\x84\x91\x7FQ\x08\x8B\x8C\x89b\x8D\xF3\xA8\x17@\x02\xC2\xA04\xD0\x15/\xCEj\xF8A]e\x1B*G4\xBF'\x04\x82\x90a\x10\xC3\x90\x88\x90aD\x18V[`@Q\x80\x91\x03\x90\xA4a\x10\xE430`@\x86\x01\x805\x90a\x0C\x8E\x90` \x89\x01a;\x10V[PPP`\x01\x01a\x0F\xD2V[Pa\x10\xFA`\x01`\x97UV[PPPV[`fT`\x02\x90`\x04\x90\x81\x16\x03a\x11(W`@Qc\x84\nH\xD5`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[a\x110a'rV[a\x11:\x83\x83a+\xA3V[a\x10\xFA`\x01`\x97UV[`fT`\x03\x90`\x08\x90\x81\x16\x03a\x11mW`@Qc\x84\nH\xD5`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[`\xCBT`\x01`\x01`\xA0\x1B\x03\x163\x14a\x11\x98W`@Qc\\B|\xD9`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[`\xCBTc\xFF\xFF\xFF\xFF`\x01`\xC0\x1B\x90\x91\x04\x81\x16\x90\x83\x16\x11a\x11\xCBW`@Qc\x1C\xA7\xE5\x0B`\xE2\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[B\x82c\xFF\xFF\xFF\xFF\x16\x10a\x11\xF1W`@Qc\x06\x95|\x91`\xE1\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[`\xCAT`\xCBT_\x90a\x12\x10\x90`\x01`\xA0\x1B\x90\x04c\xFF\xFF\xFF\xFF\x16BaD*V[`@\x80Q`\x80\x81\x01\x82R\x87\x81Rc\xFF\xFF\xFF\xFF\x87\x81\x16` \x80\x84\x01\x82\x81R\x86\x84\x16\x85\x87\x01\x81\x81R_``\x88\x01\x81\x81R`\xCA\x80T`\x01\x81\x01\x82U\x92R\x97Q\x7FB\xD7&t\x97OiK_QYY2C\x11M8\xA5\xC3\x9C\x89\xD6\xB6/\xEE\x06\x1F\xF5#$\x0E\xE1`\x02\x90\x92\x02\x91\x82\x01U\x92Q\x7FB\xD7&t\x97OiK_QYY2C\x11M8\xA5\xC3\x9C\x89\xD6\xB6/\xEE\x06\x1F\xF5#$\x0E\xE2\x90\x93\x01\x80T\x91Q\x97Q\x93\x87\x16g\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\x19\x90\x92\x16\x91\x90\x91\x17`\x01` \x1B\x97\x87\x16\x97\x90\x97\x02\x96\x90\x96\x17`\xFF`@\x1B\x19\x16`\x01`@\x1B\x92\x15\x15\x92\x90\x92\x02\x91\x90\x91\x17\x90\x94U`\xCB\x80Tc\xFF\xFF\xFF\xFF`\xC0\x1B\x19\x16`\x01`\xC0\x1B\x84\x02\x17\x90U\x93Q\x92\x83R\x93\x94P\x88\x92\x90\x86\x16\x91\x7F\xEC\xD8f\xC3\xC1X\xFA\0\xBF4\xD8\x03\xD5\xF6\x020\0\xB5p\x80\xBC\xB4\x8A\xF0\x04\xC2\xB4\xB4k:\xFD\x08\x91\x01`@Q\x80\x91\x03\x90\xA4PPPPPV[`fT`\x02\x90`\x04\x90\x81\x16\x03a\x13aW`@Qc\x84\nH\xD5`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[a\x13ia'rV[_[\x83\x81\x10\x15a\x13\xA8Wa\x13\xA0\x85\x85\x83\x81\x81\x10a\x13\x88Wa\x13\x88a@\x81V[\x90P` \x02\x81\x01\x90a\x13\x9A\x91\x90aDFV[\x84a+\xA3V[`\x01\x01a\x13kV[Pa\x13\xB3`\x01`\x97UV[PPPPV[`\x01`\x01`\xA0\x1B\x03\x81\x16_\x90\x81R`\xD5` \x90\x81R`@\x80\x83 \x81Q``\x81\x01\x83R\x90Ta\xFF\xFF\x80\x82\x16\x83Rb\x01\0\0\x82\x04\x16\x93\x82\x01\x93\x90\x93R`\x01` \x1B\x90\x92\x04c\xFF\xFF\xFF\xFF\x16\x90\x82\x01Ra\x14\x0E\x90a.+V[\x92\x91PPV[``a\x14?\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0a.\x9BV[\x90P\x90V[a\x14La*!V[a\x14U\x81a.\xD8V[PV[`@Qc#}\xFBG`\xE1\x1B\x81R`\x01`\x01`\xA0\x1B\x03\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x16\x90cF\xFB\xF6\x8E\x90a\x14\xA4\x903\x90`\x04\x01a<LV[` `@Q\x80\x83\x03\x81\x86Z\xFA\x15\x80\x15a\x14\xBFW=__>=_\xFD[PPPP`@Q=`\x1F\x19`\x1F\x82\x01\x16\x82\x01\x80`@RP\x81\x01\x90a\x14\xE3\x91\x90a@fV[a\x15\0W`@Qc\x1Dw\xD4w`\xE2\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[a\x15\n_\x19a*{V[V[_a\x15\x8F\x82`\xCAa\x15 ` \x83\x01\x83a=\xD5V[c\xFF\xFF\xFF\xFF\x16\x81T\x81\x10a\x156Wa\x156a@\x81V[_\x91\x82R` \x91\x82\x90 `@\x80Q`\x80\x81\x01\x82R`\x02\x93\x90\x93\x02\x90\x91\x01\x80T\x83R`\x01\x01Tc\xFF\xFF\xFF\xFF\x80\x82\x16\x94\x84\x01\x94\x90\x94R`\x01` \x1B\x81\x04\x90\x93\x16\x90\x82\x01R`\x01`@\x1B\x90\x91\x04`\xFF\x16\x15\x15``\x82\x01Ra/IV[P`\x01\x91\x90PV[a\x15\x9Fa*!V[a\x15\n_a0\xECV[a\x15\xB0a*!V[a\x14U\x81a1=V[a\x15\xC1a:\xD6V[`\xCA\x80Ta\x15\xD1\x90`\x01\x90aC8V[\x81T\x81\x10a\x15\xE1Wa\x15\xE1a@\x81V[_\x91\x82R` \x91\x82\x90 `@\x80Q`\x80\x81\x01\x82R`\x02\x93\x90\x93\x02\x90\x91\x01\x80T\x83R`\x01\x01Tc\xFF\xFF\xFF\xFF\x80\x82\x16\x94\x84\x01\x94\x90\x94R`\x01` \x1B\x81\x04\x90\x93\x16\x90\x82\x01R`\x01`@\x1B\x90\x91\x04`\xFF\x16\x15\x15``\x82\x01R\x91\x90PV[`fT`\x05\x90` \x90\x81\x16\x03a\x16cW`@Qc\x84\nH\xD5`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[\x83a\x16m\x81a&\xC8V[a\x16\x8AW`@Qc\x93-\x94\xF7`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[a\x16\x92a'rV[_[\x83\x81\x10\x15a\x0C\xAFW6\x85\x85\x83\x81\x81\x10a\x16\xAFWa\x16\xAFa@\x81V[\x90P` \x02\x81\x01\x90a\x16\xC1\x91\x90a@\x95V[`\x01`\x01`\xA0\x1B\x03\x88\x16_\x90\x81R`\xCE` \x90\x81R`@\x80\x83 T\x90Q\x93\x94P\x92a\x16\xF2\x91\x8B\x91\x85\x91\x87\x91\x01aB\xBDV[`@Q` \x81\x83\x03\x03\x81R\x90`@R\x80Q\x90` \x01 \x90P_a\x17\x14\x84a'\xCBV[`\x01`\x01`\xA0\x1B\x03\x8B\x16_\x90\x81R`\xD3` \x90\x81R`@\x80\x83 \x86\x84R\x90\x91R\x90 \x80T`\xFF\x19\x16`\x01\x90\x81\x17\x90\x91U\x90\x91Pa\x17R\x90\x84\x90aC\0V[`\x01`\x01`\xA0\x1B\x03\x8B\x16_\x81\x81R`\xCE` R`@\x90\x81\x90 \x92\x90\x92U\x90Q\x83\x91\x903\x90\x7F\xFC\x88\x88\xBF\xFDq\x1D\xA6\x0B\xC5\t+3\xF6w\xD8\x18\x96\xFE\x80\xEC\xC6w\xB8L\xFA\xB8\x18Db\xB6\xE0\x90a\x17\xA5\x90\x88\x90\x8A\x90aDZV[`@Q\x80\x91\x03\x90\xA4a\x17\xC330\x83a\x0C\x8E`@\x89\x01` \x8A\x01a;\x10V[PP`\x01\x90\x92\x01\x91Pa\x16\x94\x90PV[`\x01`\x01`\xA0\x1B\x03\x82\x16_\x90\x81R`\xD6` R`@\x81 a\x18O\x90\x82a\x18\x06a\x18\x016\x87\x90\x03\x87\x01\x87aDrV[a1\x98V[\x81R` \x80\x82\x01\x92\x90\x92R`@\x90\x81\x01_ \x81Q``\x81\x01\x83R\x90Ta\xFF\xFF\x80\x82\x16\x83Rb\x01\0\0\x82\x04\x16\x93\x82\x01\x93\x90\x93R`\x01` \x1B\x90\x92\x04c\xFF\xFF\xFF\xFF\x16\x90\x82\x01Ra.+V[\x93\x92PPPV[3a\x0E\xFC\x81\x83a1\xF6V[a\x18ia*!V[a\x14U\x81a2YV[`fT`\x07\x90`\x80\x90\x81\x16\x03a\x18\x9BW`@Qc\x84\nH\xD5`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[\x82a\x18\xA5\x81a&\xC8V[a\x18\xC2W`@Qc\x93-\x94\xF7`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[`\xCBT_\x90a\x18\xDE\x90`\x01`\xA0\x1B\x90\x04c\xFF\xFF\xFF\xFF\x16BaD*V[`\x01`\x01`\xA0\x1B\x03\x86\x16_\x90\x81R`\xD5` \x90\x81R`@\x80\x83 \x81Q``\x81\x01\x83R\x90Ta\xFF\xFF\x80\x82\x16\x83Rb\x01\0\0\x82\x04\x16\x93\x82\x01\x93\x90\x93R`\x01` \x1B\x90\x92\x04c\xFF\xFF\xFF\xFF\x16\x90\x82\x01R\x91\x92P\x90a\x197\x90a.+V[`\x01`\x01`\xA0\x1B\x03\x87\x16_\x90\x81R`\xD5` R`@\x90 \x90\x91Pa\x19\\\x90\x86\x84a2\xC4V[`@\x80Qc\xFF\xFF\xFF\xFF\x84\x16\x81Ra\xFF\xFF\x83\x81\x16` \x83\x01R\x87\x16\x81\x83\x01R\x90Q`\x01`\x01`\xA0\x1B\x03\x88\x16\x913\x91\x7F\xD1\xE0(\xBDfD\x86\xA4j\xD2`@\xE9\x99\xCD-\"\xE1\xE9\xA0\x94\xEEj\xFE\x19\xFC\xF6Fx\xF1ot\x91\x81\x90\x03``\x01\x90\xA3PPPPPPV[`fT`\x06\x90`@\x90\x81\x16\x03a\x19\xE4W`@Qc\x84\nH\xD5`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[\x83a\x19\xEE\x81a&\xC8V[a\x1A\x0BW`@Qc\x93-\x94\xF7`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[`\xCBT_\x90a\x1A'\x90`\x01`\xA0\x1B\x90\x04c\xFF\xFF\xFF\xFF\x16BaD*V[`\x01`\x01`\xA0\x1B\x03\x87\x81\x16_\x90\x81R`\xD4` \x90\x81R`@\x80\x83 \x93\x8A\x16\x83R\x92\x81R\x82\x82 \x83Q``\x81\x01\x85R\x90Ta\xFF\xFF\x80\x82\x16\x83Rb\x01\0\0\x82\x04\x16\x92\x82\x01\x92\x90\x92R`\x01` \x1B\x90\x91\x04c\xFF\xFF\xFF\xFF\x16\x92\x81\x01\x92\x90\x92R\x91\x92Pa\x1A\x8E\x90a.+V[`\x01`\x01`\xA0\x1B\x03\x80\x89\x16_\x90\x81R`\xD4` \x90\x81R`@\x80\x83 \x93\x8B\x16\x83R\x92\x90R \x90\x91Pa\x1A\xC0\x90\x86\x84a2\xC4V[`@\x80Qc\xFF\xFF\xFF\xFF\x84\x16\x81Ra\xFF\xFF\x83\x81\x16` \x83\x01R\x87\x16\x81\x83\x01R\x90Q`\x01`\x01`\xA0\x1B\x03\x88\x81\x16\x92\x90\x8A\x16\x913\x91\x7FH\xE1\x98\xB6\xAE5~R\x92\x04\xEES\xA8\xE5\x14\xC4p\xFFw\xD9\xCC\x8EOr\x07\xF8\xB5\xD4\x90\xAEi4\x91\x90\x81\x90\x03``\x01\x90\xA4PPPPPPPV[a\x1B.a:\xD6V[`\xCA\x82\x81T\x81\x10a\x1BAWa\x1BAa@\x81V[_\x91\x82R` \x91\x82\x90 `@\x80Q`\x80\x81\x01\x82R`\x02\x93\x90\x93\x02\x90\x91\x01\x80T\x83R`\x01\x01Tc\xFF\xFF\xFF\xFF\x80\x82\x16\x94\x84\x01\x94\x90\x94R`\x01` \x1B\x81\x04\x90\x93\x16\x90\x82\x01R`\x01`@\x1B\x90\x91\x04`\xFF\x16\x15\x15``\x82\x01R\x92\x91PPV[`\x01`\x01`\xA0\x1B\x03\x82\x81\x16_\x90\x81R`\xD4` \x90\x81R`@\x80\x83 \x93\x85\x16\x83R\x92\x81R\x82\x82 \x83Q``\x81\x01\x85R\x90Ta\xFF\xFF\x80\x82\x16\x83Rb\x01\0\0\x82\x04\x16\x92\x82\x01\x92\x90\x92R`\x01` \x1B\x90\x91\x04c\xFF\xFF\xFF\xFF\x16\x92\x81\x01\x92\x90\x92R\x90a\x18O\x90a.+V[`\xCAT_\x90[c\xFF\xFF\xFF\xFF\x81\x16\x15a\x1CgW\x82`\xCAa\x1C `\x01\x84aD\xDAV[c\xFF\xFF\xFF\xFF\x16\x81T\x81\x10a\x1C6Wa\x1C6a@\x81V[\x90_R` _ \x90`\x02\x02\x01_\x01T\x03a\x1CUWa\x18O`\x01\x82aD\xDAV[\x80a\x1C_\x81aD\xF6V[\x91PPa\x1C\x06V[P`@QcPEp\xE3`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[\x81a\x1C\x8B\x81a&\xC8V[a\x1C\xA8W`@Qc\x93-\x94\xF7`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[`@Qc6\xB8{\xD7`\xE1\x1B\x81R`\x01`\x01`\xA0\x1B\x03\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x16\x90cmp\xF7\xAE\x90a\x1C\xF4\x90\x86\x90`\x04\x01a<LV[` `@Q\x80\x83\x03\x81\x86Z\xFA\x15\x80\x15a\x1D\x0FW=__>=_\xFD[PPPP`@Q=`\x1F\x19`\x1F\x82\x01\x16\x82\x01\x80`@RP\x81\x01\x90a\x1D3\x91\x90a@fV[\x80a\x1D\xC8WP`@Qc\xBA\x1A\x84\xE5`\xE0\x1B\x81R_\x90`\x01`\x01`\xA0\x1B\x03\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x16\x90c\xBA\x1A\x84\xE5\x90a\x1D\x87\x90\x87\x90`\x04\x01a<LV[` `@Q\x80\x83\x03\x81\x86Z\xFA\x15\x80\x15a\x1D\xA2W=__>=_\xFD[PPPP`@Q=`\x1F\x19`\x1F\x82\x01\x16\x82\x01\x80`@RP\x81\x01\x90a\x1D\xC6\x91\x90aE\x14V[\x11[a\x1D\xE5W`@Qc\xFBIN\xA1`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[a\x10\xFA\x83\x83a1\xF6V[a\x1D\xF7a*!V[`\x01`\x01`\xA0\x1B\x03\x81\x16a\x1EaW`@QbF\x1B\xCD`\xE5\x1B\x81R` `\x04\x82\x01R`&`$\x82\x01R\x7FOwnable: new owner is the zero a`D\x82\x01Reddress`\xD0\x1B`d\x82\x01R`\x84\x01[`@Q\x80\x91\x03\x90\xFD[a\x14U\x81a0\xECV[_Ta\x01\0\x90\x04`\xFF\x16\x15\x80\x80\x15a\x1E\x88WP_T`\x01`\xFF\x90\x91\x16\x10[\x80a\x1E\xA1WP0;\x15\x80\x15a\x1E\xA1WP_T`\xFF\x16`\x01\x14[a\x1F\x04W`@QbF\x1B\xCD`\xE5\x1B\x81R` `\x04\x82\x01R`.`$\x82\x01R\x7FInitializable: contract is alrea`D\x82\x01Rm\x19\x1EH\x1A[\x9A]\x1AX[\x1A^\x99Y`\x92\x1B`d\x82\x01R`\x84\x01a\x1EXV[_\x80T`\xFF\x19\x16`\x01\x17\x90U\x80\x15a\x1F%W_\x80Ta\xFF\0\x19\x16a\x01\0\x17\x90U[a\x1F.\x85a*{V[a\x1F7\x86a0\xECV[a\x1F@\x84a1=V[a\x1FI\x83a.\xD8V[a\x1FR\x82a2YV[\x80\x15a\x1F\x97W_\x80Ta\xFF\0\x19\x16\x90U`@Q`\x01\x81R\x7F\x7F&\xB8?\xF9n\x1F+jh/\x138R\xF6y\x8A\t\xC4e\xDA\x95\x92\x14`\xCE\xFB8G@$\x98\x90` \x01`@Q\x80\x91\x03\x90\xA1[PPPPPPV[`fT`\x08\x90a\x01\0\x90\x81\x16\x03a\x1F\xC9W`@Qc\x84\nH\xD5`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[\x83a\x1F\xD3\x81a&\xC8V[a\x1F\xF0W`@Qc\x93-\x94\xF7`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[`@Qc\x04\xC1\xB8\xEB`\xE3\x1B\x81R`\x01`\x01`\xA0\x1B\x03\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x16\x90c&\r\xC7X\x90a <\x90\x87\x90`\x04\x01a@XV[` `@Q\x80\x83\x03\x81\x86Z\xFA\x15\x80\x15a WW=__>=_\xFD[PPPP`@Q=`\x1F\x19`\x1F\x82\x01\x16\x82\x01\x80`@RP\x81\x01\x90a {\x91\x90a@fV[a \x98W`@Qc\x1F\xB1pU`\xE2\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[`\xCBT_\x90a \xB4\x90`\x01`\xA0\x1B\x90\x04c\xFF\xFF\xFF\xFF\x16BaD*V[`\x01`\x01`\xA0\x1B\x03\x87\x16_\x90\x81R`\xD6` R`@\x81 \x91\x92P\x90a \xE6\x90\x82a\x18\x06a\x18\x016\x8B\x90\x03\x8B\x01\x8BaDrV[`\x01`\x01`\xA0\x1B\x03\x88\x16_\x90\x81R`\xD6` R`@\x81 \x91\x92Pa!+\x91\x90a!\x17a\x18\x016\x8B\x90\x03\x8B\x01\x8BaDrV[\x81R` \x01\x90\x81R` \x01_ \x86\x84a2\xC4V[\x86`\x01`\x01`\xA0\x1B\x03\x163`\x01`\x01`\xA0\x1B\x03\x16\x7F\x14\x91\x8B84\xABgR\xEB.\x1BH\x9Bfc\xA6x\x10\xEF\xB5\xF5o9D\xA9~\xDE\x8E\xCF\x1F\xD9\xF1\x88\x85\x85\x8A`@Qa!t\x94\x93\x92\x91\x90aE+V[`@Q\x80\x91\x03\x90\xA3PPPPPPPV[_`\x01a\x0F\x0F` \x84\x01\x84a;\x10V[`fT`\x03\x90`\x08\x90\x81\x16\x03a!\xBEW`@Qc\x84\nH\xD5`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[`\xCBT`\x01`\x01`\xA0\x1B\x03\x163\x14a!\xE9W`@Qc\\B|\xD9`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[`\xCATc\xFF\xFF\xFF\xFF\x83\x16\x10a\"\x11W`@Qc\x94\xA8\xD3\x89`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[_`\xCA\x83c\xFF\xFF\xFF\xFF\x16\x81T\x81\x10a\"+Wa\"+a@\x81V[\x90_R` _ \x90`\x02\x02\x01\x90P\x80`\x01\x01`\x08\x90T\x90a\x01\0\n\x90\x04`\xFF\x16\x15a\"iW`@Qc\x1B\x14\x17K`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[`\x01\x81\x01T`\x01` \x1B\x90\x04c\xFF\xFF\xFF\xFF\x16B\x10a\"\x9AW`@Qc\x0C6\xF6e`\xE2\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[`\x01\x81\x01\x80T`\xFF`@\x1B\x19\x16`\x01`@\x1B\x17\x90U`@Qc\xFF\xFF\xFF\xFF\x84\x16\x90\x7F\xD8P\xE6\xE5\xDF\xA4\x97\xB7&a\xFAs\xDF)#FN\xAE\xD9\xDC/\xF1\xD3\xCB\x82\xBC\xCB\xFE\xAB\xE5\xC4\x1E\x90_\x90\xA2PPPV[\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0`\x01`\x01`\xA0\x1B\x03\x16c\xEA\xB6mz`@Q\x81c\xFF\xFF\xFF\xFF\x16`\xE0\x1B\x81R`\x04\x01` `@Q\x80\x83\x03\x81\x86Z\xFA\x15\x80\x15a#@W=__>=_\xFD[PPPP`@Q=`\x1F\x19`\x1F\x82\x01\x16\x82\x01\x80`@RP\x81\x01\x90a#d\x91\x90aE_V[`\x01`\x01`\xA0\x1B\x03\x163`\x01`\x01`\xA0\x1B\x03\x16\x14a#\x95W`@QcyH!\xFF`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[`fT\x80\x19\x82\x19\x81\x16\x14a#\xBCW`@Qc\xC6\x1D\xCA]`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[`f\x82\x90U`@Q\x82\x81R3\x90\x7F5\x82\xD1\x82\x8E&\xBFV\xBD\x80\x15\x02\xBC\x02\x1A\xC0\xBC\x8A\xFBW\xC8&\xE4\x98kEY<\x8F\xAD8\x9C\x90` \x01`@Q\x80\x91\x03\x90\xA2PPV[`fT_\x90`\x01\x90\x81\x16\x03a$\"W`@Qc\x84\nH\xD5`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[a$*a'rV[_[\x82\x81\x10\x15a\x10\xEFW6\x84\x84\x83\x81\x81\x10a$GWa$Ga@\x81V[\x90P` \x02\x81\x01\x90a$Y\x91\x90aC`V[3_\x81\x81R`\xCE` \x90\x81R`@\x80\x83 T\x90Q\x94\x95P\x93\x91\x92a$\x83\x92\x90\x91\x85\x91\x87\x91\x01aC\xF2V[`@Q` \x81\x83\x03\x03\x81R\x90`@R\x80Q\x90` \x01 \x90Pa$\xA4\x83a*\xB8V[3_\x90\x81R`\xCF` \x90\x81R`@\x80\x83 \x84\x84R\x90\x91R\x90 \x80T`\xFF\x19\x16`\x01\x90\x81\x17\x90\x91Ua$\xD6\x90\x83\x90aC\0V[3_\x81\x81R`\xCE` R`@\x90\x81\x90 \x92\x90\x92U\x90Q\x82\x91\x84\x91\x7FE\n6z8\x0CN3\x9EZ\xE74\x0C\x84d\xEF'\xAFw\x81\xAD\x99E\xCF\xE8\xAB\xD8(\xF8\x9Eb\x81\x90a%\x1D\x90\x88\x90aD\x18V[`@Q\x80\x91\x03\x90\xA4a%>30`@\x86\x01\x805\x90a\x0C\x8E\x90` \x89\x01a;\x10V[PPP`\x01\x01a$,V[`fT`\x04\x90`\x10\x90\x81\x16\x03a%rW`@Qc\x84\nH\xD5`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[3_\x90\x81R`\xD1` R`@\x90 T`\xFF\x16a%\xA1W`@Qc\\B|\xD9`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[a%\xA9a'rV[_[\x82\x81\x10\x15a\x10\xEFW6\x84\x84\x83\x81\x81\x10a%\xC6Wa%\xC6a@\x81V[\x90P` \x02\x81\x01\x90a%\xD8\x91\x90aC`V[3_\x81\x81R`\xCE` \x90\x81R`@\x80\x83 T\x90Q\x94\x95P\x93\x91\x92a&\x02\x92\x90\x91\x85\x91\x87\x91\x01aC\xF2V[`@Q` \x81\x83\x03\x03\x81R\x90`@R\x80Q\x90` \x01 \x90Pa&#\x83a*\xB8V[3_\x90\x81R`\xD2` \x90\x81R`@\x80\x83 \x84\x84R\x90\x91R\x90 \x80T`\xFF\x19\x16`\x01\x90\x81\x17\x90\x91Ua&U\x90\x83\x90aC\0V[3_\x81\x81R`\xCE` R`@\x90\x81\x90 \x92\x90\x92U\x90Q\x82\x91\x84\x91\x7FRQ\xB6\xFD\xEF\xCB]\x81\x14Ns_i\xEALi_\xD4;\x02\x89\xCAS\xDC\x07P3\xF5\xFC\x80\x06\x8B\x90a&\x9C\x90\x88\x90aD\x18V[`@Q\x80\x91\x03\x90\xA4a&\xBD30`@\x86\x01\x805\x90a\x0C\x8E\x90` \x89\x01a;\x10V[PPP`\x01\x01a%\xABV[`@Qc\x1B\xEB+\x97`\xE3\x1B\x81R`\x01`\x01`\xA0\x1B\x03\x82\x81\x16`\x04\x83\x01R3`$\x83\x01R0`D\x83\x01R_\x805`\x01`\x01`\xE0\x1B\x03\x19\x16`d\x84\x01R\x91\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x90\x91\x16\x90c\xDFY\\\xB8\x90`\x84\x01` `@Q\x80\x83\x03\x81_\x87Z\xF1\x15\x80\x15a'NW=__>=_\xFD[PPPP`@Q=`\x1F\x19`\x1F\x82\x01\x16\x82\x01\x80`@RP\x81\x01\x90a\x14\x0E\x91\x90a@fV[`\x02`\x97T\x03a'\xC4W`@QbF\x1B\xCD`\xE5\x1B\x81R` `\x04\x82\x01R`\x1F`$\x82\x01R\x7FReentrancyGuard: reentrant call\0`D\x82\x01R`d\x01a\x1EXV[`\x02`\x97UV[_a'\xFEa'\xD9\x83\x80aEzV[a'\xE9`\x80\x86\x01``\x87\x01a=\xD5V[a'\xF9`\xA0\x87\x01`\x80\x88\x01a=\xD5V[a3\x93V[_a(\x0C`@\x84\x01\x84aEzV[\x90P\x11a(,W`@Qcyl\xC5%`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[Ba(=`\xA0\x84\x01`\x80\x85\x01a=\xD5V[a(M`\x80\x85\x01``\x86\x01a=\xD5V[a(W\x91\x90aD*V[c\xFF\xFF\xFF\xFF\x16\x10a({W`@Qc\x15\x03X\xA1`\xE2\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[_\x80\x80[a(\x8C`@\x86\x01\x86aEzV[\x90P\x81\x10\x15a)}W6a(\xA3`@\x87\x01\x87aEzV[\x83\x81\x81\x10a(\xB3Wa(\xB3a@\x81V[`@\x02\x91\x90\x91\x01\x91P_\x90Pa(\xCC` \x83\x01\x83a;\x10V[`\x01`\x01`\xA0\x1B\x03\x16\x03a(\xF3W`@Qc\x08c\xA4S`\xE1\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[a)\0` \x82\x01\x82a;\x10V[`\x01`\x01`\xA0\x1B\x03\x16\x83`\x01`\x01`\xA0\x1B\x03\x16\x10a)1W`@Qc\x10\xFBG\xF1`\xE3\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[_\x81` \x015\x11a)UW`@Qc\x10\xEBH?`\xE2\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[a)b` \x82\x01\x82a;\x10V[\x92Pa)r` \x82\x015\x85aC\0V[\x93PP`\x01\x01a(\x7FV[PoK;L\xA8Z\x86\xC4z\t\x8A\"?\xFF\xFF\xFF\xFF\x82\x11\x15a)\xAFW`@Qc\x07\x0BZo`\xE2\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[P\x92\x91PPV[`@Q`\x01`\x01`\xA0\x1B\x03\x80\x85\x16`$\x83\x01R\x83\x16`D\x82\x01R`d\x81\x01\x82\x90Ra\x13\xB3\x90\x85\x90c#\xB8r\xDD`\xE0\x1B\x90`\x84\x01[`@\x80Q`\x1F\x19\x81\x84\x03\x01\x81R\x91\x90R` \x81\x01\x80Q`\x01`\x01`\xE0\x1B\x03\x16`\x01`\x01`\xE0\x1B\x03\x19\x90\x93\x16\x92\x90\x92\x17\x90\x91Ra6\x92V[`3T`\x01`\x01`\xA0\x1B\x03\x163\x14a\x15\nW`@QbF\x1B\xCD`\xE5\x1B\x81R` `\x04\x82\x01\x81\x90R`$\x82\x01R\x7FOwnable: caller is not the owner`D\x82\x01R`d\x01a\x1EXV[`f\x81\x90U`@Q\x81\x81R3\x90\x7F\xAB@\xA3t\xBCQ\xDE7\"\0\xA8\xBC\x98\x1A\xF8\xC9\xEC\xDC\x08\xDF\xDA\xEF\x0B\xB6\xE0\x9F\x88\xF3\xC6\x16\xEF=\x90` \x01`@Q\x80\x91\x03\x90\xA2PV[a*\xE5a*\xC5\x82\x80aEzV[a*\xD5`\x80\x85\x01``\x86\x01a=\xD5V[a'\xF9`\xA0\x86\x01`\x80\x87\x01a=\xD5V[_\x81`@\x015\x11a+\tW`@Qc\x10\xEBH?`\xE2\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[oK;L\xA8Z\x86\xC4z\t\x8A\"?\xFF\xFF\xFF\xFF\x81`@\x015\x11\x15a+>W`@Qc\x07\x0BZo`\xE2\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[a+nc\xFF\xFF\xFF\xFF\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x16BaC\0V[a+~`\x80\x83\x01``\x84\x01a=\xD5V[c\xFF\xFF\xFF\xFF\x16\x11\x15a\x14UW`@Qc~\xE2\xB4C`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[_`\xCAa+\xB3` \x85\x01\x85a=\xD5V[c\xFF\xFF\xFF\xFF\x16\x81T\x81\x10a+\xC9Wa+\xC9a@\x81V[_\x91\x82R` \x91\x82\x90 `@\x80Q`\x80\x81\x01\x82R`\x02\x93\x90\x93\x02\x90\x91\x01\x80T\x83R`\x01\x01Tc\xFF\xFF\xFF\xFF\x80\x82\x16\x94\x84\x01\x94\x90\x94R`\x01` \x1B\x81\x04\x90\x93\x16\x90\x82\x01R`\x01`@\x1B\x90\x91\x04`\xFF\x16\x15\x15``\x82\x01R\x90Pa,)\x83\x82a/IV[_a,:`\x80\x85\x01``\x86\x01a;\x10V[`\x01`\x01`\xA0\x1B\x03\x80\x82\x16_\x90\x81R`\xCC` R`@\x90 T\x91\x92P\x16\x80a,_WP\x80[3`\x01`\x01`\xA0\x1B\x03\x82\x16\x14a,\x88W`@Qc\\B|\xD9`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[_[a,\x97`\xA0\x87\x01\x87aE\xBFV[\x90P\x81\x10\x15a\x1F\x97W6a,\xAE`\xE0\x88\x01\x88aEzV[\x83\x81\x81\x10a,\xBEWa,\xBEa@\x81V[`\x01`\x01`\xA0\x1B\x03\x87\x16_\x90\x81R`\xCD` \x90\x81R`@\x80\x83 \x93\x02\x94\x90\x94\x01\x94P\x92\x90\x91P\x82\x90a,\xF2\x90\x85\x01\x85a;\x10V[`\x01`\x01`\xA0\x1B\x03\x16`\x01`\x01`\xA0\x1B\x03\x16\x81R` \x01\x90\x81R` \x01_ T\x90P\x80\x82` \x015\x11a-8W`@Qc\xAA8^\x81`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[_a-G\x82` \x85\x015aC8V[`\x01`\x01`\xA0\x1B\x03\x87\x16_\x90\x81R`\xCD` \x90\x81R`@\x82 \x92\x93P\x85\x01\x805\x92\x91\x90a-t\x90\x87a;\x10V[`\x01`\x01`\xA0\x1B\x03\x16\x81R` \x80\x82\x01\x92\x90\x92R`@\x01_ \x91\x90\x91Ua-\xB5\x90\x89\x90\x83\x90a-\xA5\x90\x87\x01\x87a;\x10V[`\x01`\x01`\xA0\x1B\x03\x16\x91\x90a7eV[\x86Q`\x01`\x01`\xA0\x1B\x03\x80\x8A\x16\x91\x87\x82\x16\x91\x89\x16\x90\x7F\x95C\xDB\xD5U\x80\x84%\x86\xA9Q\xF08n$\xD6\x8A]\xF9\x9A\xE2\x9E;!e\x88\xB4_\xD6\x84\xCE1\x90a-\xF9` \x89\x01\x89a;\x10V[`@\x80Q\x92\x83R`\x01`\x01`\xA0\x1B\x03\x90\x91\x16` \x83\x01R\x81\x01\x86\x90R``\x01`@Q\x80\x91\x03\x90\xA4PPP`\x01\x01a,\x8AV[_\x81`@\x01Qc\xFF\xFF\xFF\xFF\x16_\x14\x80a.]WP\x81Qa\xFF\xFF\x90\x81\x16\x14\x80\x15a.]WP\x81`@\x01Qc\xFF\xFF\xFF\xFF\x16B\x10[\x15a.uWPP`\xCBT`\x01`\xE0\x1B\x90\x04a\xFF\xFF\x16\x90V[\x81`@\x01Qc\xFF\xFF\xFF\xFF\x16B\x10\x15a.\x8EW\x81Qa\x14\x0EV[P` \x01Q\x90V[\x91\x90PV[``_a.\xA7\x83a7\x95V[`@\x80Q` \x80\x82R\x81\x83\x01\x90\x92R\x91\x92P_\x91\x90` \x82\x01\x81\x806\x837PPP\x91\x82RP` \x81\x01\x92\x90\x92RP\x90V[`\xCBT`@\x80Qc\xFF\xFF\xFF\xFF`\x01`\xA0\x1B\x90\x93\x04\x83\x16\x81R\x91\x83\x16` \x83\x01R\x7F\xAFU|l\x02\xC2\x08yH\x17\xA7\x05`\x9C\xFA\x93_\x82s\x12\xA1\xAD\xFD\xD2d\x94\xB6\xB9]\xD2\xB4\xB3\x91\x01`@Q\x80\x91\x03\x90\xA1`\xCB\x80Tc\xFF\xFF\xFF\xFF\x90\x92\x16`\x01`\xA0\x1B\x02c\xFF\xFF\xFF\xFF`\xA0\x1B\x19\x90\x92\x16\x91\x90\x91\x17\x90UV[\x80``\x01Q\x15a/lW`@Qc\x1B\x14\x17K`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[\x80`@\x01Qc\xFF\xFF\xFF\xFF\x16B\x10\x15a/\x97W`@Qc\x147\xA2\xBB`\xE3\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[a/\xA4`\xC0\x83\x01\x83aE\xBFV[\x90Pa/\xB3`\xA0\x84\x01\x84aE\xBFV[\x90P\x14a/\xD3W`@QcCqJ\xFD`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[a/\xE0`\xE0\x83\x01\x83aEzV[\x90Pa/\xEF`\xC0\x84\x01\x84aE\xBFV[\x90P\x14a0\x0FW`@QcCqJ\xFD`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[\x80Qa0;\x90a0%`@\x85\x01` \x86\x01a=\xD5V[a02`@\x86\x01\x86aF\x04V[\x86``\x01a7\xBCV[_[a0J`\xA0\x84\x01\x84aE\xBFV[\x90P\x81\x10\x15a\x10\xFAWa0\xE4`\x80\x84\x015a0h`\xA0\x86\x01\x86aE\xBFV[\x84\x81\x81\x10a0xWa0xa@\x81V[\x90P` \x02\x01` \x81\x01\x90a0\x8D\x91\x90a=\xD5V[a0\x9A`\xC0\x87\x01\x87aE\xBFV[\x85\x81\x81\x10a0\xAAWa0\xAAa@\x81V[\x90P` \x02\x81\x01\x90a0\xBC\x91\x90aF\x04V[a0\xC9`\xE0\x89\x01\x89aEzV[\x87\x81\x81\x10a0\xD9Wa0\xD9a@\x81V[\x90P`@\x02\x01a8`V[`\x01\x01a0=V[`3\x80T`\x01`\x01`\xA0\x1B\x03\x83\x81\x16`\x01`\x01`\xA0\x1B\x03\x19\x83\x16\x81\x17\x90\x93U`@Q\x91\x16\x91\x90\x82\x90\x7F\x8B\xE0\x07\x9CS\x16Y\x14\x13D\xCD\x1F\xD0\xA4\xF2\x84\x19I\x7F\x97\"\xA3\xDA\xAF\xE3\xB4\x18okdW\xE0\x90_\x90\xA3PPV[`\xCBT`@Q`\x01`\x01`\xA0\x1B\x03\x80\x84\x16\x92\x16\x90\x7F#{\x82\xF48\xD7_\xC5h\xEB\xABHKu\xB0\x1D\x92\x87\xB9\xE9\x8BI\x0B|#\"\x16#\xB6p]\xBB\x90_\x90\xA3`\xCB\x80T`\x01`\x01`\xA0\x1B\x03\x19\x16`\x01`\x01`\xA0\x1B\x03\x92\x90\x92\x16\x91\x90\x91\x17\x90UV[_\x81_\x01Q\x82` \x01Qc\xFF\xFF\xFF\xFF\x16`@Q` \x01a1\xDE\x92\x91\x90``\x92\x90\x92\x1B`\x01`\x01``\x1B\x03\x19\x16\x82R`\xA0\x1B`\x01`\x01`\xA0\x1B\x03\x19\x16`\x14\x82\x01R` \x01\x90V[`@Q` \x81\x83\x03\x03\x81R\x90`@Ra\x14\x0E\x90aFFV[`\x01`\x01`\xA0\x1B\x03\x80\x83\x16_\x81\x81R`\xCC` R`@\x80\x82 \x80T\x86\x86\x16`\x01`\x01`\xA0\x1B\x03\x19\x82\x16\x81\x17\x90\x92U\x91Q\x91\x90\x94\x16\x93\x92\x84\x92\x90\x91\x7F\xBA\xB9G\x93MB\xE0\xAD o%\xC9\xCA\xB1\x8B[\xB6\xAE\x14J\xCF\xB0\x0F@\xB4\xE3\xAAYY\x0C\xA3\x12\x91\x90\xA4PPPV[`\xCBT`@\x80Qa\xFF\xFF`\x01`\xE0\x1B\x90\x93\x04\x83\x16\x81R\x91\x83\x16` \x83\x01R\x7F\xE6\xCDN\xDF\xDC\xC1\xF6\xD10\xAB5\xF7=r7\x8F:d)D\xFBN\xE5\xBD\x84\xB7\x80z\x81\xEA\x1CN\x91\x01`@Q\x80\x91\x03\x90\xA1`\xCB\x80Ta\xFF\xFF\x90\x92\x16`\x01`\xE0\x1B\x02a\xFF\xFF`\xE0\x1B\x19\x90\x92\x16\x91\x90\x91\x17\x90UV[a'\x10a\xFF\xFF\x83\x16\x11\x15a2\xEBW`@Qc\x89\x1Cc\xDF`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[\x82T`\x01` \x1B\x90\x04c\xFF\xFF\xFF\xFF\x16B\x11a3\x19W`@Qc{\x1E%\xC5`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[\x82T`\x01` \x1B\x90\x04c\xFF\xFF\xFF\xFF\x16_\x03a3@W\x82Ta\xFF\xFF\x19\x16a\xFF\xFF\x17\x83Ua3WV[\x82Tb\x01\0\0\x81\x04a\xFF\xFF\x16a\xFF\xFF\x19\x90\x91\x16\x17\x83U[\x82Tc\xFF\xFF\xFF\xFF\x90\x91\x16`\x01` \x1B\x02g\xFF\xFF\xFF\xFF\0\0\0\0\x19a\xFF\xFF\x90\x93\x16b\x01\0\0\x02\x92\x90\x92\x16g\xFF\xFF\xFF\xFF\xFF\xFF\0\0\x19\x90\x91\x16\x17\x17\x90UV[\x82a3\xB1W`@Qcyl\xC5%`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0c\xFF\xFF\xFF\xFF\x16\x81c\xFF\xFF\xFF\xFF\x16\x11\x15a3\xFEW`@Qc\r\xD0\xB9\xF5`\xE2\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[a4(\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x82aF}V[c\xFF\xFF\xFF\xFF\x16\x15a4LW`@Qc\xEEfG\x05`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[_\x81c\xFF\xFF\xFF\xFF\x16\x11a4rW`@Qc\xCB?CM`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[a4\x9C\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x83aF}V[c\xFF\xFF\xFF\xFF\x16\x15a4\xC0W`@Qc<\x1A\x94\xF1`\xE2\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[\x81c\xFF\xFF\xFF\xFF\x16\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0c\xFF\xFF\xFF\xFF\x16Ba4\xF9\x91\x90aC8V[\x11\x15\x80\x15a53WP\x81c\xFF\xFF\xFF\xFF\x16\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0c\xFF\xFF\xFF\xFF\x16\x11\x15[a5PW`@Qc\x04\x1A\xA7W`\xE1\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[_\x80[\x84\x81\x10\x15a\x1F\x97W_\x86\x86\x83\x81\x81\x10a5nWa5na@\x81V[a5\x84\x92` `@\x90\x92\x02\x01\x90\x81\x01\x91Pa;\x10V[`@Qc\x19\x8F\x07y`\xE2\x1B\x81R\x90\x91P`\x01`\x01`\xA0\x1B\x03\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x16\x90cf<\x1D\xE4\x90a5\xD3\x90\x84\x90`\x04\x01a<LV[` `@Q\x80\x83\x03\x81\x86Z\xFA\x15\x80\x15a5\xEEW=__>=_\xFD[PPPP`@Q=`\x1F\x19`\x1F\x82\x01\x16\x82\x01\x80`@RP\x81\x01\x90a6\x12\x91\x90a@fV[\x80a69WP`\x01`\x01`\xA0\x1B\x03\x81\x16s\xBE\xAC\x0E\xEE\xEE\xEE\xEE\xEE\xEE\xEE\xEE\xEE\xEE\xEE\xEE\xEE\xEE\xEB\xEA\xC0\x14[a6VW`@Qc.\xFD\x96Q`\xE1\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[\x80`\x01`\x01`\xA0\x1B\x03\x16\x83`\x01`\x01`\xA0\x1B\x03\x16\x10a6\x88W`@Qc\xDF\xAD\x9C\xA1`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[\x91P`\x01\x01a5SV[_a6\xE6\x82`@Q\x80`@\x01`@R\x80` \x81R` \x01\x7FSafeERC20: low-level call failed\x81RP\x85`\x01`\x01`\xA0\x1B\x03\x16a8\x9E\x90\x92\x91\x90c\xFF\xFF\xFF\xFF\x16V[\x90P\x80Q_\x14\x80a7\x06WP\x80\x80` \x01\x90Q\x81\x01\x90a7\x06\x91\x90a@fV[a\x10\xFAW`@QbF\x1B\xCD`\xE5\x1B\x81R` `\x04\x82\x01R`*`$\x82\x01R\x7FSafeERC20: ERC20 operation did n`D\x82\x01Ri\x1B\xDD\x08\x1C\xDDX\xD8\xD9YY`\xB2\x1B`d\x82\x01R`\x84\x01a\x1EXV[`@Q`\x01`\x01`\xA0\x1B\x03\x83\x16`$\x82\x01R`D\x81\x01\x82\x90Ra\x10\xFA\x90\x84\x90c\xA9\x05\x9C\xBB`\xE0\x1B\x90`d\x01a)\xEAV[_`\xFF\x82\x16`\x1F\x81\x11\x15a\x14\x0EW`@Qc,\xD4J\xC3`\xE2\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[a7\xC7` \x83aF\xA4V[`\x01\x90\x1B\x84c\xFF\xFF\xFF\xFF\x16\x10a7\xEFW`@Qb\xC6\xC3\x9D`\xE7\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[_a7\xF9\x82a\x0F\0V[\x90Pa8C\x84\x84\x80\x80`\x1F\x01` \x80\x91\x04\x02` \x01`@Q\x90\x81\x01`@R\x80\x93\x92\x91\x90\x81\x81R` \x01\x83\x83\x80\x82\x847_\x92\x01\x91\x90\x91RP\x8A\x92P\x85\x91PPc\xFF\xFF\xFF\xFF\x89\x16a8\xB4V[a\x1F\x97W`@Qci\xCA\x16\xC9`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[a8k` \x83aF\xA4V[`\x01\x90\x1B\x84c\xFF\xFF\xFF\xFF\x16\x10a8\x94W`@Qc\x05O\xF4\xDF`\xE5\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[_a7\xF9\x82a!\x85V[``a8\xAC\x84\x84_\x85a8\xCBV[\x94\x93PPPPV[_\x83a8\xC1\x86\x85\x85a9\xA2V[\x14\x95\x94PPPPPV[``\x82G\x10\x15a9,W`@QbF\x1B\xCD`\xE5\x1B\x81R` `\x04\x82\x01R`&`$\x82\x01R\x7FAddress: insufficient balance fo`D\x82\x01Re\x1C\x88\x18\xD8[\x1B`\xD2\x1B`d\x82\x01R`\x84\x01a\x1EXV[__\x86`\x01`\x01`\xA0\x1B\x03\x16\x85\x87`@Qa9G\x91\x90aF\xB7V[_`@Q\x80\x83\x03\x81\x85\x87Z\xF1\x92PPP=\x80_\x81\x14a9\x81W`@Q\x91P`\x1F\x19`?=\x01\x16\x82\x01`@R=\x82R=_` \x84\x01>a9\x86V[``\x91P[P\x91P\x91Pa9\x97\x87\x83\x83\x87a:9V[\x97\x96PPPPPPPV[_` \x84Qa9\xB1\x91\x90aF\xC8V[\x15a9\xCFW`@Qc\x13q}\xA9`\xE2\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[\x82` [\x85Q\x81\x11a:0Wa9\xE6`\x02\x85aF\xC8V[_\x03a:\x07W\x81_R\x80\x86\x01Q` R`@_ \x91P`\x02\x84\x04\x93Pa:\x1EV[\x80\x86\x01Q_R\x81` R`@_ \x91P`\x02\x84\x04\x93P[a:)` \x82aC\0V[\x90Pa9\xD3V[P\x94\x93PPPPV[``\x83\x15a:\xA7W\x82Q_\x03a:\xA0W`\x01`\x01`\xA0\x1B\x03\x85\x16;a:\xA0W`@QbF\x1B\xCD`\xE5\x1B\x81R` `\x04\x82\x01R`\x1D`$\x82\x01R\x7FAddress: call to non-contract\0\0\0`D\x82\x01R`d\x01a\x1EXV[P\x81a8\xACV[a8\xAC\x83\x83\x81Q\x15a:\xBCW\x81Q\x80\x83` \x01\xFD[\x80`@QbF\x1B\xCD`\xE5\x1B\x81R`\x04\x01a\x1EX\x91\x90a=\xA3V[`@\x80Q`\x80\x81\x01\x82R_\x80\x82R` \x82\x01\x81\x90R\x91\x81\x01\x82\x90R``\x81\x01\x91\x90\x91R\x90V[`\x01`\x01`\xA0\x1B\x03\x81\x16\x81\x14a\x14UW__\xFD[_` \x82\x84\x03\x12\x15a; W__\xFD[\x815a\x18O\x81a:\xFCV[_`@\x82\x84\x03\x12\x15a;;W__\xFD[P\x91\x90PV[__\x83`\x1F\x84\x01\x12a;QW__\xFD[P\x815`\x01`\x01`@\x1B\x03\x81\x11\x15a;gW__\xFD[` \x83\x01\x91P\x83` \x82`\x05\x1B\x85\x01\x01\x11\x15a;\x81W__\xFD[\x92P\x92\x90PV[___``\x84\x86\x03\x12\x15a;\x9AW__\xFD[a;\xA4\x85\x85a;+V[\x92P`@\x84\x015`\x01`\x01`@\x1B\x03\x81\x11\x15a;\xBEW__\xFD[a;\xCA\x86\x82\x87\x01a;AV[\x94\x97\x90\x96P\x93\x94PPPPV[\x80\x15\x15\x81\x14a\x14UW__\xFD[__`@\x83\x85\x03\x12\x15a;\xF5W__\xFD[\x825a<\0\x81a:\xFCV[\x91P` \x83\x015a<\x10\x81a;\xD7V[\x80\x91PP\x92P\x92\x90PV[_` \x82\x84\x03\x12\x15a<+W__\xFD[P5\x91\x90PV[_`@\x82\x84\x03\x12\x15a<BW__\xFD[a\x18O\x83\x83a;+V[`\x01`\x01`\xA0\x1B\x03\x91\x90\x91\x16\x81R` \x01\x90V[__` \x83\x85\x03\x12\x15a<qW__\xFD[\x825`\x01`\x01`@\x1B\x03\x81\x11\x15a<\x86W__\xFD[a<\x92\x85\x82\x86\x01a;AV[\x90\x96\x90\x95P\x93PPPPV[_a\x01\0\x82\x84\x03\x12\x15a;;W__\xFD[__`@\x83\x85\x03\x12\x15a<\xC0W__\xFD[\x825`\x01`\x01`@\x1B\x03\x81\x11\x15a<\xD5W__\xFD[a<\xE1\x85\x82\x86\x01a<\x9EV[\x92PP` \x83\x015a<\x10\x81a:\xFCV[\x805c\xFF\xFF\xFF\xFF\x81\x16\x81\x14a.\x96W__\xFD[__`@\x83\x85\x03\x12\x15a=\x16W__\xFD[\x825\x91Pa=&` \x84\x01a<\xF2V[\x90P\x92P\x92\x90PV[___`@\x84\x86\x03\x12\x15a=AW__\xFD[\x835`\x01`\x01`@\x1B\x03\x81\x11\x15a=VW__\xFD[a=b\x86\x82\x87\x01a;AV[\x90\x94P\x92PP` \x84\x015a=v\x81a:\xFCV[\x80\x91PP\x92P\x92P\x92V[_[\x83\x81\x10\x15a=\x9BW\x81\x81\x01Q\x83\x82\x01R` \x01a=\x83V[PP_\x91\x01RV[` \x81R_\x82Q\x80` \x84\x01Ra=\xC1\x81`@\x85\x01` \x87\x01a=\x81V[`\x1F\x01`\x1F\x19\x16\x91\x90\x91\x01`@\x01\x92\x91PPV[_` \x82\x84\x03\x12\x15a=\xE5W__\xFD[a\x18O\x82a<\xF2V[_` \x82\x84\x03\x12\x15a=\xFEW__\xFD[\x815`\xFF\x81\x16\x81\x14a\x18OW__\xFD[_` \x82\x84\x03\x12\x15a>\x1EW__\xFD[\x815`\x01`\x01`@\x1B\x03\x81\x11\x15a>3W__\xFD[a8\xAC\x84\x82\x85\x01a<\x9EV[__`@\x83\x85\x03\x12\x15a>PW__\xFD[\x825a>[\x81a:\xFCV[\x94` \x93\x90\x93\x015\x93PPPV[__`@\x83\x85\x03\x12\x15a>zW__\xFD[\x825a>\x85\x81a:\xFCV[\x91P` \x83\x015a<\x10\x81a:\xFCV[___`@\x84\x86\x03\x12\x15a>\xA7W__\xFD[\x835a>\xB2\x81a:\xFCV[\x92P` \x84\x015`\x01`\x01`@\x1B\x03\x81\x11\x15a;\xBEW__\xFD[__``\x83\x85\x03\x12\x15a>\xDDW__\xFD[\x825a>\xE8\x81a:\xFCV[\x91Pa=&\x84` \x85\x01a;+V[\x805a\xFF\xFF\x81\x16\x81\x14a.\x96W__\xFD[_` \x82\x84\x03\x12\x15a?\x18W__\xFD[a\x18O\x82a>\xF7V[__`@\x83\x85\x03\x12\x15a?2W__\xFD[\x825a?=\x81a:\xFCV[\x91Pa=&` \x84\x01a>\xF7V[___``\x84\x86\x03\x12\x15a?]W__\xFD[\x835a?h\x81a:\xFCV[\x92P` \x84\x015a?x\x81a:\xFCV[\x91Pa?\x86`@\x85\x01a>\xF7V[\x90P\x92P\x92P\x92V[_____`\xA0\x86\x88\x03\x12\x15a?\xA3W__\xFD[\x855a?\xAE\x81a:\xFCV[\x94P` \x86\x015\x93P`@\x86\x015a?\xC5\x81a:\xFCV[\x92Pa?\xD3``\x87\x01a<\xF2V[\x91Pa?\xE1`\x80\x87\x01a>\xF7V[\x90P\x92\x95P\x92\x95\x90\x93PV[___`\x80\x84\x86\x03\x12\x15a?\xFFW__\xFD[\x835a@\n\x81a:\xFCV[\x92Pa@\x19\x85` \x86\x01a;+V[\x91Pa?\x86``\x85\x01a>\xF7V[\x805a@2\x81a:\xFCV[`\x01`\x01`\xA0\x1B\x03\x16\x82Rc\xFF\xFF\xFF\xFFa@N` \x83\x01a<\xF2V[\x16` \x83\x01RPPV[`@\x81\x01a\x14\x0E\x82\x84a@'V[_` \x82\x84\x03\x12\x15a@vW__\xFD[\x81Qa\x18O\x81a;\xD7V[cNH{q`\xE0\x1B_R`2`\x04R`$_\xFD[_\x825`\xBE\x19\x836\x03\x01\x81\x12a@\xA9W__\xFD[\x91\x90\x91\x01\x92\x91PPV[__\x835`\x1E\x19\x846\x03\x01\x81\x12a@\xC8W__\xFD[\x83\x01` \x81\x01\x92P5\x90P`\x01`\x01`@\x1B\x03\x81\x11\x15a@\xE6W__\xFD[\x80`\x06\x1B6\x03\x82\x13\x15a;\x81W__\xFD[\x81\x83R` \x83\x01\x92P_\x81_[\x84\x81\x10\x15aAZW\x815aA\x17\x81a:\xFCV[`\x01`\x01`\xA0\x1B\x03\x16\x86R` \x82\x015k\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\x81\x16\x80\x82\x14aAAW__\xFD[` \x88\x01RP`@\x95\x86\x01\x95\x91\x90\x91\x01\x90`\x01\x01aA\x04V[P\x93\x94\x93PPPPV[__\x835`\x1E\x19\x846\x03\x01\x81\x12aAyW__\xFD[\x83\x01` \x81\x01\x92P5\x90P`\x01`\x01`@\x1B\x03\x81\x11\x15aA\x97W__\xFD[\x806\x03\x82\x13\x15a;\x81W__\xFD[\x81\x83R\x81\x81` \x85\x017P_\x82\x82\x01` \x90\x81\x01\x91\x90\x91R`\x1F\x90\x91\x01`\x1F\x19\x16\x90\x91\x01\x01\x90V[_aA\xD8\x82\x83a@\xB3V[`\xC0\x85RaA\xEA`\xC0\x86\x01\x82\x84a@\xF7V[\x91PP` \x83\x015aA\xFB\x81a:\xFCV[`\x01`\x01`\xA0\x1B\x03\x16` \x85\x01RaB\x16`@\x84\x01\x84a@\xB3V[\x85\x83\x03`@\x87\x01R\x80\x83R\x90\x91_\x91\x90` \x01[\x81\x83\x10\x15aBeW\x835aB=\x81a:\xFCV[`\x01`\x01`\xA0\x1B\x03\x16\x81R` \x84\x81\x015\x90\x82\x01R`@\x93\x84\x01\x93`\x01\x93\x90\x93\x01\x92\x01aB*V[aBq``\x87\x01a<\xF2V[c\xFF\xFF\xFF\xFF\x81\x16``\x89\x01R\x93PaB\x8B`\x80\x87\x01a<\xF2V[c\xFF\xFF\xFF\xFF\x81\x16`\x80\x89\x01R\x93PaB\xA6`\xA0\x87\x01\x87aAdV[\x94P\x92P\x86\x81\x03`\xA0\x88\x01Ra9\x97\x81\x85\x85aA\xA5V[`\x01\x80`\xA0\x1B\x03\x84\x16\x81R\x82` \x82\x01R```@\x82\x01R_aB\xE3``\x83\x01\x84aA\xCDV[\x95\x94PPPPPV[cNH{q`\xE0\x1B_R`\x11`\x04R`$_\xFD[\x80\x82\x01\x80\x82\x11\x15a\x14\x0EWa\x14\x0EaB\xECV[aC\x1D\x81\x85a@'V[\x82`@\x82\x01R`\x80``\x82\x01R_aB\xE3`\x80\x83\x01\x84aA\xCDV[\x81\x81\x03\x81\x81\x11\x15a\x14\x0EWa\x14\x0EaB\xECV[_\x81aCYWaCYaB\xECV[P_\x19\x01\x90V[_\x825`\x9E\x19\x836\x03\x01\x81\x12a@\xA9W__\xFD[_aC\x7F\x82\x83a@\xB3V[`\xA0\x85RaC\x91`\xA0\x86\x01\x82\x84a@\xF7V[\x91PP` \x83\x015aC\xA2\x81a:\xFCV[`\x01`\x01`\xA0\x1B\x03\x16` \x85\x01R`@\x83\x81\x015\x90\x85\x01Rc\xFF\xFF\xFF\xFFaC\xCB``\x85\x01a<\xF2V[\x16``\x85\x01Rc\xFF\xFF\xFF\xFFaC\xE2`\x80\x85\x01a<\xF2V[\x16`\x80\x85\x01R\x80\x91PP\x92\x91PPV[`\x01\x80`\xA0\x1B\x03\x84\x16\x81R\x82` \x82\x01R```@\x82\x01R_aB\xE3``\x83\x01\x84aCtV[` \x81R_a\x18O` \x83\x01\x84aCtV[c\xFF\xFF\xFF\xFF\x81\x81\x16\x83\x82\x16\x01\x90\x81\x11\x15a\x14\x0EWa\x14\x0EaB\xECV[_\x825`\xFE\x19\x836\x03\x01\x81\x12a@\xA9W__\xFD[\x82\x81R`@` \x82\x01R_a8\xAC`@\x83\x01\x84aA\xCDV[_`@\x82\x84\x03\x12\x80\x15aD\x83W__\xFD[P`@\x80Q\x90\x81\x01`\x01`\x01`@\x1B\x03\x81\x11\x82\x82\x10\x17\x15aD\xB2WcNH{q`\xE0\x1B_R`A`\x04R`$_\xFD[`@R\x825aD\xC0\x81a:\xFCV[\x81RaD\xCE` \x84\x01a<\xF2V[` \x82\x01R\x93\x92PPPV[c\xFF\xFF\xFF\xFF\x82\x81\x16\x82\x82\x16\x03\x90\x81\x11\x15a\x14\x0EWa\x14\x0EaB\xECV[_c\xFF\xFF\xFF\xFF\x82\x16\x80aE\x0BWaE\x0BaB\xECV[_\x19\x01\x92\x91PPV[_` \x82\x84\x03\x12\x15aE$W__\xFD[PQ\x91\x90PV[`\xA0\x81\x01aE9\x82\x87a@'V[c\xFF\xFF\xFF\xFF\x94\x90\x94\x16`@\x82\x01Ra\xFF\xFF\x92\x83\x16``\x82\x01R\x91\x16`\x80\x90\x91\x01R\x91\x90PV[_` \x82\x84\x03\x12\x15aEoW__\xFD[\x81Qa\x18O\x81a:\xFCV[__\x835`\x1E\x19\x846\x03\x01\x81\x12aE\x8FW__\xFD[\x83\x01\x805\x91P`\x01`\x01`@\x1B\x03\x82\x11\x15aE\xA8W__\xFD[` \x01\x91P`\x06\x81\x90\x1B6\x03\x82\x13\x15a;\x81W__\xFD[__\x835`\x1E\x19\x846\x03\x01\x81\x12aE\xD4W__\xFD[\x83\x01\x805\x91P`\x01`\x01`@\x1B\x03\x82\x11\x15aE\xEDW__\xFD[` \x01\x91P`\x05\x81\x90\x1B6\x03\x82\x13\x15a;\x81W__\xFD[__\x835`\x1E\x19\x846\x03\x01\x81\x12aF\x19W__\xFD[\x83\x01\x805\x91P`\x01`\x01`@\x1B\x03\x82\x11\x15aF2W__\xFD[` \x01\x91P6\x81\x90\x03\x82\x13\x15a;\x81W__\xFD[\x80Q` \x80\x83\x01Q\x91\x90\x81\x10\x15a;;W_\x19` \x91\x90\x91\x03`\x03\x1B\x1B\x16\x91\x90PV[cNH{q`\xE0\x1B_R`\x12`\x04R`$_\xFD[_c\xFF\xFF\xFF\xFF\x83\x16\x80aF\x92WaF\x92aFiV[\x80c\xFF\xFF\xFF\xFF\x84\x16\x06\x91PP\x92\x91PPV[_\x82aF\xB2WaF\xB2aFiV[P\x04\x90V[_\x82Qa@\xA9\x81\x84` \x87\x01a=\x81V[_\x82aF\xD6WaF\xD6aFiV[P\x06\x90V\xFE\xA2dipfsX\"\x12 \xAC\x15:<\xFB\xE2\xAFA\x13%5&YKUa>\xA8$\xFF\xA2\xBD!]!\xF3\xC4\xBC\xC6\x1E\xD6\x97dsolcC\0\x08\x1B\x003",
     );
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**```solidity
 struct OperatorSet { address avs; uint32 id; }
 ```*/
@@ -5905,6 +5915,7 @@ struct OperatorSet { address avs; uint32 id; }
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `AmountExceedsMax()` and selector `0x1c2d69bc`.
 ```solidity
 error AmountExceedsMax();
@@ -5969,6 +5980,7 @@ error AmountExceedsMax();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `AmountIsZero()` and selector `0x43ad20fc`.
 ```solidity
 error AmountIsZero();
@@ -6033,6 +6045,7 @@ error AmountIsZero();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `CurrentlyPaused()` and selector `0x840a48d5`.
 ```solidity
 error CurrentlyPaused();
@@ -6097,6 +6110,7 @@ error CurrentlyPaused();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `DurationExceedsMax()` and selector `0x3742e7d4`.
 ```solidity
 error DurationExceedsMax();
@@ -6161,6 +6175,7 @@ error DurationExceedsMax();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `DurationIsZero()` and selector `0xcb3f434d`.
 ```solidity
 error DurationIsZero();
@@ -6225,6 +6240,7 @@ error DurationIsZero();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `EarningsNotGreaterThanClaimed()` and selector `0xaa385e81`.
 ```solidity
 error EarningsNotGreaterThanClaimed();
@@ -6291,6 +6307,7 @@ error EarningsNotGreaterThanClaimed();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `InputAddressZero()` and selector `0x73632176`.
 ```solidity
 error InputAddressZero();
@@ -6355,6 +6372,7 @@ error InputAddressZero();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `InputArrayLengthMismatch()` and selector `0x43714afd`.
 ```solidity
 error InputArrayLengthMismatch();
@@ -6421,6 +6439,7 @@ error InputArrayLengthMismatch();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `InputArrayLengthZero()` and selector `0x796cc525`.
 ```solidity
 error InputArrayLengthZero();
@@ -6485,6 +6504,7 @@ error InputArrayLengthZero();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `InvalidAddressZero()` and selector `0x10c748a6`.
 ```solidity
 error InvalidAddressZero();
@@ -6549,6 +6569,7 @@ error InvalidAddressZero();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `InvalidCalculationIntervalSecondsRemainder()` and selector `0x4478f672`.
 ```solidity
 error InvalidCalculationIntervalSecondsRemainder();
@@ -6615,6 +6636,7 @@ error InvalidCalculationIntervalSecondsRemainder();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `InvalidClaimProof()` and selector `0x69ca16c9`.
 ```solidity
 error InvalidClaimProof();
@@ -6679,6 +6701,7 @@ error InvalidClaimProof();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `InvalidDurationRemainder()` and selector `0xee664705`.
 ```solidity
 error InvalidDurationRemainder();
@@ -6745,6 +6768,7 @@ error InvalidDurationRemainder();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `InvalidEarner()` and selector `0xfb494ea1`.
 ```solidity
 error InvalidEarner();
@@ -6809,6 +6833,7 @@ error InvalidEarner();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `InvalidEarnerLeafIndex()` and selector `0x6361ce80`.
 ```solidity
 error InvalidEarnerLeafIndex();
@@ -6873,6 +6898,7 @@ error InvalidEarnerLeafIndex();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `InvalidGenesisRewardsTimestampRemainder()` and selector `0x0e06bd31`.
 ```solidity
 error InvalidGenesisRewardsTimestampRemainder();
@@ -6939,6 +6965,7 @@ error InvalidGenesisRewardsTimestampRemainder();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `InvalidNewPausedStatus()` and selector `0xc61dca5d`.
 ```solidity
 error InvalidNewPausedStatus();
@@ -7003,6 +7030,7 @@ error InvalidNewPausedStatus();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `InvalidOperatorSet()` and selector `0x7ec5c154`.
 ```solidity
 error InvalidOperatorSet();
@@ -7067,6 +7095,7 @@ error InvalidOperatorSet();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `InvalidPermissions()` and selector `0x932d94f7`.
 ```solidity
 error InvalidPermissions();
@@ -7131,6 +7160,7 @@ error InvalidPermissions();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `InvalidProofLength()` and selector `0x4dc5f6a4`.
 ```solidity
 error InvalidProofLength();
@@ -7195,6 +7225,7 @@ error InvalidProofLength();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `InvalidRoot()` and selector `0x504570e3`.
 ```solidity
 error InvalidRoot();
@@ -7259,6 +7290,7 @@ error InvalidRoot();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `InvalidRootIndex()` and selector `0x94a8d389`.
 ```solidity
 error InvalidRootIndex();
@@ -7323,6 +7355,7 @@ error InvalidRootIndex();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `InvalidShortString()` and selector `0xb3512b0c`.
 ```solidity
 error InvalidShortString();
@@ -7387,6 +7420,7 @@ error InvalidShortString();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `InvalidStartTimestampRemainder()` and selector `0xf06a53c4`.
 ```solidity
 error InvalidStartTimestampRemainder();
@@ -7453,6 +7487,7 @@ error InvalidStartTimestampRemainder();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `InvalidTokenLeafIndex()` and selector `0xa9fe9be0`.
 ```solidity
 error InvalidTokenLeafIndex();
@@ -7517,6 +7552,7 @@ error InvalidTokenLeafIndex();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `NewRootMustBeForNewCalculatedPeriod()` and selector `0x729f942c`.
 ```solidity
 error NewRootMustBeForNewCalculatedPeriod();
@@ -7583,6 +7619,7 @@ error NewRootMustBeForNewCalculatedPeriod();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `OnlyPauser()` and selector `0x75df51dc`.
 ```solidity
 error OnlyPauser();
@@ -7647,6 +7684,7 @@ error OnlyPauser();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `OnlyUnpauser()` and selector `0x794821ff`.
 ```solidity
 error OnlyUnpauser();
@@ -7711,6 +7749,7 @@ error OnlyUnpauser();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `OperatorsNotInAscendingOrder()` and selector `0x87da3f88`.
 ```solidity
 error OperatorsNotInAscendingOrder();
@@ -7777,6 +7816,7 @@ error OperatorsNotInAscendingOrder();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `PreviousSplitPending()` and selector `0x7b1e25c5`.
 ```solidity
 error PreviousSplitPending();
@@ -7841,6 +7881,7 @@ error PreviousSplitPending();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `RewardsEndTimestampNotElapsed()` and selector `0x0d2af922`.
 ```solidity
 error RewardsEndTimestampNotElapsed();
@@ -7907,6 +7948,7 @@ error RewardsEndTimestampNotElapsed();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `RootAlreadyActivated()` and selector `0x30dbd994`.
 ```solidity
 error RootAlreadyActivated();
@@ -7971,6 +8013,7 @@ error RootAlreadyActivated();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `RootDisabled()` and selector `0x1b14174b`.
 ```solidity
 error RootDisabled();
@@ -8035,6 +8078,7 @@ error RootDisabled();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `RootNotActivated()` and selector `0xa1bd15d8`.
 ```solidity
 error RootNotActivated();
@@ -8099,6 +8143,7 @@ error RootNotActivated();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `SplitExceedsMax()` and selector `0x891c63df`.
 ```solidity
 error SplitExceedsMax();
@@ -8163,6 +8208,7 @@ error SplitExceedsMax();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `StartTimestampTooFarInFuture()` and selector `0x7ee2b443`.
 ```solidity
 error StartTimestampTooFarInFuture();
@@ -8229,6 +8275,7 @@ error StartTimestampTooFarInFuture();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `StartTimestampTooFarInPast()` and selector `0x08354eae`.
 ```solidity
 error StartTimestampTooFarInPast();
@@ -8295,6 +8342,7 @@ error StartTimestampTooFarInPast();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `StrategiesNotInAscendingOrder()` and selector `0xdfad9ca1`.
 ```solidity
 error StrategiesNotInAscendingOrder();
@@ -8361,6 +8409,7 @@ error StrategiesNotInAscendingOrder();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `StrategyNotWhitelisted()` and selector `0x5dfb2ca2`.
 ```solidity
 error StrategyNotWhitelisted();
@@ -8425,6 +8474,7 @@ error StrategyNotWhitelisted();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `StringTooLong(string)` and selector `0x305a27a9`.
 ```solidity
 error StringTooLong(string str);
@@ -8496,6 +8546,7 @@ error StringTooLong(string str);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `SubmissionNotRetroactive()` and selector `0x540d6284`.
 ```solidity
 error SubmissionNotRetroactive();
@@ -8562,6 +8613,7 @@ error SubmissionNotRetroactive();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `UnauthorizedCaller()` and selector `0x5c427cd9`.
 ```solidity
 error UnauthorizedCaller();
@@ -8626,6 +8678,7 @@ error UnauthorizedCaller();
             }
         }
     };
+    #[derive()]
     /**Event with signature `AVSRewardsSubmissionCreated(address,uint256,bytes32,((address,uint96)[],address,uint256,uint32,uint32))` and selector `0x450a367a380c4e339e5ae7340c8464ef27af7781ad9945cfe8abd828f89e6281`.
 ```solidity
 event AVSRewardsSubmissionCreated(address indexed avs, uint256 indexed submissionNonce, bytes32 indexed rewardsSubmissionHash, IRewardsCoordinatorTypes.RewardsSubmission rewardsSubmission);
@@ -8669,38 +8722,9 @@ event AVSRewardsSubmissionCreated(address indexed avs, uint256 indexed submissio
             );
             const SIGNATURE: &'static str = "AVSRewardsSubmissionCreated(address,uint256,bytes32,((address,uint96)[],address,uint256,uint32,uint32))";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                69u8,
-                10u8,
-                54u8,
-                122u8,
-                56u8,
-                12u8,
-                78u8,
-                51u8,
-                158u8,
-                90u8,
-                231u8,
-                52u8,
-                12u8,
-                132u8,
-                100u8,
-                239u8,
-                39u8,
-                175u8,
-                119u8,
-                129u8,
-                173u8,
-                153u8,
-                69u8,
-                207u8,
-                232u8,
-                171u8,
-                216u8,
-                40u8,
-                248u8,
-                158u8,
-                98u8,
-                129u8,
+                69u8, 10u8, 54u8, 122u8, 56u8, 12u8, 78u8, 51u8, 158u8, 90u8, 231u8,
+                52u8, 12u8, 132u8, 100u8, 239u8, 39u8, 175u8, 119u8, 129u8, 173u8, 153u8,
+                69u8, 207u8, 232u8, 171u8, 216u8, 40u8, 248u8, 158u8, 98u8, 129u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -8792,6 +8816,7 @@ event AVSRewardsSubmissionCreated(address indexed avs, uint256 indexed submissio
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `ActivationDelaySet(uint32,uint32)` and selector `0xaf557c6c02c208794817a705609cfa935f827312a1adfdd26494b6b95dd2b4b3`.
 ```solidity
 event ActivationDelaySet(uint32 oldActivationDelay, uint32 newActivationDelay);
@@ -8829,38 +8854,9 @@ event ActivationDelaySet(uint32 oldActivationDelay, uint32 newActivationDelay);
             type TopicList = (alloy_sol_types::sol_data::FixedBytes<32>,);
             const SIGNATURE: &'static str = "ActivationDelaySet(uint32,uint32)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                175u8,
-                85u8,
-                124u8,
-                108u8,
-                2u8,
-                194u8,
-                8u8,
-                121u8,
-                72u8,
-                23u8,
-                167u8,
-                5u8,
-                96u8,
-                156u8,
-                250u8,
-                147u8,
-                95u8,
-                130u8,
-                115u8,
-                18u8,
-                161u8,
-                173u8,
-                253u8,
-                210u8,
-                100u8,
-                148u8,
-                182u8,
-                185u8,
-                93u8,
-                210u8,
-                180u8,
-                179u8,
+                175u8, 85u8, 124u8, 108u8, 2u8, 194u8, 8u8, 121u8, 72u8, 23u8, 167u8,
+                5u8, 96u8, 156u8, 250u8, 147u8, 95u8, 130u8, 115u8, 18u8, 161u8, 173u8,
+                253u8, 210u8, 100u8, 148u8, 182u8, 185u8, 93u8, 210u8, 180u8, 179u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -8935,6 +8931,7 @@ event ActivationDelaySet(uint32 oldActivationDelay, uint32 newActivationDelay);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `ClaimerForSet(address,address,address)` and selector `0xbab947934d42e0ad206f25c9cab18b5bb6ae144acfb00f40b4e3aa59590ca312`.
 ```solidity
 event ClaimerForSet(address indexed earner, address indexed oldClaimer, address indexed claimer);
@@ -8976,38 +8973,9 @@ event ClaimerForSet(address indexed earner, address indexed oldClaimer, address 
             );
             const SIGNATURE: &'static str = "ClaimerForSet(address,address,address)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                186u8,
-                185u8,
-                71u8,
-                147u8,
-                77u8,
-                66u8,
-                224u8,
-                173u8,
-                32u8,
-                111u8,
-                37u8,
-                201u8,
-                202u8,
-                177u8,
-                139u8,
-                91u8,
-                182u8,
-                174u8,
-                20u8,
-                74u8,
-                207u8,
-                176u8,
-                15u8,
-                64u8,
-                180u8,
-                227u8,
-                170u8,
-                89u8,
-                89u8,
-                12u8,
-                163u8,
-                18u8,
+                186u8, 185u8, 71u8, 147u8, 77u8, 66u8, 224u8, 173u8, 32u8, 111u8, 37u8,
+                201u8, 202u8, 177u8, 139u8, 91u8, 182u8, 174u8, 20u8, 74u8, 207u8, 176u8,
+                15u8, 64u8, 180u8, 227u8, 170u8, 89u8, 89u8, 12u8, 163u8, 18u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -9090,6 +9058,7 @@ event ClaimerForSet(address indexed earner, address indexed oldClaimer, address 
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `DefaultOperatorSplitBipsSet(uint16,uint16)` and selector `0xe6cd4edfdcc1f6d130ab35f73d72378f3a642944fb4ee5bd84b7807a81ea1c4e`.
 ```solidity
 event DefaultOperatorSplitBipsSet(uint16 oldDefaultOperatorSplitBips, uint16 newDefaultOperatorSplitBips);
@@ -9127,38 +9096,9 @@ event DefaultOperatorSplitBipsSet(uint16 oldDefaultOperatorSplitBips, uint16 new
             type TopicList = (alloy_sol_types::sol_data::FixedBytes<32>,);
             const SIGNATURE: &'static str = "DefaultOperatorSplitBipsSet(uint16,uint16)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                230u8,
-                205u8,
-                78u8,
-                223u8,
-                220u8,
-                193u8,
-                246u8,
-                209u8,
-                48u8,
-                171u8,
-                53u8,
-                247u8,
-                61u8,
-                114u8,
-                55u8,
-                143u8,
-                58u8,
-                100u8,
-                41u8,
-                68u8,
-                251u8,
-                78u8,
-                229u8,
-                189u8,
-                132u8,
-                183u8,
-                128u8,
-                122u8,
-                129u8,
-                234u8,
-                28u8,
-                78u8,
+                230u8, 205u8, 78u8, 223u8, 220u8, 193u8, 246u8, 209u8, 48u8, 171u8, 53u8,
+                247u8, 61u8, 114u8, 55u8, 143u8, 58u8, 100u8, 41u8, 68u8, 251u8, 78u8,
+                229u8, 189u8, 132u8, 183u8, 128u8, 122u8, 129u8, 234u8, 28u8, 78u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -9239,6 +9179,7 @@ event DefaultOperatorSplitBipsSet(uint16 oldDefaultOperatorSplitBips, uint16 new
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `DistributionRootDisabled(uint32)` and selector `0xd850e6e5dfa497b72661fa73df2923464eaed9dc2ff1d3cb82bccbfeabe5c41e`.
 ```solidity
 event DistributionRootDisabled(uint32 indexed rootIndex);
@@ -9274,38 +9215,9 @@ event DistributionRootDisabled(uint32 indexed rootIndex);
             );
             const SIGNATURE: &'static str = "DistributionRootDisabled(uint32)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                216u8,
-                80u8,
-                230u8,
-                229u8,
-                223u8,
-                164u8,
-                151u8,
-                183u8,
-                38u8,
-                97u8,
-                250u8,
-                115u8,
-                223u8,
-                41u8,
-                35u8,
-                70u8,
-                78u8,
-                174u8,
-                217u8,
-                220u8,
-                47u8,
-                241u8,
-                211u8,
-                203u8,
-                130u8,
-                188u8,
-                203u8,
-                254u8,
-                171u8,
-                229u8,
-                196u8,
-                30u8,
+                216u8, 80u8, 230u8, 229u8, 223u8, 164u8, 151u8, 183u8, 38u8, 97u8, 250u8,
+                115u8, 223u8, 41u8, 35u8, 70u8, 78u8, 174u8, 217u8, 220u8, 47u8, 241u8,
+                211u8, 203u8, 130u8, 188u8, 203u8, 254u8, 171u8, 229u8, 196u8, 30u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -9375,6 +9287,7 @@ event DistributionRootDisabled(uint32 indexed rootIndex);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `DistributionRootSubmitted(uint32,bytes32,uint32,uint32)` and selector `0xecd866c3c158fa00bf34d803d5f6023000b57080bcb48af004c2b4b46b3afd08`.
 ```solidity
 event DistributionRootSubmitted(uint32 indexed rootIndex, bytes32 indexed root, uint32 indexed rewardsCalculationEndTimestamp, uint32 activatedAt);
@@ -9418,38 +9331,9 @@ event DistributionRootSubmitted(uint32 indexed rootIndex, bytes32 indexed root, 
             );
             const SIGNATURE: &'static str = "DistributionRootSubmitted(uint32,bytes32,uint32,uint32)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                236u8,
-                216u8,
-                102u8,
-                195u8,
-                193u8,
-                88u8,
-                250u8,
-                0u8,
-                191u8,
-                52u8,
-                216u8,
-                3u8,
-                213u8,
-                246u8,
-                2u8,
-                48u8,
-                0u8,
-                181u8,
-                112u8,
-                128u8,
-                188u8,
-                180u8,
-                138u8,
-                240u8,
-                4u8,
-                194u8,
-                180u8,
-                180u8,
-                107u8,
-                58u8,
-                253u8,
-                8u8,
+                236u8, 216u8, 102u8, 195u8, 193u8, 88u8, 250u8, 0u8, 191u8, 52u8, 216u8,
+                3u8, 213u8, 246u8, 2u8, 48u8, 0u8, 181u8, 112u8, 128u8, 188u8, 180u8,
+                138u8, 240u8, 4u8, 194u8, 180u8, 180u8, 107u8, 58u8, 253u8, 8u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -9541,6 +9425,7 @@ event DistributionRootSubmitted(uint32 indexed rootIndex, bytes32 indexed root, 
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `Initialized(uint8)` and selector `0x7f26b83ff96e1f2b6a682f133852f6798a09c465da95921460cefb3847402498`.
 ```solidity
 event Initialized(uint8 version);
@@ -9573,38 +9458,9 @@ event Initialized(uint8 version);
             type TopicList = (alloy_sol_types::sol_data::FixedBytes<32>,);
             const SIGNATURE: &'static str = "Initialized(uint8)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                127u8,
-                38u8,
-                184u8,
-                63u8,
-                249u8,
-                110u8,
-                31u8,
-                43u8,
-                106u8,
-                104u8,
-                47u8,
-                19u8,
-                56u8,
-                82u8,
-                246u8,
-                121u8,
-                138u8,
-                9u8,
-                196u8,
-                101u8,
-                218u8,
-                149u8,
-                146u8,
-                20u8,
-                96u8,
-                206u8,
-                251u8,
-                56u8,
-                71u8,
-                64u8,
-                36u8,
-                152u8,
+                127u8, 38u8, 184u8, 63u8, 249u8, 110u8, 31u8, 43u8, 106u8, 104u8, 47u8,
+                19u8, 56u8, 82u8, 246u8, 121u8, 138u8, 9u8, 196u8, 101u8, 218u8, 149u8,
+                146u8, 20u8, 96u8, 206u8, 251u8, 56u8, 71u8, 64u8, 36u8, 152u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -9673,6 +9529,7 @@ event Initialized(uint8 version);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `OperatorAVSSplitBipsSet(address,address,address,uint32,uint16,uint16)` and selector `0x48e198b6ae357e529204ee53a8e514c470ff77d9cc8e4f7207f8b5d490ae6934`.
 ```solidity
 event OperatorAVSSplitBipsSet(address indexed caller, address indexed operator, address indexed avs, uint32 activatedAt, uint16 oldOperatorAVSSplitBips, uint16 newOperatorAVSSplitBips);
@@ -9724,38 +9581,9 @@ event OperatorAVSSplitBipsSet(address indexed caller, address indexed operator, 
             );
             const SIGNATURE: &'static str = "OperatorAVSSplitBipsSet(address,address,address,uint32,uint16,uint16)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                72u8,
-                225u8,
-                152u8,
-                182u8,
-                174u8,
-                53u8,
-                126u8,
-                82u8,
-                146u8,
-                4u8,
-                238u8,
-                83u8,
-                168u8,
-                229u8,
-                20u8,
-                196u8,
-                112u8,
-                255u8,
-                119u8,
-                217u8,
-                204u8,
-                142u8,
-                79u8,
-                114u8,
-                7u8,
-                248u8,
-                181u8,
-                212u8,
-                144u8,
-                174u8,
-                105u8,
-                52u8,
+                72u8, 225u8, 152u8, 182u8, 174u8, 53u8, 126u8, 82u8, 146u8, 4u8, 238u8,
+                83u8, 168u8, 229u8, 20u8, 196u8, 112u8, 255u8, 119u8, 217u8, 204u8,
+                142u8, 79u8, 114u8, 7u8, 248u8, 181u8, 212u8, 144u8, 174u8, 105u8, 52u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -9857,6 +9685,7 @@ event OperatorAVSSplitBipsSet(address indexed caller, address indexed operator, 
             }
         }
     };
+    #[derive()]
     /**Event with signature `OperatorDirectedAVSRewardsSubmissionCreated(address,address,bytes32,uint256,((address,uint96)[],address,(address,uint256)[],uint32,uint32,string))` and selector `0xfc8888bffd711da60bc5092b33f677d81896fe80ecc677b84cfab8184462b6e0`.
 ```solidity
 event OperatorDirectedAVSRewardsSubmissionCreated(address indexed caller, address indexed avs, bytes32 indexed operatorDirectedRewardsSubmissionHash, uint256 submissionNonce, IRewardsCoordinatorTypes.OperatorDirectedRewardsSubmission operatorDirectedRewardsSubmission);
@@ -9907,38 +9736,9 @@ event OperatorDirectedAVSRewardsSubmissionCreated(address indexed caller, addres
             );
             const SIGNATURE: &'static str = "OperatorDirectedAVSRewardsSubmissionCreated(address,address,bytes32,uint256,((address,uint96)[],address,(address,uint256)[],uint32,uint32,string))";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                252u8,
-                136u8,
-                136u8,
-                191u8,
-                253u8,
-                113u8,
-                29u8,
-                166u8,
-                11u8,
-                197u8,
-                9u8,
-                43u8,
-                51u8,
-                246u8,
-                119u8,
-                216u8,
-                24u8,
-                150u8,
-                254u8,
-                128u8,
-                236u8,
-                198u8,
-                119u8,
-                184u8,
-                76u8,
-                250u8,
-                184u8,
-                24u8,
-                68u8,
-                98u8,
-                182u8,
-                224u8,
+                252u8, 136u8, 136u8, 191u8, 253u8, 113u8, 29u8, 166u8, 11u8, 197u8, 9u8,
+                43u8, 51u8, 246u8, 119u8, 216u8, 24u8, 150u8, 254u8, 128u8, 236u8, 198u8,
+                119u8, 184u8, 76u8, 250u8, 184u8, 24u8, 68u8, 98u8, 182u8, 224u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -10036,6 +9836,7 @@ event OperatorDirectedAVSRewardsSubmissionCreated(address indexed caller, addres
             }
         }
     };
+    #[derive()]
     /**Event with signature `OperatorDirectedOperatorSetRewardsSubmissionCreated(address,bytes32,(address,uint32),uint256,((address,uint96)[],address,(address,uint256)[],uint32,uint32,string))` and selector `0xfff0759ccb371dfb5691798724e70b4fa61cb3bfe730a33ac19fb86a48efc756`.
 ```solidity
 event OperatorDirectedOperatorSetRewardsSubmissionCreated(address indexed caller, bytes32 indexed operatorDirectedRewardsSubmissionHash, OperatorSet operatorSet, uint256 submissionNonce, IRewardsCoordinatorTypes.OperatorDirectedRewardsSubmission operatorDirectedRewardsSubmission);
@@ -10087,38 +9888,9 @@ event OperatorDirectedOperatorSetRewardsSubmissionCreated(address indexed caller
             );
             const SIGNATURE: &'static str = "OperatorDirectedOperatorSetRewardsSubmissionCreated(address,bytes32,(address,uint32),uint256,((address,uint96)[],address,(address,uint256)[],uint32,uint32,string))";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                255u8,
-                240u8,
-                117u8,
-                156u8,
-                203u8,
-                55u8,
-                29u8,
-                251u8,
-                86u8,
-                145u8,
-                121u8,
-                135u8,
-                36u8,
-                231u8,
-                11u8,
-                79u8,
-                166u8,
-                28u8,
-                179u8,
-                191u8,
-                231u8,
-                48u8,
-                163u8,
-                58u8,
-                193u8,
-                159u8,
-                184u8,
-                106u8,
-                72u8,
-                239u8,
-                199u8,
-                86u8,
+                255u8, 240u8, 117u8, 156u8, 203u8, 55u8, 29u8, 251u8, 86u8, 145u8, 121u8,
+                135u8, 36u8, 231u8, 11u8, 79u8, 166u8, 28u8, 179u8, 191u8, 231u8, 48u8,
+                163u8, 58u8, 193u8, 159u8, 184u8, 106u8, 72u8, 239u8, 199u8, 86u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -10215,6 +9987,7 @@ event OperatorDirectedOperatorSetRewardsSubmissionCreated(address indexed caller
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `OperatorPISplitBipsSet(address,address,uint32,uint16,uint16)` and selector `0xd1e028bd664486a46ad26040e999cd2d22e1e9a094ee6afe19fcf64678f16f74`.
 ```solidity
 event OperatorPISplitBipsSet(address indexed caller, address indexed operator, uint32 activatedAt, uint16 oldOperatorPISplitBips, uint16 newOperatorPISplitBips);
@@ -10263,38 +10036,9 @@ event OperatorPISplitBipsSet(address indexed caller, address indexed operator, u
             );
             const SIGNATURE: &'static str = "OperatorPISplitBipsSet(address,address,uint32,uint16,uint16)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                209u8,
-                224u8,
-                40u8,
-                189u8,
-                102u8,
-                68u8,
-                134u8,
-                164u8,
-                106u8,
-                210u8,
-                96u8,
-                64u8,
-                233u8,
-                153u8,
-                205u8,
-                45u8,
-                34u8,
-                225u8,
-                233u8,
-                160u8,
-                148u8,
-                238u8,
-                106u8,
-                254u8,
-                25u8,
-                252u8,
-                246u8,
-                70u8,
-                120u8,
-                241u8,
-                111u8,
-                116u8,
+                209u8, 224u8, 40u8, 189u8, 102u8, 68u8, 134u8, 164u8, 106u8, 210u8, 96u8,
+                64u8, 233u8, 153u8, 205u8, 45u8, 34u8, 225u8, 233u8, 160u8, 148u8, 238u8,
+                106u8, 254u8, 25u8, 252u8, 246u8, 70u8, 120u8, 241u8, 111u8, 116u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -10385,6 +10129,7 @@ event OperatorPISplitBipsSet(address indexed caller, address indexed operator, u
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `OperatorSetSplitBipsSet(address,address,(address,uint32),uint32,uint16,uint16)` and selector `0x14918b3834ab6752eb2e1b489b6663a67810efb5f56f3944a97ede8ecf1fd9f1`.
 ```solidity
 event OperatorSetSplitBipsSet(address indexed caller, address indexed operator, OperatorSet operatorSet, uint32 activatedAt, uint16 oldOperatorSetSplitBips, uint16 newOperatorSetSplitBips);
@@ -10436,38 +10181,9 @@ event OperatorSetSplitBipsSet(address indexed caller, address indexed operator, 
             );
             const SIGNATURE: &'static str = "OperatorSetSplitBipsSet(address,address,(address,uint32),uint32,uint16,uint16)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                20u8,
-                145u8,
-                139u8,
-                56u8,
-                52u8,
-                171u8,
-                103u8,
-                82u8,
-                235u8,
-                46u8,
-                27u8,
-                72u8,
-                155u8,
-                102u8,
-                99u8,
-                166u8,
-                120u8,
-                16u8,
-                239u8,
-                181u8,
-                245u8,
-                111u8,
-                57u8,
-                68u8,
-                169u8,
-                126u8,
-                222u8,
-                142u8,
-                207u8,
-                31u8,
-                217u8,
-                241u8,
+                20u8, 145u8, 139u8, 56u8, 52u8, 171u8, 103u8, 82u8, 235u8, 46u8, 27u8,
+                72u8, 155u8, 102u8, 99u8, 166u8, 120u8, 16u8, 239u8, 181u8, 245u8, 111u8,
+                57u8, 68u8, 169u8, 126u8, 222u8, 142u8, 207u8, 31u8, 217u8, 241u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -10564,6 +10280,7 @@ event OperatorSetSplitBipsSet(address indexed caller, address indexed operator, 
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `OwnershipTransferred(address,address)` and selector `0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0`.
 ```solidity
 event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
@@ -10602,38 +10319,9 @@ event OwnershipTransferred(address indexed previousOwner, address indexed newOwn
             );
             const SIGNATURE: &'static str = "OwnershipTransferred(address,address)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                139u8,
-                224u8,
-                7u8,
-                156u8,
-                83u8,
-                22u8,
-                89u8,
-                20u8,
-                19u8,
-                68u8,
-                205u8,
-                31u8,
-                208u8,
-                164u8,
-                242u8,
-                132u8,
-                25u8,
-                73u8,
-                127u8,
-                151u8,
-                34u8,
-                163u8,
-                218u8,
-                175u8,
-                227u8,
-                180u8,
-                24u8,
-                111u8,
-                107u8,
-                100u8,
-                87u8,
-                224u8,
+                139u8, 224u8, 7u8, 156u8, 83u8, 22u8, 89u8, 20u8, 19u8, 68u8, 205u8,
+                31u8, 208u8, 164u8, 242u8, 132u8, 25u8, 73u8, 127u8, 151u8, 34u8, 163u8,
+                218u8, 175u8, 227u8, 180u8, 24u8, 111u8, 107u8, 100u8, 87u8, 224u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -10711,6 +10399,7 @@ event OwnershipTransferred(address indexed previousOwner, address indexed newOwn
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `Paused(address,uint256)` and selector `0xab40a374bc51de372200a8bc981af8c9ecdc08dfdaef0bb6e09f88f3c616ef3d`.
 ```solidity
 event Paused(address indexed account, uint256 newPausedStatus);
@@ -10748,38 +10437,9 @@ event Paused(address indexed account, uint256 newPausedStatus);
             );
             const SIGNATURE: &'static str = "Paused(address,uint256)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                171u8,
-                64u8,
-                163u8,
-                116u8,
-                188u8,
-                81u8,
-                222u8,
-                55u8,
-                34u8,
-                0u8,
-                168u8,
-                188u8,
-                152u8,
-                26u8,
-                248u8,
-                201u8,
-                236u8,
-                220u8,
-                8u8,
-                223u8,
-                218u8,
-                239u8,
-                11u8,
-                182u8,
-                224u8,
-                159u8,
-                136u8,
-                243u8,
-                198u8,
-                22u8,
-                239u8,
-                61u8,
+                171u8, 64u8, 163u8, 116u8, 188u8, 81u8, 222u8, 55u8, 34u8, 0u8, 168u8,
+                188u8, 152u8, 26u8, 248u8, 201u8, 236u8, 220u8, 8u8, 223u8, 218u8, 239u8,
+                11u8, 182u8, 224u8, 159u8, 136u8, 243u8, 198u8, 22u8, 239u8, 61u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -10854,6 +10514,7 @@ event Paused(address indexed account, uint256 newPausedStatus);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `RewardsClaimed(bytes32,address,address,address,address,uint256)` and selector `0x9543dbd55580842586a951f0386e24d68a5df99ae29e3b216588b45fd684ce31`.
 ```solidity
 event RewardsClaimed(bytes32 root, address indexed earner, address indexed claimer, address indexed recipient, address token, uint256 claimedAmount);
@@ -10905,38 +10566,9 @@ event RewardsClaimed(bytes32 root, address indexed earner, address indexed claim
             );
             const SIGNATURE: &'static str = "RewardsClaimed(bytes32,address,address,address,address,uint256)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                149u8,
-                67u8,
-                219u8,
-                213u8,
-                85u8,
-                128u8,
-                132u8,
-                37u8,
-                134u8,
-                169u8,
-                81u8,
-                240u8,
-                56u8,
-                110u8,
-                36u8,
-                214u8,
-                138u8,
-                93u8,
-                249u8,
-                154u8,
-                226u8,
-                158u8,
-                59u8,
-                33u8,
-                101u8,
-                136u8,
-                180u8,
-                95u8,
-                214u8,
-                132u8,
-                206u8,
-                49u8,
+                149u8, 67u8, 219u8, 213u8, 85u8, 128u8, 132u8, 37u8, 134u8, 169u8, 81u8,
+                240u8, 56u8, 110u8, 36u8, 214u8, 138u8, 93u8, 249u8, 154u8, 226u8, 158u8,
+                59u8, 33u8, 101u8, 136u8, 180u8, 95u8, 214u8, 132u8, 206u8, 49u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -11032,6 +10664,7 @@ event RewardsClaimed(bytes32 root, address indexed earner, address indexed claim
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `RewardsForAllSubmitterSet(address,bool,bool)` and selector `0x4de6293e668df1398422e1def12118052c1539a03cbfedc145895d48d7685f1c`.
 ```solidity
 event RewardsForAllSubmitterSet(address indexed rewardsForAllSubmitter, bool indexed oldValue, bool indexed newValue);
@@ -11073,38 +10706,9 @@ event RewardsForAllSubmitterSet(address indexed rewardsForAllSubmitter, bool ind
             );
             const SIGNATURE: &'static str = "RewardsForAllSubmitterSet(address,bool,bool)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                77u8,
-                230u8,
-                41u8,
-                62u8,
-                102u8,
-                141u8,
-                241u8,
-                57u8,
-                132u8,
-                34u8,
-                225u8,
-                222u8,
-                241u8,
-                33u8,
-                24u8,
-                5u8,
-                44u8,
-                21u8,
-                57u8,
-                160u8,
-                60u8,
-                191u8,
-                237u8,
-                193u8,
-                69u8,
-                137u8,
-                93u8,
-                72u8,
-                215u8,
-                104u8,
-                95u8,
-                28u8,
+                77u8, 230u8, 41u8, 62u8, 102u8, 141u8, 241u8, 57u8, 132u8, 34u8, 225u8,
+                222u8, 241u8, 33u8, 24u8, 5u8, 44u8, 21u8, 57u8, 160u8, 60u8, 191u8,
+                237u8, 193u8, 69u8, 137u8, 93u8, 72u8, 215u8, 104u8, 95u8, 28u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -11189,6 +10793,7 @@ event RewardsForAllSubmitterSet(address indexed rewardsForAllSubmitter, bool ind
             }
         }
     };
+    #[derive()]
     /**Event with signature `RewardsSubmissionForAllCreated(address,uint256,bytes32,((address,uint96)[],address,uint256,uint32,uint32))` and selector `0x51088b8c89628df3a8174002c2a034d0152fce6af8415d651b2a4734bf270482`.
 ```solidity
 event RewardsSubmissionForAllCreated(address indexed submitter, uint256 indexed submissionNonce, bytes32 indexed rewardsSubmissionHash, IRewardsCoordinatorTypes.RewardsSubmission rewardsSubmission);
@@ -11232,38 +10837,9 @@ event RewardsSubmissionForAllCreated(address indexed submitter, uint256 indexed 
             );
             const SIGNATURE: &'static str = "RewardsSubmissionForAllCreated(address,uint256,bytes32,((address,uint96)[],address,uint256,uint32,uint32))";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                81u8,
-                8u8,
-                139u8,
-                140u8,
-                137u8,
-                98u8,
-                141u8,
-                243u8,
-                168u8,
-                23u8,
-                64u8,
-                2u8,
-                194u8,
-                160u8,
-                52u8,
-                208u8,
-                21u8,
-                47u8,
-                206u8,
-                106u8,
-                248u8,
-                65u8,
-                93u8,
-                101u8,
-                27u8,
-                42u8,
-                71u8,
-                52u8,
-                191u8,
-                39u8,
-                4u8,
-                130u8,
+                81u8, 8u8, 139u8, 140u8, 137u8, 98u8, 141u8, 243u8, 168u8, 23u8, 64u8,
+                2u8, 194u8, 160u8, 52u8, 208u8, 21u8, 47u8, 206u8, 106u8, 248u8, 65u8,
+                93u8, 101u8, 27u8, 42u8, 71u8, 52u8, 191u8, 39u8, 4u8, 130u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -11356,6 +10932,7 @@ event RewardsSubmissionForAllCreated(address indexed submitter, uint256 indexed 
             }
         }
     };
+    #[derive()]
     /**Event with signature `RewardsSubmissionForAllEarnersCreated(address,uint256,bytes32,((address,uint96)[],address,uint256,uint32,uint32))` and selector `0x5251b6fdefcb5d81144e735f69ea4c695fd43b0289ca53dc075033f5fc80068b`.
 ```solidity
 event RewardsSubmissionForAllEarnersCreated(address indexed tokenHopper, uint256 indexed submissionNonce, bytes32 indexed rewardsSubmissionHash, IRewardsCoordinatorTypes.RewardsSubmission rewardsSubmission);
@@ -11399,38 +10976,9 @@ event RewardsSubmissionForAllEarnersCreated(address indexed tokenHopper, uint256
             );
             const SIGNATURE: &'static str = "RewardsSubmissionForAllEarnersCreated(address,uint256,bytes32,((address,uint96)[],address,uint256,uint32,uint32))";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                82u8,
-                81u8,
-                182u8,
-                253u8,
-                239u8,
-                203u8,
-                93u8,
-                129u8,
-                20u8,
-                78u8,
-                115u8,
-                95u8,
-                105u8,
-                234u8,
-                76u8,
-                105u8,
-                95u8,
-                212u8,
-                59u8,
-                2u8,
-                137u8,
-                202u8,
-                83u8,
-                220u8,
-                7u8,
-                80u8,
-                51u8,
-                245u8,
-                252u8,
-                128u8,
-                6u8,
-                139u8,
+                82u8, 81u8, 182u8, 253u8, 239u8, 203u8, 93u8, 129u8, 20u8, 78u8, 115u8,
+                95u8, 105u8, 234u8, 76u8, 105u8, 95u8, 212u8, 59u8, 2u8, 137u8, 202u8,
+                83u8, 220u8, 7u8, 80u8, 51u8, 245u8, 252u8, 128u8, 6u8, 139u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -11524,6 +11072,7 @@ event RewardsSubmissionForAllEarnersCreated(address indexed tokenHopper, uint256
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `RewardsUpdaterSet(address,address)` and selector `0x237b82f438d75fc568ebab484b75b01d9287b9e98b490b7c23221623b6705dbb`.
 ```solidity
 event RewardsUpdaterSet(address indexed oldRewardsUpdater, address indexed newRewardsUpdater);
@@ -11562,38 +11111,9 @@ event RewardsUpdaterSet(address indexed oldRewardsUpdater, address indexed newRe
             );
             const SIGNATURE: &'static str = "RewardsUpdaterSet(address,address)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                35u8,
-                123u8,
-                130u8,
-                244u8,
-                56u8,
-                215u8,
-                95u8,
-                197u8,
-                104u8,
-                235u8,
-                171u8,
-                72u8,
-                75u8,
-                117u8,
-                176u8,
-                29u8,
-                146u8,
-                135u8,
-                185u8,
-                233u8,
-                139u8,
-                73u8,
-                11u8,
-                124u8,
-                35u8,
-                34u8,
-                22u8,
-                35u8,
-                182u8,
-                112u8,
-                93u8,
-                187u8,
+                35u8, 123u8, 130u8, 244u8, 56u8, 215u8, 95u8, 197u8, 104u8, 235u8, 171u8,
+                72u8, 75u8, 117u8, 176u8, 29u8, 146u8, 135u8, 185u8, 233u8, 139u8, 73u8,
+                11u8, 124u8, 35u8, 34u8, 22u8, 35u8, 182u8, 112u8, 93u8, 187u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -11671,6 +11191,7 @@ event RewardsUpdaterSet(address indexed oldRewardsUpdater, address indexed newRe
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `Unpaused(address,uint256)` and selector `0x3582d1828e26bf56bd801502bc021ac0bc8afb57c826e4986b45593c8fad389c`.
 ```solidity
 event Unpaused(address indexed account, uint256 newPausedStatus);
@@ -11708,38 +11229,9 @@ event Unpaused(address indexed account, uint256 newPausedStatus);
             );
             const SIGNATURE: &'static str = "Unpaused(address,uint256)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                53u8,
-                130u8,
-                209u8,
-                130u8,
-                142u8,
-                38u8,
-                191u8,
-                86u8,
-                189u8,
-                128u8,
-                21u8,
-                2u8,
-                188u8,
-                2u8,
-                26u8,
-                192u8,
-                188u8,
-                138u8,
-                251u8,
-                87u8,
-                200u8,
-                38u8,
-                228u8,
-                152u8,
-                107u8,
-                69u8,
-                89u8,
-                60u8,
-                143u8,
-                173u8,
-                56u8,
-                156u8,
+                53u8, 130u8, 209u8, 130u8, 142u8, 38u8, 191u8, 86u8, 189u8, 128u8, 21u8,
+                2u8, 188u8, 2u8, 26u8, 192u8, 188u8, 138u8, 251u8, 87u8, 200u8, 38u8,
+                228u8, 152u8, 107u8, 69u8, 89u8, 60u8, 143u8, 173u8, 56u8, 156u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -11885,6 +11377,7 @@ constructor(IRewardsCoordinatorTypes.RewardsCoordinatorConstructorParams params)
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `CALCULATION_INTERVAL_SECONDS()` and selector `0x9d45c281`.
 ```solidity
 function CALCULATION_INTERVAL_SECONDS() external view returns (uint32);
@@ -11892,6 +11385,7 @@ function CALCULATION_INTERVAL_SECONDS() external view returns (uint32);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct CALCULATION_INTERVAL_SECONDSCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`CALCULATION_INTERVAL_SECONDS()`](CALCULATION_INTERVAL_SECONDSCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -12008,6 +11502,7 @@ function CALCULATION_INTERVAL_SECONDS() external view returns (uint32);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `GENESIS_REWARDS_TIMESTAMP()` and selector `0x131433b4`.
 ```solidity
 function GENESIS_REWARDS_TIMESTAMP() external view returns (uint32);
@@ -12015,6 +11510,7 @@ function GENESIS_REWARDS_TIMESTAMP() external view returns (uint32);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct GENESIS_REWARDS_TIMESTAMPCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`GENESIS_REWARDS_TIMESTAMP()`](GENESIS_REWARDS_TIMESTAMPCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -12131,6 +11627,7 @@ function GENESIS_REWARDS_TIMESTAMP() external view returns (uint32);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `MAX_FUTURE_LENGTH()` and selector `0x04a0c502`.
 ```solidity
 function MAX_FUTURE_LENGTH() external view returns (uint32);
@@ -12138,6 +11635,7 @@ function MAX_FUTURE_LENGTH() external view returns (uint32);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct MAX_FUTURE_LENGTHCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`MAX_FUTURE_LENGTH()`](MAX_FUTURE_LENGTHCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -12254,6 +11752,7 @@ function MAX_FUTURE_LENGTH() external view returns (uint32);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `MAX_RETROACTIVE_LENGTH()` and selector `0x37838ed0`.
 ```solidity
 function MAX_RETROACTIVE_LENGTH() external view returns (uint32);
@@ -12261,6 +11760,7 @@ function MAX_RETROACTIVE_LENGTH() external view returns (uint32);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct MAX_RETROACTIVE_LENGTHCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`MAX_RETROACTIVE_LENGTH()`](MAX_RETROACTIVE_LENGTHCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -12377,6 +11877,7 @@ function MAX_RETROACTIVE_LENGTH() external view returns (uint32);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `MAX_REWARDS_DURATION()` and selector `0xbf21a8aa`.
 ```solidity
 function MAX_REWARDS_DURATION() external view returns (uint32);
@@ -12384,6 +11885,7 @@ function MAX_REWARDS_DURATION() external view returns (uint32);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct MAX_REWARDS_DURATIONCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`MAX_REWARDS_DURATION()`](MAX_REWARDS_DURATIONCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -12500,6 +12002,7 @@ function MAX_REWARDS_DURATION() external view returns (uint32);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `activationDelay()` and selector `0x3a8c0786`.
 ```solidity
 function activationDelay() external view returns (uint32);
@@ -12507,6 +12010,7 @@ function activationDelay() external view returns (uint32);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct activationDelayCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`activationDelay()`](activationDelayCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -12621,6 +12125,7 @@ function activationDelay() external view returns (uint32);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `allocationManager()` and selector `0xca8aa7c7`.
 ```solidity
 function allocationManager() external view returns (address);
@@ -12628,6 +12133,7 @@ function allocationManager() external view returns (address);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct allocationManagerCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`allocationManager()`](allocationManagerCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -12744,6 +12250,7 @@ function allocationManager() external view returns (address);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `beaconChainETHStrategy()` and selector `0x9104c319`.
 ```solidity
 function beaconChainETHStrategy() external view returns (address);
@@ -12751,6 +12258,7 @@ function beaconChainETHStrategy() external view returns (address);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct beaconChainETHStrategyCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`beaconChainETHStrategy()`](beaconChainETHStrategyCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -12867,6 +12375,7 @@ function beaconChainETHStrategy() external view returns (address);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `calculateEarnerLeafHash((address,bytes32))` and selector `0x149bc872`.
 ```solidity
 function calculateEarnerLeafHash(IRewardsCoordinatorTypes.EarnerTreeMerkleLeaf memory leaf) external pure returns (bytes32);
@@ -12877,6 +12386,7 @@ function calculateEarnerLeafHash(IRewardsCoordinatorTypes.EarnerTreeMerkleLeaf m
         #[allow(missing_docs)]
         pub leaf: <IRewardsCoordinatorTypes::EarnerTreeMerkleLeaf as alloy::sol_types::SolType>::RustType,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`calculateEarnerLeafHash((address,bytes32))`](calculateEarnerLeafHashCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -13001,6 +12511,7 @@ function calculateEarnerLeafHash(IRewardsCoordinatorTypes.EarnerTreeMerkleLeaf m
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `calculateTokenLeafHash((address,uint256))` and selector `0xf8cd8448`.
 ```solidity
 function calculateTokenLeafHash(IRewardsCoordinatorTypes.TokenTreeMerkleLeaf memory leaf) external pure returns (bytes32);
@@ -13011,6 +12522,7 @@ function calculateTokenLeafHash(IRewardsCoordinatorTypes.TokenTreeMerkleLeaf mem
         #[allow(missing_docs)]
         pub leaf: <IRewardsCoordinatorTypes::TokenTreeMerkleLeaf as alloy::sol_types::SolType>::RustType,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`calculateTokenLeafHash((address,uint256))`](calculateTokenLeafHashCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -13135,6 +12647,7 @@ function calculateTokenLeafHash(IRewardsCoordinatorTypes.TokenTreeMerkleLeaf mem
             }
         }
     };
+    #[derive()]
     /**Function with signature `checkClaim((uint32,uint32,bytes,(address,bytes32),uint32[],bytes[],(address,uint256)[]))` and selector `0x5e9d8348`.
 ```solidity
 function checkClaim(IRewardsCoordinatorTypes.RewardsMerkleClaim memory claim) external view returns (bool);
@@ -13145,6 +12658,7 @@ function checkClaim(IRewardsCoordinatorTypes.RewardsMerkleClaim memory claim) ex
         #[allow(missing_docs)]
         pub claim: <IRewardsCoordinatorTypes::RewardsMerkleClaim as alloy::sol_types::SolType>::RustType,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`checkClaim((uint32,uint32,bytes,(address,bytes32),uint32[],bytes[],(address,uint256)[]))`](checkClaimCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -13265,6 +12779,7 @@ function checkClaim(IRewardsCoordinatorTypes.RewardsMerkleClaim memory claim) ex
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `claimerFor(address)` and selector `0x2b9f64a4`.
 ```solidity
 function claimerFor(address earner) external view returns (address claimer);
@@ -13275,6 +12790,7 @@ function claimerFor(address earner) external view returns (address claimer);
         #[allow(missing_docs)]
         pub earner: alloy::sol_types::private::Address,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`claimerFor(address)`](claimerForCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -13391,6 +12907,7 @@ function claimerFor(address earner) external view returns (address claimer);
             }
         }
     };
+    #[derive()]
     /**Function with signature `createAVSRewardsSubmission(((address,uint96)[],address,uint256,uint32,uint32)[])` and selector `0xfce36c7d`.
 ```solidity
 function createAVSRewardsSubmission(IRewardsCoordinatorTypes.RewardsSubmission[] memory rewardsSubmissions) external;
@@ -13534,6 +13051,7 @@ function createAVSRewardsSubmission(IRewardsCoordinatorTypes.RewardsSubmission[]
             }
         }
     };
+    #[derive()]
     /**Function with signature `createOperatorDirectedAVSRewardsSubmission(address,((address,uint96)[],address,(address,uint256)[],uint32,uint32,string)[])` and selector `0x9cb9a5fa`.
 ```solidity
 function createOperatorDirectedAVSRewardsSubmission(address avs, IRewardsCoordinatorTypes.OperatorDirectedRewardsSubmission[] memory operatorDirectedRewardsSubmissions) external;
@@ -13691,6 +13209,7 @@ function createOperatorDirectedAVSRewardsSubmission(address avs, IRewardsCoordin
             }
         }
     };
+    #[derive()]
     /**Function with signature `createOperatorDirectedOperatorSetRewardsSubmission((address,uint32),((address,uint96)[],address,(address,uint256)[],uint32,uint32,string)[])` and selector `0x0ca29899`.
 ```solidity
 function createOperatorDirectedOperatorSetRewardsSubmission(OperatorSet memory operatorSet, IRewardsCoordinatorTypes.OperatorDirectedRewardsSubmission[] memory operatorDirectedRewardsSubmissions) external;
@@ -13852,6 +13371,7 @@ function createOperatorDirectedOperatorSetRewardsSubmission(OperatorSet memory o
             }
         }
     };
+    #[derive()]
     /**Function with signature `createRewardsForAllEarners(((address,uint96)[],address,uint256,uint32,uint32)[])` and selector `0xff9f6cce`.
 ```solidity
 function createRewardsForAllEarners(IRewardsCoordinatorTypes.RewardsSubmission[] memory rewardsSubmissions) external;
@@ -13995,6 +13515,7 @@ function createRewardsForAllEarners(IRewardsCoordinatorTypes.RewardsSubmission[]
             }
         }
     };
+    #[derive()]
     /**Function with signature `createRewardsForAllSubmission(((address,uint96)[],address,uint256,uint32,uint32)[])` and selector `0x36af41fa`.
 ```solidity
 function createRewardsForAllSubmission(IRewardsCoordinatorTypes.RewardsSubmission[] memory rewardsSubmissions) external;
@@ -14138,6 +13659,7 @@ function createRewardsForAllSubmission(IRewardsCoordinatorTypes.RewardsSubmissio
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `cumulativeClaimed(address,address)` and selector `0x865c6953`.
 ```solidity
 function cumulativeClaimed(address earner, address token) external view returns (uint256 totalClaimed);
@@ -14150,6 +13672,7 @@ function cumulativeClaimed(address earner, address token) external view returns 
         #[allow(missing_docs)]
         pub token: alloy::sol_types::private::Address,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`cumulativeClaimed(address,address)`](cumulativeClaimedCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -14287,6 +13810,7 @@ function cumulativeClaimed(address earner, address token) external view returns 
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `currRewardsCalculationEndTimestamp()` and selector `0x4d18cc35`.
 ```solidity
 function currRewardsCalculationEndTimestamp() external view returns (uint32);
@@ -14294,6 +13818,7 @@ function currRewardsCalculationEndTimestamp() external view returns (uint32);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct currRewardsCalculationEndTimestampCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`currRewardsCalculationEndTimestamp()`](currRewardsCalculationEndTimestampCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -14410,6 +13935,7 @@ function currRewardsCalculationEndTimestamp() external view returns (uint32);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `defaultOperatorSplitBips()` and selector `0x63f6a798`.
 ```solidity
 function defaultOperatorSplitBips() external view returns (uint16);
@@ -14417,6 +13943,7 @@ function defaultOperatorSplitBips() external view returns (uint16);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct defaultOperatorSplitBipsCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`defaultOperatorSplitBips()`](defaultOperatorSplitBipsCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -14533,6 +14060,7 @@ function defaultOperatorSplitBips() external view returns (uint16);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `delegationManager()` and selector `0xea4d3c9b`.
 ```solidity
 function delegationManager() external view returns (address);
@@ -14540,6 +14068,7 @@ function delegationManager() external view returns (address);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct delegationManagerCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`delegationManager()`](delegationManagerCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -14656,6 +14185,7 @@ function delegationManager() external view returns (address);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `disableRoot(uint32)` and selector `0xf96abf2e`.
 ```solidity
 function disableRoot(uint32 rootIndex) external;
@@ -14779,6 +14309,7 @@ function disableRoot(uint32 rootIndex) external;
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getCurrentClaimableDistributionRoot()` and selector `0x0e9a53cf`.
 ```solidity
 function getCurrentClaimableDistributionRoot() external view returns (IRewardsCoordinatorTypes.DistributionRoot memory);
@@ -14786,6 +14317,7 @@ function getCurrentClaimableDistributionRoot() external view returns (IRewardsCo
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct getCurrentClaimableDistributionRootCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getCurrentClaimableDistributionRoot()`](getCurrentClaimableDistributionRootCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -14904,6 +14436,7 @@ function getCurrentClaimableDistributionRoot() external view returns (IRewardsCo
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getCurrentDistributionRoot()` and selector `0x9be3d4e4`.
 ```solidity
 function getCurrentDistributionRoot() external view returns (IRewardsCoordinatorTypes.DistributionRoot memory);
@@ -14911,6 +14444,7 @@ function getCurrentDistributionRoot() external view returns (IRewardsCoordinator
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct getCurrentDistributionRootCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getCurrentDistributionRoot()`](getCurrentDistributionRootCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -15029,6 +14563,7 @@ function getCurrentDistributionRoot() external view returns (IRewardsCoordinator
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getDistributionRootAtIndex(uint256)` and selector `0xde02e503`.
 ```solidity
 function getDistributionRootAtIndex(uint256 index) external view returns (IRewardsCoordinatorTypes.DistributionRoot memory);
@@ -15039,6 +14574,7 @@ function getDistributionRootAtIndex(uint256 index) external view returns (IRewar
         #[allow(missing_docs)]
         pub index: alloy::sol_types::private::primitives::aliases::U256,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getDistributionRootAtIndex(uint256)`](getDistributionRootAtIndexCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -15163,6 +14699,7 @@ function getDistributionRootAtIndex(uint256 index) external view returns (IRewar
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getDistributionRootsLength()` and selector `0x7b8f8b05`.
 ```solidity
 function getDistributionRootsLength() external view returns (uint256);
@@ -15170,6 +14707,7 @@ function getDistributionRootsLength() external view returns (uint256);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct getDistributionRootsLengthCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getDistributionRootsLength()`](getDistributionRootsLengthCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -15288,6 +14826,7 @@ function getDistributionRootsLength() external view returns (uint256);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getOperatorAVSSplit(address,address)` and selector `0xe063f81f`.
 ```solidity
 function getOperatorAVSSplit(address operator, address avs) external view returns (uint16);
@@ -15300,6 +14839,7 @@ function getOperatorAVSSplit(address operator, address avs) external view return
         #[allow(missing_docs)]
         pub avs: alloy::sol_types::private::Address,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getOperatorAVSSplit(address,address)`](getOperatorAVSSplitCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -15435,6 +14975,7 @@ function getOperatorAVSSplit(address operator, address avs) external view return
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getOperatorPISplit(address)` and selector `0x4b943960`.
 ```solidity
 function getOperatorPISplit(address operator) external view returns (uint16);
@@ -15445,6 +14986,7 @@ function getOperatorPISplit(address operator) external view returns (uint16);
         #[allow(missing_docs)]
         pub operator: alloy::sol_types::private::Address,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getOperatorPISplit(address)`](getOperatorPISplitCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -15565,6 +15107,7 @@ function getOperatorPISplit(address operator) external view returns (uint16);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getOperatorSetSplit(address,(address,uint32))` and selector `0x9de4b35f`.
 ```solidity
 function getOperatorSetSplit(address operator, OperatorSet memory operatorSet) external view returns (uint16);
@@ -15577,6 +15120,7 @@ function getOperatorSetSplit(address operator, OperatorSet memory operatorSet) e
         #[allow(missing_docs)]
         pub operatorSet: <OperatorSet as alloy::sol_types::SolType>::RustType,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getOperatorSetSplit(address,(address,uint32))`](getOperatorSetSplitCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -15709,6 +15253,7 @@ function getOperatorSetSplit(address operator, OperatorSet memory operatorSet) e
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getRootIndexFromHash(bytes32)` and selector `0xe810ce21`.
 ```solidity
 function getRootIndexFromHash(bytes32 rootHash) external view returns (uint32);
@@ -15719,6 +15264,7 @@ function getRootIndexFromHash(bytes32 rootHash) external view returns (uint32);
         #[allow(missing_docs)]
         pub rootHash: alloy::sol_types::private::FixedBytes<32>,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getRootIndexFromHash(bytes32)`](getRootIndexFromHashCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -15839,6 +15385,7 @@ function getRootIndexFromHash(bytes32 rootHash) external view returns (uint32);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `initialize(address,uint256,address,uint32,uint16)` and selector `0xf6efbb59`.
 ```solidity
 function initialize(address initialOwner, uint256 initialPausedStatus, address _rewardsUpdater, uint32 _activationDelay, uint16 _defaultSplitBips) external;
@@ -16012,6 +15559,7 @@ function initialize(address initialOwner, uint256 initialPausedStatus, address _
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `isAVSRewardsSubmissionHash(address,bytes32)` and selector `0x6d21117e`.
 ```solidity
 function isAVSRewardsSubmissionHash(address avs, bytes32 hash) external view returns (bool valid);
@@ -16024,6 +15572,7 @@ function isAVSRewardsSubmissionHash(address avs, bytes32 hash) external view ret
         #[allow(missing_docs)]
         pub hash: alloy::sol_types::private::FixedBytes<32>,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`isAVSRewardsSubmissionHash(address,bytes32)`](isAVSRewardsSubmissionHashCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -16159,6 +15708,7 @@ function isAVSRewardsSubmissionHash(address avs, bytes32 hash) external view ret
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `isOperatorDirectedAVSRewardsSubmissionHash(address,bytes32)` and selector `0xed71e6a2`.
 ```solidity
 function isOperatorDirectedAVSRewardsSubmissionHash(address avs, bytes32 hash) external view returns (bool valid);
@@ -16171,6 +15721,7 @@ function isOperatorDirectedAVSRewardsSubmissionHash(address avs, bytes32 hash) e
         #[allow(missing_docs)]
         pub hash: alloy::sol_types::private::FixedBytes<32>,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`isOperatorDirectedAVSRewardsSubmissionHash(address,bytes32)`](isOperatorDirectedAVSRewardsSubmissionHashCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -16309,6 +15860,7 @@ function isOperatorDirectedAVSRewardsSubmissionHash(address avs, bytes32 hash) e
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `isOperatorDirectedOperatorSetRewardsSubmissionHash(address,bytes32)` and selector `0xf2f07ab4`.
 ```solidity
 function isOperatorDirectedOperatorSetRewardsSubmissionHash(address avs, bytes32 hash) external view returns (bool valid);
@@ -16321,6 +15873,7 @@ function isOperatorDirectedOperatorSetRewardsSubmissionHash(address avs, bytes32
         #[allow(missing_docs)]
         pub hash: alloy::sol_types::private::FixedBytes<32>,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`isOperatorDirectedOperatorSetRewardsSubmissionHash(address,bytes32)`](isOperatorDirectedOperatorSetRewardsSubmissionHashCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -16463,6 +16016,7 @@ function isOperatorDirectedOperatorSetRewardsSubmissionHash(address avs, bytes32
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `isRewardsForAllSubmitter(address)` and selector `0x0018572c`.
 ```solidity
 function isRewardsForAllSubmitter(address submitter) external view returns (bool valid);
@@ -16473,6 +16027,7 @@ function isRewardsForAllSubmitter(address submitter) external view returns (bool
         #[allow(missing_docs)]
         pub submitter: alloy::sol_types::private::Address,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`isRewardsForAllSubmitter(address)`](isRewardsForAllSubmitterCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -16593,6 +16148,7 @@ function isRewardsForAllSubmitter(address submitter) external view returns (bool
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `isRewardsSubmissionForAllEarnersHash(address,bytes32)` and selector `0xaebd8bae`.
 ```solidity
 function isRewardsSubmissionForAllEarnersHash(address avs, bytes32 hash) external view returns (bool valid);
@@ -16605,6 +16161,7 @@ function isRewardsSubmissionForAllEarnersHash(address avs, bytes32 hash) externa
         #[allow(missing_docs)]
         pub hash: alloy::sol_types::private::FixedBytes<32>,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`isRewardsSubmissionForAllEarnersHash(address,bytes32)`](isRewardsSubmissionForAllEarnersHashCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -16740,6 +16297,7 @@ function isRewardsSubmissionForAllEarnersHash(address avs, bytes32 hash) externa
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `isRewardsSubmissionForAllHash(address,bytes32)` and selector `0xc46db606`.
 ```solidity
 function isRewardsSubmissionForAllHash(address avs, bytes32 hash) external view returns (bool valid);
@@ -16752,6 +16310,7 @@ function isRewardsSubmissionForAllHash(address avs, bytes32 hash) external view 
         #[allow(missing_docs)]
         pub hash: alloy::sol_types::private::FixedBytes<32>,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`isRewardsSubmissionForAllHash(address,bytes32)`](isRewardsSubmissionForAllHashCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -16887,6 +16446,7 @@ function isRewardsSubmissionForAllHash(address avs, bytes32 hash) external view 
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `owner()` and selector `0x8da5cb5b`.
 ```solidity
 function owner() external view returns (address);
@@ -16894,6 +16454,7 @@ function owner() external view returns (address);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct ownerCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`owner()`](ownerCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -17006,6 +16567,7 @@ function owner() external view returns (address);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `pause(uint256)` and selector `0x136439dd`.
 ```solidity
 function pause(uint256 newPausedStatus) external;
@@ -17131,6 +16693,7 @@ function pause(uint256 newPausedStatus) external;
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `pauseAll()` and selector `0x595c6a67`.
 ```solidity
 function pauseAll() external;
@@ -17247,6 +16810,7 @@ function pauseAll() external;
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `paused(uint8)` and selector `0x5ac86ab7`.
 ```solidity
 function paused(uint8 index) external view returns (bool);
@@ -17257,6 +16821,7 @@ function paused(uint8 index) external view returns (bool);
         #[allow(missing_docs)]
         pub index: u8,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`paused(uint8)`](paused_0Call) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -17373,6 +16938,7 @@ function paused(uint8 index) external view returns (bool);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `paused()` and selector `0x5c975abb`.
 ```solidity
 function paused() external view returns (uint256);
@@ -17380,6 +16946,7 @@ function paused() external view returns (uint256);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct paused_1Call {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`paused()`](paused_1Call) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -17494,6 +17061,7 @@ function paused() external view returns (uint256);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `pauserRegistry()` and selector `0x886f1195`.
 ```solidity
 function pauserRegistry() external view returns (address);
@@ -17501,6 +17069,7 @@ function pauserRegistry() external view returns (address);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct pauserRegistryCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`pauserRegistry()`](pauserRegistryCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -17615,6 +17184,7 @@ function pauserRegistry() external view returns (address);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `permissionController()` and selector `0x4657e26a`.
 ```solidity
 function permissionController() external view returns (address);
@@ -17622,6 +17192,7 @@ function permissionController() external view returns (address);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct permissionControllerCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`permissionController()`](permissionControllerCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -17738,6 +17309,7 @@ function permissionController() external view returns (address);
             }
         }
     };
+    #[derive()]
     /**Function with signature `processClaim((uint32,uint32,bytes,(address,bytes32),uint32[],bytes[],(address,uint256)[]),address)` and selector `0x3ccc861d`.
 ```solidity
 function processClaim(IRewardsCoordinatorTypes.RewardsMerkleClaim memory claim, address recipient) external;
@@ -17878,6 +17450,7 @@ function processClaim(IRewardsCoordinatorTypes.RewardsMerkleClaim memory claim, 
             }
         }
     };
+    #[derive()]
     /**Function with signature `processClaims((uint32,uint32,bytes,(address,bytes32),uint32[],bytes[],(address,uint256)[])[],address)` and selector `0x4596021c`.
 ```solidity
 function processClaims(IRewardsCoordinatorTypes.RewardsMerkleClaim[] memory claims, address recipient) external;
@@ -18026,6 +17599,7 @@ function processClaims(IRewardsCoordinatorTypes.RewardsMerkleClaim[] memory clai
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `renounceOwnership()` and selector `0x715018a6`.
 ```solidity
 function renounceOwnership() external;
@@ -18146,6 +17720,7 @@ function renounceOwnership() external;
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `rewardsUpdater()` and selector `0xfbf1e2c1`.
 ```solidity
 function rewardsUpdater() external view returns (address);
@@ -18153,6 +17728,7 @@ function rewardsUpdater() external view returns (address);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct rewardsUpdaterCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`rewardsUpdater()`](rewardsUpdaterCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -18267,6 +17843,7 @@ function rewardsUpdater() external view returns (address);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `setActivationDelay(uint32)` and selector `0x58baaa3e`.
 ```solidity
 function setActivationDelay(uint32 _activationDelay) external;
@@ -18394,6 +17971,7 @@ function setActivationDelay(uint32 _activationDelay) external;
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `setClaimerFor(address)` and selector `0xa0169ddd`.
 ```solidity
 function setClaimerFor(address claimer) external;
@@ -18519,6 +18097,7 @@ function setClaimerFor(address claimer) external;
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `setClaimerFor(address,address)` and selector `0xf22cef85`.
 ```solidity
 function setClaimerFor(address earner, address claimer) external;
@@ -18661,6 +18240,7 @@ function setClaimerFor(address earner, address claimer) external;
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `setDefaultOperatorSplit(uint16)` and selector `0xa50a1d9c`.
 ```solidity
 function setDefaultOperatorSplit(uint16 split) external;
@@ -18788,6 +18368,7 @@ function setDefaultOperatorSplit(uint16 split) external;
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `setOperatorAVSSplit(address,address,uint16)` and selector `0xdcbb03b3`.
 ```solidity
 function setOperatorAVSSplit(address operator, address avs, uint16 split) external;
@@ -18941,6 +18522,7 @@ function setOperatorAVSSplit(address operator, address avs, uint16 split) extern
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `setOperatorPISplit(address,uint16)` and selector `0xb3dbb0e0`.
 ```solidity
 function setOperatorPISplit(address operator, uint16 split) external;
@@ -19082,6 +18664,7 @@ function setOperatorPISplit(address operator, uint16 split) external;
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `setOperatorSetSplit(address,(address,uint32),uint16)` and selector `0xf74e8eac`.
 ```solidity
 function setOperatorSetSplit(address operator, OperatorSet memory operatorSet, uint16 split) external;
@@ -19235,6 +18818,7 @@ function setOperatorSetSplit(address operator, OperatorSet memory operatorSet, u
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `setRewardsForAllSubmitter(address,bool)` and selector `0x0eb38345`.
 ```solidity
 function setRewardsForAllSubmitter(address _submitter, bool _newValue) external;
@@ -19376,6 +18960,7 @@ function setRewardsForAllSubmitter(address _submitter, bool _newValue) external;
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `setRewardsUpdater(address)` and selector `0x863cb9a9`.
 ```solidity
 function setRewardsUpdater(address _rewardsUpdater) external;
@@ -19503,6 +19088,7 @@ function setRewardsUpdater(address _rewardsUpdater) external;
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `strategyManager()` and selector `0x39b70e38`.
 ```solidity
 function strategyManager() external view returns (address);
@@ -19510,6 +19096,7 @@ function strategyManager() external view returns (address);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct strategyManagerCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`strategyManager()`](strategyManagerCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -19624,6 +19211,7 @@ function strategyManager() external view returns (address);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `submissionNonce(address)` and selector `0xbb7e451f`.
 ```solidity
 function submissionNonce(address avs) external view returns (uint256 nonce);
@@ -19634,6 +19222,7 @@ function submissionNonce(address avs) external view returns (uint256 nonce);
         #[allow(missing_docs)]
         pub avs: alloy::sol_types::private::Address,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`submissionNonce(address)`](submissionNonceCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -19754,6 +19343,7 @@ function submissionNonce(address avs) external view returns (uint256 nonce);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `submitRoot(bytes32,uint32)` and selector `0x3efe1db6`.
 ```solidity
 function submitRoot(bytes32 root, uint32 rewardsCalculationEndTimestamp) external;
@@ -19896,6 +19486,7 @@ function submitRoot(bytes32 root, uint32 rewardsCalculationEndTimestamp) externa
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `transferOwnership(address)` and selector `0xf2fde38b`.
 ```solidity
 function transferOwnership(address newOwner) external;
@@ -20023,6 +19614,7 @@ function transferOwnership(address newOwner) external;
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `unpause(uint256)` and selector `0xfabc1cbc`.
 ```solidity
 function unpause(uint256 newPausedStatus) external;
@@ -20148,6 +19740,7 @@ function unpause(uint256 newPausedStatus) external;
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `version()` and selector `0x54fd4d50`.
 ```solidity
 function version() external view returns (string memory);
@@ -20155,6 +19748,7 @@ function version() external view returns (string memory);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct versionCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`version()`](versionCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -20268,6 +19862,7 @@ function version() external view returns (string memory);
         }
     };
     ///Container for all the [`RewardsCoordinator`](self) function calls.
+    #[derive()]
     pub enum RewardsCoordinatorCalls {
         #[allow(missing_docs)]
         CALCULATION_INTERVAL_SECONDS(CALCULATION_INTERVAL_SECONDSCall),
@@ -22197,6 +21792,7 @@ function version() external view returns (string memory);
         }
     }
     ///Container for all the [`RewardsCoordinator`](self) custom errors.
+    #[derive(Debug, PartialEq, Eq, Hash)]
     pub enum RewardsCoordinatorErrors {
         #[allow(missing_docs)]
         AmountExceedsMax(AmountExceedsMax),
@@ -23515,6 +23111,7 @@ function version() external view returns (string memory);
         }
     }
     ///Container for all the [`RewardsCoordinator`](self) events.
+    #[derive()]
     pub enum RewardsCoordinatorEvents {
         #[allow(missing_docs)]
         AVSRewardsSubmissionCreated(AVSRewardsSubmissionCreated),
@@ -23571,684 +23168,104 @@ function version() external view returns (string memory);
         /// Prefer using `SolInterface` methods instead.
         pub const SELECTORS: &'static [[u8; 32usize]] = &[
             [
-                20u8,
-                145u8,
-                139u8,
-                56u8,
-                52u8,
-                171u8,
-                103u8,
-                82u8,
-                235u8,
-                46u8,
-                27u8,
-                72u8,
-                155u8,
-                102u8,
-                99u8,
-                166u8,
-                120u8,
-                16u8,
-                239u8,
-                181u8,
-                245u8,
-                111u8,
-                57u8,
-                68u8,
-                169u8,
-                126u8,
-                222u8,
-                142u8,
-                207u8,
-                31u8,
-                217u8,
-                241u8,
+                20u8, 145u8, 139u8, 56u8, 52u8, 171u8, 103u8, 82u8, 235u8, 46u8, 27u8,
+                72u8, 155u8, 102u8, 99u8, 166u8, 120u8, 16u8, 239u8, 181u8, 245u8, 111u8,
+                57u8, 68u8, 169u8, 126u8, 222u8, 142u8, 207u8, 31u8, 217u8, 241u8,
             ],
             [
-                35u8,
-                123u8,
-                130u8,
-                244u8,
-                56u8,
-                215u8,
-                95u8,
-                197u8,
-                104u8,
-                235u8,
-                171u8,
-                72u8,
-                75u8,
-                117u8,
-                176u8,
-                29u8,
-                146u8,
-                135u8,
-                185u8,
-                233u8,
-                139u8,
-                73u8,
-                11u8,
-                124u8,
-                35u8,
-                34u8,
-                22u8,
-                35u8,
-                182u8,
-                112u8,
-                93u8,
-                187u8,
+                35u8, 123u8, 130u8, 244u8, 56u8, 215u8, 95u8, 197u8, 104u8, 235u8, 171u8,
+                72u8, 75u8, 117u8, 176u8, 29u8, 146u8, 135u8, 185u8, 233u8, 139u8, 73u8,
+                11u8, 124u8, 35u8, 34u8, 22u8, 35u8, 182u8, 112u8, 93u8, 187u8,
             ],
             [
-                53u8,
-                130u8,
-                209u8,
-                130u8,
-                142u8,
-                38u8,
-                191u8,
-                86u8,
-                189u8,
-                128u8,
-                21u8,
-                2u8,
-                188u8,
-                2u8,
-                26u8,
-                192u8,
-                188u8,
-                138u8,
-                251u8,
-                87u8,
-                200u8,
-                38u8,
-                228u8,
-                152u8,
-                107u8,
-                69u8,
-                89u8,
-                60u8,
-                143u8,
-                173u8,
-                56u8,
-                156u8,
+                53u8, 130u8, 209u8, 130u8, 142u8, 38u8, 191u8, 86u8, 189u8, 128u8, 21u8,
+                2u8, 188u8, 2u8, 26u8, 192u8, 188u8, 138u8, 251u8, 87u8, 200u8, 38u8,
+                228u8, 152u8, 107u8, 69u8, 89u8, 60u8, 143u8, 173u8, 56u8, 156u8,
             ],
             [
-                69u8,
-                10u8,
-                54u8,
-                122u8,
-                56u8,
-                12u8,
-                78u8,
-                51u8,
-                158u8,
-                90u8,
-                231u8,
-                52u8,
-                12u8,
-                132u8,
-                100u8,
-                239u8,
-                39u8,
-                175u8,
-                119u8,
-                129u8,
-                173u8,
-                153u8,
-                69u8,
-                207u8,
-                232u8,
-                171u8,
-                216u8,
-                40u8,
-                248u8,
-                158u8,
-                98u8,
-                129u8,
+                69u8, 10u8, 54u8, 122u8, 56u8, 12u8, 78u8, 51u8, 158u8, 90u8, 231u8,
+                52u8, 12u8, 132u8, 100u8, 239u8, 39u8, 175u8, 119u8, 129u8, 173u8, 153u8,
+                69u8, 207u8, 232u8, 171u8, 216u8, 40u8, 248u8, 158u8, 98u8, 129u8,
             ],
             [
-                72u8,
-                225u8,
-                152u8,
-                182u8,
-                174u8,
-                53u8,
-                126u8,
-                82u8,
-                146u8,
-                4u8,
-                238u8,
-                83u8,
-                168u8,
-                229u8,
-                20u8,
-                196u8,
-                112u8,
-                255u8,
-                119u8,
-                217u8,
-                204u8,
-                142u8,
-                79u8,
-                114u8,
-                7u8,
-                248u8,
-                181u8,
-                212u8,
-                144u8,
-                174u8,
-                105u8,
-                52u8,
+                72u8, 225u8, 152u8, 182u8, 174u8, 53u8, 126u8, 82u8, 146u8, 4u8, 238u8,
+                83u8, 168u8, 229u8, 20u8, 196u8, 112u8, 255u8, 119u8, 217u8, 204u8,
+                142u8, 79u8, 114u8, 7u8, 248u8, 181u8, 212u8, 144u8, 174u8, 105u8, 52u8,
             ],
             [
-                77u8,
-                230u8,
-                41u8,
-                62u8,
-                102u8,
-                141u8,
-                241u8,
-                57u8,
-                132u8,
-                34u8,
-                225u8,
-                222u8,
-                241u8,
-                33u8,
-                24u8,
-                5u8,
-                44u8,
-                21u8,
-                57u8,
-                160u8,
-                60u8,
-                191u8,
-                237u8,
-                193u8,
-                69u8,
-                137u8,
-                93u8,
-                72u8,
-                215u8,
-                104u8,
-                95u8,
-                28u8,
+                77u8, 230u8, 41u8, 62u8, 102u8, 141u8, 241u8, 57u8, 132u8, 34u8, 225u8,
+                222u8, 241u8, 33u8, 24u8, 5u8, 44u8, 21u8, 57u8, 160u8, 60u8, 191u8,
+                237u8, 193u8, 69u8, 137u8, 93u8, 72u8, 215u8, 104u8, 95u8, 28u8,
             ],
             [
-                81u8,
-                8u8,
-                139u8,
-                140u8,
-                137u8,
-                98u8,
-                141u8,
-                243u8,
-                168u8,
-                23u8,
-                64u8,
-                2u8,
-                194u8,
-                160u8,
-                52u8,
-                208u8,
-                21u8,
-                47u8,
-                206u8,
-                106u8,
-                248u8,
-                65u8,
-                93u8,
-                101u8,
-                27u8,
-                42u8,
-                71u8,
-                52u8,
-                191u8,
-                39u8,
-                4u8,
-                130u8,
+                81u8, 8u8, 139u8, 140u8, 137u8, 98u8, 141u8, 243u8, 168u8, 23u8, 64u8,
+                2u8, 194u8, 160u8, 52u8, 208u8, 21u8, 47u8, 206u8, 106u8, 248u8, 65u8,
+                93u8, 101u8, 27u8, 42u8, 71u8, 52u8, 191u8, 39u8, 4u8, 130u8,
             ],
             [
-                82u8,
-                81u8,
-                182u8,
-                253u8,
-                239u8,
-                203u8,
-                93u8,
-                129u8,
-                20u8,
-                78u8,
-                115u8,
-                95u8,
-                105u8,
-                234u8,
-                76u8,
-                105u8,
-                95u8,
-                212u8,
-                59u8,
-                2u8,
-                137u8,
-                202u8,
-                83u8,
-                220u8,
-                7u8,
-                80u8,
-                51u8,
-                245u8,
-                252u8,
-                128u8,
-                6u8,
-                139u8,
+                82u8, 81u8, 182u8, 253u8, 239u8, 203u8, 93u8, 129u8, 20u8, 78u8, 115u8,
+                95u8, 105u8, 234u8, 76u8, 105u8, 95u8, 212u8, 59u8, 2u8, 137u8, 202u8,
+                83u8, 220u8, 7u8, 80u8, 51u8, 245u8, 252u8, 128u8, 6u8, 139u8,
             ],
             [
-                127u8,
-                38u8,
-                184u8,
-                63u8,
-                249u8,
-                110u8,
-                31u8,
-                43u8,
-                106u8,
-                104u8,
-                47u8,
-                19u8,
-                56u8,
-                82u8,
-                246u8,
-                121u8,
-                138u8,
-                9u8,
-                196u8,
-                101u8,
-                218u8,
-                149u8,
-                146u8,
-                20u8,
-                96u8,
-                206u8,
-                251u8,
-                56u8,
-                71u8,
-                64u8,
-                36u8,
-                152u8,
+                127u8, 38u8, 184u8, 63u8, 249u8, 110u8, 31u8, 43u8, 106u8, 104u8, 47u8,
+                19u8, 56u8, 82u8, 246u8, 121u8, 138u8, 9u8, 196u8, 101u8, 218u8, 149u8,
+                146u8, 20u8, 96u8, 206u8, 251u8, 56u8, 71u8, 64u8, 36u8, 152u8,
             ],
             [
-                139u8,
-                224u8,
-                7u8,
-                156u8,
-                83u8,
-                22u8,
-                89u8,
-                20u8,
-                19u8,
-                68u8,
-                205u8,
-                31u8,
-                208u8,
-                164u8,
-                242u8,
-                132u8,
-                25u8,
-                73u8,
-                127u8,
-                151u8,
-                34u8,
-                163u8,
-                218u8,
-                175u8,
-                227u8,
-                180u8,
-                24u8,
-                111u8,
-                107u8,
-                100u8,
-                87u8,
-                224u8,
+                139u8, 224u8, 7u8, 156u8, 83u8, 22u8, 89u8, 20u8, 19u8, 68u8, 205u8,
+                31u8, 208u8, 164u8, 242u8, 132u8, 25u8, 73u8, 127u8, 151u8, 34u8, 163u8,
+                218u8, 175u8, 227u8, 180u8, 24u8, 111u8, 107u8, 100u8, 87u8, 224u8,
             ],
             [
-                149u8,
-                67u8,
-                219u8,
-                213u8,
-                85u8,
-                128u8,
-                132u8,
-                37u8,
-                134u8,
-                169u8,
-                81u8,
-                240u8,
-                56u8,
-                110u8,
-                36u8,
-                214u8,
-                138u8,
-                93u8,
-                249u8,
-                154u8,
-                226u8,
-                158u8,
-                59u8,
-                33u8,
-                101u8,
-                136u8,
-                180u8,
-                95u8,
-                214u8,
-                132u8,
-                206u8,
-                49u8,
+                149u8, 67u8, 219u8, 213u8, 85u8, 128u8, 132u8, 37u8, 134u8, 169u8, 81u8,
+                240u8, 56u8, 110u8, 36u8, 214u8, 138u8, 93u8, 249u8, 154u8, 226u8, 158u8,
+                59u8, 33u8, 101u8, 136u8, 180u8, 95u8, 214u8, 132u8, 206u8, 49u8,
             ],
             [
-                171u8,
-                64u8,
-                163u8,
-                116u8,
-                188u8,
-                81u8,
-                222u8,
-                55u8,
-                34u8,
-                0u8,
-                168u8,
-                188u8,
-                152u8,
-                26u8,
-                248u8,
-                201u8,
-                236u8,
-                220u8,
-                8u8,
-                223u8,
-                218u8,
-                239u8,
-                11u8,
-                182u8,
-                224u8,
-                159u8,
-                136u8,
-                243u8,
-                198u8,
-                22u8,
-                239u8,
-                61u8,
+                171u8, 64u8, 163u8, 116u8, 188u8, 81u8, 222u8, 55u8, 34u8, 0u8, 168u8,
+                188u8, 152u8, 26u8, 248u8, 201u8, 236u8, 220u8, 8u8, 223u8, 218u8, 239u8,
+                11u8, 182u8, 224u8, 159u8, 136u8, 243u8, 198u8, 22u8, 239u8, 61u8,
             ],
             [
-                175u8,
-                85u8,
-                124u8,
-                108u8,
-                2u8,
-                194u8,
-                8u8,
-                121u8,
-                72u8,
-                23u8,
-                167u8,
-                5u8,
-                96u8,
-                156u8,
-                250u8,
-                147u8,
-                95u8,
-                130u8,
-                115u8,
-                18u8,
-                161u8,
-                173u8,
-                253u8,
-                210u8,
-                100u8,
-                148u8,
-                182u8,
-                185u8,
-                93u8,
-                210u8,
-                180u8,
-                179u8,
+                175u8, 85u8, 124u8, 108u8, 2u8, 194u8, 8u8, 121u8, 72u8, 23u8, 167u8,
+                5u8, 96u8, 156u8, 250u8, 147u8, 95u8, 130u8, 115u8, 18u8, 161u8, 173u8,
+                253u8, 210u8, 100u8, 148u8, 182u8, 185u8, 93u8, 210u8, 180u8, 179u8,
             ],
             [
-                186u8,
-                185u8,
-                71u8,
-                147u8,
-                77u8,
-                66u8,
-                224u8,
-                173u8,
-                32u8,
-                111u8,
-                37u8,
-                201u8,
-                202u8,
-                177u8,
-                139u8,
-                91u8,
-                182u8,
-                174u8,
-                20u8,
-                74u8,
-                207u8,
-                176u8,
-                15u8,
-                64u8,
-                180u8,
-                227u8,
-                170u8,
-                89u8,
-                89u8,
-                12u8,
-                163u8,
-                18u8,
+                186u8, 185u8, 71u8, 147u8, 77u8, 66u8, 224u8, 173u8, 32u8, 111u8, 37u8,
+                201u8, 202u8, 177u8, 139u8, 91u8, 182u8, 174u8, 20u8, 74u8, 207u8, 176u8,
+                15u8, 64u8, 180u8, 227u8, 170u8, 89u8, 89u8, 12u8, 163u8, 18u8,
             ],
             [
-                209u8,
-                224u8,
-                40u8,
-                189u8,
-                102u8,
-                68u8,
-                134u8,
-                164u8,
-                106u8,
-                210u8,
-                96u8,
-                64u8,
-                233u8,
-                153u8,
-                205u8,
-                45u8,
-                34u8,
-                225u8,
-                233u8,
-                160u8,
-                148u8,
-                238u8,
-                106u8,
-                254u8,
-                25u8,
-                252u8,
-                246u8,
-                70u8,
-                120u8,
-                241u8,
-                111u8,
-                116u8,
+                209u8, 224u8, 40u8, 189u8, 102u8, 68u8, 134u8, 164u8, 106u8, 210u8, 96u8,
+                64u8, 233u8, 153u8, 205u8, 45u8, 34u8, 225u8, 233u8, 160u8, 148u8, 238u8,
+                106u8, 254u8, 25u8, 252u8, 246u8, 70u8, 120u8, 241u8, 111u8, 116u8,
             ],
             [
-                216u8,
-                80u8,
-                230u8,
-                229u8,
-                223u8,
-                164u8,
-                151u8,
-                183u8,
-                38u8,
-                97u8,
-                250u8,
-                115u8,
-                223u8,
-                41u8,
-                35u8,
-                70u8,
-                78u8,
-                174u8,
-                217u8,
-                220u8,
-                47u8,
-                241u8,
-                211u8,
-                203u8,
-                130u8,
-                188u8,
-                203u8,
-                254u8,
-                171u8,
-                229u8,
-                196u8,
-                30u8,
+                216u8, 80u8, 230u8, 229u8, 223u8, 164u8, 151u8, 183u8, 38u8, 97u8, 250u8,
+                115u8, 223u8, 41u8, 35u8, 70u8, 78u8, 174u8, 217u8, 220u8, 47u8, 241u8,
+                211u8, 203u8, 130u8, 188u8, 203u8, 254u8, 171u8, 229u8, 196u8, 30u8,
             ],
             [
-                230u8,
-                205u8,
-                78u8,
-                223u8,
-                220u8,
-                193u8,
-                246u8,
-                209u8,
-                48u8,
-                171u8,
-                53u8,
-                247u8,
-                61u8,
-                114u8,
-                55u8,
-                143u8,
-                58u8,
-                100u8,
-                41u8,
-                68u8,
-                251u8,
-                78u8,
-                229u8,
-                189u8,
-                132u8,
-                183u8,
-                128u8,
-                122u8,
-                129u8,
-                234u8,
-                28u8,
-                78u8,
+                230u8, 205u8, 78u8, 223u8, 220u8, 193u8, 246u8, 209u8, 48u8, 171u8, 53u8,
+                247u8, 61u8, 114u8, 55u8, 143u8, 58u8, 100u8, 41u8, 68u8, 251u8, 78u8,
+                229u8, 189u8, 132u8, 183u8, 128u8, 122u8, 129u8, 234u8, 28u8, 78u8,
             ],
             [
-                236u8,
-                216u8,
-                102u8,
-                195u8,
-                193u8,
-                88u8,
-                250u8,
-                0u8,
-                191u8,
-                52u8,
-                216u8,
-                3u8,
-                213u8,
-                246u8,
-                2u8,
-                48u8,
-                0u8,
-                181u8,
-                112u8,
-                128u8,
-                188u8,
-                180u8,
-                138u8,
-                240u8,
-                4u8,
-                194u8,
-                180u8,
-                180u8,
-                107u8,
-                58u8,
-                253u8,
-                8u8,
+                236u8, 216u8, 102u8, 195u8, 193u8, 88u8, 250u8, 0u8, 191u8, 52u8, 216u8,
+                3u8, 213u8, 246u8, 2u8, 48u8, 0u8, 181u8, 112u8, 128u8, 188u8, 180u8,
+                138u8, 240u8, 4u8, 194u8, 180u8, 180u8, 107u8, 58u8, 253u8, 8u8,
             ],
             [
-                252u8,
-                136u8,
-                136u8,
-                191u8,
-                253u8,
-                113u8,
-                29u8,
-                166u8,
-                11u8,
-                197u8,
-                9u8,
-                43u8,
-                51u8,
-                246u8,
-                119u8,
-                216u8,
-                24u8,
-                150u8,
-                254u8,
-                128u8,
-                236u8,
-                198u8,
-                119u8,
-                184u8,
-                76u8,
-                250u8,
-                184u8,
-                24u8,
-                68u8,
-                98u8,
-                182u8,
-                224u8,
+                252u8, 136u8, 136u8, 191u8, 253u8, 113u8, 29u8, 166u8, 11u8, 197u8, 9u8,
+                43u8, 51u8, 246u8, 119u8, 216u8, 24u8, 150u8, 254u8, 128u8, 236u8, 198u8,
+                119u8, 184u8, 76u8, 250u8, 184u8, 24u8, 68u8, 98u8, 182u8, 224u8,
             ],
             [
-                255u8,
-                240u8,
-                117u8,
-                156u8,
-                203u8,
-                55u8,
-                29u8,
-                251u8,
-                86u8,
-                145u8,
-                121u8,
-                135u8,
-                36u8,
-                231u8,
-                11u8,
-                79u8,
-                166u8,
-                28u8,
-                179u8,
-                191u8,
-                231u8,
-                48u8,
-                163u8,
-                58u8,
-                193u8,
-                159u8,
-                184u8,
-                106u8,
-                72u8,
-                239u8,
-                199u8,
-                86u8,
+                255u8, 240u8, 117u8, 156u8, 203u8, 55u8, 29u8, 251u8, 86u8, 145u8, 121u8,
+                135u8, 36u8, 231u8, 11u8, 79u8, 166u8, 28u8, 179u8, 191u8, 231u8, 48u8,
+                163u8, 58u8, 193u8, 159u8, 184u8, 106u8, 72u8, 239u8, 199u8, 86u8,
             ],
         ];
     }

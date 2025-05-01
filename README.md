@@ -35,7 +35,7 @@ Currently, the library includes specific support for the EigenLayer Incredible S
 
 ### Prerequisites
 
-- Rust 1.85 or higher
+- Rust 1.86
 - Forge (for contract compilation and binding generation)
 
 ### Installation

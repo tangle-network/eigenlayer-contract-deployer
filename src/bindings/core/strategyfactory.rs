@@ -551,6 +551,7 @@ pub mod StrategyFactory {
     pub static DEPLOYED_BYTECODE: alloy_sol_types::private::Bytes = alloy_sol_types::private::Bytes::from_static(
         b"`\x80`@R4\x80\x15a\0\x0FW__\xFD[P`\x046\x10a\x01\rW_5`\xE0\x1C\x80cqP\x18\xA6\x11a\0\xA9W\x80c\xF0\x06-\x9A\x11a\0nW\x80c\xF0\x06-\x9A\x14a\x02xW\x80c\xF2\xFD\xE3\x8B\x14a\x02\x8AW\x80c\xFA\xBC\x1C\xBC\x14a\x02\x9DW\x80c\xFE8\xB3-\x14a\x02\xB0W\x80c\xFEWZ\x87\x14a\x02\xC3W__\xFD[\x80cqP\x18\xA6\x14a\x02\x12W\x80c\x88o\x11\x95\x14a\x02\x1AW\x80c\x8D\xA5\xCB[\x14a\x02AW\x80c\xB7h\xEB\xC9\x14a\x02RW\x80c\xC3P\xA1\xB5\x14a\x02eW__\xFD[\x80c\x13d9\xDD\x14a\x01\x11W\x80c#\x10<A\x14a\x01&W\x80c9\xB7\x0E8\x14a\x019W\x80cT\xFDMP\x14a\x01vW\x80cX\x1D\xFDe\x14a\x01\x8BW\x80cY\\jg\x14a\x01\xB3W\x80cZ\xC8j\xB7\x14a\x01\xBBW\x80c\\\x97Z\xBB\x14a\x01\xEEW\x80ck\x9Bb)\x14a\x01\xFFW[__\xFD[a\x01$a\x01\x1F6`\x04a\x0E\xFBV[a\x02\xE5V[\0[a\x01$a\x0146`\x04a\x0FZV[a\x03\xBFV[a\x01`\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x81V[`@Qa\x01m\x91\x90a\x0F\x99V[`@Q\x80\x91\x03\x90\xF3[a\x01~a\x06GV[`@Qa\x01m\x91\x90a\x0F\xF0V[a\x01`a\x01\x996`\x04a\x10\x1DV[`\x01` R_\x90\x81R`@\x90 T`\x01`\x01`\xA0\x1B\x03\x16\x81V[a\x01$a\x06wV[a\x01\xDEa\x01\xC96`\x04a\x108V[`\x99T`\x01`\xFF\x90\x92\x16\x91\x90\x91\x1B\x90\x81\x16\x14\x90V[`@Q\x90\x15\x15\x81R` \x01a\x01mV[`\x99T`@Q\x90\x81R` \x01a\x01mV[a\x01`a\x02\r6`\x04a\x10\x1DV[a\x07+V[a\x01$a\t#V[a\x01`\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x81V[`fT`\x01`\x01`\xA0\x1B\x03\x16a\x01`V[a\x01$a\x02`6`\x04a\x0FZV[a\t4V[a\x01$a\x02s6`\x04a\x10XV[a\t\xBBV[_Ta\x01`\x90`\x01`\x01`\xA0\x1B\x03\x16\x81V[a\x01$a\x02\x986`\x04a\x10\x1DV[a\n\xE6V[a\x01$a\x02\xAB6`\x04a\x0E\xFBV[a\x0B_V[a\x01$a\x02\xBE6`\x04a\x0FZV[a\x0CuV[a\x01\xDEa\x02\xD16`\x04a\x10\x1DV[`\x02` R_\x90\x81R`@\x90 T`\xFF\x16\x81V[`@Qc#}\xFBG`\xE1\x1B\x81R`\x01`\x01`\xA0\x1B\x03\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x16\x90cF\xFB\xF6\x8E\x90a\x031\x903\x90`\x04\x01a\x0F\x99V[` `@Q\x80\x83\x03\x81\x86Z\xFA\x15\x80\x15a\x03LW=__>=_\xFD[PPPP`@Q=`\x1F\x19`\x1F\x82\x01\x16\x82\x01\x80`@RP\x81\x01\x90a\x03p\x91\x90a\x10\x97V[a\x03\x8DW`@Qc\x1Dw\xD4w`\xE2\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[`\x99T\x81\x81\x16\x81\x14a\x03\xB2W`@Qc\xC6\x1D\xCA]`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[a\x03\xBB\x82a\x0C\xCBV[PPV[a\x03\xC7a\r\x08V[_\x81g\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\x81\x11\x15a\x03\xE1Wa\x03\xE1a\x10\xB6V[`@Q\x90\x80\x82R\x80` \x02` \x01\x82\x01`@R\x80\x15a\x04\nW\x81` \x01` \x82\x02\x806\x837\x01\x90P[P\x90P_\x80[\x83\x81\x10\x15a\x05\xBDW`\x02_\x86\x86\x84\x81\x81\x10a\x04-Wa\x04-a\x10\xCAV[\x90P` \x02\x01` \x81\x01\x90a\x04B\x91\x90a\x10\x1DV[`\x01`\x01`\xA0\x1B\x03\x16\x81R` \x81\x01\x91\x90\x91R`@\x01_ T`\xFF\x16\x15a\x04|W`@Qc\xF5=\xE7_`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[`\x01`\x02_\x87\x87\x85\x81\x81\x10a\x04\x93Wa\x04\x93a\x10\xCAV[\x90P` \x02\x01` \x81\x01\x90a\x04\xA8\x91\x90a\x10\x1DV[`\x01`\x01`\xA0\x1B\x03\x16\x81R` \x81\x01\x91\x90\x91R`@\x01_ \x80T`\xFF\x19\x16\x91\x15\x15\x91\x90\x91\x17\x90U\x7FuQ\x9CQ\xF3\x98s\xEC\x0E'\xDD;\xBC\tT\x9EHe\xA1\x13\xF5\x059?\xB9\xEA\xB5\x89\x8Fd\x18\xB3\x85\x85\x83\x81\x81\x10a\x05\x02Wa\x05\x02a\x10\xCAV[\x90P` \x02\x01` \x81\x01\x90a\x05\x17\x91\x90a\x10\x1DV[`@Qa\x05$\x91\x90a\x0F\x99V[`@Q\x80\x91\x03\x90\xA1_`\x01_\x87\x87\x85\x81\x81\x10a\x05BWa\x05Ba\x10\xCAV[\x90P` \x02\x01` \x81\x01\x90a\x05W\x91\x90a\x10\x1DV[`\x01`\x01`\xA0\x1B\x03\x90\x81\x16\x82R` \x82\x01\x92\x90\x92R`@\x01_ T\x16\x90P\x80\x15a\x05\xB4W\x80\x84\x84\x81Q\x81\x10a\x05\x8EWa\x05\x8Ea\x10\xCAV[`\x01`\x01`\xA0\x1B\x03\x90\x92\x16` \x92\x83\x02\x91\x90\x91\x01\x90\x91\x01R\x82a\x05\xB0\x81a\x10\xDEV[\x93PP[P`\x01\x01a\x04\x10V[P\x80\x82R\x80\x15a\x06AW`@Qc\x16\xBB\x16\xB7`\xE3\x1B\x81R`\x01`\x01`\xA0\x1B\x03\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x16\x90c\xB5\xD8\xB5\xB8\x90a\x06\x13\x90\x85\x90`\x04\x01a\x11\x02V[_`@Q\x80\x83\x03\x81_\x87\x80;\x15\x80\x15a\x06*W__\xFD[PZ\xF1\x15\x80\x15a\x06<W=__>=_\xFD[PPPP[PPPPV[``a\x06r\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0a\rbV[\x90P\x90V[`@Qc#}\xFBG`\xE1\x1B\x81R`\x01`\x01`\xA0\x1B\x03\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x16\x90cF\xFB\xF6\x8E\x90a\x06\xC3\x903\x90`\x04\x01a\x0F\x99V[` `@Q\x80\x83\x03\x81\x86Z\xFA\x15\x80\x15a\x06\xDEW=__>=_\xFD[PPPP`@Q=`\x1F\x19`\x1F\x82\x01\x16\x82\x01\x80`@RP\x81\x01\x90a\x07\x02\x91\x90a\x10\x97V[a\x07\x1FW`@Qc\x1Dw\xD4w`\xE2\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[a\x07)_\x19a\x0C\xCBV[V[`\x99T_\x90\x81\x90`\x01\x90\x81\x16\x03a\x07UW`@Qc\x84\nH\xD5`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[`\x01`\x01`\xA0\x1B\x03\x83\x16_\x90\x81R`\x02` R`@\x90 T`\xFF\x16\x15a\x07\x8EW`@Qc\t\x18g\xBD`\xE1\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[`\x01`\x01`\xA0\x1B\x03\x83\x81\x16_\x90\x81R`\x01` R`@\x90 T\x16\x15a\x07\xC6W`@Qc\xC4UF\xF7`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[_\x80T`@Q`\x01`\x01`\xA0\x1B\x03\x90\x91\x16\x90c\x18\x9A\xCD\xBD`\xE3\x1B\x90a\x07\xEF\x90\x87\x90`$\x01a\x0F\x99V[`@\x80Q`\x1F\x19\x81\x84\x03\x01\x81R\x91\x81R` \x82\x01\x80Q`\x01`\x01`\xE0\x1B\x03\x16`\x01`\x01`\xE0\x1B\x03\x19\x90\x94\x16\x93\x90\x93\x17\x90\x92R\x90Qa\x08,\x90a\x0E\xEEV[a\x087\x92\x91\x90a\x11MV[`@Q\x80\x91\x03\x90_\xF0\x80\x15\x80\x15a\x08PW=__>=_\xFD[P\x90Pa\x08]\x84\x82a\r\x9FV[`@\x80Q`\x01\x80\x82R\x81\x83\x01\x90\x92R_\x91` \x80\x83\x01\x90\x806\x837\x01\x90PP\x90P\x81\x81_\x81Q\x81\x10a\x08\x91Wa\x08\x91a\x10\xCAV[`\x01`\x01`\xA0\x1B\x03\x92\x83\x16` \x91\x82\x02\x92\x90\x92\x01\x01R`@Qc.\xF0G\xF9`\xE1\x1B\x81R\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x90\x91\x16\x90c]\xE0\x8F\xF2\x90a\x08\xED\x90\x84\x90`\x04\x01a\x11\x02V[_`@Q\x80\x83\x03\x81_\x87\x80;\x15\x80\x15a\t\x04W__\xFD[PZ\xF1\x15\x80\x15a\t\x16W=__>=_\xFD[P\x93\x97\x96PPPPPPPV[a\t+a\r\x08V[a\x07)_a\x0E\tV[a\t<a\r\x08V[`@Qc.\xF0G\xF9`\xE1\x1B\x81R`\x01`\x01`\xA0\x1B\x03\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x16\x90c]\xE0\x8F\xF2\x90a\t\x8A\x90\x85\x90\x85\x90`\x04\x01a\x11xV[_`@Q\x80\x83\x03\x81_\x87\x80;\x15\x80\x15a\t\xA1W__\xFD[PZ\xF1\x15\x80\x15a\t\xB3W=__>=_\xFD[PPPPPPV[`3Ta\x01\0\x90\x04`\xFF\x16\x15\x80\x80\x15a\t\xDBWP`3T`\x01`\xFF\x90\x91\x16\x10[\x80a\t\xF5WP0;\x15\x80\x15a\t\xF5WP`3T`\xFF\x16`\x01\x14[a\n]W`@QbF\x1B\xCD`\xE5\x1B\x81R` `\x04\x82\x01R`.`$\x82\x01R\x7FInitializable: contract is alrea`D\x82\x01Rm\x19\x1EH\x1A[\x9A]\x1AX[\x1A^\x99Y`\x92\x1B`d\x82\x01R`\x84\x01[`@Q\x80\x91\x03\x90\xFD[`3\x80T`\xFF\x19\x16`\x01\x17\x90U\x80\x15a\n\x80W`3\x80Ta\xFF\0\x19\x16a\x01\0\x17\x90U[a\n\x89\x84a\x0E\tV[a\n\x92\x83a\x0C\xCBV[a\n\x9B\x82a\x0EZV[\x80\x15a\x06AW`3\x80Ta\xFF\0\x19\x16\x90U`@Q`\x01\x81R\x7F\x7F&\xB8?\xF9n\x1F+jh/\x138R\xF6y\x8A\t\xC4e\xDA\x95\x92\x14`\xCE\xFB8G@$\x98\x90` \x01`@Q\x80\x91\x03\x90\xA1PPPPV[a\n\xEEa\r\x08V[`\x01`\x01`\xA0\x1B\x03\x81\x16a\x0BSW`@QbF\x1B\xCD`\xE5\x1B\x81R` `\x04\x82\x01R`&`$\x82\x01R\x7FOwnable: new owner is the zero a`D\x82\x01Reddress`\xD0\x1B`d\x82\x01R`\x84\x01a\nTV[a\x0B\\\x81a\x0E\tV[PV[\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0`\x01`\x01`\xA0\x1B\x03\x16c\xEA\xB6mz`@Q\x81c\xFF\xFF\xFF\xFF\x16`\xE0\x1B\x81R`\x04\x01` `@Q\x80\x83\x03\x81\x86Z\xFA\x15\x80\x15a\x0B\xBBW=__>=_\xFD[PPPP`@Q=`\x1F\x19`\x1F\x82\x01\x16\x82\x01\x80`@RP\x81\x01\x90a\x0B\xDF\x91\x90a\x11\xC4V[`\x01`\x01`\xA0\x1B\x03\x163`\x01`\x01`\xA0\x1B\x03\x16\x14a\x0C\x10W`@QcyH!\xFF`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[`\x99T\x80\x19\x82\x19\x81\x16\x14a\x0C7W`@Qc\xC6\x1D\xCA]`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[`\x99\x82\x90U`@Q\x82\x81R3\x90\x7F5\x82\xD1\x82\x8E&\xBFV\xBD\x80\x15\x02\xBC\x02\x1A\xC0\xBC\x8A\xFBW\xC8&\xE4\x98kEY<\x8F\xAD8\x9C\x90` \x01`@Q\x80\x91\x03\x90\xA2PPV[a\x0C}a\r\x08V[`@Qc\x16\xBB\x16\xB7`\xE3\x1B\x81R`\x01`\x01`\xA0\x1B\x03\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x16\x90c\xB5\xD8\xB5\xB8\x90a\t\x8A\x90\x85\x90\x85\x90`\x04\x01a\x11xV[`\x99\x81\x90U`@Q\x81\x81R3\x90\x7F\xAB@\xA3t\xBCQ\xDE7\"\0\xA8\xBC\x98\x1A\xF8\xC9\xEC\xDC\x08\xDF\xDA\xEF\x0B\xB6\xE0\x9F\x88\xF3\xC6\x16\xEF=\x90` \x01`@Q\x80\x91\x03\x90\xA2PV[`fT`\x01`\x01`\xA0\x1B\x03\x163\x14a\x07)W`@QbF\x1B\xCD`\xE5\x1B\x81R` `\x04\x82\x01\x81\x90R`$\x82\x01R\x7FOwnable: caller is not the owner`D\x82\x01R`d\x01a\nTV[``_a\rn\x83a\x0E\xC1V[`@\x80Q` \x80\x82R\x81\x83\x01\x90\x92R\x91\x92P_\x91\x90` \x82\x01\x81\x806\x837PPP\x91\x82RP` \x81\x01\x92\x90\x92RP\x90V[`\x01`\x01`\xA0\x1B\x03\x82\x81\x16_\x81\x81R`\x01` \x90\x81R`@\x91\x82\x90 \x80T`\x01`\x01`\xA0\x1B\x03\x19\x16\x94\x86\x16\x94\x85\x17\x90U\x81Q\x92\x83R\x82\x01\x92\x90\x92R\x7FhR\xA5R0\xEF\x08\x9Dx[\xCE\x7F\xFB\xF7W\x98]\xE3@&\xDF\x90\xA8}{JnV\xF9]%\x1F\x91\x01`@Q\x80\x91\x03\x90\xA1PPV[`f\x80T`\x01`\x01`\xA0\x1B\x03\x83\x81\x16`\x01`\x01`\xA0\x1B\x03\x19\x83\x16\x81\x17\x90\x93U`@Q\x91\x16\x91\x90\x82\x90\x7F\x8B\xE0\x07\x9CS\x16Y\x14\x13D\xCD\x1F\xD0\xA4\xF2\x84\x19I\x7F\x97\"\xA3\xDA\xAF\xE3\xB4\x18okdW\xE0\x90_\x90\xA3PPV[_T`@\x80Q`\x01`\x01`\xA0\x1B\x03\x92\x83\x16\x81R\x91\x83\x16` \x83\x01R\x7F\xE2\x17U\x96*}~\x10\x0BY\xB9\xC3\xE4\xD4\xB5@\x85\xB1F17\x19\x95^\xFBjz%\xC5\xC7\xFE\xEE\x91\x01`@Q\x80\x91\x03\x90\xA1_\x80T`\x01`\x01`\xA0\x1B\x03\x19\x16`\x01`\x01`\xA0\x1B\x03\x92\x90\x92\x16\x91\x90\x91\x17\x90UV[_`\xFF\x82\x16`\x1F\x81\x11\x15a\x0E\xE8W`@Qc,\xD4J\xC3`\xE2\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[\x92\x91PPV[a\x06\x9B\x80a\x11\xE0\x839\x01\x90V[_` \x82\x84\x03\x12\x15a\x0F\x0BW__\xFD[P5\x91\x90PV[__\x83`\x1F\x84\x01\x12a\x0F\"W__\xFD[P\x815g\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\x81\x11\x15a\x0F9W__\xFD[` \x83\x01\x91P\x83` \x82`\x05\x1B\x85\x01\x01\x11\x15a\x0FSW__\xFD[\x92P\x92\x90PV[__` \x83\x85\x03\x12\x15a\x0FkW__\xFD[\x825g\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\x81\x11\x15a\x0F\x81W__\xFD[a\x0F\x8D\x85\x82\x86\x01a\x0F\x12V[\x90\x96\x90\x95P\x93PPPPV[`\x01`\x01`\xA0\x1B\x03\x91\x90\x91\x16\x81R` \x01\x90V[_\x81Q\x80\x84R_[\x81\x81\x10\x15a\x0F\xD1W` \x81\x85\x01\x81\x01Q\x86\x83\x01\x82\x01R\x01a\x0F\xB5V[P_` \x82\x86\x01\x01R` `\x1F\x19`\x1F\x83\x01\x16\x85\x01\x01\x91PP\x92\x91PPV[` \x81R_a\x10\x02` \x83\x01\x84a\x0F\xADV[\x93\x92PPPV[`\x01`\x01`\xA0\x1B\x03\x81\x16\x81\x14a\x0B\\W__\xFD[_` \x82\x84\x03\x12\x15a\x10-W__\xFD[\x815a\x10\x02\x81a\x10\tV[_` \x82\x84\x03\x12\x15a\x10HW__\xFD[\x815`\xFF\x81\x16\x81\x14a\x10\x02W__\xFD[___``\x84\x86\x03\x12\x15a\x10jW__\xFD[\x835a\x10u\x81a\x10\tV[\x92P` \x84\x015\x91P`@\x84\x015a\x10\x8C\x81a\x10\tV[\x80\x91PP\x92P\x92P\x92V[_` \x82\x84\x03\x12\x15a\x10\xA7W__\xFD[\x81Q\x80\x15\x15\x81\x14a\x10\x02W__\xFD[cNH{q`\xE0\x1B_R`A`\x04R`$_\xFD[cNH{q`\xE0\x1B_R`2`\x04R`$_\xFD[_`\x01\x82\x01a\x10\xFBWcNH{q`\xE0\x1B_R`\x11`\x04R`$_\xFD[P`\x01\x01\x90V[` \x80\x82R\x82Q\x82\x82\x01\x81\x90R_\x91\x84\x01\x90`@\x84\x01\x90\x83[\x81\x81\x10\x15a\x11BW\x83Q`\x01`\x01`\xA0\x1B\x03\x16\x83R` \x93\x84\x01\x93\x90\x92\x01\x91`\x01\x01a\x11\x1BV[P\x90\x95\x94PPPPPV[`\x01`\x01`\xA0\x1B\x03\x83\x16\x81R`@` \x82\x01\x81\x90R_\x90a\x11p\x90\x83\x01\x84a\x0F\xADV[\x94\x93PPPPV[` \x80\x82R\x81\x01\x82\x90R_\x83`@\x83\x01\x82[\x85\x81\x10\x15a\x11\xBAW\x825a\x11\x9D\x81a\x10\tV[`\x01`\x01`\xA0\x1B\x03\x16\x82R` \x92\x83\x01\x92\x90\x91\x01\x90`\x01\x01a\x11\x8AV[P\x95\x94PPPPPV[_` \x82\x84\x03\x12\x15a\x11\xD4W__\xFD[\x81Qa\x10\x02\x81a\x10\tV\xFE`\x80`@R`@Qa\x06\x9B8\x03\x80a\x06\x9B\x839\x81\x01`@\x81\x90Ra\0\"\x91a\x04\x0FV[a\0-\x82\x82_a\x004V[PPa\x056V[a\0=\x83a\0\xF1V[`@Q`\x01`\x01`\xA0\x1B\x03\x84\x16\x90\x7F\x1C\xF3\xB0:l\xF1\x9F\xA2\xBA\xBAM\xF1H\xE9\xDC\xAB\xED\xEA\x7F\x8A\\\x07\x84\x0E ~\\\x08\x9B\xE9]>\x90_\x90\xA2_\x82Q\x11\x80a\0|WP\x80[\x15a\0\xECWa\0\xEA\x83`\x01`\x01`\xA0\x1B\x03\x16c\\`\xDA\x1B`@Q\x81c\xFF\xFF\xFF\xFF\x16`\xE0\x1B\x81R`\x04\x01` `@Q\x80\x83\x03\x81\x86Z\xFA\x15\x80\x15a\0\xC0W=__>=_\xFD[PPPP`@Q=`\x1F\x19`\x1F\x82\x01\x16\x82\x01\x80`@RP\x81\x01\x90a\0\xE4\x91\x90a\x04\xD0V[\x83a\x02sV[P[PPPV[`\x01`\x01`\xA0\x1B\x03\x81\x16;a\x01[W`@QbF\x1B\xCD`\xE5\x1B\x81R` `\x04\x82\x01R`%`$\x82\x01R\x7FERC1967: new beacon is not a con`D\x82\x01Rd\x1D\x1C\x98X\xDD`\xDA\x1B`d\x82\x01R`\x84\x01[`@Q\x80\x91\x03\x90\xFD[a\x01\xCD\x81`\x01`\x01`\xA0\x1B\x03\x16c\\`\xDA\x1B`@Q\x81c\xFF\xFF\xFF\xFF\x16`\xE0\x1B\x81R`\x04\x01` `@Q\x80\x83\x03\x81\x86Z\xFA\x15\x80\x15a\x01\x9AW=__>=_\xFD[PPPP`@Q=`\x1F\x19`\x1F\x82\x01\x16\x82\x01\x80`@RP\x81\x01\x90a\x01\xBE\x91\x90a\x04\xD0V[`\x01`\x01`\xA0\x1B\x03\x16;\x15\x15\x90V[a\x022W`@QbF\x1B\xCD`\xE5\x1B\x81R` `\x04\x82\x01R`0`$\x82\x01R\x7FERC1967: beacon implementation i`D\x82\x01Ro\x1C\xC8\x1B\x9B\xDD\x08\x18H\x18\xDB\xDB\x9D\x1C\x98X\xDD`\x82\x1B`d\x82\x01R`\x84\x01a\x01RV[\x7F\xA3\xF0\xADt\xE5B:\xEB\xFD\x80\xD3\xEFCFW\x835\xA9\xA7*\xEA\xEEY\xFFl\xB3X+5\x13=P\x80T`\x01`\x01`\xA0\x1B\x03\x19\x16`\x01`\x01`\xA0\x1B\x03\x92\x90\x92\x16\x91\x90\x91\x17\x90UV[``a\x02\x98\x83\x83`@Q\x80``\x01`@R\x80`'\x81R` \x01a\x06t`'\x919a\x02\x9FV[\x93\x92PPPV[``__\x85`\x01`\x01`\xA0\x1B\x03\x16\x85`@Qa\x02\xBB\x91\x90a\x04\xE9V[_`@Q\x80\x83\x03\x81\x85Z\xF4\x91PP=\x80_\x81\x14a\x02\xF3W`@Q\x91P`\x1F\x19`?=\x01\x16\x82\x01`@R=\x82R=_` \x84\x01>a\x02\xF8V[``\x91P[P\x90\x92P\x90Pa\x03\n\x86\x83\x83\x87a\x03\x14V[\x96\x95PPPPPPV[``\x83\x15a\x03\x82W\x82Q_\x03a\x03{W`\x01`\x01`\xA0\x1B\x03\x85\x16;a\x03{W`@QbF\x1B\xCD`\xE5\x1B\x81R` `\x04\x82\x01R`\x1D`$\x82\x01R\x7FAddress: call to non-contract\0\0\0`D\x82\x01R`d\x01a\x01RV[P\x81a\x03\x8CV[a\x03\x8C\x83\x83a\x03\x94V[\x94\x93PPPPV[\x81Q\x15a\x03\xA4W\x81Q\x80\x83` \x01\xFD[\x80`@QbF\x1B\xCD`\xE5\x1B\x81R`\x04\x01a\x01R\x91\x90a\x05\x04V[\x80Q`\x01`\x01`\xA0\x1B\x03\x81\x16\x81\x14a\x03\xD4W__\xFD[\x91\x90PV[cNH{q`\xE0\x1B_R`A`\x04R`$_\xFD[_[\x83\x81\x10\x15a\x04\x07W\x81\x81\x01Q\x83\x82\x01R` \x01a\x03\xEFV[PP_\x91\x01RV[__`@\x83\x85\x03\x12\x15a\x04 W__\xFD[a\x04)\x83a\x03\xBEV[` \x84\x01Q\x90\x92P`\x01`\x01`@\x1B\x03\x81\x11\x15a\x04DW__\xFD[\x83\x01`\x1F\x81\x01\x85\x13a\x04TW__\xFD[\x80Q`\x01`\x01`@\x1B\x03\x81\x11\x15a\x04mWa\x04ma\x03\xD9V[`@Q`\x1F\x82\x01`\x1F\x19\x90\x81\x16`?\x01\x16\x81\x01`\x01`\x01`@\x1B\x03\x81\x11\x82\x82\x10\x17\x15a\x04\x9BWa\x04\x9Ba\x03\xD9V[`@R\x81\x81R\x82\x82\x01` \x01\x87\x10\x15a\x04\xB2W__\xFD[a\x04\xC3\x82` \x83\x01` \x86\x01a\x03\xEDV[\x80\x93PPPP\x92P\x92\x90PV[_` \x82\x84\x03\x12\x15a\x04\xE0W__\xFD[a\x02\x98\x82a\x03\xBEV[_\x82Qa\x04\xFA\x81\x84` \x87\x01a\x03\xEDV[\x91\x90\x91\x01\x92\x91PPV[` \x81R_\x82Q\x80` \x84\x01Ra\x05\"\x81`@\x85\x01` \x87\x01a\x03\xEDV[`\x1F\x01`\x1F\x19\x16\x91\x90\x91\x01`@\x01\x92\x91PPV[a\x011\x80a\x05C_9_\xF3\xFE`\x80`@R6`\x10W`\x0E`\x13V[\0[`\x0E[`\x1F`\x1B`!V[`\xB3V[V[_`R\x7F\xA3\xF0\xADt\xE5B:\xEB\xFD\x80\xD3\xEFCFW\x835\xA9\xA7*\xEA\xEEY\xFFl\xB3X+5\x13=PT`\x01`\x01`\xA0\x1B\x03\x16\x90V[`\x01`\x01`\xA0\x1B\x03\x16c\\`\xDA\x1B`@Q\x81c\xFF\xFF\xFF\xFF\x16`\xE0\x1B\x81R`\x04\x01` `@Q\x80\x83\x03\x81\x86Z\xFA\x15\x80\x15`\x8CW=__>=_\xFD[PPPP`@Q=`\x1F\x19`\x1F\x82\x01\x16\x82\x01\x80`@RP\x81\x01\x90`\xAE\x91\x90`\xD0V[\x90P\x90V[6__7__6_\x84Z\xF4=__>\x80\x80\x15`\xCCW=_\xF3[=_\xFD[_` \x82\x84\x03\x12\x15`\xDFW__\xFD[\x81Q`\x01`\x01`\xA0\x1B\x03\x81\x16\x81\x14`\xF4W__\xFD[\x93\x92PPPV\xFE\xA2dipfsX\"\x12 q\0F_z{\x1B\x1E\xAB\x04\x18\x89\t>\x80\x02\x13\x06\x9C\xDC\x9D\xD5<J3l'\x0EY\xEB#\xCAdsolcC\0\x08\x1B\x003Address: low-level delegate call failed\xA2dipfsX\"\x12 a\xAC|\xAC&\xA9\xA3\xC4\x95\x99\xEAl\xB5\xC3P\x89\xE0\xB6w\t\xC4\x83\xAC\xB9i\x83\x93\x84\xC3\x1F\x9BrdsolcC\0\x08\x1B\x003",
     );
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `AlreadyBlacklisted()` and selector `0xf53de75f`.
 ```solidity
 error AlreadyBlacklisted();
@@ -615,6 +616,7 @@ error AlreadyBlacklisted();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `BlacklistedToken()` and selector `0x1230cf7a`.
 ```solidity
 error BlacklistedToken();
@@ -679,6 +681,7 @@ error BlacklistedToken();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `CurrentlyPaused()` and selector `0x840a48d5`.
 ```solidity
 error CurrentlyPaused();
@@ -743,6 +746,7 @@ error CurrentlyPaused();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `InputAddressZero()` and selector `0x73632176`.
 ```solidity
 error InputAddressZero();
@@ -807,6 +811,7 @@ error InputAddressZero();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `InvalidNewPausedStatus()` and selector `0xc61dca5d`.
 ```solidity
 error InvalidNewPausedStatus();
@@ -871,6 +876,7 @@ error InvalidNewPausedStatus();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `InvalidShortString()` and selector `0xb3512b0c`.
 ```solidity
 error InvalidShortString();
@@ -935,6 +941,7 @@ error InvalidShortString();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `OnlyPauser()` and selector `0x75df51dc`.
 ```solidity
 error OnlyPauser();
@@ -999,6 +1006,7 @@ error OnlyPauser();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `OnlyUnpauser()` and selector `0x794821ff`.
 ```solidity
 error OnlyUnpauser();
@@ -1063,6 +1071,7 @@ error OnlyUnpauser();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `StrategyAlreadyExists()` and selector `0xc45546f7`.
 ```solidity
 error StrategyAlreadyExists();
@@ -1127,6 +1136,7 @@ error StrategyAlreadyExists();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `StringTooLong(string)` and selector `0x305a27a9`.
 ```solidity
 error StringTooLong(string str);
@@ -1198,6 +1208,7 @@ error StringTooLong(string str);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `Initialized(uint8)` and selector `0x7f26b83ff96e1f2b6a682f133852f6798a09c465da95921460cefb3847402498`.
 ```solidity
 event Initialized(uint8 version);
@@ -1230,38 +1241,9 @@ event Initialized(uint8 version);
             type TopicList = (alloy_sol_types::sol_data::FixedBytes<32>,);
             const SIGNATURE: &'static str = "Initialized(uint8)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                127u8,
-                38u8,
-                184u8,
-                63u8,
-                249u8,
-                110u8,
-                31u8,
-                43u8,
-                106u8,
-                104u8,
-                47u8,
-                19u8,
-                56u8,
-                82u8,
-                246u8,
-                121u8,
-                138u8,
-                9u8,
-                196u8,
-                101u8,
-                218u8,
-                149u8,
-                146u8,
-                20u8,
-                96u8,
-                206u8,
-                251u8,
-                56u8,
-                71u8,
-                64u8,
-                36u8,
-                152u8,
+                127u8, 38u8, 184u8, 63u8, 249u8, 110u8, 31u8, 43u8, 106u8, 104u8, 47u8,
+                19u8, 56u8, 82u8, 246u8, 121u8, 138u8, 9u8, 196u8, 101u8, 218u8, 149u8,
+                146u8, 20u8, 96u8, 206u8, 251u8, 56u8, 71u8, 64u8, 36u8, 152u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -1330,6 +1312,7 @@ event Initialized(uint8 version);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `OwnershipTransferred(address,address)` and selector `0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0`.
 ```solidity
 event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
@@ -1368,38 +1351,9 @@ event OwnershipTransferred(address indexed previousOwner, address indexed newOwn
             );
             const SIGNATURE: &'static str = "OwnershipTransferred(address,address)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                139u8,
-                224u8,
-                7u8,
-                156u8,
-                83u8,
-                22u8,
-                89u8,
-                20u8,
-                19u8,
-                68u8,
-                205u8,
-                31u8,
-                208u8,
-                164u8,
-                242u8,
-                132u8,
-                25u8,
-                73u8,
-                127u8,
-                151u8,
-                34u8,
-                163u8,
-                218u8,
-                175u8,
-                227u8,
-                180u8,
-                24u8,
-                111u8,
-                107u8,
-                100u8,
-                87u8,
-                224u8,
+                139u8, 224u8, 7u8, 156u8, 83u8, 22u8, 89u8, 20u8, 19u8, 68u8, 205u8,
+                31u8, 208u8, 164u8, 242u8, 132u8, 25u8, 73u8, 127u8, 151u8, 34u8, 163u8,
+                218u8, 175u8, 227u8, 180u8, 24u8, 111u8, 107u8, 100u8, 87u8, 224u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -1477,6 +1431,7 @@ event OwnershipTransferred(address indexed previousOwner, address indexed newOwn
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `Paused(address,uint256)` and selector `0xab40a374bc51de372200a8bc981af8c9ecdc08dfdaef0bb6e09f88f3c616ef3d`.
 ```solidity
 event Paused(address indexed account, uint256 newPausedStatus);
@@ -1514,38 +1469,9 @@ event Paused(address indexed account, uint256 newPausedStatus);
             );
             const SIGNATURE: &'static str = "Paused(address,uint256)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                171u8,
-                64u8,
-                163u8,
-                116u8,
-                188u8,
-                81u8,
-                222u8,
-                55u8,
-                34u8,
-                0u8,
-                168u8,
-                188u8,
-                152u8,
-                26u8,
-                248u8,
-                201u8,
-                236u8,
-                220u8,
-                8u8,
-                223u8,
-                218u8,
-                239u8,
-                11u8,
-                182u8,
-                224u8,
-                159u8,
-                136u8,
-                243u8,
-                198u8,
-                22u8,
-                239u8,
-                61u8,
+                171u8, 64u8, 163u8, 116u8, 188u8, 81u8, 222u8, 55u8, 34u8, 0u8, 168u8,
+                188u8, 152u8, 26u8, 248u8, 201u8, 236u8, 220u8, 8u8, 223u8, 218u8, 239u8,
+                11u8, 182u8, 224u8, 159u8, 136u8, 243u8, 198u8, 22u8, 239u8, 61u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -1620,6 +1546,7 @@ event Paused(address indexed account, uint256 newPausedStatus);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `StrategyBeaconModified(address,address)` and selector `0xe21755962a7d7e100b59b9c3e4d4b54085b146313719955efb6a7a25c5c7feee`.
 ```solidity
 event StrategyBeaconModified(address previousBeacon, address newBeacon);
@@ -1657,38 +1584,9 @@ event StrategyBeaconModified(address previousBeacon, address newBeacon);
             type TopicList = (alloy_sol_types::sol_data::FixedBytes<32>,);
             const SIGNATURE: &'static str = "StrategyBeaconModified(address,address)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                226u8,
-                23u8,
-                85u8,
-                150u8,
-                42u8,
-                125u8,
-                126u8,
-                16u8,
-                11u8,
-                89u8,
-                185u8,
-                195u8,
-                228u8,
-                212u8,
-                181u8,
-                64u8,
-                133u8,
-                177u8,
-                70u8,
-                49u8,
-                55u8,
-                25u8,
-                149u8,
-                94u8,
-                251u8,
-                106u8,
-                122u8,
-                37u8,
-                197u8,
-                199u8,
-                254u8,
-                238u8,
+                226u8, 23u8, 85u8, 150u8, 42u8, 125u8, 126u8, 16u8, 11u8, 89u8, 185u8,
+                195u8, 228u8, 212u8, 181u8, 64u8, 133u8, 177u8, 70u8, 49u8, 55u8, 25u8,
+                149u8, 94u8, 251u8, 106u8, 122u8, 37u8, 197u8, 199u8, 254u8, 238u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -1763,6 +1661,7 @@ event StrategyBeaconModified(address previousBeacon, address newBeacon);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `StrategySetForToken(address,address)` and selector `0x6852a55230ef089d785bce7ffbf757985de34026df90a87d7b4a6e56f95d251f`.
 ```solidity
 event StrategySetForToken(address token, address strategy);
@@ -1800,38 +1699,9 @@ event StrategySetForToken(address token, address strategy);
             type TopicList = (alloy_sol_types::sol_data::FixedBytes<32>,);
             const SIGNATURE: &'static str = "StrategySetForToken(address,address)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                104u8,
-                82u8,
-                165u8,
-                82u8,
-                48u8,
-                239u8,
-                8u8,
-                157u8,
-                120u8,
-                91u8,
-                206u8,
-                127u8,
-                251u8,
-                247u8,
-                87u8,
-                152u8,
-                93u8,
-                227u8,
-                64u8,
-                38u8,
-                223u8,
-                144u8,
-                168u8,
-                125u8,
-                123u8,
-                74u8,
-                110u8,
-                86u8,
-                249u8,
-                93u8,
-                37u8,
-                31u8,
+                104u8, 82u8, 165u8, 82u8, 48u8, 239u8, 8u8, 157u8, 120u8, 91u8, 206u8,
+                127u8, 251u8, 247u8, 87u8, 152u8, 93u8, 227u8, 64u8, 38u8, 223u8, 144u8,
+                168u8, 125u8, 123u8, 74u8, 110u8, 86u8, 249u8, 93u8, 37u8, 31u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -1906,6 +1776,7 @@ event StrategySetForToken(address token, address strategy);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `TokenBlacklisted(address)` and selector `0x75519c51f39873ec0e27dd3bbc09549e4865a113f505393fb9eab5898f6418b3`.
 ```solidity
 event TokenBlacklisted(address token);
@@ -1938,38 +1809,9 @@ event TokenBlacklisted(address token);
             type TopicList = (alloy_sol_types::sol_data::FixedBytes<32>,);
             const SIGNATURE: &'static str = "TokenBlacklisted(address)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                117u8,
-                81u8,
-                156u8,
-                81u8,
-                243u8,
-                152u8,
-                115u8,
-                236u8,
-                14u8,
-                39u8,
-                221u8,
-                59u8,
-                188u8,
-                9u8,
-                84u8,
-                158u8,
-                72u8,
-                101u8,
-                161u8,
-                19u8,
-                245u8,
-                5u8,
-                57u8,
-                63u8,
-                185u8,
-                234u8,
-                181u8,
-                137u8,
-                143u8,
-                100u8,
-                24u8,
-                179u8,
+                117u8, 81u8, 156u8, 81u8, 243u8, 152u8, 115u8, 236u8, 14u8, 39u8, 221u8,
+                59u8, 188u8, 9u8, 84u8, 158u8, 72u8, 101u8, 161u8, 19u8, 245u8, 5u8,
+                57u8, 63u8, 185u8, 234u8, 181u8, 137u8, 143u8, 100u8, 24u8, 179u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -2038,6 +1880,7 @@ event TokenBlacklisted(address token);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `Unpaused(address,uint256)` and selector `0x3582d1828e26bf56bd801502bc021ac0bc8afb57c826e4986b45593c8fad389c`.
 ```solidity
 event Unpaused(address indexed account, uint256 newPausedStatus);
@@ -2075,38 +1918,9 @@ event Unpaused(address indexed account, uint256 newPausedStatus);
             );
             const SIGNATURE: &'static str = "Unpaused(address,uint256)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                53u8,
-                130u8,
-                209u8,
-                130u8,
-                142u8,
-                38u8,
-                191u8,
-                86u8,
-                189u8,
-                128u8,
-                21u8,
-                2u8,
-                188u8,
-                2u8,
-                26u8,
-                192u8,
-                188u8,
-                138u8,
-                251u8,
-                87u8,
-                200u8,
-                38u8,
-                228u8,
-                152u8,
-                107u8,
-                69u8,
-                89u8,
-                60u8,
-                143u8,
-                173u8,
-                56u8,
-                156u8,
+                53u8, 130u8, 209u8, 130u8, 142u8, 38u8, 191u8, 86u8, 189u8, 128u8, 21u8,
+                2u8, 188u8, 2u8, 26u8, 192u8, 188u8, 138u8, 251u8, 87u8, 200u8, 38u8,
+                228u8, 152u8, 107u8, 69u8, 89u8, 60u8, 143u8, 173u8, 56u8, 156u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -2272,6 +2086,7 @@ constructor(address _strategyManager, address _pauserRegistry, string _version);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `blacklistTokens(address[])` and selector `0x23103c41`.
 ```solidity
 function blacklistTokens(address[] memory tokens) external;
@@ -2403,6 +2218,7 @@ function blacklistTokens(address[] memory tokens) external;
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `deployNewStrategy(address)` and selector `0x6b9b6229`.
 ```solidity
 function deployNewStrategy(address token) external returns (address newStrategy);
@@ -2413,6 +2229,7 @@ function deployNewStrategy(address token) external returns (address newStrategy)
         #[allow(missing_docs)]
         pub token: alloy::sol_types::private::Address,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`deployNewStrategy(address)`](deployNewStrategyCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -2533,6 +2350,7 @@ function deployNewStrategy(address token) external returns (address newStrategy)
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `deployedStrategies(address)` and selector `0x581dfd65`.
 ```solidity
 function deployedStrategies(address) external view returns (address);
@@ -2543,6 +2361,7 @@ function deployedStrategies(address) external view returns (address);
         #[allow(missing_docs)]
         pub _0: alloy::sol_types::private::Address,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`deployedStrategies(address)`](deployedStrategiesCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -2663,6 +2482,7 @@ function deployedStrategies(address) external view returns (address);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `initialize(address,uint256,address)` and selector `0xc350a1b5`.
 ```solidity
 function initialize(address _initialOwner, uint256 _initialPausedStatus, address _strategyBeacon) external;
@@ -2816,6 +2636,7 @@ function initialize(address _initialOwner, uint256 _initialPausedStatus, address
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `isBlacklisted(address)` and selector `0xfe575a87`.
 ```solidity
 function isBlacklisted(address) external view returns (bool);
@@ -2826,6 +2647,7 @@ function isBlacklisted(address) external view returns (bool);
         #[allow(missing_docs)]
         pub _0: alloy::sol_types::private::Address,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`isBlacklisted(address)`](isBlacklistedCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -2942,6 +2764,7 @@ function isBlacklisted(address) external view returns (bool);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `owner()` and selector `0x8da5cb5b`.
 ```solidity
 function owner() external view returns (address);
@@ -2949,6 +2772,7 @@ function owner() external view returns (address);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct ownerCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`owner()`](ownerCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -3061,6 +2885,7 @@ function owner() external view returns (address);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `pause(uint256)` and selector `0x136439dd`.
 ```solidity
 function pause(uint256 newPausedStatus) external;
@@ -3186,6 +3011,7 @@ function pause(uint256 newPausedStatus) external;
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `pauseAll()` and selector `0x595c6a67`.
 ```solidity
 function pauseAll() external;
@@ -3302,6 +3128,7 @@ function pauseAll() external;
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `paused(uint8)` and selector `0x5ac86ab7`.
 ```solidity
 function paused(uint8 index) external view returns (bool);
@@ -3312,6 +3139,7 @@ function paused(uint8 index) external view returns (bool);
         #[allow(missing_docs)]
         pub index: u8,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`paused(uint8)`](paused_0Call) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -3428,6 +3256,7 @@ function paused(uint8 index) external view returns (bool);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `paused()` and selector `0x5c975abb`.
 ```solidity
 function paused() external view returns (uint256);
@@ -3435,6 +3264,7 @@ function paused() external view returns (uint256);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct paused_1Call {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`paused()`](paused_1Call) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -3549,6 +3379,7 @@ function paused() external view returns (uint256);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `pauserRegistry()` and selector `0x886f1195`.
 ```solidity
 function pauserRegistry() external view returns (address);
@@ -3556,6 +3387,7 @@ function pauserRegistry() external view returns (address);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct pauserRegistryCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`pauserRegistry()`](pauserRegistryCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -3670,6 +3502,7 @@ function pauserRegistry() external view returns (address);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `removeStrategiesFromWhitelist(address[])` and selector `0xfe38b32d`.
 ```solidity
 function removeStrategiesFromWhitelist(address[] memory strategiesToRemoveFromWhitelist) external;
@@ -3809,6 +3642,7 @@ function removeStrategiesFromWhitelist(address[] memory strategiesToRemoveFromWh
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `renounceOwnership()` and selector `0x715018a6`.
 ```solidity
 function renounceOwnership() external;
@@ -3929,6 +3763,7 @@ function renounceOwnership() external;
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `strategyBeacon()` and selector `0xf0062d9a`.
 ```solidity
 function strategyBeacon() external view returns (address);
@@ -3936,6 +3771,7 @@ function strategyBeacon() external view returns (address);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct strategyBeaconCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`strategyBeacon()`](strategyBeaconCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -4050,6 +3886,7 @@ function strategyBeacon() external view returns (address);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `strategyManager()` and selector `0x39b70e38`.
 ```solidity
 function strategyManager() external view returns (address);
@@ -4057,6 +3894,7 @@ function strategyManager() external view returns (address);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct strategyManagerCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`strategyManager()`](strategyManagerCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -4171,6 +4009,7 @@ function strategyManager() external view returns (address);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `transferOwnership(address)` and selector `0xf2fde38b`.
 ```solidity
 function transferOwnership(address newOwner) external;
@@ -4298,6 +4137,7 @@ function transferOwnership(address newOwner) external;
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `unpause(uint256)` and selector `0xfabc1cbc`.
 ```solidity
 function unpause(uint256 newPausedStatus) external;
@@ -4423,6 +4263,7 @@ function unpause(uint256 newPausedStatus) external;
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `version()` and selector `0x54fd4d50`.
 ```solidity
 function version() external view returns (string memory);
@@ -4430,6 +4271,7 @@ function version() external view returns (string memory);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct versionCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`version()`](versionCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -4542,6 +4384,7 @@ function version() external view returns (string memory);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `whitelistStrategies(address[])` and selector `0xb768ebc9`.
 ```solidity
 function whitelistStrategies(address[] memory strategiesToWhitelist) external;
@@ -4682,6 +4525,7 @@ function whitelistStrategies(address[] memory strategiesToWhitelist) external;
         }
     };
     ///Container for all the [`StrategyFactory`](self) function calls.
+    #[derive()]
     pub enum StrategyFactoryCalls {
         #[allow(missing_docs)]
         blacklistTokens(blacklistTokensCall),
@@ -5275,6 +5119,7 @@ function whitelistStrategies(address[] memory strategiesToWhitelist) external;
         }
     }
     ///Container for all the [`StrategyFactory`](self) custom errors.
+    #[derive(Debug, PartialEq, Eq, Hash)]
     pub enum StrategyFactoryErrors {
         #[allow(missing_docs)]
         AlreadyBlacklisted(AlreadyBlacklisted),
@@ -5631,6 +5476,7 @@ function whitelistStrategies(address[] memory strategiesToWhitelist) external;
         }
     }
     ///Container for all the [`StrategyFactory`](self) events.
+    #[derive(Debug, PartialEq, Eq, Hash)]
     pub enum StrategyFactoryEvents {
         #[allow(missing_docs)]
         Initialized(Initialized),
@@ -5657,242 +5503,39 @@ function whitelistStrategies(address[] memory strategiesToWhitelist) external;
         /// Prefer using `SolInterface` methods instead.
         pub const SELECTORS: &'static [[u8; 32usize]] = &[
             [
-                53u8,
-                130u8,
-                209u8,
-                130u8,
-                142u8,
-                38u8,
-                191u8,
-                86u8,
-                189u8,
-                128u8,
-                21u8,
-                2u8,
-                188u8,
-                2u8,
-                26u8,
-                192u8,
-                188u8,
-                138u8,
-                251u8,
-                87u8,
-                200u8,
-                38u8,
-                228u8,
-                152u8,
-                107u8,
-                69u8,
-                89u8,
-                60u8,
-                143u8,
-                173u8,
-                56u8,
-                156u8,
+                53u8, 130u8, 209u8, 130u8, 142u8, 38u8, 191u8, 86u8, 189u8, 128u8, 21u8,
+                2u8, 188u8, 2u8, 26u8, 192u8, 188u8, 138u8, 251u8, 87u8, 200u8, 38u8,
+                228u8, 152u8, 107u8, 69u8, 89u8, 60u8, 143u8, 173u8, 56u8, 156u8,
             ],
             [
-                104u8,
-                82u8,
-                165u8,
-                82u8,
-                48u8,
-                239u8,
-                8u8,
-                157u8,
-                120u8,
-                91u8,
-                206u8,
-                127u8,
-                251u8,
-                247u8,
-                87u8,
-                152u8,
-                93u8,
-                227u8,
-                64u8,
-                38u8,
-                223u8,
-                144u8,
-                168u8,
-                125u8,
-                123u8,
-                74u8,
-                110u8,
-                86u8,
-                249u8,
-                93u8,
-                37u8,
-                31u8,
+                104u8, 82u8, 165u8, 82u8, 48u8, 239u8, 8u8, 157u8, 120u8, 91u8, 206u8,
+                127u8, 251u8, 247u8, 87u8, 152u8, 93u8, 227u8, 64u8, 38u8, 223u8, 144u8,
+                168u8, 125u8, 123u8, 74u8, 110u8, 86u8, 249u8, 93u8, 37u8, 31u8,
             ],
             [
-                117u8,
-                81u8,
-                156u8,
-                81u8,
-                243u8,
-                152u8,
-                115u8,
-                236u8,
-                14u8,
-                39u8,
-                221u8,
-                59u8,
-                188u8,
-                9u8,
-                84u8,
-                158u8,
-                72u8,
-                101u8,
-                161u8,
-                19u8,
-                245u8,
-                5u8,
-                57u8,
-                63u8,
-                185u8,
-                234u8,
-                181u8,
-                137u8,
-                143u8,
-                100u8,
-                24u8,
-                179u8,
+                117u8, 81u8, 156u8, 81u8, 243u8, 152u8, 115u8, 236u8, 14u8, 39u8, 221u8,
+                59u8, 188u8, 9u8, 84u8, 158u8, 72u8, 101u8, 161u8, 19u8, 245u8, 5u8,
+                57u8, 63u8, 185u8, 234u8, 181u8, 137u8, 143u8, 100u8, 24u8, 179u8,
             ],
             [
-                127u8,
-                38u8,
-                184u8,
-                63u8,
-                249u8,
-                110u8,
-                31u8,
-                43u8,
-                106u8,
-                104u8,
-                47u8,
-                19u8,
-                56u8,
-                82u8,
-                246u8,
-                121u8,
-                138u8,
-                9u8,
-                196u8,
-                101u8,
-                218u8,
-                149u8,
-                146u8,
-                20u8,
-                96u8,
-                206u8,
-                251u8,
-                56u8,
-                71u8,
-                64u8,
-                36u8,
-                152u8,
+                127u8, 38u8, 184u8, 63u8, 249u8, 110u8, 31u8, 43u8, 106u8, 104u8, 47u8,
+                19u8, 56u8, 82u8, 246u8, 121u8, 138u8, 9u8, 196u8, 101u8, 218u8, 149u8,
+                146u8, 20u8, 96u8, 206u8, 251u8, 56u8, 71u8, 64u8, 36u8, 152u8,
             ],
             [
-                139u8,
-                224u8,
-                7u8,
-                156u8,
-                83u8,
-                22u8,
-                89u8,
-                20u8,
-                19u8,
-                68u8,
-                205u8,
-                31u8,
-                208u8,
-                164u8,
-                242u8,
-                132u8,
-                25u8,
-                73u8,
-                127u8,
-                151u8,
-                34u8,
-                163u8,
-                218u8,
-                175u8,
-                227u8,
-                180u8,
-                24u8,
-                111u8,
-                107u8,
-                100u8,
-                87u8,
-                224u8,
+                139u8, 224u8, 7u8, 156u8, 83u8, 22u8, 89u8, 20u8, 19u8, 68u8, 205u8,
+                31u8, 208u8, 164u8, 242u8, 132u8, 25u8, 73u8, 127u8, 151u8, 34u8, 163u8,
+                218u8, 175u8, 227u8, 180u8, 24u8, 111u8, 107u8, 100u8, 87u8, 224u8,
             ],
             [
-                171u8,
-                64u8,
-                163u8,
-                116u8,
-                188u8,
-                81u8,
-                222u8,
-                55u8,
-                34u8,
-                0u8,
-                168u8,
-                188u8,
-                152u8,
-                26u8,
-                248u8,
-                201u8,
-                236u8,
-                220u8,
-                8u8,
-                223u8,
-                218u8,
-                239u8,
-                11u8,
-                182u8,
-                224u8,
-                159u8,
-                136u8,
-                243u8,
-                198u8,
-                22u8,
-                239u8,
-                61u8,
+                171u8, 64u8, 163u8, 116u8, 188u8, 81u8, 222u8, 55u8, 34u8, 0u8, 168u8,
+                188u8, 152u8, 26u8, 248u8, 201u8, 236u8, 220u8, 8u8, 223u8, 218u8, 239u8,
+                11u8, 182u8, 224u8, 159u8, 136u8, 243u8, 198u8, 22u8, 239u8, 61u8,
             ],
             [
-                226u8,
-                23u8,
-                85u8,
-                150u8,
-                42u8,
-                125u8,
-                126u8,
-                16u8,
-                11u8,
-                89u8,
-                185u8,
-                195u8,
-                228u8,
-                212u8,
-                181u8,
-                64u8,
-                133u8,
-                177u8,
-                70u8,
-                49u8,
-                55u8,
-                25u8,
-                149u8,
-                94u8,
-                251u8,
-                106u8,
-                122u8,
-                37u8,
-                197u8,
-                199u8,
-                254u8,
-                238u8,
+                226u8, 23u8, 85u8, 150u8, 42u8, 125u8, 126u8, 16u8, 11u8, 89u8, 185u8,
+                195u8, 228u8, 212u8, 181u8, 64u8, 133u8, 177u8, 70u8, 49u8, 55u8, 25u8,
+                149u8, 94u8, 251u8, 106u8, 122u8, 37u8, 197u8, 199u8, 254u8, 238u8,
             ],
         ];
     }

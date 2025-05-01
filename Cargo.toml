@@ -1,13 +1,13 @@
 [package]
 name = "eigenlayer-contract-deployer"
-version = "0.1.0"
+version = "0.2.0"
 description = "A library that contains Rust bindings for contracts and tools for deploying contracts"
 authors = ["Tangle Network"]
 edition = "2024"
 license = "MIT OR Apache-2.0"
 homepage = "https://tangle.tools"
 repository = "https://github.com/tangle-network/eigenlayer-contract-deployer"
-rust-version = "1.85"
+rust-version = "1.86"
 
 [lints.rust]
 rust_2018_idioms = { level = "deny", priority = -1 }
@@ -48,3 +48,7 @@ alloy-contract = { version = "0.12" }
 alloy-provider = { version = "0.12" }
 alloy-primitives = { version = "0.8" }
 tracing = { version = "0.1.41" }
+
+[features]
+default = []
+build-script = []

@@ -19,6 +19,7 @@ library IAllocationManagerTypes {
 pub mod IAllocationManagerTypes {
     use super::*;
     use alloy::sol_types as alloy_sol_types;
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**```solidity
 struct SlashingParams { address operator; uint32 operatorSetId; address[] strategies; uint256[] wadsToSlash; string description; }
 ```*/
@@ -671,6 +672,7 @@ pub mod InstantSlasher {
     pub static DEPLOYED_BYTECODE: alloy_sol_types::private::Bytes = alloy_sol_types::private::Bytes::from_static(
         b"`\x80`@R4\x80\x15a\0\x0FW__\xFD[P`\x046\x10a\0UW_5`\xE0\x1C\x80cjf\x9BA\x14a\0YW\x80cj\x84\xA9\x85\x14a\0nW\x80c\xB14Bq\x14a\0\x89W\x80c\xCA\x8A\xA7\xC7\x14a\0\xC8W\x80c\xCF\x1DkB\x14a\0\xEFW[__\xFD[a\0la\0g6`\x04a\x03\xBEV[a\x01\x16V[\0[a\0v_T\x81V[`@Q\x90\x81R` \x01[`@Q\x80\x91\x03\x90\xF3[a\0\xB0\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x81V[`@Q`\x01`\x01`\xA0\x1B\x03\x90\x91\x16\x81R` \x01a\0\x80V[a\0\xB0\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x81V[a\0\xB0\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x81V[a\x01\x1F3a\x02\x11V[_\x80T\x81\x80a\x01-\x83a\x03\xFBV[\x90\x91UP\x90Pa\x01E\x81a\x01@\x84a\x06\x1DV[a\x02fV[`@\x80Q`\x01\x80\x82R\x81\x83\x01\x90\x92R_\x91` \x80\x83\x01\x90\x806\x837\x01\x90PP\x90Pa\x01s` \x84\x01\x84a\x06\xD5V[\x81_\x81Q\x81\x10a\x01\x85Wa\x01\x85a\x06\xF0V[`\x01`\x01`\xA0\x1B\x03\x92\x83\x16` \x91\x82\x02\x92\x90\x92\x01\x01R`@Qb\xCF*\xB5`\xE0\x1B\x81R\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x90\x91\x16\x90b\xCF*\xB5\x90a\x01\xDF\x90\x84\x90`\x04\x01a\x07\x04V[_`@Q\x80\x83\x03\x81_\x87\x80;\x15\x80\x15a\x01\xF6W__\xFD[PZ\xF1\x15\x80\x15a\x02\x08W=__>=_\xFD[PPPPPPPV[\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0`\x01`\x01`\xA0\x1B\x03\x16\x81`\x01`\x01`\xA0\x1B\x03\x16\x14a\x02cW`@Qc~W\xB1\xE1`\xE0\x1B\x81R`\x04\x01`@Q\x80\x91\x03\x90\xFD[PV[\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0`\x01`\x01`\xA0\x1B\x03\x16c65 W\x7F\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0`\x01`\x01`\xA0\x1B\x03\x16c\xDE\x11d\xBB`@Q\x81c\xFF\xFF\xFF\xFF\x16`\xE0\x1B\x81R`\x04\x01` `@Q\x80\x83\x03\x81\x86Z\xFA\x15\x80\x15a\x02\xF1W=__>=_\xFD[PPPP`@Q=`\x1F\x19`\x1F\x82\x01\x16\x82\x01\x80`@RP\x81\x01\x90a\x03\x15\x91\x90a\x07OV[\x83`@Q\x83c\xFF\xFF\xFF\xFF\x16`\xE0\x1B\x81R`\x04\x01a\x033\x92\x91\x90a\x07\xE7V[_`@Q\x80\x83\x03\x81_\x87\x80;\x15\x80\x15a\x03JW__\xFD[PZ\xF1\x15\x80\x15a\x03\\W=__>=_\xFD[PPPP\x80` \x01Qc\xFF\xFF\xFF\xFF\x16\x81_\x01Q`\x01`\x01`\xA0\x1B\x03\x16\x83\x7F\x8A\x83\xCF\x9A\xFB\t\xA9\x811OO\xB3S\xB9[\x004Q\xDA\x17\n\x99\xF4\x8D\x8D\xB6GK\x06\xD7\x9F;\x84``\x01Q\x85`\x80\x01Q`@Qa\x03\xB2\x92\x91\x90a\x08\xABV[`@Q\x80\x91\x03\x90\xA4PPV[_` \x82\x84\x03\x12\x15a\x03\xCEW__\xFD[\x815`\x01`\x01`@\x1B\x03\x81\x11\x15a\x03\xE3W__\xFD[\x82\x01`\xA0\x81\x85\x03\x12\x15a\x03\xF4W__\xFD[\x93\x92PPPV[_`\x01\x82\x01a\x04\x18WcNH{q`\xE0\x1B_R`\x11`\x04R`$_\xFD[P`\x01\x01\x90V[cNH{q`\xE0\x1B_R`A`\x04R`$_\xFD[`@Q`\xA0\x81\x01`\x01`\x01`@\x1B\x03\x81\x11\x82\x82\x10\x17\x15a\x04UWa\x04Ua\x04\x1FV[`@R\x90V[`@Q`\x1F\x82\x01`\x1F\x19\x16\x81\x01`\x01`\x01`@\x1B\x03\x81\x11\x82\x82\x10\x17\x15a\x04\x83Wa\x04\x83a\x04\x1FV[`@R\x91\x90PV[`\x01`\x01`\xA0\x1B\x03\x81\x16\x81\x14a\x02cW__\xFD[\x805a\x04\xAA\x81a\x04\x8BV[\x91\x90PV[\x805c\xFF\xFF\xFF\xFF\x81\x16\x81\x14a\x04\xAAW__\xFD[_`\x01`\x01`@\x1B\x03\x82\x11\x15a\x04\xDAWa\x04\xDAa\x04\x1FV[P`\x05\x1B` \x01\x90V[_\x82`\x1F\x83\x01\x12a\x04\xF3W__\xFD[\x815a\x05\x06a\x05\x01\x82a\x04\xC2V[a\x04[V[\x80\x82\x82R` \x82\x01\x91P` \x83`\x05\x1B\x86\x01\x01\x92P\x85\x83\x11\x15a\x05'W__\xFD[` \x85\x01[\x83\x81\x10\x15a\x05MW\x805a\x05?\x81a\x04\x8BV[\x83R` \x92\x83\x01\x92\x01a\x05,V[P\x95\x94PPPPPV[_\x82`\x1F\x83\x01\x12a\x05fW__\xFD[\x815a\x05ta\x05\x01\x82a\x04\xC2V[\x80\x82\x82R` \x82\x01\x91P` \x83`\x05\x1B\x86\x01\x01\x92P\x85\x83\x11\x15a\x05\x95W__\xFD[` \x85\x01[\x83\x81\x10\x15a\x05MW\x805\x83R` \x92\x83\x01\x92\x01a\x05\x9AV[_\x82`\x1F\x83\x01\x12a\x05\xC1W__\xFD[\x815`\x01`\x01`@\x1B\x03\x81\x11\x15a\x05\xDAWa\x05\xDAa\x04\x1FV[a\x05\xED`\x1F\x82\x01`\x1F\x19\x16` \x01a\x04[V[\x81\x81R\x84` \x83\x86\x01\x01\x11\x15a\x06\x01W__\xFD[\x81` \x85\x01` \x83\x017_\x91\x81\x01` \x01\x91\x90\x91R\x93\x92PPPV[_`\xA0\x826\x03\x12\x15a\x06-W__\xFD[a\x065a\x043V[a\x06>\x83a\x04\x9FV[\x81Ra\x06L` \x84\x01a\x04\xAFV[` \x82\x01R`@\x83\x015`\x01`\x01`@\x1B\x03\x81\x11\x15a\x06iW__\xFD[a\x06u6\x82\x86\x01a\x04\xE4V[`@\x83\x01RP``\x83\x015`\x01`\x01`@\x1B\x03\x81\x11\x15a\x06\x93W__\xFD[a\x06\x9F6\x82\x86\x01a\x05WV[``\x83\x01RP`\x80\x83\x015`\x01`\x01`@\x1B\x03\x81\x11\x15a\x06\xBDW__\xFD[a\x06\xC96\x82\x86\x01a\x05\xB2V[`\x80\x83\x01RP\x92\x91PPV[_` \x82\x84\x03\x12\x15a\x06\xE5W__\xFD[\x815a\x03\xF4\x81a\x04\x8BV[cNH{q`\xE0\x1B_R`2`\x04R`$_\xFD[` \x80\x82R\x82Q\x82\x82\x01\x81\x90R_\x91\x84\x01\x90`@\x84\x01\x90\x83[\x81\x81\x10\x15a\x07DW\x83Q`\x01`\x01`\xA0\x1B\x03\x16\x83R` \x93\x84\x01\x93\x90\x92\x01\x91`\x01\x01a\x07\x1DV[P\x90\x95\x94PPPPPV[_` \x82\x84\x03\x12\x15a\x07_W__\xFD[\x81Qa\x03\xF4\x81a\x04\x8BV[_\x81Q\x80\x84R` \x84\x01\x93P` \x83\x01_[\x82\x81\x10\x15a\x07\x9AW\x81Q\x86R` \x95\x86\x01\x95\x90\x91\x01\x90`\x01\x01a\x07|V[P\x93\x94\x93PPPPV[_\x81Q\x80\x84R_[\x81\x81\x10\x15a\x07\xC8W` \x81\x85\x01\x81\x01Q\x86\x83\x01\x82\x01R\x01a\x07\xACV[P_` \x82\x86\x01\x01R` `\x1F\x19`\x1F\x83\x01\x16\x85\x01\x01\x91PP\x92\x91PPV[`\x01`\x01`\xA0\x1B\x03\x83\x81\x16\x82R`@` \x80\x84\x01\x82\x90R\x84Q\x90\x92\x16\x81\x84\x01R\x83\x82\x01Qc\xFF\xFF\xFF\xFF\x16``\x84\x01R\x83\x01Q`\xA0`\x80\x84\x01R\x80Q`\xE0\x84\x01\x81\x90R_\x92\x91\x90\x91\x01\x90\x82\x90a\x01\0\x85\x01\x90[\x80\x83\x10\x15a\x08dW\x83Q`\x01`\x01`\xA0\x1B\x03\x16\x82R` \x93\x84\x01\x93`\x01\x93\x90\x93\x01\x92\x90\x91\x01\x90a\x089V[P``\x86\x01Q\x85\x82\x03`?\x19\x01`\xA0\x87\x01R\x92Pa\x08\x82\x81\x84a\x07jV[\x92PPP`\x80\x84\x01Q`?\x19\x84\x83\x03\x01`\xC0\x85\x01Ra\x08\xA1\x82\x82a\x07\xA4V[\x96\x95PPPPPPV[`@\x81R_a\x08\xBD`@\x83\x01\x85a\x07jV[\x82\x81\x03` \x84\x01Ra\x08\xCF\x81\x85a\x07\xA4V[\x95\x94PPPPPV\xFE\xA2dipfsX\"\x12 \x9F\x99\xA5\x04\xFB\xD4B\xDB,{VH\x06\x80\x88E\xB0\x12\x97@>6\xE6\xEA)\x01Vm\xA4\x9C\x8B\x8EdsolcC\0\x08\x1B\x003",
     );
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `OnlySlasher()` and selector `0x7e57b1e1`.
 ```solidity
 error OnlySlasher();
@@ -735,6 +737,7 @@ error OnlySlasher();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `OperatorSlashed(uint256,address,uint32,uint256[],string)` and selector `0x8a83cf9afb09a981314f4fb353b95b003451da170a99f48d8db6474b06d79f3b`.
 ```solidity
 event OperatorSlashed(uint256 indexed slashingRequestId, address indexed operator, uint32 indexed operatorSetId, uint256[] wadsToSlash, string description);
@@ -785,38 +788,9 @@ event OperatorSlashed(uint256 indexed slashingRequestId, address indexed operato
             );
             const SIGNATURE: &'static str = "OperatorSlashed(uint256,address,uint32,uint256[],string)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                138u8,
-                131u8,
-                207u8,
-                154u8,
-                251u8,
-                9u8,
-                169u8,
-                129u8,
-                49u8,
-                79u8,
-                79u8,
-                179u8,
-                83u8,
-                185u8,
-                91u8,
-                0u8,
-                52u8,
-                81u8,
-                218u8,
-                23u8,
-                10u8,
-                153u8,
-                244u8,
-                141u8,
-                141u8,
-                182u8,
-                71u8,
-                75u8,
-                6u8,
-                215u8,
-                159u8,
-                59u8,
+                138u8, 131u8, 207u8, 154u8, 251u8, 9u8, 169u8, 129u8, 49u8, 79u8, 79u8,
+                179u8, 83u8, 185u8, 91u8, 0u8, 52u8, 81u8, 218u8, 23u8, 10u8, 153u8,
+                244u8, 141u8, 141u8, 182u8, 71u8, 75u8, 6u8, 215u8, 159u8, 59u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -1003,6 +977,7 @@ constructor(address _allocationManager, address _slashingRegistryCoordinator, ad
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `allocationManager()` and selector `0xca8aa7c7`.
 ```solidity
 function allocationManager() external view returns (address);
@@ -1010,6 +985,7 @@ function allocationManager() external view returns (address);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct allocationManagerCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`allocationManager()`](allocationManagerCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -1126,6 +1102,7 @@ function allocationManager() external view returns (address);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `fulfillSlashingRequest((address,uint32,address[],uint256[],string))` and selector `0x6a669b41`.
 ```solidity
 function fulfillSlashingRequest(IAllocationManagerTypes.SlashingParams memory _slashingParams) external;
@@ -1255,6 +1232,7 @@ function fulfillSlashingRequest(IAllocationManagerTypes.SlashingParams memory _s
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `nextRequestId()` and selector `0x6a84a985`.
 ```solidity
 function nextRequestId() external view returns (uint256);
@@ -1262,6 +1240,7 @@ function nextRequestId() external view returns (uint256);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct nextRequestIdCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`nextRequestId()`](nextRequestIdCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -1376,6 +1355,7 @@ function nextRequestId() external view returns (uint256);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `slasher()` and selector `0xb1344271`.
 ```solidity
 function slasher() external view returns (address);
@@ -1383,6 +1363,7 @@ function slasher() external view returns (address);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct slasherCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`slasher()`](slasherCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -1495,6 +1476,7 @@ function slasher() external view returns (address);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `slashingRegistryCoordinator()` and selector `0xcf1d6b42`.
 ```solidity
 function slashingRegistryCoordinator() external view returns (address);
@@ -1502,6 +1484,7 @@ function slashingRegistryCoordinator() external view returns (address);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct slashingRegistryCoordinatorCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`slashingRegistryCoordinator()`](slashingRegistryCoordinatorCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -1619,6 +1602,7 @@ function slashingRegistryCoordinator() external view returns (address);
         }
     };
     ///Container for all the [`InstantSlasher`](self) function calls.
+    #[derive()]
     pub enum InstantSlasherCalls {
         #[allow(missing_docs)]
         allocationManager(allocationManagerCall),
@@ -1827,6 +1811,7 @@ function slashingRegistryCoordinator() external view returns (address);
         }
     }
     ///Container for all the [`InstantSlasher`](self) custom errors.
+    #[derive(Debug, PartialEq, Eq, Hash)]
     pub enum InstantSlasherErrors {
         #[allow(missing_docs)]
         OnlySlasher(OnlySlasher),
@@ -1918,6 +1903,7 @@ function slashingRegistryCoordinator() external view returns (address);
         }
     }
     ///Container for all the [`InstantSlasher`](self) events.
+    #[derive(Debug, PartialEq, Eq, Hash)]
     pub enum InstantSlasherEvents {
         #[allow(missing_docs)]
         OperatorSlashed(OperatorSlashed),
@@ -1932,38 +1918,9 @@ function slashingRegistryCoordinator() external view returns (address);
         /// Prefer using `SolInterface` methods instead.
         pub const SELECTORS: &'static [[u8; 32usize]] = &[
             [
-                138u8,
-                131u8,
-                207u8,
-                154u8,
-                251u8,
-                9u8,
-                169u8,
-                129u8,
-                49u8,
-                79u8,
-                79u8,
-                179u8,
-                83u8,
-                185u8,
-                91u8,
-                0u8,
-                52u8,
-                81u8,
-                218u8,
-                23u8,
-                10u8,
-                153u8,
-                244u8,
-                141u8,
-                141u8,
-                182u8,
-                71u8,
-                75u8,
-                6u8,
-                215u8,
-                159u8,
-                59u8,
+                138u8, 131u8, 207u8, 154u8, 251u8, 9u8, 169u8, 129u8, 49u8, 79u8, 79u8,
+                179u8, 83u8, 185u8, 91u8, 0u8, 52u8, 81u8, 218u8, 23u8, 10u8, 153u8,
+                244u8, 141u8, 141u8, 182u8, 71u8, 75u8, 6u8, 215u8, 159u8, 59u8,
             ],
         ];
     }

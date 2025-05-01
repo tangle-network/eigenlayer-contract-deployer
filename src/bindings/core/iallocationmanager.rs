@@ -24,12 +24,13 @@ library IAllocationManagerTypes {
 pub mod IAllocationManagerTypes {
     use super::*;
     use alloy::sol_types as alloy_sol_types;
+    #[derive()]
     /**```solidity
 struct AllocateParams { OperatorSet operatorSet; address[] strategies; uint64[] newMagnitudes; }
 ```*/
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
-    #[derive(Clone)]
-    pub struct AllocateParams {
+    #[derive(Clone, Hash, Debug, Eq, PartialEq)]
+	pub struct AllocateParams {
         #[allow(missing_docs)]
         pub operatorSet: <OperatorSet as alloy::sol_types::SolType>::RustType,
         #[allow(missing_docs)]
@@ -276,6 +277,7 @@ struct AllocateParams { OperatorSet operatorSet; address[] strategies; uint64[] 
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**```solidity
 struct Allocation { uint64 currentMagnitude; int128 pendingDiff; uint32 effectBlock; }
 ```*/
@@ -523,6 +525,7 @@ struct Allocation { uint64 currentMagnitude; int128 pendingDiff; uint32 effectBl
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**```solidity
 struct CreateSetParams { uint32 operatorSetId; address[] strategies; }
 ```*/
@@ -751,6 +754,7 @@ struct CreateSetParams { uint32 operatorSetId; address[] strategies; }
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**```solidity
 struct DeregisterParams { address operator; address avs; uint32[] operatorSetIds; }
 ```*/
@@ -994,6 +998,7 @@ struct DeregisterParams { address operator; address avs; uint32[] operatorSetIds
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**```solidity
 struct RegisterParams { address avs; uint32[] operatorSetIds; bytes data; }
 ```*/
@@ -1237,6 +1242,7 @@ struct RegisterParams { address avs; uint32[] operatorSetIds; bytes data; }
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**```solidity
 struct SlashingParams { address operator; uint32 operatorSetId; address[] strategies; uint256[] wadsToSlash; string description; }
 ```*/
@@ -3371,6 +3377,7 @@ pub mod IAllocationManager {
     pub static DEPLOYED_BYTECODE: alloy_sol_types::private::Bytes = alloy_sol_types::private::Bytes::from_static(
         b"",
     );
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**```solidity
 struct OperatorSet { address avs; uint32 id; }
 ```*/
@@ -3582,6 +3589,7 @@ struct OperatorSet { address avs; uint32 id; }
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `AlreadyMemberOfSet()` and selector `0xd8d8dc4e`.
 ```solidity
 error AlreadyMemberOfSet();
@@ -3646,6 +3654,7 @@ error AlreadyMemberOfSet();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `InputArrayLengthMismatch()` and selector `0x43714afd`.
 ```solidity
 error InputArrayLengthMismatch();
@@ -3712,6 +3721,7 @@ error InputArrayLengthMismatch();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `InsufficientMagnitude()` and selector `0x6c9be0bf`.
 ```solidity
 error InsufficientMagnitude();
@@ -3776,6 +3786,7 @@ error InsufficientMagnitude();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `InvalidAVSRegistrar()` and selector `0xe8589e08`.
 ```solidity
 error InvalidAVSRegistrar();
@@ -3840,6 +3851,7 @@ error InvalidAVSRegistrar();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `InvalidCaller()` and selector `0x48f5c3ed`.
 ```solidity
 error InvalidCaller();
@@ -3904,6 +3916,7 @@ error InvalidCaller();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `InvalidOperator()` and selector `0xccea9e6f`.
 ```solidity
 error InvalidOperator();
@@ -3968,6 +3981,7 @@ error InvalidOperator();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `InvalidOperatorSet()` and selector `0x7ec5c154`.
 ```solidity
 error InvalidOperatorSet();
@@ -4032,6 +4046,7 @@ error InvalidOperatorSet();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `InvalidWadToSlash()` and selector `0x13536031`.
 ```solidity
 error InvalidWadToSlash();
@@ -4096,6 +4111,7 @@ error InvalidWadToSlash();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `ModificationAlreadyPending()` and selector `0xd8fcbe30`.
 ```solidity
 error ModificationAlreadyPending();
@@ -4162,6 +4178,7 @@ error ModificationAlreadyPending();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `NonexistentAVSMetadata()` and selector `0x48f7dbb9`.
 ```solidity
 error NonexistentAVSMetadata();
@@ -4226,6 +4243,7 @@ error NonexistentAVSMetadata();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `NotMemberOfSet()` and selector `0x25131d4f`.
 ```solidity
 error NotMemberOfSet();
@@ -4290,6 +4308,7 @@ error NotMemberOfSet();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `OperatorNotSlashable()` and selector `0xebbff497`.
 ```solidity
 error OperatorNotSlashable();
@@ -4354,6 +4373,7 @@ error OperatorNotSlashable();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `SameMagnitude()` and selector `0x8c0c2f26`.
 ```solidity
 error SameMagnitude();
@@ -4418,6 +4438,7 @@ error SameMagnitude();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `StrategiesMustBeInAscendingOrder()` and selector `0x9f1c8053`.
 ```solidity
 error StrategiesMustBeInAscendingOrder();
@@ -4484,6 +4505,7 @@ error StrategiesMustBeInAscendingOrder();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `StrategyAlreadyInOperatorSet()` and selector `0x585cfb2f`.
 ```solidity
 error StrategyAlreadyInOperatorSet();
@@ -4550,6 +4572,7 @@ error StrategyAlreadyInOperatorSet();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `StrategyNotInOperatorSet()` and selector `0x6378684e`.
 ```solidity
 error StrategyNotInOperatorSet();
@@ -4616,6 +4639,7 @@ error StrategyNotInOperatorSet();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Custom error with signature `UninitializedAllocationDelay()` and selector `0xfa55fc81`.
 ```solidity
 error UninitializedAllocationDelay();
@@ -4682,6 +4706,7 @@ error UninitializedAllocationDelay();
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `AVSMetadataURIUpdated(address,string)` and selector `0xa89c1dc243d8908a96dd84944bcc97d6bc6ac00dd78e20621576be6a3c943713`.
 ```solidity
 event AVSMetadataURIUpdated(address indexed avs, string metadataURI);
@@ -4719,37 +4744,9 @@ event AVSMetadataURIUpdated(address indexed avs, string metadataURI);
             );
             const SIGNATURE: &'static str = "AVSMetadataURIUpdated(address,string)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                168u8,
-                156u8,
-                29u8,
-                194u8,
-                67u8,
-                216u8,
-                144u8,
-                138u8,
-                150u8,
-                221u8,
-                132u8,
-                148u8,
-                75u8,
-                204u8,
-                151u8,
-                214u8,
-                188u8,
-                106u8,
-                192u8,
-                13u8,
-                215u8,
-                142u8,
-                32u8,
-                98u8,
-                21u8,
-                118u8,
-                190u8,
-                106u8,
-                60u8,
-                148u8,
-                55u8,
+                168u8, 156u8, 29u8, 194u8, 67u8, 216u8, 144u8, 138u8, 150u8, 221u8,
+                132u8, 148u8, 75u8, 204u8, 151u8, 214u8, 188u8, 106u8, 192u8, 13u8,
+                215u8, 142u8, 32u8, 98u8, 21u8, 118u8, 190u8, 106u8, 60u8, 148u8, 55u8,
                 19u8,
             ]);
             const ANONYMOUS: bool = false;
@@ -4825,6 +4822,7 @@ event AVSMetadataURIUpdated(address indexed avs, string metadataURI);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `AVSRegistrarSet(address,address)` and selector `0x2ae945c40c44dc0ec263f95609c3fdc6952e0aefa22d6374e44f2c997acedf85`.
 ```solidity
 event AVSRegistrarSet(address avs, address registrar);
@@ -4862,38 +4860,9 @@ event AVSRegistrarSet(address avs, address registrar);
             type TopicList = (alloy_sol_types::sol_data::FixedBytes<32>,);
             const SIGNATURE: &'static str = "AVSRegistrarSet(address,address)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                42u8,
-                233u8,
-                69u8,
-                196u8,
-                12u8,
-                68u8,
-                220u8,
-                14u8,
-                194u8,
-                99u8,
-                249u8,
-                86u8,
-                9u8,
-                195u8,
-                253u8,
-                198u8,
-                149u8,
-                46u8,
-                10u8,
-                239u8,
-                162u8,
-                45u8,
-                99u8,
-                116u8,
-                228u8,
-                79u8,
-                44u8,
-                153u8,
-                122u8,
-                206u8,
-                223u8,
-                133u8,
+                42u8, 233u8, 69u8, 196u8, 12u8, 68u8, 220u8, 14u8, 194u8, 99u8, 249u8,
+                86u8, 9u8, 195u8, 253u8, 198u8, 149u8, 46u8, 10u8, 239u8, 162u8, 45u8,
+                99u8, 116u8, 228u8, 79u8, 44u8, 153u8, 122u8, 206u8, 223u8, 133u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -4968,6 +4937,7 @@ event AVSRegistrarSet(address avs, address registrar);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `AllocationDelaySet(address,uint32,uint32)` and selector `0x4e85751d6331506c6c62335f207eb31f12a61e570f34f5c17640308785c6d4db`.
 ```solidity
 event AllocationDelaySet(address operator, uint32 delay, uint32 effectBlock);
@@ -5008,38 +4978,9 @@ event AllocationDelaySet(address operator, uint32 delay, uint32 effectBlock);
             type TopicList = (alloy_sol_types::sol_data::FixedBytes<32>,);
             const SIGNATURE: &'static str = "AllocationDelaySet(address,uint32,uint32)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                78u8,
-                133u8,
-                117u8,
-                29u8,
-                99u8,
-                49u8,
-                80u8,
-                108u8,
-                108u8,
-                98u8,
-                51u8,
-                95u8,
-                32u8,
-                126u8,
-                179u8,
-                31u8,
-                18u8,
-                166u8,
-                30u8,
-                87u8,
-                15u8,
-                52u8,
-                245u8,
-                193u8,
-                118u8,
-                64u8,
-                48u8,
-                135u8,
-                133u8,
-                198u8,
-                212u8,
-                219u8,
+                78u8, 133u8, 117u8, 29u8, 99u8, 49u8, 80u8, 108u8, 108u8, 98u8, 51u8,
+                95u8, 32u8, 126u8, 179u8, 31u8, 18u8, 166u8, 30u8, 87u8, 15u8, 52u8,
+                245u8, 193u8, 118u8, 64u8, 48u8, 135u8, 133u8, 198u8, 212u8, 219u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -5118,6 +5059,7 @@ event AllocationDelaySet(address operator, uint32 delay, uint32 effectBlock);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `AllocationUpdated(address,(address,uint32),address,uint64,uint32)` and selector `0x1487af5418c47ee5ea45ef4a93398668120890774a9e13487e61e9dc3baf76dd`.
 ```solidity
 event AllocationUpdated(address operator, OperatorSet operatorSet, address strategy, uint64 magnitude, uint32 effectBlock);
@@ -5164,38 +5106,9 @@ event AllocationUpdated(address operator, OperatorSet operatorSet, address strat
             type TopicList = (alloy_sol_types::sol_data::FixedBytes<32>,);
             const SIGNATURE: &'static str = "AllocationUpdated(address,(address,uint32),address,uint64,uint32)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                20u8,
-                135u8,
-                175u8,
-                84u8,
-                24u8,
-                196u8,
-                126u8,
-                229u8,
-                234u8,
-                69u8,
-                239u8,
-                74u8,
-                147u8,
-                57u8,
-                134u8,
-                104u8,
-                18u8,
-                8u8,
-                144u8,
-                119u8,
-                74u8,
-                158u8,
-                19u8,
-                72u8,
-                126u8,
-                97u8,
-                233u8,
-                220u8,
-                59u8,
-                175u8,
-                118u8,
-                221u8,
+                20u8, 135u8, 175u8, 84u8, 24u8, 196u8, 126u8, 229u8, 234u8, 69u8, 239u8,
+                74u8, 147u8, 57u8, 134u8, 104u8, 18u8, 8u8, 144u8, 119u8, 74u8, 158u8,
+                19u8, 72u8, 126u8, 97u8, 233u8, 220u8, 59u8, 175u8, 118u8, 221u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -5282,6 +5195,7 @@ event AllocationUpdated(address operator, OperatorSet operatorSet, address strat
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `EncumberedMagnitudeUpdated(address,address,uint64)` and selector `0xacf9095feb3a370c9cf692421c69ef320d4db5c66e6a7d29c7694eb02364fc55`.
 ```solidity
 event EncumberedMagnitudeUpdated(address operator, address strategy, uint64 encumberedMagnitude);
@@ -5322,38 +5236,9 @@ event EncumberedMagnitudeUpdated(address operator, address strategy, uint64 encu
             type TopicList = (alloy_sol_types::sol_data::FixedBytes<32>,);
             const SIGNATURE: &'static str = "EncumberedMagnitudeUpdated(address,address,uint64)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                172u8,
-                249u8,
-                9u8,
-                95u8,
-                235u8,
-                58u8,
-                55u8,
-                12u8,
-                156u8,
-                246u8,
-                146u8,
-                66u8,
-                28u8,
-                105u8,
-                239u8,
-                50u8,
-                13u8,
-                77u8,
-                181u8,
-                198u8,
-                110u8,
-                106u8,
-                125u8,
-                41u8,
-                199u8,
-                105u8,
-                78u8,
-                176u8,
-                35u8,
-                100u8,
-                252u8,
-                85u8,
+                172u8, 249u8, 9u8, 95u8, 235u8, 58u8, 55u8, 12u8, 156u8, 246u8, 146u8,
+                66u8, 28u8, 105u8, 239u8, 50u8, 13u8, 77u8, 181u8, 198u8, 110u8, 106u8,
+                125u8, 41u8, 199u8, 105u8, 78u8, 176u8, 35u8, 100u8, 252u8, 85u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -5434,6 +5319,7 @@ event EncumberedMagnitudeUpdated(address operator, address strategy, uint64 encu
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `MaxMagnitudeUpdated(address,address,uint64)` and selector `0x1c6458079a41077d003c11faf9bf097e693bd67979e4e6500bac7b29db779b5c`.
 ```solidity
 event MaxMagnitudeUpdated(address operator, address strategy, uint64 maxMagnitude);
@@ -5474,38 +5360,9 @@ event MaxMagnitudeUpdated(address operator, address strategy, uint64 maxMagnitud
             type TopicList = (alloy_sol_types::sol_data::FixedBytes<32>,);
             const SIGNATURE: &'static str = "MaxMagnitudeUpdated(address,address,uint64)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                28u8,
-                100u8,
-                88u8,
-                7u8,
-                154u8,
-                65u8,
-                7u8,
-                125u8,
-                0u8,
-                60u8,
-                17u8,
-                250u8,
-                249u8,
-                191u8,
-                9u8,
-                126u8,
-                105u8,
-                59u8,
-                214u8,
-                121u8,
-                121u8,
-                228u8,
-                230u8,
-                80u8,
-                11u8,
-                172u8,
-                123u8,
-                41u8,
-                219u8,
-                119u8,
-                155u8,
-                92u8,
+                28u8, 100u8, 88u8, 7u8, 154u8, 65u8, 7u8, 125u8, 0u8, 60u8, 17u8, 250u8,
+                249u8, 191u8, 9u8, 126u8, 105u8, 59u8, 214u8, 121u8, 121u8, 228u8, 230u8,
+                80u8, 11u8, 172u8, 123u8, 41u8, 219u8, 119u8, 155u8, 92u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -5584,6 +5441,7 @@ event MaxMagnitudeUpdated(address operator, address strategy, uint64 maxMagnitud
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `OperatorAddedToOperatorSet(address,(address,uint32))` and selector `0x43232edf9071753d2321e5fa7e018363ee248e5f2142e6c08edd3265bfb4895e`.
 ```solidity
 event OperatorAddedToOperatorSet(address indexed operator, OperatorSet operatorSet);
@@ -5621,38 +5479,9 @@ event OperatorAddedToOperatorSet(address indexed operator, OperatorSet operatorS
             );
             const SIGNATURE: &'static str = "OperatorAddedToOperatorSet(address,(address,uint32))";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                67u8,
-                35u8,
-                46u8,
-                223u8,
-                144u8,
-                113u8,
-                117u8,
-                61u8,
-                35u8,
-                33u8,
-                229u8,
-                250u8,
-                126u8,
-                1u8,
-                131u8,
-                99u8,
-                238u8,
-                36u8,
-                142u8,
-                95u8,
-                33u8,
-                66u8,
-                230u8,
-                192u8,
-                142u8,
-                221u8,
-                50u8,
-                101u8,
-                191u8,
-                180u8,
-                137u8,
-                94u8,
+                67u8, 35u8, 46u8, 223u8, 144u8, 113u8, 117u8, 61u8, 35u8, 33u8, 229u8,
+                250u8, 126u8, 1u8, 131u8, 99u8, 238u8, 36u8, 142u8, 95u8, 33u8, 66u8,
+                230u8, 192u8, 142u8, 221u8, 50u8, 101u8, 191u8, 180u8, 137u8, 94u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -5725,6 +5554,7 @@ event OperatorAddedToOperatorSet(address indexed operator, OperatorSet operatorS
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `OperatorRemovedFromOperatorSet(address,(address,uint32))` and selector `0xad34c3070be1dffbcaa499d000ba2b8d9848aefcac3059df245dd95c4ece14fe`.
 ```solidity
 event OperatorRemovedFromOperatorSet(address indexed operator, OperatorSet operatorSet);
@@ -5762,38 +5592,9 @@ event OperatorRemovedFromOperatorSet(address indexed operator, OperatorSet opera
             );
             const SIGNATURE: &'static str = "OperatorRemovedFromOperatorSet(address,(address,uint32))";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                173u8,
-                52u8,
-                195u8,
-                7u8,
-                11u8,
-                225u8,
-                223u8,
-                251u8,
-                202u8,
-                164u8,
-                153u8,
-                208u8,
-                0u8,
-                186u8,
-                43u8,
-                141u8,
-                152u8,
-                72u8,
-                174u8,
-                252u8,
-                172u8,
-                48u8,
-                89u8,
-                223u8,
-                36u8,
-                93u8,
-                217u8,
-                92u8,
-                78u8,
-                206u8,
-                20u8,
-                254u8,
+                173u8, 52u8, 195u8, 7u8, 11u8, 225u8, 223u8, 251u8, 202u8, 164u8, 153u8,
+                208u8, 0u8, 186u8, 43u8, 141u8, 152u8, 72u8, 174u8, 252u8, 172u8, 48u8,
+                89u8, 223u8, 36u8, 93u8, 217u8, 92u8, 78u8, 206u8, 20u8, 254u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -5867,6 +5668,7 @@ event OperatorRemovedFromOperatorSet(address indexed operator, OperatorSet opera
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `OperatorSetCreated((address,uint32))` and selector `0x31629285ead2335ae0933f86ed2ae63321f7af77b4e6eaabc42c057880977e6c`.
 ```solidity
 event OperatorSetCreated(OperatorSet operatorSet);
@@ -5899,38 +5701,9 @@ event OperatorSetCreated(OperatorSet operatorSet);
             type TopicList = (alloy_sol_types::sol_data::FixedBytes<32>,);
             const SIGNATURE: &'static str = "OperatorSetCreated((address,uint32))";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                49u8,
-                98u8,
-                146u8,
-                133u8,
-                234u8,
-                210u8,
-                51u8,
-                90u8,
-                224u8,
-                147u8,
-                63u8,
-                134u8,
-                237u8,
-                42u8,
-                230u8,
-                51u8,
-                33u8,
-                247u8,
-                175u8,
-                119u8,
-                180u8,
-                230u8,
-                234u8,
-                171u8,
-                196u8,
-                44u8,
-                5u8,
-                120u8,
-                128u8,
-                151u8,
-                126u8,
-                108u8,
+                49u8, 98u8, 146u8, 133u8, 234u8, 210u8, 51u8, 90u8, 224u8, 147u8, 63u8,
+                134u8, 237u8, 42u8, 230u8, 51u8, 33u8, 247u8, 175u8, 119u8, 180u8, 230u8,
+                234u8, 171u8, 196u8, 44u8, 5u8, 120u8, 128u8, 151u8, 126u8, 108u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -5995,6 +5768,7 @@ event OperatorSetCreated(OperatorSet operatorSet);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `OperatorSlashed(address,(address,uint32),address[],uint256[],string)` and selector `0x80969ad29428d6797ee7aad084f9e4a42a82fc506dcd2ca3b6fb431f85ccebe5`.
 ```solidity
 event OperatorSlashed(address operator, OperatorSet operatorSet, address[] strategies, uint256[] wadSlashed, string description);
@@ -6045,37 +5819,9 @@ event OperatorSlashed(address operator, OperatorSet operatorSet, address[] strat
             type TopicList = (alloy_sol_types::sol_data::FixedBytes<32>,);
             const SIGNATURE: &'static str = "OperatorSlashed(address,(address,uint32),address[],uint256[],string)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                128u8,
-                150u8,
-                154u8,
-                210u8,
-                148u8,
-                40u8,
-                214u8,
-                121u8,
-                126u8,
-                231u8,
-                170u8,
-                208u8,
-                132u8,
-                249u8,
-                228u8,
-                164u8,
-                42u8,
-                130u8,
-                252u8,
-                80u8,
-                109u8,
-                205u8,
-                44u8,
-                163u8,
-                182u8,
-                251u8,
-                67u8,
-                31u8,
-                133u8,
-                204u8,
-                235u8,
+                128u8, 150u8, 154u8, 210u8, 148u8, 40u8, 214u8, 121u8, 126u8, 231u8,
+                170u8, 208u8, 132u8, 249u8, 228u8, 164u8, 42u8, 130u8, 252u8, 80u8,
+                109u8, 205u8, 44u8, 163u8, 182u8, 251u8, 67u8, 31u8, 133u8, 204u8, 235u8,
                 229u8,
             ]);
             const ANONYMOUS: bool = false;
@@ -6163,6 +5909,7 @@ event OperatorSlashed(address operator, OperatorSet operatorSet, address[] strat
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `StrategyAddedToOperatorSet((address,uint32),address)` and selector `0x7ab260fe0af193db5f4986770d831bda4ea46099dc817e8b6716dcae8af8e88b`.
 ```solidity
 event StrategyAddedToOperatorSet(OperatorSet operatorSet, address strategy);
@@ -6197,38 +5944,9 @@ event StrategyAddedToOperatorSet(OperatorSet operatorSet, address strategy);
             type TopicList = (alloy_sol_types::sol_data::FixedBytes<32>,);
             const SIGNATURE: &'static str = "StrategyAddedToOperatorSet((address,uint32),address)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                122u8,
-                178u8,
-                96u8,
-                254u8,
-                10u8,
-                241u8,
-                147u8,
-                219u8,
-                95u8,
-                73u8,
-                134u8,
-                119u8,
-                13u8,
-                131u8,
-                27u8,
-                218u8,
-                78u8,
-                164u8,
-                96u8,
-                153u8,
-                220u8,
-                129u8,
-                126u8,
-                139u8,
-                103u8,
-                22u8,
-                220u8,
-                174u8,
-                138u8,
-                248u8,
-                232u8,
-                139u8,
+                122u8, 178u8, 96u8, 254u8, 10u8, 241u8, 147u8, 219u8, 95u8, 73u8, 134u8,
+                119u8, 13u8, 131u8, 27u8, 218u8, 78u8, 164u8, 96u8, 153u8, 220u8, 129u8,
+                126u8, 139u8, 103u8, 22u8, 220u8, 174u8, 138u8, 248u8, 232u8, 139u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -6305,6 +6023,7 @@ event StrategyAddedToOperatorSet(OperatorSet operatorSet, address strategy);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Event with signature `StrategyRemovedFromOperatorSet((address,uint32),address)` and selector `0x7b4b073d80dcac55a11177d8459ad9f664ceeb91f71f27167bb14f8152a7eeee`.
 ```solidity
 event StrategyRemovedFromOperatorSet(OperatorSet operatorSet, address strategy);
@@ -6339,38 +6058,9 @@ event StrategyRemovedFromOperatorSet(OperatorSet operatorSet, address strategy);
             type TopicList = (alloy_sol_types::sol_data::FixedBytes<32>,);
             const SIGNATURE: &'static str = "StrategyRemovedFromOperatorSet((address,uint32),address)";
             const SIGNATURE_HASH: alloy_sol_types::private::B256 = alloy_sol_types::private::B256::new([
-                123u8,
-                75u8,
-                7u8,
-                61u8,
-                128u8,
-                220u8,
-                172u8,
-                85u8,
-                161u8,
-                17u8,
-                119u8,
-                216u8,
-                69u8,
-                154u8,
-                217u8,
-                246u8,
-                100u8,
-                206u8,
-                235u8,
-                145u8,
-                247u8,
-                31u8,
-                39u8,
-                22u8,
-                123u8,
-                177u8,
-                79u8,
-                129u8,
-                82u8,
-                167u8,
-                238u8,
-                238u8,
+                123u8, 75u8, 7u8, 61u8, 128u8, 220u8, 172u8, 85u8, 161u8, 17u8, 119u8,
+                216u8, 69u8, 154u8, 217u8, 246u8, 100u8, 206u8, 235u8, 145u8, 247u8,
+                31u8, 39u8, 22u8, 123u8, 177u8, 79u8, 129u8, 82u8, 167u8, 238u8, 238u8,
             ]);
             const ANONYMOUS: bool = false;
             #[allow(unused_variables)]
@@ -6448,6 +6138,7 @@ event StrategyRemovedFromOperatorSet(OperatorSet operatorSet, address strategy);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `addStrategiesToOperatorSet(address,uint32,address[])` and selector `0x50feea20`.
 ```solidity
 function addStrategiesToOperatorSet(address avs, uint32 operatorSetId, address[] memory strategies) external;
@@ -6603,6 +6294,7 @@ function addStrategiesToOperatorSet(address avs, uint32 operatorSetId, address[]
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `clearDeallocationQueue(address,address[],uint16[])` and selector `0x4b5046ef`.
 ```solidity
 function clearDeallocationQueue(address operator, address[] memory strategies, uint16[] memory numToClear) external;
@@ -6758,6 +6450,7 @@ function clearDeallocationQueue(address operator, address[] memory strategies, u
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `createOperatorSets(address,(uint32,address[])[])` and selector `0x261f84e0`.
 ```solidity
 function createOperatorSets(address avs, IAllocationManagerTypes.CreateSetParams[] memory params) external;
@@ -6910,6 +6603,7 @@ function createOperatorSets(address avs, IAllocationManagerTypes.CreateSetParams
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `deregisterFromOperatorSets((address,address,uint32[]))` and selector `0x6e3492b5`.
 ```solidity
 function deregisterFromOperatorSets(IAllocationManagerTypes.DeregisterParams memory params) external;
@@ -7039,6 +6733,7 @@ function deregisterFromOperatorSets(IAllocationManagerTypes.DeregisterParams mem
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getAVSRegistrar(address)` and selector `0x304c10cd`.
 ```solidity
 function getAVSRegistrar(address avs) external view returns (address);
@@ -7049,6 +6744,7 @@ function getAVSRegistrar(address avs) external view returns (address);
         #[allow(missing_docs)]
         pub avs: alloy::sol_types::private::Address,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getAVSRegistrar(address)`](getAVSRegistrarCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -7167,6 +6863,7 @@ function getAVSRegistrar(address avs) external view returns (address);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getAllocatableMagnitude(address,address)` and selector `0x6cfb4481`.
 ```solidity
 function getAllocatableMagnitude(address operator, address strategy) external view returns (uint64);
@@ -7179,6 +6876,7 @@ function getAllocatableMagnitude(address operator, address strategy) external vi
         #[allow(missing_docs)]
         pub strategy: alloy::sol_types::private::Address,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getAllocatableMagnitude(address,address)`](getAllocatableMagnitudeCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -7314,6 +7012,7 @@ function getAllocatableMagnitude(address operator, address strategy) external vi
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getAllocatedSets(address)` and selector `0x15fe5028`.
 ```solidity
 function getAllocatedSets(address operator) external view returns (OperatorSet[] memory);
@@ -7324,6 +7023,7 @@ function getAllocatedSets(address operator) external view returns (OperatorSet[]
         #[allow(missing_docs)]
         pub operator: alloy::sol_types::private::Address,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getAllocatedSets(address)`](getAllocatedSetsCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -7452,6 +7152,7 @@ function getAllocatedSets(address operator) external view returns (OperatorSet[]
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getAllocatedStake((address,uint32),address[],address[])` and selector `0x2b453a9a`.
 ```solidity
 function getAllocatedStake(OperatorSet memory operatorSet, address[] memory operators, address[] memory strategies) external view returns (uint256[][] memory slashableStake);
@@ -7470,6 +7171,7 @@ function getAllocatedStake(OperatorSet memory operatorSet, address[] memory oper
             alloy::sol_types::private::Address,
         >,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getAllocatedStake((address,uint32),address[],address[])`](getAllocatedStakeCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -7634,6 +7336,7 @@ function getAllocatedStake(OperatorSet memory operatorSet, address[] memory oper
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getAllocatedStrategies(address,(address,uint32))` and selector `0xc221d8ae`.
 ```solidity
 function getAllocatedStrategies(address operator, OperatorSet memory operatorSet) external view returns (address[] memory);
@@ -7646,6 +7349,7 @@ function getAllocatedStrategies(address operator, OperatorSet memory operatorSet
         #[allow(missing_docs)]
         pub operatorSet: <OperatorSet as alloy::sol_types::SolType>::RustType,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getAllocatedStrategies(address,(address,uint32))`](getAllocatedStrategiesCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -7784,6 +7488,7 @@ function getAllocatedStrategies(address operator, OperatorSet memory operatorSet
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getAllocation(address,(address,uint32),address)` and selector `0x10e1b9b8`.
 ```solidity
 function getAllocation(address operator, OperatorSet memory operatorSet, address strategy) external view returns (IAllocationManagerTypes.Allocation memory);
@@ -7798,6 +7503,7 @@ function getAllocation(address operator, OperatorSet memory operatorSet, address
         #[allow(missing_docs)]
         pub strategy: alloy::sol_types::private::Address,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getAllocation(address,(address,uint32),address)`](getAllocationCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -7938,6 +7644,7 @@ function getAllocation(address operator, OperatorSet memory operatorSet, address
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getAllocationDelay(address)` and selector `0xb9fbaed1`.
 ```solidity
 function getAllocationDelay(address operator) external view returns (bool isSet, uint32 delay);
@@ -7948,6 +7655,7 @@ function getAllocationDelay(address operator) external view returns (bool isSet,
         #[allow(missing_docs)]
         pub operator: alloy::sol_types::private::Address,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getAllocationDelay(address)`](getAllocationDelayCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -8079,6 +7787,7 @@ function getAllocationDelay(address operator) external view returns (bool isSet,
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getAllocations(address[],(address,uint32),address)` and selector `0x8ce64854`.
 ```solidity
 function getAllocations(address[] memory operators, OperatorSet memory operatorSet, address strategy) external view returns (IAllocationManagerTypes.Allocation[] memory);
@@ -8095,6 +7804,7 @@ function getAllocations(address[] memory operators, OperatorSet memory operatorS
         #[allow(missing_docs)]
         pub strategy: alloy::sol_types::private::Address,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getAllocations(address[],(address,uint32),address)`](getAllocationsCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -8245,6 +7955,7 @@ function getAllocations(address[] memory operators, OperatorSet memory operatorS
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getEncumberedMagnitude(address,address)` and selector `0xf605ce08`.
 ```solidity
 function getEncumberedMagnitude(address operator, address strategy) external view returns (uint64);
@@ -8257,6 +7968,7 @@ function getEncumberedMagnitude(address operator, address strategy) external vie
         #[allow(missing_docs)]
         pub strategy: alloy::sol_types::private::Address,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getEncumberedMagnitude(address,address)`](getEncumberedMagnitudeCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -8392,6 +8104,7 @@ function getEncumberedMagnitude(address operator, address strategy) external vie
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getMaxMagnitude(address,address)` and selector `0xa9333ec8`.
 ```solidity
 function getMaxMagnitude(address operator, address strategy) external view returns (uint64);
@@ -8404,6 +8117,7 @@ function getMaxMagnitude(address operator, address strategy) external view retur
         #[allow(missing_docs)]
         pub strategy: alloy::sol_types::private::Address,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getMaxMagnitude(address,address)`](getMaxMagnitudeCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -8537,6 +8251,7 @@ function getMaxMagnitude(address operator, address strategy) external view retur
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getMaxMagnitudes(address[],address)` and selector `0x4a10ffe5`.
 ```solidity
 function getMaxMagnitudes(address[] memory operators, address strategy) external view returns (uint64[] memory);
@@ -8551,6 +8266,7 @@ function getMaxMagnitudes(address[] memory operators, address strategy) external
         #[allow(missing_docs)]
         pub strategy: alloy::sol_types::private::Address,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getMaxMagnitudes(address[],address)`](getMaxMagnitudes_0Call) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -8690,6 +8406,7 @@ function getMaxMagnitudes(address[] memory operators, address strategy) external
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getMaxMagnitudes(address,address[])` and selector `0x547afb87`.
 ```solidity
 function getMaxMagnitudes(address operator, address[] memory strategies) external view returns (uint64[] memory);
@@ -8704,6 +8421,7 @@ function getMaxMagnitudes(address operator, address[] memory strategies) externa
             alloy::sol_types::private::Address,
         >,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getMaxMagnitudes(address,address[])`](getMaxMagnitudes_1Call) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -8843,6 +8561,7 @@ function getMaxMagnitudes(address operator, address[] memory strategies) externa
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getMaxMagnitudesAtBlock(address,address[],uint32)` and selector `0x94d7d00c`.
 ```solidity
 function getMaxMagnitudesAtBlock(address operator, address[] memory strategies, uint32 blockNumber) external view returns (uint64[] memory);
@@ -8859,6 +8578,7 @@ function getMaxMagnitudesAtBlock(address operator, address[] memory strategies, 
         #[allow(missing_docs)]
         pub blockNumber: u32,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getMaxMagnitudesAtBlock(address,address[],uint32)`](getMaxMagnitudesAtBlockCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -9005,6 +8725,7 @@ function getMaxMagnitudesAtBlock(address operator, address[] memory strategies, 
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getMemberCount((address,uint32))` and selector `0xb2447af7`.
 ```solidity
 function getMemberCount(OperatorSet memory operatorSet) external view returns (uint256);
@@ -9015,6 +8736,7 @@ function getMemberCount(OperatorSet memory operatorSet) external view returns (u
         #[allow(missing_docs)]
         pub operatorSet: <OperatorSet as alloy::sol_types::SolType>::RustType,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getMemberCount((address,uint32))`](getMemberCountCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -9133,6 +8855,7 @@ function getMemberCount(OperatorSet memory operatorSet) external view returns (u
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getMembers((address,uint32))` and selector `0x6e875dba`.
 ```solidity
 function getMembers(OperatorSet memory operatorSet) external view returns (address[] memory operators);
@@ -9143,6 +8866,7 @@ function getMembers(OperatorSet memory operatorSet) external view returns (addre
         #[allow(missing_docs)]
         pub operatorSet: <OperatorSet as alloy::sol_types::SolType>::RustType,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getMembers((address,uint32))`](getMembersCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -9265,6 +8989,7 @@ function getMembers(OperatorSet memory operatorSet) external view returns (addre
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getMinimumSlashableStake((address,uint32),address[],address[],uint32)` and selector `0x2bab2c4a`.
 ```solidity
 function getMinimumSlashableStake(OperatorSet memory operatorSet, address[] memory operators, address[] memory strategies, uint32 futureBlock) external view returns (uint256[][] memory slashableStake);
@@ -9285,6 +9010,7 @@ function getMinimumSlashableStake(OperatorSet memory operatorSet, address[] memo
         #[allow(missing_docs)]
         pub futureBlock: u32,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getMinimumSlashableStake((address,uint32),address[],address[],uint32)`](getMinimumSlashableStakeCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -9461,6 +9187,7 @@ function getMinimumSlashableStake(OperatorSet memory operatorSet, address[] memo
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getOperatorSetCount(address)` and selector `0xba1a84e5`.
 ```solidity
 function getOperatorSetCount(address avs) external view returns (uint256);
@@ -9471,6 +9198,7 @@ function getOperatorSetCount(address avs) external view returns (uint256);
         #[allow(missing_docs)]
         pub avs: alloy::sol_types::private::Address,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getOperatorSetCount(address)`](getOperatorSetCountCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -9593,6 +9321,7 @@ function getOperatorSetCount(address avs) external view returns (uint256);
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getRegisteredSets(address)` and selector `0x79ae50cd`.
 ```solidity
 function getRegisteredSets(address operator) external view returns (OperatorSet[] memory operatorSets);
@@ -9603,6 +9332,7 @@ function getRegisteredSets(address operator) external view returns (OperatorSet[
         #[allow(missing_docs)]
         pub operator: alloy::sol_types::private::Address,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getRegisteredSets(address)`](getRegisteredSetsCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -9731,6 +9461,7 @@ function getRegisteredSets(address operator) external view returns (OperatorSet[
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getStrategiesInOperatorSet((address,uint32))` and selector `0x4177a87c`.
 ```solidity
 function getStrategiesInOperatorSet(OperatorSet memory operatorSet) external view returns (address[] memory strategies);
@@ -9741,6 +9472,7 @@ function getStrategiesInOperatorSet(OperatorSet memory operatorSet) external vie
         #[allow(missing_docs)]
         pub operatorSet: <OperatorSet as alloy::sol_types::SolType>::RustType,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getStrategiesInOperatorSet((address,uint32))`](getStrategiesInOperatorSetCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -9867,6 +9599,7 @@ function getStrategiesInOperatorSet(OperatorSet memory operatorSet) external vie
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `getStrategyAllocations(address,address)` and selector `0x40120dab`.
 ```solidity
 function getStrategyAllocations(address operator, address strategy) external view returns (OperatorSet[] memory, IAllocationManagerTypes.Allocation[] memory);
@@ -9879,6 +9612,7 @@ function getStrategyAllocations(address operator, address strategy) external vie
         #[allow(missing_docs)]
         pub strategy: alloy::sol_types::private::Address,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`getStrategyAllocations(address,address)`](getStrategyAllocationsCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -10033,6 +9767,7 @@ function getStrategyAllocations(address operator, address strategy) external vie
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `initialize(address,uint256)` and selector `0xcd6dc687`.
 ```solidity
 function initialize(address initialOwner, uint256 initialPausedStatus) external;
@@ -10173,6 +9908,7 @@ function initialize(address initialOwner, uint256 initialPausedStatus) external;
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `isMemberOfOperatorSet(address,(address,uint32))` and selector `0x670d3ba2`.
 ```solidity
 function isMemberOfOperatorSet(address operator, OperatorSet memory operatorSet) external view returns (bool);
@@ -10185,6 +9921,7 @@ function isMemberOfOperatorSet(address operator, OperatorSet memory operatorSet)
         #[allow(missing_docs)]
         pub operatorSet: <OperatorSet as alloy::sol_types::SolType>::RustType,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`isMemberOfOperatorSet(address,(address,uint32))`](isMemberOfOperatorSetCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -10317,6 +10054,7 @@ function isMemberOfOperatorSet(address operator, OperatorSet memory operatorSet)
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `isOperatorSet((address,uint32))` and selector `0x260dc758`.
 ```solidity
 function isOperatorSet(OperatorSet memory operatorSet) external view returns (bool);
@@ -10327,6 +10065,7 @@ function isOperatorSet(OperatorSet memory operatorSet) external view returns (bo
         #[allow(missing_docs)]
         pub operatorSet: <OperatorSet as alloy::sol_types::SolType>::RustType,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`isOperatorSet((address,uint32))`](isOperatorSetCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -10441,6 +10180,7 @@ function isOperatorSet(OperatorSet memory operatorSet) external view returns (bo
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `isOperatorSlashable(address,(address,uint32))` and selector `0x1352c3e6`.
 ```solidity
 function isOperatorSlashable(address operator, OperatorSet memory operatorSet) external view returns (bool);
@@ -10453,6 +10193,7 @@ function isOperatorSlashable(address operator, OperatorSet memory operatorSet) e
         #[allow(missing_docs)]
         pub operatorSet: <OperatorSet as alloy::sol_types::SolType>::RustType,
     }
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`isOperatorSlashable(address,(address,uint32))`](isOperatorSlashableCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -10585,6 +10326,7 @@ function isOperatorSlashable(address operator, OperatorSet memory operatorSet) e
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `modifyAllocations(address,((address,uint32),address[],uint64[])[])` and selector `0x952899ee`.
 ```solidity
 function modifyAllocations(address operator, IAllocationManagerTypes.AllocateParams[] memory params) external;
@@ -10737,6 +10479,7 @@ function modifyAllocations(address operator, IAllocationManagerTypes.AllocatePar
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `registerForOperatorSets(address,(address,uint32[],bytes))` and selector `0xadc2e3d9`.
 ```solidity
 function registerForOperatorSets(address operator, IAllocationManagerTypes.RegisterParams memory params) external;
@@ -10881,6 +10624,7 @@ function registerForOperatorSets(address operator, IAllocationManagerTypes.Regis
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `removeStrategiesFromOperatorSet(address,uint32,address[])` and selector `0xb66bd989`.
 ```solidity
 function removeStrategiesFromOperatorSet(address avs, uint32 operatorSetId, address[] memory strategies) external;
@@ -11036,6 +10780,7 @@ function removeStrategiesFromOperatorSet(address avs, uint32 operatorSetId, addr
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `setAVSRegistrar(address,address)` and selector `0xd3d96ff4`.
 ```solidity
 function setAVSRegistrar(address avs, address registrar) external;
@@ -11178,6 +10923,7 @@ function setAVSRegistrar(address avs, address registrar) external;
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `setAllocationDelay(address,uint32)` and selector `0x56c483e6`.
 ```solidity
 function setAllocationDelay(address operator, uint32 delay) external;
@@ -11319,6 +11065,7 @@ function setAllocationDelay(address operator, uint32 delay) external;
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `slashOperator(address,(address,uint32,address[],uint256[],string))` and selector `0x36352057`.
 ```solidity
 function slashOperator(address avs, IAllocationManagerTypes.SlashingParams memory params) external;
@@ -11459,6 +11206,7 @@ function slashOperator(address avs, IAllocationManagerTypes.SlashingParams memor
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `updateAVSMetadataURI(address,string)` and selector `0xa9821821`.
 ```solidity
 function updateAVSMetadataURI(address avs, string memory metadataURI) external;
@@ -11603,6 +11351,7 @@ function updateAVSMetadataURI(address avs, string memory metadataURI) external;
             }
         }
     };
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     /**Function with signature `version()` and selector `0x54fd4d50`.
 ```solidity
 function version() external view returns (string memory);
@@ -11610,6 +11359,7 @@ function version() external view returns (string memory);
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
     pub struct versionCall {}
+    #[derive(Default, Debug, PartialEq, Eq, Hash)]
     ///Container type for the return parameters of the [`version()`](versionCall) function.
     #[allow(non_camel_case_types, non_snake_case, clippy::pub_underscore_fields)]
     #[derive(Clone)]
@@ -11723,6 +11473,7 @@ function version() external view returns (string memory);
         }
     };
     ///Container for all the [`IAllocationManager`](self) function calls.
+    #[derive()]
     pub enum IAllocationManagerCalls {
         #[allow(missing_docs)]
         addStrategiesToOperatorSet(addStrategiesToOperatorSetCall),
@@ -12859,6 +12610,7 @@ function version() external view returns (string memory);
         }
     }
     ///Container for all the [`IAllocationManager`](self) custom errors.
+    #[derive(Debug, PartialEq, Eq, Hash)]
     pub enum IAllocationManagerErrors {
         #[allow(missing_docs)]
         AlreadyMemberOfSet(AlreadyMemberOfSet),
@@ -13432,6 +13184,7 @@ function version() external view returns (string memory);
         }
     }
     ///Container for all the [`IAllocationManager`](self) events.
+    #[derive(Debug, PartialEq, Eq, Hash)]
     pub enum IAllocationManagerEvents {
         #[allow(missing_docs)]
         AVSMetadataURIUpdated(AVSMetadataURIUpdated),
@@ -13468,412 +13221,66 @@ function version() external view returns (string memory);
         /// Prefer using `SolInterface` methods instead.
         pub const SELECTORS: &'static [[u8; 32usize]] = &[
             [
-                20u8,
-                135u8,
-                175u8,
-                84u8,
-                24u8,
-                196u8,
-                126u8,
-                229u8,
-                234u8,
-                69u8,
-                239u8,
-                74u8,
-                147u8,
-                57u8,
-                134u8,
-                104u8,
-                18u8,
-                8u8,
-                144u8,
-                119u8,
-                74u8,
-                158u8,
-                19u8,
-                72u8,
-                126u8,
-                97u8,
-                233u8,
-                220u8,
-                59u8,
-                175u8,
-                118u8,
-                221u8,
+                20u8, 135u8, 175u8, 84u8, 24u8, 196u8, 126u8, 229u8, 234u8, 69u8, 239u8,
+                74u8, 147u8, 57u8, 134u8, 104u8, 18u8, 8u8, 144u8, 119u8, 74u8, 158u8,
+                19u8, 72u8, 126u8, 97u8, 233u8, 220u8, 59u8, 175u8, 118u8, 221u8,
             ],
             [
-                28u8,
-                100u8,
-                88u8,
-                7u8,
-                154u8,
-                65u8,
-                7u8,
-                125u8,
-                0u8,
-                60u8,
-                17u8,
-                250u8,
-                249u8,
-                191u8,
-                9u8,
-                126u8,
-                105u8,
-                59u8,
-                214u8,
-                121u8,
-                121u8,
-                228u8,
-                230u8,
-                80u8,
-                11u8,
-                172u8,
-                123u8,
-                41u8,
-                219u8,
-                119u8,
-                155u8,
-                92u8,
+                28u8, 100u8, 88u8, 7u8, 154u8, 65u8, 7u8, 125u8, 0u8, 60u8, 17u8, 250u8,
+                249u8, 191u8, 9u8, 126u8, 105u8, 59u8, 214u8, 121u8, 121u8, 228u8, 230u8,
+                80u8, 11u8, 172u8, 123u8, 41u8, 219u8, 119u8, 155u8, 92u8,
             ],
             [
-                42u8,
-                233u8,
-                69u8,
-                196u8,
-                12u8,
-                68u8,
-                220u8,
-                14u8,
-                194u8,
-                99u8,
-                249u8,
-                86u8,
-                9u8,
-                195u8,
-                253u8,
-                198u8,
-                149u8,
-                46u8,
-                10u8,
-                239u8,
-                162u8,
-                45u8,
-                99u8,
-                116u8,
-                228u8,
-                79u8,
-                44u8,
-                153u8,
-                122u8,
-                206u8,
-                223u8,
-                133u8,
+                42u8, 233u8, 69u8, 196u8, 12u8, 68u8, 220u8, 14u8, 194u8, 99u8, 249u8,
+                86u8, 9u8, 195u8, 253u8, 198u8, 149u8, 46u8, 10u8, 239u8, 162u8, 45u8,
+                99u8, 116u8, 228u8, 79u8, 44u8, 153u8, 122u8, 206u8, 223u8, 133u8,
             ],
             [
-                49u8,
-                98u8,
-                146u8,
-                133u8,
-                234u8,
-                210u8,
-                51u8,
-                90u8,
-                224u8,
-                147u8,
-                63u8,
-                134u8,
-                237u8,
-                42u8,
-                230u8,
-                51u8,
-                33u8,
-                247u8,
-                175u8,
-                119u8,
-                180u8,
-                230u8,
-                234u8,
-                171u8,
-                196u8,
-                44u8,
-                5u8,
-                120u8,
-                128u8,
-                151u8,
-                126u8,
-                108u8,
+                49u8, 98u8, 146u8, 133u8, 234u8, 210u8, 51u8, 90u8, 224u8, 147u8, 63u8,
+                134u8, 237u8, 42u8, 230u8, 51u8, 33u8, 247u8, 175u8, 119u8, 180u8, 230u8,
+                234u8, 171u8, 196u8, 44u8, 5u8, 120u8, 128u8, 151u8, 126u8, 108u8,
             ],
             [
-                67u8,
-                35u8,
-                46u8,
-                223u8,
-                144u8,
-                113u8,
-                117u8,
-                61u8,
-                35u8,
-                33u8,
-                229u8,
-                250u8,
-                126u8,
-                1u8,
-                131u8,
-                99u8,
-                238u8,
-                36u8,
-                142u8,
-                95u8,
-                33u8,
-                66u8,
-                230u8,
-                192u8,
-                142u8,
-                221u8,
-                50u8,
-                101u8,
-                191u8,
-                180u8,
-                137u8,
-                94u8,
+                67u8, 35u8, 46u8, 223u8, 144u8, 113u8, 117u8, 61u8, 35u8, 33u8, 229u8,
+                250u8, 126u8, 1u8, 131u8, 99u8, 238u8, 36u8, 142u8, 95u8, 33u8, 66u8,
+                230u8, 192u8, 142u8, 221u8, 50u8, 101u8, 191u8, 180u8, 137u8, 94u8,
             ],
             [
-                78u8,
-                133u8,
-                117u8,
-                29u8,
-                99u8,
-                49u8,
-                80u8,
-                108u8,
-                108u8,
-                98u8,
-                51u8,
-                95u8,
-                32u8,
-                126u8,
-                179u8,
-                31u8,
-                18u8,
-                166u8,
-                30u8,
-                87u8,
-                15u8,
-                52u8,
-                245u8,
-                193u8,
-                118u8,
-                64u8,
-                48u8,
-                135u8,
-                133u8,
-                198u8,
-                212u8,
-                219u8,
+                78u8, 133u8, 117u8, 29u8, 99u8, 49u8, 80u8, 108u8, 108u8, 98u8, 51u8,
+                95u8, 32u8, 126u8, 179u8, 31u8, 18u8, 166u8, 30u8, 87u8, 15u8, 52u8,
+                245u8, 193u8, 118u8, 64u8, 48u8, 135u8, 133u8, 198u8, 212u8, 219u8,
             ],
             [
-                122u8,
-                178u8,
-                96u8,
-                254u8,
-                10u8,
-                241u8,
-                147u8,
-                219u8,
-                95u8,
-                73u8,
-                134u8,
-                119u8,
-                13u8,
-                131u8,
-                27u8,
-                218u8,
-                78u8,
-                164u8,
-                96u8,
-                153u8,
-                220u8,
-                129u8,
-                126u8,
-                139u8,
-                103u8,
-                22u8,
-                220u8,
-                174u8,
-                138u8,
-                248u8,
-                232u8,
-                139u8,
+                122u8, 178u8, 96u8, 254u8, 10u8, 241u8, 147u8, 219u8, 95u8, 73u8, 134u8,
+                119u8, 13u8, 131u8, 27u8, 218u8, 78u8, 164u8, 96u8, 153u8, 220u8, 129u8,
+                126u8, 139u8, 103u8, 22u8, 220u8, 174u8, 138u8, 248u8, 232u8, 139u8,
             ],
             [
-                123u8,
-                75u8,
-                7u8,
-                61u8,
-                128u8,
-                220u8,
-                172u8,
-                85u8,
-                161u8,
-                17u8,
-                119u8,
-                216u8,
-                69u8,
-                154u8,
-                217u8,
-                246u8,
-                100u8,
-                206u8,
-                235u8,
-                145u8,
-                247u8,
-                31u8,
-                39u8,
-                22u8,
-                123u8,
-                177u8,
-                79u8,
-                129u8,
-                82u8,
-                167u8,
-                238u8,
-                238u8,
+                123u8, 75u8, 7u8, 61u8, 128u8, 220u8, 172u8, 85u8, 161u8, 17u8, 119u8,
+                216u8, 69u8, 154u8, 217u8, 246u8, 100u8, 206u8, 235u8, 145u8, 247u8,
+                31u8, 39u8, 22u8, 123u8, 177u8, 79u8, 129u8, 82u8, 167u8, 238u8, 238u8,
             ],
             [
-                128u8,
-                150u8,
-                154u8,
-                210u8,
-                148u8,
-                40u8,
-                214u8,
-                121u8,
-                126u8,
-                231u8,
-                170u8,
-                208u8,
-                132u8,
-                249u8,
-                228u8,
-                164u8,
-                42u8,
-                130u8,
-                252u8,
-                80u8,
-                109u8,
-                205u8,
-                44u8,
-                163u8,
-                182u8,
-                251u8,
-                67u8,
-                31u8,
-                133u8,
-                204u8,
-                235u8,
+                128u8, 150u8, 154u8, 210u8, 148u8, 40u8, 214u8, 121u8, 126u8, 231u8,
+                170u8, 208u8, 132u8, 249u8, 228u8, 164u8, 42u8, 130u8, 252u8, 80u8,
+                109u8, 205u8, 44u8, 163u8, 182u8, 251u8, 67u8, 31u8, 133u8, 204u8, 235u8,
                 229u8,
             ],
             [
-                168u8,
-                156u8,
-                29u8,
-                194u8,
-                67u8,
-                216u8,
-                144u8,
-                138u8,
-                150u8,
-                221u8,
-                132u8,
-                148u8,
-                75u8,
-                204u8,
-                151u8,
-                214u8,
-                188u8,
-                106u8,
-                192u8,
-                13u8,
-                215u8,
-                142u8,
-                32u8,
-                98u8,
-                21u8,
-                118u8,
-                190u8,
-                106u8,
-                60u8,
-                148u8,
-                55u8,
+                168u8, 156u8, 29u8, 194u8, 67u8, 216u8, 144u8, 138u8, 150u8, 221u8,
+                132u8, 148u8, 75u8, 204u8, 151u8, 214u8, 188u8, 106u8, 192u8, 13u8,
+                215u8, 142u8, 32u8, 98u8, 21u8, 118u8, 190u8, 106u8, 60u8, 148u8, 55u8,
                 19u8,
             ],
             [
-                172u8,
-                249u8,
-                9u8,
-                95u8,
-                235u8,
-                58u8,
-                55u8,
-                12u8,
-                156u8,
-                246u8,
-                146u8,
-                66u8,
-                28u8,
-                105u8,
-                239u8,
-                50u8,
-                13u8,
-                77u8,
-                181u8,
-                198u8,
-                110u8,
-                106u8,
-                125u8,
-                41u8,
-                199u8,
-                105u8,
-                78u8,
-                176u8,
-                35u8,
-                100u8,
-                252u8,
-                85u8,
+                172u8, 249u8, 9u8, 95u8, 235u8, 58u8, 55u8, 12u8, 156u8, 246u8, 146u8,
+                66u8, 28u8, 105u8, 239u8, 50u8, 13u8, 77u8, 181u8, 198u8, 110u8, 106u8,
+                125u8, 41u8, 199u8, 105u8, 78u8, 176u8, 35u8, 100u8, 252u8, 85u8,
             ],
             [
-                173u8,
-                52u8,
-                195u8,
-                7u8,
-                11u8,
-                225u8,
-                223u8,
-                251u8,
-                202u8,
-                164u8,
-                153u8,
-                208u8,
-                0u8,
-                186u8,
-                43u8,
-                141u8,
-                152u8,
-                72u8,
-                174u8,
-                252u8,
-                172u8,
-                48u8,
-                89u8,
-                223u8,
-                36u8,
-                93u8,
-                217u8,
-                92u8,
-                78u8,
-                206u8,
-                20u8,
-                254u8,
+                173u8, 52u8, 195u8, 7u8, 11u8, 225u8, 223u8, 251u8, 202u8, 164u8, 153u8,
+                208u8, 0u8, 186u8, 43u8, 141u8, 152u8, 72u8, 174u8, 252u8, 172u8, 48u8,
+                89u8, 223u8, 36u8, 93u8, 217u8, 92u8, 78u8, 206u8, 20u8, 254u8,
             ],
         ];
     }
