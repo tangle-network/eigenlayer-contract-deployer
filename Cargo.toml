@@ -41,7 +41,7 @@ eigensdk = { version = "0.5.0", features = ["crypto-bls", "utils"] }
 serde = { version = "1.0.127", features = ["derive"] }
 serde_json = { version = "1.0.67", features = ["alloc"] }
 alloy = { version = "0.12" }
-alloy-sol-types = { version = "0.8", features = ["json"] }
+alloy-sol-types = { version = "1.2", features = ["json"] }
 alloy-json-abi = { version = "0.8", features = ["serde_json"] }
 alloy-rpc-types-eth = {version = "0.12" }
 alloy-contract = { version = "0.12" }
