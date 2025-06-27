@@ -10,8 +10,8 @@ fn main() {
     }
 
     let contract_dirs = vec![
-        "./dependencies/eigenlayer-middleware-0.5.4/lib/eigenlayer-contracts",
-        "./dependencies/eigenlayer-middleware-0.5.4",
+        "./dependencies/eigenlayer-middleware-1.3.1/lib/eigenlayer-contracts",
+        "./dependencies/eigenlayer-middleware-1.3.1",
         "./contracts",
     ];
     soldeer_install();
@@ -60,6 +60,9 @@ fn main() {
         "TransparentUpgradeableProxy",
         "UpgradeableBeacon",
         "IStrategy",
+        // Libraries
+        "QuorumBitmapHistoryLib",
+        "SignatureCheckerLib",
     ];
 
     // Generate bindings for contracts directory
@@ -70,6 +73,8 @@ fn main() {
     cmd.args([
         "bind",
         "--alloy",
+        "--alloy-version",
+        "1.0",
         "--skip-build",
         "--evm-version",
         "shanghai",
@@ -100,6 +105,8 @@ fn main() {
     cmd.args([
         "bind",
         "--alloy",
+        "--alloy-version",
+        "1.0",
         "--skip-build",
         "--evm-version",
         "shanghai",
@@ -107,7 +114,7 @@ fn main() {
         "src/bindings/core",
         "--overwrite",
         "--root",
-        "./dependencies/eigenlayer-middleware-0.5.4",
+        "./dependencies/eigenlayer-middleware-1.3.1",
         "--module",
     ]);
 
@@ -127,14 +134,14 @@ fn main() {
 
     // Process deploy contracts
     for contract in &contracts_contracts {
-        let lower_contract = contract.to_lowercase();
+        let lower_contract = to_snake_case(contract);
         let file_path = format!("src/bindings/deploy/{}.rs", lower_contract);
         add_imports_to_file(&file_path, contract);
     }
 
     // Process middleware contracts
     for contract in &middleware_contracts {
-        let lower_contract = contract.to_lowercase();
+        let lower_contract = to_snake_case(contract);
         let file_path = format!("src/bindings/core/{}.rs", lower_contract);
         add_imports_to_file(&file_path, contract);
 
@@ -163,14 +170,14 @@ fn main() {
     contents.push('\n');
 
     for contract in &contracts_contracts {
-        let lower_contract = contract.to_lowercase();
+        let lower_contract = to_snake_case(contract);
         contents.push_str(&format!(
             "pub use deploy::{}::{};\n",
             lower_contract, contract
         ));
     }
     for contract in &middleware_contracts {
-        let lower_contract = contract.to_lowercase();
+        let lower_contract = to_snake_case(contract);
         contents.push_str(&format!(
             "pub use core::{}::{};\n",
             lower_contract, contract
@@ -187,14 +194,14 @@ fn main() {
 
     // Add all modules
     for contract in &middleware_contracts {
-        let lower_contract = contract.to_lowercase();
+        let lower_contract = to_snake_case(contract);
         core_mod_contents.push_str(&format!("pub mod {};\n", lower_contract));
     }
 
     // Re-export OperatorSet from AllocationManager
     core_mod_contents.push_str("\n// Re-export OperatorSet for use across modules\n");
     core_mod_contents
-        .push_str("pub use self::allocationmanager::AllocationManager::OperatorSet;\n");
+        .push_str("pub use self::allocation_manager::AllocationManager::OperatorSet;\n");
 
     let core_mod_path = Path::new("src/bindings/core/mod.rs");
     fs::write(core_mod_path, core_mod_contents).expect("Failed to write to core/mod.rs");
@@ -206,7 +213,7 @@ fn main() {
 
     // Add all modules
     for contract in &contracts_contracts {
-        let lower_contract = contract.to_lowercase();
+        let lower_contract = to_snake_case(contract);
         deploy_mod_contents.push_str(&format!("pub mod {};\n", lower_contract));
     }
 
@@ -422,4 +429,55 @@ pub fn find_forge_executable() -> String {
         }
         Err(e) => panic!("Failed to find `forge` executable: {e}"),
     }
+}
+
+/// Converts a string to `snake_case`.
+///
+/// This function takes a string in any case (`PascalCase`, camelCase, etc.)
+/// and converts it to `snake_case` by inserting underscores before uppercase
+/// letters and converting everything to lowercase. It properly handles acronyms
+/// by treating consecutive uppercase letters as a single unit.
+///
+/// # Examples
+/// ```
+/// assert_eq!(to_snake_case("PascalCase"), "pascal_case");
+/// assert_eq!(to_snake_case("camelCase"), "camel_case");
+/// assert_eq!(to_snake_case("HTTPRequest"), "http_request");
+/// assert_eq!(to_snake_case("AVSDirectory"), "avs_directory");
+/// assert_eq!(to_snake_case("XMLHttpRequest"), "xml_http_request");
+/// assert_eq!(to_snake_case("already_snake"), "already_snake");
+/// ```
+fn to_snake_case(input: &str) -> String {
+    let mut result = String::new();
+    let chars: Vec<char> = input.chars().collect();
+
+    for (i, &ch) in chars.iter().enumerate() {
+        let is_first = i == 0;
+        let is_last = i == chars.len() - 1;
+        let prev_char = if i > 0 { Some(chars[i - 1]) } else { None };
+        let next_char = if i < chars.len() - 1 {
+            Some(chars[i + 1])
+        } else {
+            None
+        };
+
+        if ch.is_uppercase() {
+            let should_add_underscore = !is_first
+                && (
+                    // Previous char is lowercase
+                    prev_char.is_some_and(char::is_lowercase) ||
+                // Current char is uppercase, next char is lowercase (end of acronym)
+                (!is_last && next_char.is_some_and(char::is_lowercase))
+                );
+
+            if should_add_underscore {
+                result.push('_');
+            }
+            result.push(ch.to_lowercase().next().unwrap());
+        } else {
+            result.push(ch.to_lowercase().next().unwrap());
+        }
+    }
+
+    result
 }

@@ -11,7 +11,11 @@ contract SquaringTask is TaskManager {
     event SquaringTaskCompleted(uint256 number, uint256 result);
 
     /// @notice Error thrown when the submitted result is incorrect
-    error IncorrectSquareResult(uint256 number, uint256 submittedResult, uint256 expectedResult);
+    error IncorrectSquareResult(
+        uint256 number,
+        uint256 submittedResult,
+        uint256 expectedResult
+    );
 
     /// @notice Constructor to initialize the SquaringTask contract
     /// @param _registryCoordinator Address of the registry coordinator
@@ -32,13 +36,9 @@ contract SquaringTask is TaskManager {
     ) external onlyTaskGenerator {
         // Encode the number as the task message
         bytes memory message = abi.encode(number);
-        
+
         // Create the task using the parent contract's function
-        _createNewTask(
-            message,
-            quorumThresholdPercentage,
-            quorumNumbers
-        );
+        _createNewTask(message, quorumThresholdPercentage, quorumNumbers);
     }
 
     /// @notice Responds to a squaring task with the computed result

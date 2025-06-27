@@ -77,8 +77,8 @@ use alloy_rpc_types_eth::TransactionReceipt;
 // use tokio::io::AsyncBufReadExt;
 
 #[allow(clippy::missing_errors_doc)]
-pub async fn get_receipt<T, P, D>(
-    call: CallBuilder<T, P, D, Ethereum>,
+pub async fn get_receipt<P, D>(
+    call: CallBuilder<P, D, Ethereum>,
 ) -> Result<TransactionReceipt, color_eyre::eyre::Error>
 where
     P: Provider<Ethereum>,
@@ -118,7 +118,7 @@ pub fn get_provider_from_signer(key: &str, rpc_url: &str) -> RootProvider {
     let url = Url::parse(rpc_url).expect("Wrong rpc url");
     ProviderBuilder::new()
         .wallet(wallet.clone())
-        .on_http(url)
+        .connect_http(url)
         .root()
         .clone()
 }
@@ -141,7 +141,7 @@ pub async fn wait_transaction(
     let url = Url::parse(rpc_url).map_err(|_| TransportErrorKind::custom_str("Invalid RPC URL"))?;
     let root_provider = ProviderBuilder::new()
         .disable_recommended_fillers()
-        .on_http(url);
+        .connect_http(url);
     let pending_tx = PendingTransactionBuilder::new(root_provider, tx_hash);
     pending_tx.get_receipt().await
 }

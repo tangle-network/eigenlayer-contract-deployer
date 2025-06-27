@@ -1,12 +1,12 @@
 use alloy_primitives::{Address, U256};
 use alloy_sol_types::SolCall;
 use color_eyre::eyre::eyre;
-use eigensdk::utils::slashing::sdk::mockerc20::MockERC20;
+use eigensdk::utils::slashing::sdk::r#mock_erc20::MockERC20;
 use serde::{Deserialize, Serialize};
 use tracing::info;
 
-use crate::bindings::core::islashingregistrycoordinator::ISlashingRegistryCoordinatorTypes::OperatorSetParam;
-use crate::bindings::core::slashingregistrycoordinator::IStakeRegistryTypes::StrategyParams;
+use crate::bindings::core::i_slashing_registry_coordinator::ISlashingRegistryCoordinatorTypes::OperatorSetParam;
+use crate::bindings::core::slashing_registry_coordinator::IStakeRegistryTypes::StrategyParams;
 use crate::bindings::{
     BLSApkRegistry, IStrategy, IndexRegistry, InstantSlasher, OperatorStateRetriever,
     PauserRegistry, ProxyAdmin, SlashingRegistryCoordinator, SocketRegistry,
@@ -125,12 +125,12 @@ pub async fn deploy_avs_contracts(
     }
     info!("Minted tokens to task generator: {}", task_generator_addr);
 
-    let balance = token.balanceOf(deployer_address).call().await?._0;
+    let balance = token.balanceOf(deployer_address).call().await?;
     info!("Deployer token balance: {}", balance);
-    let balance = token.balanceOf(task_generator_addr).call().await?._0;
+    let balance = token.balanceOf(task_generator_addr).call().await?;
     info!("Task generator token balance: {}", balance);
 
-    let token_total_supply = token.totalSupply().call().await?._0;
+    let token_total_supply = token.totalSupply().call().await?;
     info!("Token total supply: {}", token_total_supply);
 
     let strategy_factory = StrategyFactory::new(strategy_factory_addr, wallet.clone());
@@ -230,7 +230,7 @@ pub async fn deploy_avs_contracts(
     );
 
     // Deploy RegistryCoordinator implementation
-    let registry_coordinator_impl = SlashingRegistryCoordinator::deploy(
+    let registry_coordinator_impl = crate::slashing_registry_coordinator::deploy(
         &wallet,
         stake_registry_proxy,
         bls_apk_registry_proxy,

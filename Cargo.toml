@@ -1,6 +1,6 @@
 [package]
 name = "eigenlayer-contract-deployer"
-version = "0.2.0"
+version = "0.3.0"
 description = "A library that contains Rust bindings for contracts and tools for deploying contracts"
 authors = ["Tangle Network"]
 edition = "2024"
@@ -37,16 +37,16 @@ broken_intra_doc_links = "deny"
 
 [dependencies]
 color-eyre = { version = "0.6" }
-eigensdk = { version = "0.5.0", features = ["crypto-bls", "utils"] }
+eigensdk = { version = "2", features = ["crypto-bls", "utils"] }
 serde = { version = "1.0.127", features = ["derive"] }
 serde_json = { version = "1.0.67", features = ["alloc"] }
-alloy = { version = "0.12" }
-alloy-sol-types = { version = "0.8", features = ["json"] }
-alloy-json-abi = { version = "0.8", features = ["serde_json"] }
-alloy-rpc-types-eth = {version = "0.12" }
-alloy-contract = { version = "0.12" }
-alloy-provider = { version = "0.12" }
-alloy-primitives = { version = "0.8" }
+alloy = { version = "1.0" }
+alloy-sol-types = { version = "1.2.1", features = ["json"] }
+alloy-json-abi = { version = "1.2.1", features = ["serde_json"] }
+alloy-rpc-types-eth = { version = "1.0" }
+alloy-contract = { version = "1.0" }
+alloy-provider = { version = "1.0" }
+alloy-primitives = { version = "1.2.1" }
 tracing = { version = "0.1.41" }
 
 [features]

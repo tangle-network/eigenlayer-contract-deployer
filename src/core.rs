@@ -1,4 +1,4 @@
-use crate::bindings::core::rewardscoordinator::IRewardsCoordinatorTypes::RewardsCoordinatorConstructorParams;
+use crate::bindings::core::rewards_coordinator::IRewardsCoordinatorTypes::RewardsCoordinatorConstructorParams;
 use crate::bindings::{
     AVSDirectory, AllocationManager, DelegationManager, EigenPod, EigenPodManager, PauserRegistry,
     PermissionController, ProxyAdmin, RewardsCoordinator, StrategyBase, StrategyFactory,

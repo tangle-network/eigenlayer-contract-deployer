@@ -10,3 +10,4 @@ pub mod core;
 pub mod deploy;
 pub mod helpers;
 pub mod permissions;
+pub mod slashing_registry_coordinator;
