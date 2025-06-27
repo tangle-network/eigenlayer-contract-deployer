@@ -96,6 +96,7 @@ fn link_all_fully_qualified(
     result
 }
 
+#[allow(clippy::missing_panics_doc)]
 pub async fn deploy_builder<P: alloy_contract::private::Provider<N> + Clone, N: Network>(
     provider: P,
     _stakeRegistry: alloy::sol_types::private::Address,
