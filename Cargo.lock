@@ -533,9 +533,9 @@ dependencies = [
 
 [[package]]
 name = "alloy-rpc-types-eth"
-version = "1.0.15"
+version = "1.0.21"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4d4785c613476178a820685135db58472734deba83fa0700bd19aa81b3aec184"
+checksum = "21313fffcce0dcf4acd5ed1e053fd38b361151090c294a1e537aa3f23cd2da16"
 dependencies = [
  "alloy-consensus",
  "alloy-consensus-any",
@@ -548,6 +548,7 @@ dependencies = [
  "itertools 0.14.0",
  "serde",
  "serde_json",
+ "serde_with",
  "thiserror 2.0.12",
 ]
 
