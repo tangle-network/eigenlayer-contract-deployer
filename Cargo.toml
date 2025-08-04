@@ -42,7 +42,7 @@ serde = { version = "1.0.127", features = ["derive"] }
 serde_json = { version = "1.0.67", features = ["alloc"] }
 alloy = { version = "1.0" }
 alloy-sol-types = { version = "1.2.1", features = ["json"] }
-alloy-json-abi = { version = "1.2.1", features = ["serde_json"] }
+alloy-json-abi = { version = "1.3.0", features = ["serde_json"] }
 alloy-rpc-types-eth = { version = "1.0" }
 alloy-contract = { version = "1.0" }
 alloy-provider = { version = "1.0" }
