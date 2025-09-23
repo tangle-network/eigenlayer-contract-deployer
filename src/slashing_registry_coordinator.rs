@@ -17,7 +17,7 @@ use crate::bindings::core::{
 };
 
 pub const ARTIFACT: &str = include_str!(
-    "../dependencies/eigenlayer-middleware-1.3.1/out/SlashingRegistryCoordinator.sol/SlashingRegistryCoordinator.json"
+    "../artifacts/eigenlayer-middleware-1.3.1/SlashingRegistryCoordinator.json"
 );
 
 fn artifact() -> std::io::Result<serde_json::Value> {
