@@ -41,22 +41,22 @@ pub mod EmptyContract {
     /// The creation / init bytecode of the contract.
     ///
     /// ```text
-    ///0x6080604052348015600e575f5ffd5b50607380601a5f395ff3fe6080604052348015600e575f5ffd5b50600436106026575f3560e01c8063c298557814602a575b5f5ffd5b5f60405190815260200160405180910390f3fea264697066735822122019d60c6cbf32f06cbab6be87591091c44c01a0329adb0ed31d0e9b88be31524e64736f6c634300081b0033
+    ///0x6080604052348015600e575f5ffd5b50607380601a5f395ff3fe6080604052348015600e575f5ffd5b50600436106026575f3560e01c8063c298557814602a575b5f5ffd5b5f60405190815260200160405180910390f3fea2646970667358221220065cc1fc21b4eb7bc92f84674533008d257e86502809b253c89c5cdcea463baf64736f6c634300081b0033
     /// ```
     #[rustfmt::skip]
     #[allow(clippy::all)]
     pub static BYTECODE: alloy_sol_types::private::Bytes = alloy_sol_types::private::Bytes::from_static(
-        b"`\x80`@R4\x80\x15`\x0EW__\xFD[P`s\x80`\x1A_9_\xF3\xFE`\x80`@R4\x80\x15`\x0EW__\xFD[P`\x046\x10`&W_5`\xE0\x1C\x80c\xC2\x98Ux\x14`*W[__\xFD[_`@Q\x90\x81R` \x01`@Q\x80\x91\x03\x90\xF3\xFE\xA2dipfsX\"\x12 \x19\xD6\x0Cl\xBF2\xF0l\xBA\xB6\xBE\x87Y\x10\x91\xC4L\x01\xA02\x9A\xDB\x0E\xD3\x1D\x0E\x9B\x88\xBE1RNdsolcC\0\x08\x1B\x003",
+        b"`\x80`@R4\x80\x15`\x0EW__\xFD[P`s\x80`\x1A_9_\xF3\xFE`\x80`@R4\x80\x15`\x0EW__\xFD[P`\x046\x10`&W_5`\xE0\x1C\x80c\xC2\x98Ux\x14`*W[__\xFD[_`@Q\x90\x81R` \x01`@Q\x80\x91\x03\x90\xF3\xFE\xA2dipfsX\"\x12 \x06\\\xC1\xFC!\xB4\xEB{\xC9/\x84gE3\0\x8D%~\x86P(\t\xB2S\xC8\x9C\\\xDC\xEAF;\xAFdsolcC\0\x08\x1B\x003",
     );
     /// The runtime bytecode of the contract, as deployed on the network.
     ///
     /// ```text
-    ///0x6080604052348015600e575f5ffd5b50600436106026575f3560e01c8063c298557814602a575b5f5ffd5b5f60405190815260200160405180910390f3fea264697066735822122019d60c6cbf32f06cbab6be87591091c44c01a0329adb0ed31d0e9b88be31524e64736f6c634300081b0033
+    ///0x6080604052348015600e575f5ffd5b50600436106026575f3560e01c8063c298557814602a575b5f5ffd5b5f60405190815260200160405180910390f3fea2646970667358221220065cc1fc21b4eb7bc92f84674533008d257e86502809b253c89c5cdcea463baf64736f6c634300081b0033
     /// ```
     #[rustfmt::skip]
     #[allow(clippy::all)]
     pub static DEPLOYED_BYTECODE: alloy_sol_types::private::Bytes = alloy_sol_types::private::Bytes::from_static(
-        b"`\x80`@R4\x80\x15`\x0EW__\xFD[P`\x046\x10`&W_5`\xE0\x1C\x80c\xC2\x98Ux\x14`*W[__\xFD[_`@Q\x90\x81R` \x01`@Q\x80\x91\x03\x90\xF3\xFE\xA2dipfsX\"\x12 \x19\xD6\x0Cl\xBF2\xF0l\xBA\xB6\xBE\x87Y\x10\x91\xC4L\x01\xA02\x9A\xDB\x0E\xD3\x1D\x0E\x9B\x88\xBE1RNdsolcC\0\x08\x1B\x003",
+        b"`\x80`@R4\x80\x15`\x0EW__\xFD[P`\x046\x10`&W_5`\xE0\x1C\x80c\xC2\x98Ux\x14`*W[__\xFD[_`@Q\x90\x81R` \x01`@Q\x80\x91\x03\x90\xF3\xFE\xA2dipfsX\"\x12 \x06\\\xC1\xFC!\xB4\xEB{\xC9/\x84gE3\0\x8D%~\x86P(\t\xB2S\xC8\x9C\\\xDC\xEAF;\xAFdsolcC\0\x08\x1B\x003",
     );
     #[derive(serde::Serialize, serde::Deserialize)]
     #[derive(Default, Debug, PartialEq, Eq, Hash)]

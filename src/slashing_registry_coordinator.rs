@@ -27,10 +27,10 @@ fn artifact() -> std::io::Result<serde_json::Value> {
 fn contract_bytecode()
 -> std::io::Result<(String, serde_json::value::Map<String, serde_json::Value>)> {
     let artifact = artifact()?;
-    let bytecode = artifact["deployedBytecode"]
+    let bytecode = artifact["deployedBytecode"]["object"]
         .as_str()
         .ok_or_else(|| std::io::Error::other("No deployed bytecode found"))?;
-    let link_references = artifact["linkReferences"]
+    let link_references = artifact["deployedBytecode"]["linkReferences"]
         .as_object()
         .cloned()
         .unwrap_or_default();
@@ -58,20 +58,22 @@ fn link_all_fully_qualified(
                             if let (Some(start), Some(length)) =
                                 (position["start"].as_u64(), position["length"].as_u64())
                             {
+                                // 1 bytes = 2 characters. then convert to usize
+                                let char_length = (length * 2) as usize;
                                 // Convert address to hex string and prepare replacement
                                 let addr_hex = format!("{:x}", lib_address);
                                 let addr_hex = addr_hex.strip_prefix("0x").unwrap_or(&addr_hex);
 
                                 // Pad with zeros or trim to match required length
-                                let replacement = if addr_hex.len() < length as usize {
-                                    format!("{:0>width$}", addr_hex, width = length as usize)
+                                let replacement = if addr_hex.len() < char_length {
+                                    format!("{:0>width$}", addr_hex, width = char_length)
                                 } else {
-                                    addr_hex[..length as usize].to_string()
+                                    addr_hex[..char_length].to_string()
                                 };
 
                                 replacements.push((
-                                    start as usize * 2,
-                                    length as usize * 2,
+                                    (start as usize + 1usize) * 2usize,
+                                    char_length,
                                     replacement,
                                 ));
                             }
@@ -123,8 +125,9 @@ pub async fn deploy_builder<P: alloy_contract::private::Provider<N> + Clone, N: 
             *signature_checker_lib.address(),
         ),
     ]);
+    let linked_bytecode = link_all_fully_qualified(&bytecode, &link_references, &libs);
     let linked_bytecode =
-        alloy::hex::decode(link_all_fully_qualified(&bytecode, &link_references, &libs))
+        alloy::hex::decode(linked_bytecode)
             .expect("Failed to decode linked bytecode");
     Ok(alloy_contract::RawCallBuilder::<P, N>::new_raw_deploy(
         provider,
