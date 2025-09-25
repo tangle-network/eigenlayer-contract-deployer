@@ -72,7 +72,7 @@ fn link_all_fully_qualified(
                                 };
 
                                 replacements.push((
-                                    (start as usize + 1usize) * 2usize,
+                                    ((start + 1) * 2) as usize,
                                     char_length,
                                     replacement,
                                 ));
