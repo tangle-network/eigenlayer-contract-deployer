@@ -37,7 +37,6 @@ fn contract_bytecode()
     Ok((bytecode.to_string(), link_references))
 }
 
-
 fn link_all_fully_qualified(
     bytecode: &str,
     link_references: &serde_json::Map<String, serde_json::Value>,
@@ -188,19 +187,19 @@ pub mod test {
 
     #[test]
     fn test_link_all_fully_qualified() {
-
-        let (bytecode, link_references) = contract_bytecode().expect("Failed to get contract bytecode");
+        let (bytecode, link_references) =
+            contract_bytecode().expect("Failed to get contract bytecode");
         // Deploy library contracts if needed.
         let quourm_bitmap_history_lib = alloy_primitives::Address::ZERO;
         let signature_checker_lib = alloy_primitives::Address::ZERO;
         let libs = BTreeMap::from([
             (
                 "src/libraries/QuorumBitmapHistoryLib.sol",
-                quourm_bitmap_history_lib.into(),
+                quourm_bitmap_history_lib,
             ),
             (
                 "src/libraries/SignatureCheckerLib.sol",
-                signature_checker_lib.into(),
+                signature_checker_lib,
             ),
         ]);
         let linked_bytecode = link_all_fully_qualified(&bytecode, &link_references, &libs);
