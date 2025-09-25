@@ -37,6 +37,7 @@ fn contract_bytecode()
     Ok((bytecode.to_string(), link_references))
 }
 
+
 fn link_all_fully_qualified(
     bytecode: &str,
     link_references: &serde_json::Map<String, serde_json::Value>,
@@ -58,22 +59,20 @@ fn link_all_fully_qualified(
                             if let (Some(start), Some(length)) =
                                 (position["start"].as_u64(), position["length"].as_u64())
                             {
-                                // 1 bytes = 2 characters. then convert to usize
-                                let char_length = (length * 2) as usize;
                                 // Convert address to hex string and prepare replacement
                                 let addr_hex = format!("{:x}", lib_address);
                                 let addr_hex = addr_hex.strip_prefix("0x").unwrap_or(&addr_hex);
 
                                 // Pad with zeros or trim to match required length
-                                let replacement = if addr_hex.len() < char_length {
-                                    format!("{:0>width$}", addr_hex, width = char_length)
+                                let replacement = if addr_hex.len() < length as usize {
+                                    format!("{:0>width$}", addr_hex, width = length as usize)
                                 } else {
-                                    addr_hex[..char_length].to_string()
+                                    addr_hex[..length as usize].to_string()
                                 };
 
                                 replacements.push((
-                                    ((start + 1) * 2) as usize,
-                                    char_length,
+                                    start as usize * 2,
+                                    length as usize * 2,
                                     replacement,
                                 ));
                             }
@@ -126,6 +125,7 @@ pub async fn deploy_builder<P: alloy_contract::private::Provider<N> + Clone, N: 
         ),
     ]);
     let linked_bytecode = link_all_fully_qualified(&bytecode, &link_references, &libs);
+    println!("linked_bytecode: {:?}", linked_bytecode);
     let linked_bytecode =
         alloy::hex::decode(linked_bytecode).expect("Failed to decode linked bytecode");
     Ok(alloy_contract::RawCallBuilder::<P, N>::new_raw_deploy(
@@ -174,5 +174,35 @@ pub async fn deploy<P: alloy_contract::private::Provider<N> + Clone, N: Network>
     )
     .await?;
     let deployed = builder.deploy().await?;
+
+    // ContractNotDeployed
     Ok(slashing_registry_coordinator::SlashingRegistryCoordinator::new(deployed, provider))
+}
+
+#[cfg(test)]
+pub mod test {
+    use super::*;
+
+    #[test]
+    fn test_link_all_fully_qualified() {
+
+        let (bytecode, link_references) = contract_bytecode().expect("Failed to get contract bytecode");
+        // Deploy library contracts if needed.
+        let quourm_bitmap_history_lib = alloy_primitives::Address::ZERO;
+        let signature_checker_lib = alloy_primitives::Address::ZERO;
+        let libs = BTreeMap::from([
+            (
+                "src/libraries/QuorumBitmapHistoryLib.sol",
+                quourm_bitmap_history_lib.into(),
+            ),
+            (
+                "src/libraries/SignatureCheckerLib.sol",
+                signature_checker_lib.into(),
+            ),
+        ]);
+        let linked_bytecode = link_all_fully_qualified(&bytecode, &link_references, &libs);
+        let linked_bytecode =
+            alloy::hex::decode(linked_bytecode).expect("Failed to decode linked bytecode");
+        println!("linked_bytecode: {:?}", linked_bytecode);
+    }
 }
