@@ -27,10 +27,13 @@ fn artifact() -> std::io::Result<serde_json::Value> {
 fn contract_bytecode()
 -> std::io::Result<(String, serde_json::value::Map<String, serde_json::Value>)> {
     let artifact = artifact()?;
-    let bytecode = artifact["deployedBytecode"]["object"]
+    // Use CREATION bytecode for deployment, not deployed/runtime bytecode.
+    // Using runtime bytecode as init code results in an empty code deployment.
+    let bytecode = artifact["bytecode"]["object"]
         .as_str()
         .ok_or_else(|| std::io::Error::other("No deployed bytecode found"))?;
-    let link_references = artifact["deployedBytecode"]["linkReferences"]
+    // Link against the creation bytecode link references
+    let link_references = artifact["bytecode"]["linkReferences"]
         .as_object()
         .cloned()
         .unwrap_or_default();
@@ -126,7 +129,6 @@ pub async fn deploy_builder<P: alloy_contract::private::Provider<N> + Clone, N: 
         ),
     ]);
     let linked_bytecode = link_all_fully_qualified(&bytecode, &link_references, &libs);
-    println!("linked_bytecode: {:?}", linked_bytecode);
     let linked_bytecode =
         alloy::hex::decode(linked_bytecode).expect("Failed to decode linked bytecode");
     Ok(alloy_contract::RawCallBuilder::<P, N>::new_raw_deploy(
@@ -174,7 +176,6 @@ pub async fn deploy<P: alloy_contract::private::Provider<N> + Clone, N: Network>
         _version,
     )
     .await?;
-    println!("builder: {:?}", builder);
     let deployed = builder.deploy().await?;
 
     // ContractNotDeployed
