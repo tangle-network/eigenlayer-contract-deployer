@@ -127,8 +127,7 @@ pub async fn deploy_builder<P: alloy_contract::private::Provider<N> + Clone, N: 
     ]);
     let linked_bytecode = link_all_fully_qualified(&bytecode, &link_references, &libs);
     let linked_bytecode =
-        alloy::hex::decode(linked_bytecode)
-            .expect("Failed to decode linked bytecode");
+        alloy::hex::decode(linked_bytecode).expect("Failed to decode linked bytecode");
     Ok(alloy_contract::RawCallBuilder::<P, N>::new_raw_deploy(
         provider,
         [
