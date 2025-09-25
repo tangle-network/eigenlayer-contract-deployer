@@ -52,3 +52,8 @@ tracing = { version = "0.1.41" }
 [features]
 default = []
 build-script = []
+
+[dev-dependencies]
+# Spawn and control a local anvil node in tests (requires `anvil` binary at runtime)
+alloy = { version = "1.0", features = ["node-bindings"] }
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
