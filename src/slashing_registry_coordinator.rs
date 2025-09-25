@@ -59,20 +59,22 @@ fn link_all_fully_qualified(
                             if let (Some(start), Some(length)) =
                                 (position["start"].as_u64(), position["length"].as_u64())
                             {
+                                // 1 bytes = 2 characters. then convert to usize
+                                let char_length = (length * 2) as usize;
                                 // Convert address to hex string and prepare replacement
                                 let addr_hex = format!("{:x}", lib_address);
                                 let addr_hex = addr_hex.strip_prefix("0x").unwrap_or(&addr_hex);
 
                                 // Pad with zeros or trim to match required length
-                                let replacement = if addr_hex.len() < length as usize {
-                                    format!("{:0>width$}", addr_hex, width = length as usize)
+                                let replacement = if addr_hex.len() < char_length {
+                                    format!("{:0>width$}", addr_hex, width = char_length)
                                 } else {
-                                    addr_hex[..length as usize].to_string()
+                                    addr_hex[..char_length].to_string()
                                 };
 
                                 replacements.push((
-                                    start as usize * 2,
-                                    length as usize * 2,
+                                    ((start + 1) * 2) as usize,
+                                    char_length,
                                     replacement,
                                 ));
                             }
@@ -173,6 +175,7 @@ pub async fn deploy<P: alloy_contract::private::Provider<N> + Clone, N: Network>
         _version,
     )
     .await?;
+    println!("builder: {:?}", builder);
     let deployed = builder.deploy().await?;
 
     // ContractNotDeployed
