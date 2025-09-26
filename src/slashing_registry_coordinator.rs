@@ -27,10 +27,13 @@ fn artifact() -> std::io::Result<serde_json::Value> {
 fn contract_bytecode()
 -> std::io::Result<(String, serde_json::value::Map<String, serde_json::Value>)> {
     let artifact = artifact()?;
-    let bytecode = artifact["deployedBytecode"]
+    // Use CREATION bytecode for deployment, not deployed/runtime bytecode.
+    // Using runtime bytecode as init code results in an empty code deployment.
+    let bytecode = artifact["bytecode"]["object"]
         .as_str()
         .ok_or_else(|| std::io::Error::other("No deployed bytecode found"))?;
-    let link_references = artifact["linkReferences"]
+    // Link against the creation bytecode link references
+    let link_references = artifact["bytecode"]["linkReferences"]
         .as_object()
         .cloned()
         .unwrap_or_default();
@@ -58,20 +61,22 @@ fn link_all_fully_qualified(
                             if let (Some(start), Some(length)) =
                                 (position["start"].as_u64(), position["length"].as_u64())
                             {
+                                // 1 bytes = 2 characters. then convert to usize
+                                let char_length = (length * 2) as usize;
                                 // Convert address to hex string and prepare replacement
                                 let addr_hex = format!("{:x}", lib_address);
                                 let addr_hex = addr_hex.strip_prefix("0x").unwrap_or(&addr_hex);
 
                                 // Pad with zeros or trim to match required length
-                                let replacement = if addr_hex.len() < length as usize {
-                                    format!("{:0>width$}", addr_hex, width = length as usize)
+                                let replacement = if addr_hex.len() < char_length {
+                                    format!("{:0>width$}", addr_hex, width = char_length)
                                 } else {
-                                    addr_hex[..length as usize].to_string()
+                                    addr_hex[..char_length].to_string()
                                 };
 
                                 replacements.push((
-                                    start as usize * 2,
-                                    length as usize * 2,
+                                    ((start + 1) * 2) as usize,
+                                    char_length,
                                     replacement,
                                 ));
                             }
@@ -81,9 +86,6 @@ fn link_all_fully_qualified(
             }
         }
     }
-
-    // Sort replacements by start index in descending order to preserve offsets
-    replacements.sort_by(|a, b| b.0.cmp(&a.0));
 
     // Apply replacements to the bytecode
     let mut result = bytecode.to_string();
@@ -123,9 +125,9 @@ pub async fn deploy_builder<P: alloy_contract::private::Provider<N> + Clone, N: 
             *signature_checker_lib.address(),
         ),
     ]);
+    let linked_bytecode = link_all_fully_qualified(&bytecode, &link_references, &libs);
     let linked_bytecode =
-        alloy::hex::decode(link_all_fully_qualified(&bytecode, &link_references, &libs))
-            .expect("Failed to decode linked bytecode");
+        alloy::hex::decode(linked_bytecode).expect("Failed to decode linked bytecode");
     Ok(alloy_contract::RawCallBuilder::<P, N>::new_raw_deploy(
         provider,
         [
@@ -172,5 +174,35 @@ pub async fn deploy<P: alloy_contract::private::Provider<N> + Clone, N: Network>
     )
     .await?;
     let deployed = builder.deploy().await?;
+
+    // ContractNotDeployed
     Ok(slashing_registry_coordinator::SlashingRegistryCoordinator::new(deployed, provider))
+}
+
+#[cfg(test)]
+pub mod test {
+    use super::*;
+
+    #[test]
+    fn test_link_all_fully_qualified() {
+        let (bytecode, link_references) =
+            contract_bytecode().expect("Failed to get contract bytecode");
+        // Deploy library contracts if needed.
+        let quourm_bitmap_history_lib = alloy_primitives::Address::ZERO;
+        let signature_checker_lib = alloy_primitives::Address::ZERO;
+        let libs = BTreeMap::from([
+            (
+                "src/libraries/QuorumBitmapHistoryLib.sol",
+                quourm_bitmap_history_lib,
+            ),
+            (
+                "src/libraries/SignatureCheckerLib.sol",
+                signature_checker_lib,
+            ),
+        ]);
+        let linked_bytecode = link_all_fully_qualified(&bytecode, &link_references, &libs);
+        let linked_bytecode =
+            alloy::hex::decode(linked_bytecode).expect("Failed to decode linked bytecode");
+        println!("linked_bytecode: {:?}", linked_bytecode);
+    }
 }
