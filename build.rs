@@ -15,7 +15,7 @@ fn main() {
         "./contracts",
     ];
     soldeer_install();
-    // soldeer_update();
+    soldeer_update();
     build_contracts(contract_dirs);
 
     // Create bindings directory

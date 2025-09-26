@@ -87,9 +87,6 @@ fn link_all_fully_qualified(
         }
     }
 
-    // Sort replacements by start index in descending order to preserve offsets
-    replacements.sort_by(|a, b| b.0.cmp(&a.0));
-
     // Apply replacements to the bytecode
     let mut result = bytecode.to_string();
     for (start, length, replacement) in replacements {
