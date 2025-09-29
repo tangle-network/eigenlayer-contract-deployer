@@ -38,7 +38,7 @@ broken_intra_doc_links = "deny"
 [dependencies]
 color-eyre = { version = "0.6" }
 eigensdk = { version = "2", features = ["crypto-bls", "utils"] }
-serde = { version = "1.0.127", features = ["derive"] }
+serde = { version = "1.0.228", features = ["derive"] }
 serde_json = { version = "1.0.67", features = ["alloc"] }
 alloy = { version = "1.0" }
 alloy-sol-types = { version = "1.2.1", features = ["json"] }
