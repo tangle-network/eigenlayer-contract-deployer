@@ -16,9 +16,8 @@ use crate::bindings::core::{
     quorum_bitmap_history_lib, signature_checker_lib, slashing_registry_coordinator,
 };
 
-pub const ARTIFACT: &str = include_str!(
-    "artifacts/eigenlayer-middleware-1.3.1/SlashingRegistryCoordinator.json"
-);
+pub const ARTIFACT: &str =
+    include_str!("artifacts/eigenlayer-middleware-1.3.1/SlashingRegistryCoordinator.json");
 
 fn artifact() -> std::io::Result<serde_json::Value> {
     serde_json::from_str(ARTIFACT).map_err(std::io::Error::other)
